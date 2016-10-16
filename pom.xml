@@ -20,6 +20,7 @@
      <module>jmeter-functions</module>
      <module>jmeter-protocols</module>
      <module>jmeter-monitor</module>
+     <module>jmeter-junit</module>
   </modules>
 
   <repositories>
