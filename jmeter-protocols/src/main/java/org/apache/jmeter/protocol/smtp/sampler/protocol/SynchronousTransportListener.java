@@ -48,7 +48,7 @@ public class SynchronousTransportListener extends TransportAdapter {
      */
     @Override
     public void messageDelivered(TransportEvent e) {
-        logger.debug("Message delivered");
+        log.debug("Message delivered");
         finish();
     }
 
@@ -57,7 +57,7 @@ public class SynchronousTransportListener extends TransportAdapter {
      */
     @Override
     public void messageNotDelivered(TransportEvent e) {
-        logger.debug("Message not delivered");
+        log.debug("Message not delivered");
         finish();
     }
 
@@ -66,7 +66,7 @@ public class SynchronousTransportListener extends TransportAdapter {
      */
     @Override
     public void messagePartiallyDelivered(TransportEvent e) {
-        logger.debug("Message partially delivered");
+        log.debug("Message partially delivered");
         finish();
     }
 

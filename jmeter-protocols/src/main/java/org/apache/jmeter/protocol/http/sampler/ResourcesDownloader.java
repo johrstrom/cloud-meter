@@ -90,7 +90,7 @@ public class ResourcesDownloader {
     
     
     private void init() {
-        LOG.info("Creating ResourcesDownloader with keepalive_inseconds:"+THREAD_KEEP_ALIVE_TIME);
+        log.info("Creating ResourcesDownloader with keepalive_inseconds:"+THREAD_KEEP_ALIVE_TIME);
         ThreadPoolExecutor exec = new ThreadPoolExecutor(
                 MIN_POOL_SIZE, MAX_POOL_SIZE, THREAD_KEEP_ALIVE_TIME, TimeUnit.SECONDS,
                 new SynchronousQueue<Runnable>(),
@@ -119,14 +119,14 @@ public class ResourcesDownloader {
             List<Runnable> drainList = new ArrayList<>();
             concurrentExecutor.getQueue().drainTo(drainList);
             if(!drainList.isEmpty()) {
-                LOG.warn("the pool executor workqueue is not empty size=" + drainList.size());
+                log.warn("the pool executor workqueue is not empty size=" + drainList.size());
                 for (Runnable runnable : drainList) {
                     if(runnable instanceof Future<?>) {
                         Future<?> f = (Future<?>) runnable;
                         f.cancel(true);
                     }
                     else {
-                        LOG.warn("Content of workqueue is not an instance of Future");
+                        log.warn("Content of workqueue is not an instance of Future");
                     }
                 }
             }
@@ -161,8 +161,8 @@ public class ResourcesDownloader {
         // restore MaximumPoolSize original value
         concurrentExecutor.setMaximumPoolSize(MAX_POOL_SIZE);
         
-        if(LOG.isDebugEnabled()) {
-            LOG.debug("PoolSize=" + concurrentExecutor.getPoolSize()+" LargestPoolSize=" + concurrentExecutor.getLargestPoolSize());
+        if(log.isDebugEnabled()) {
+            log.debug("PoolSize=" + concurrentExecutor.getPoolSize()+" LargestPoolSize=" + concurrentExecutor.getLargestPoolSize());
         }
         
         CompletionService<AsynSamplerResultHolder> completionService = new ExecutorCompletionService<>(concurrentExecutor);
@@ -195,8 +195,8 @@ public class ResourcesDownloader {
         finally {
             //bug 51925 : Calling Stop on Test leaks executor threads when concurrent download of resources is on
             if(remainingTasksToTake > 0) {
-                if(LOG.isDebugEnabled()) {
-                    LOG.debug("Interrupted while waiting for resource downloads : cancelling remaining tasks");
+                if(log.isDebugEnabled()) {
+                    log.debug("Interrupted while waiting for resource downloads : cancelling remaining tasks");
                 }
                 for (Future<AsynSamplerResultHolder> future : submittedTasks) {
                     if(!future.isDone()) {

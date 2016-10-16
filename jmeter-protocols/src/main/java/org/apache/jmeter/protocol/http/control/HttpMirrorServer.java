@@ -164,8 +164,8 @@ public class HttpMirrorServer extends Thread implements Stoppable {
         if (args.length > 0){
             port = Integer.parseInt(args[0]);
         }
-        LoggingManager.setPriority("INFO"); // default level
-        LoggingManager.setLoggingLevels(System.getProperties() ); // allow override by system properties
+//        LoggingManager.setPriority("INFO"); // default level
+//        LoggingManager.setLoggingLevels(System.getProperties() ); // allow override by system properties
         HttpMirrorServer serv = new HttpMirrorServer(port);
         serv.start();
     }

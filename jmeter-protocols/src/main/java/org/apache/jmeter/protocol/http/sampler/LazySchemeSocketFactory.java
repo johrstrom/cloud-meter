@@ -47,11 +47,11 @@ public final class LazySchemeSocketFactory implements SchemeLayeredSocketFactory
          * @throws SSLInitializationException
          */
         private static SchemeLayeredSocketFactory checkAndInit() throws SSLInitializationException {
-            LOG.info("Setting up HTTPS TrustAll Socket Factory");
+            log.info("Setting up HTTPS TrustAll Socket Factory");
             try {
                 return new HC4TrustAllSSLSocketFactory();
             } catch (GeneralSecurityException e) {
-                LOG.warn("Failed to initialise HTTPS HC4TrustAllSSLSocketFactory", e);
+                log.warn("Failed to initialise HTTPS HC4TrustAllSSLSocketFactory", e);
                 return SSLSocketFactory.getSocketFactory();
             }
         }

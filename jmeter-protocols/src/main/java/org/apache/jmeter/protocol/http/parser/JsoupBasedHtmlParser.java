@@ -39,7 +39,7 @@ import org.jsoup.select.NodeVisitor;
  * TODO Factor out common code between {@link LagartoBasedHtmlParser} and this one (adapter pattern)
  */
 public class JsoupBasedHtmlParser extends HTMLParser {
-	private static final Logger log = LoggerFactory.getLogger(JsoupBasedHtmlParser.class);
+//	private static final Logger log = LoggerFactory.getLogger(JsoupBasedHtmlParser.class);
 
     /*
      * A dummy class to pass the pointer of URL.

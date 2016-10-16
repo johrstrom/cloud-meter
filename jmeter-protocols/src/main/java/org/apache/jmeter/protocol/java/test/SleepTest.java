@@ -87,7 +87,7 @@ public class SleepTest extends AbstractJavaSamplerClient implements Serializable
      * of the client class.
      */
     public SleepTest() {
-        LOG.debug(whoAmI() + "\tConstruct");
+        log.debug(whoAmI() + "\tConstruct");
     }
 
     /**
@@ -104,8 +104,8 @@ public class SleepTest extends AbstractJavaSamplerClient implements Serializable
      */
     @Override
     public void setupTest(JavaSamplerContext context) {
-        if (LOG.isDebugEnabled()) {
-            LOG.debug(whoAmI() + "\tsetupTest()");
+        if (log.isDebugEnabled()) {
+            log.debug(whoAmI() + "\tsetupTest()");
             listParameters(context);
         }
         sleepTime = context.getLongParameter("SleepTime", DEFAULT_SLEEP_TIME);
@@ -159,19 +159,19 @@ public class SleepTest extends AbstractJavaSamplerClient implements Serializable
 
             results.setSuccessful(true);
         } catch (InterruptedException e) {
-            LOG.warn("SleepTest: interrupted.");
+            log.warn("SleepTest: interrupted.");
             results.setSuccessful(false);
             results.setResponseMessage(e.toString());
         } catch (Exception e) {
-            LOG.error("SleepTest: error during sample", e);
+            log.error("SleepTest: error during sample", e);
             results.setSuccessful(false);
             results.setResponseMessage(e.toString());
         } finally {
             results.sampleEnd();
         }
 
-        if (LOG.isDebugEnabled()) {
-            LOG.debug(whoAmI() + "\trunTest()" + "\tTime:\t" + results.getTime());
+        if (log.isDebugEnabled()) {
+            log.debug(whoAmI() + "\trunTest()" + "\tTime:\t" + results.getTime());
             listParameters(context);
         }
 
@@ -208,7 +208,7 @@ public class SleepTest extends AbstractJavaSamplerClient implements Serializable
         Iterator<String> argsIt = context.getParameterNamesIterator();
         while (argsIt.hasNext()) {
             String name = argsIt.next();
-            LOG.debug(name + "=" + context.getParameter(name));
+            log.debug(name + "=" + context.getParameter(name));
         }
     }
 

@@ -74,7 +74,7 @@ import org.slf4j.Logger;
  */
 
 public class TCLogParser implements LogParser {
-    protected static final Logger log = LoggingManager.getLoggerForClass();
+    protected static final Logger log = LoggerFactory.getLogger(TCLogParser.class);
 
     /*
      * TODO should these fields be public?

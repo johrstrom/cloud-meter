@@ -58,7 +58,7 @@ public abstract class BaseParser implements LinkExtractorParser {
         // Is there a cached parser?
         LinkExtractorParser parser = PARSERS.get(parserClassName);
         if (parser != null) {
-            LOG.debug("Fetched " + parserClassName);
+            log.debug("Fetched " + parserClassName);
             return parser;
         }
 
@@ -73,7 +73,7 @@ public abstract class BaseParser implements LinkExtractorParser {
                 | IllegalAccessException e) {
             throw new LinkExtractorParseException(e);
         }
-        LOG.info("Created " + parserClassName);
+        log.info("Created " + parserClassName);
         if (parser.isReusable()) {
             LinkExtractorParser currentParser = PARSERS.putIfAbsent(
                     parserClassName, parser);// cache the parser if not alread

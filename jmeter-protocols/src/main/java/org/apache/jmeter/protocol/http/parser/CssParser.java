@@ -70,7 +70,7 @@ public class CssParser implements LinkExtractorParser {
         @Override
         public void onException(ParseException ex) {
             if(IGNORE_UNRECOVERABLE_PARSING_ERROR) {   
-                LOG.warn("Failed to parse CSS: " + cssUrl + ", " + LoggingCSSParseErrorHandler.createLoggingStringParseError (ex));
+                log.warn("Failed to parse CSS: " + cssUrl + ", " + LoggingCSSParseErrorHandler.createLoggingStringParseError (ex));
             } else {
                 throw new IllegalStateException("Failed to parse CSS: " + cssUrl + ", " + LoggingCSSParseErrorHandler.createLoggingStringParseError (ex));
             }
@@ -125,15 +125,15 @@ public class CssParser implements LinkExtractorParser {
                     }
                 });
             } else {
-               LOG.warn("Failed parsing url:"+baseUrl+", got null CascadingStyleSheet");
+               log.warn("Failed parsing url:"+baseUrl+", got null CascadingStyleSheet");
             }
-            if(LOG.isDebugEnabled()) {
+            if(log.isDebugEnabled()) {
                 StringBuilder builder = new StringBuilder();
                 for (Iterator<URL> iterator = urlCollection.iterator(); iterator.hasNext();) {
                     URL urlString = iterator.next();
                     builder.append(urlString).append(",");
                 }
-                LOG.debug("Parsed:"+baseUrl+", got:"+builder.toString());
+                log.debug("Parsed:"+baseUrl+", got:"+builder.toString());
             }
             return urlCollection.iterator();
         } catch (Exception e) {

@@ -173,7 +173,7 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
                 }
             }
         } catch (Exception e) {
-            LOGGER.warn(e.getLocalizedMessage(), e);
+            log.warn(e.getLocalizedMessage(), e);
             if (thrown != null){
                 res.setResponseMessage(thrown.toString());
             } else {                
@@ -330,7 +330,7 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
             if (!(obj instanceof QueueConnectionFactory)) {
                 String msg = "QueueConnectionFactory expected, but got "
                     + (obj != null ? obj.getClass().getName() : "null");
-                LOGGER.fatalError(msg);
+                log.error(msg);
                 throw new IllegalStateException(msg);
             }
             QueueConnectionFactory factory = (QueueConnectionFactory) obj;
@@ -357,8 +357,8 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
 
             session = connection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
 
-            if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Session created");
+            if (log.isDebugEnabled()) {
+                log.debug("Session created");
             }
 
             if (isOneway()) {
@@ -377,18 +377,18 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
                     executor = new FixedQueueExecutor(producer, getTimeoutAsInt(), isUseReqMsgIdAsCorrelId());
                 }
             }
-            if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Starting connection");
+            if (log.isDebugEnabled()) {
+                log.debug("Starting connection");
             }
 
             connection.start();
 
-            if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Connection started");
+            if (log.isDebugEnabled()) {
+                log.debug("Connection started");
             }
         } catch (Exception | NoClassDefFoundError e) {
             thrown = e;
-            LOGGER.error(e.getLocalizedMessage(), e);
+            log.error(e.getLocalizedMessage(), e);
         }
     }
 
@@ -396,23 +396,23 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
         Hashtable<String, String> table = new Hashtable<>();
 
         if (getInitialContextFactory() != null && getInitialContextFactory().trim().length() > 0) {
-            if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Using InitialContext [" + getInitialContextFactory() + "]");
+            if (log.isDebugEnabled()) {
+                log.debug("Using InitialContext [" + getInitialContextFactory() + "]");
             }
             table.put(Context.INITIAL_CONTEXT_FACTORY, getInitialContextFactory());
         }
         if (getContextProvider() != null && getContextProvider().trim().length() > 0) {
-            if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Using Provider [" + getContextProvider() + "]");
+            if (log.isDebugEnabled()) {
+                log.debug("Using Provider [" + getContextProvider() + "]");
             }
             table.put(Context.PROVIDER_URL, getContextProvider());
         }
         Map<String, String> map = getArguments(JMSSampler.JNDI_PROPERTIES).getArgumentsAsMap();
-        if (LOGGER.isDebugEnabled()) {
+        if (log.isDebugEnabled()) {
             if (map.isEmpty()) {
-                LOGGER.debug("Empty JNDI properties");
+                log.debug("Empty JNDI properties");
             } else {
-                LOGGER.debug("Number of JNDI properties: " + map.size());
+                log.debug("Number of JNDI properties: " + map.size());
             }
         }
         for (Map.Entry<String, String> me : map.entrySet()) {
@@ -420,7 +420,7 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
         }
 
         Context context = new InitialContext(table);
-        if (LOGGER.isDebugEnabled()) {
+        if (log.isDebugEnabled()) {
             printEnvironment(context);
         }
         return context;
@@ -430,27 +430,27 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
         try {
             Hashtable<?,?> env = context.getEnvironment();
             if(env != null) {
-                LOGGER.debug("Initial Context Properties");
+                log.debug("Initial Context Properties");
                 for (Map.Entry<?, ?> entry : env.entrySet()) {
-                    LOGGER.debug(entry.getKey() + "=" + entry.getValue());
+                    log.debug(entry.getKey() + "=" + entry.getValue());
                 }
             } else {
-                LOGGER.warn("context.getEnvironment() returned null (should not happen according to javadoc but non compliant implementation can return this)");
+                log.warn("context.getEnvironment() returned null (should not happen according to javadoc but non compliant implementation can return this)");
             }
         } catch (javax.naming.OperationNotSupportedException ex) {
             // Some JNDI implementation can return this
-            LOGGER.warn("context.getEnvironment() not supported by implementation ");
+            log.warn("context.getEnvironment() not supported by implementation ");
         }
     }
 
     private void logThreadStart() {
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("Thread started " + new Date());
-            LOGGER.debug("JMSSampler: [" + Thread.currentThread().getName() + "], hashCode=[" + hashCode() + "]");
-            LOGGER.debug("QCF: [" + getQueueConnectionFactory() + "], sendQueue=[" + getSendQueue() + "]");
-            LOGGER.debug("Timeout             = " + getTimeout() + "]");
-            LOGGER.debug("Use temporary queue =" + useTemporyQueue() + "]");
-            LOGGER.debug("Reply queue         =" + getReceiveQueue() + "]");
+        if (log.isDebugEnabled()) {
+            log.debug("Thread started " + new Date());
+            log.debug("JMSSampler: [" + Thread.currentThread().getName() + "], hashCode=[" + hashCode() + "]");
+            log.debug("QCF: [" + getQueueConnectionFactory() + "], sendQueue=[" + getSendQueue() + "]");
+            log.debug("Timeout             = " + getTimeout() + "]");
+            log.debug("Use temporary queue =" + useTemporyQueue() + "]");
+            log.debug("Reply queue         =" + getReceiveQueue() + "]");
         }
     }
 
@@ -488,7 +488,7 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
      */
     @Override
     public void threadFinished() {
-        LOGGER.debug("Thread ended " + new Date());
+        log.debug("Thread ended " + new Date());
 
         if (context != null) {
             try {
@@ -497,8 +497,8 @@ public class JMSSampler extends AbstractSampler implements ThreadListener {
                 // ignore
             }
         }
-        Utils.close(session, LOGGER);
-        Utils.close(connection, LOGGER);
+        Utils.close(session, log);
+        Utils.close(connection, log);
         if (receiverThread != null) {
             receiverThread.deactivate();
         }

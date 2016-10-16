@@ -143,10 +143,10 @@ public class SendMailCommand {
             try {
                 String allProtocols = StringUtils.join(
                     SSLContext.getDefault().getSupportedSSLParameters().getProtocols(), " ");
-                logger.info("Use ssl/tls protocols for mail: " + allProtocols);
+                log.info("Use ssl/tls protocols for mail: " + allProtocols);
                 props.setProperty("mail." + protocol + ".ssl.protocols", allProtocols);
             } catch (Exception e) {
-                logger.error("Problem setting ssl/tls protocols for mail", e);
+                log.error("Problem setting ssl/tls protocols for mail", e);
             }
         }
 
@@ -172,13 +172,13 @@ public class SendMailCommand {
             }
         } else if (useLocalTrustStore){
             File truststore = new File(trustStoreToUse);
-            logger.info("load local truststore - try to load truststore from: "+truststore.getAbsolutePath());
+            log.info("load local truststore - try to load truststore from: "+truststore.getAbsolutePath());
             if(!truststore.exists()){
-                logger.info("load local truststore -Failed to load truststore from: "+truststore.getAbsolutePath());
+                log.info("load local truststore -Failed to load truststore from: "+truststore.getAbsolutePath());
                 truststore = new File(FileServer.getFileServer().getBaseDir(), trustStoreToUse);
-                logger.info("load local truststore -Attempting to read truststore from:  "+truststore.getAbsolutePath());
+                log.info("load local truststore -Attempting to read truststore from:  "+truststore.getAbsolutePath());
                 if(!truststore.exists()){
-                    logger.info("load local truststore -Failed to load truststore from: "+truststore.getAbsolutePath() + ". Local truststore not available, aborting execution.");
+                    log.info("load local truststore -Failed to load truststore from: "+truststore.getAbsolutePath() + ". Local truststore not available, aborting execution.");
                     throw new IOException("Local truststore file not found. Also not available under : " + truststore.getAbsolutePath());
                 }
             }
@@ -318,10 +318,10 @@ public class SendMailCommand {
                     // NOOP
                 }
             }
-            logger.debug("transport closed");
+            log.debug("transport closed");
         }
 
-        logger.debug("message sent");
+        log.debug("message sent");
         return;
     }
 

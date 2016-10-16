@@ -158,7 +158,7 @@ public class JavaTest extends AbstractJavaSamplerClient implements Serializable,
      * of the client class.
      */
     public JavaTest() {
-        LOG.debug(whoAmI() + "\tConstruct");
+        log.debug(whoAmI() + "\tConstruct");
     }
 
     /*
@@ -197,8 +197,8 @@ public class JavaTest extends AbstractJavaSamplerClient implements Serializable,
      */
     @Override
     public void setupTest(JavaSamplerContext context) {
-        if (LOG.isDebugEnabled()) {
-            LOG.debug(whoAmI() + "\tsetupTest()");
+        if (log.isDebugEnabled()) {
+            log.debug(whoAmI() + "\tsetupTest()");
             listParameters(context);
         }
     }
@@ -307,18 +307,18 @@ public class JavaTest extends AbstractJavaSamplerClient implements Serializable,
             }
             results.setSuccessful(success);
         } catch (InterruptedException e) {
-            LOG.warn("JavaTest: interrupted.");
+            log.warn("JavaTest: interrupted.");
             results.setSuccessful(false);
         } catch (Exception e) {
-            LOG.error("JavaTest: error during sample", e);
+            log.error("JavaTest: error during sample", e);
             results.setSuccessful(false);
         } finally {
             // Record end time and populate the results.
             results.sampleEnd();
         }
 
-        if (LOG.isDebugEnabled()) {
-            LOG.debug(whoAmI() + "\trunTest()" + "\tTime:\t" + results.getTime());
+        if (log.isDebugEnabled()) {
+            log.debug(whoAmI() + "\trunTest()" + "\tTime:\t" + results.getTime());
             listParameters(context);
         }
 
@@ -336,7 +336,7 @@ public class JavaTest extends AbstractJavaSamplerClient implements Serializable,
         Iterator<String> argsIt = context.getParameterNamesIterator();
         while (argsIt.hasNext()) {
             String name = argsIt.next();
-            LOG.debug(name + "=" + context.getParameter(name));
+            log.debug(name + "=" + context.getParameter(name));
         }
     }
 

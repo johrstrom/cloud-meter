@@ -32,8 +32,6 @@ import jodd.lagarto.Tag;
 import jodd.lagarto.TagType;
 import jodd.lagarto.TagUtil;
 import jodd.lagarto.dom.HtmlCCommentExpressionMatcher;
-import jodd.log.LoggerFactory;
-import jodd.log.impl.Slf4jLoggerFactory;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jmeter.protocol.http.util.ConversionUtils;
@@ -46,9 +44,6 @@ import org.slf4j.Logger;
  */
 public class LagartoBasedHtmlParser extends HTMLParser {
 	private static final Logger log = LoggerFactory.getLogger(LagartoBasedHtmlParser.class);
-    static {
-        LoggerFactory.setLoggerFactory(new Slf4jLoggerFactory());
-    }
 
     /*
      * A dummy class to pass the pointer of URL.

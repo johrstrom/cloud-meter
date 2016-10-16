@@ -14,6 +14,71 @@
       		<artifactId>jmeter-core</artifactId>
       		<version>${project.version}</version>
     	</dependency>
+    	<dependency>
+      		<groupId>org.cloudmeter</groupId>
+      		<artifactId>jmeter-components</artifactId>
+      		<version>${project.version}</version>
+    	</dependency>
+		<dependency>
+		    <groupId>commons-net</groupId>
+		    <artifactId>commons-net</artifactId>
+		    <version>3.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>dnsjava</groupId>
+		    <artifactId>dnsjava</artifactId>
+		    <version>2.1.7</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.helger</groupId>
+		    <artifactId>ph-css</artifactId>
+		    <version>5.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.helger</groupId>
+		    <artifactId>ph-commons</artifactId>
+		    <version>6.2.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.jodd</groupId>
+		    <artifactId>jodd-lagarto</artifactId>
+		    <version>3.6.7</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpmime</artifactId>
+		    <version>4.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-dbcp2</artifactId>
+		    <version>2.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>javax.jms</groupId>
+		    <artifactId>jms</artifactId>
+		    <version>1.1</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.mongodb</groupId>
+		    <artifactId>mongo-java-driver</artifactId>
+		    <version>2.11.3</version>
+		</dependency>
+				
+		
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.apache.geronimo.specs</groupId> -->
+<!-- 		    <artifactId>geronimo-jms_1.1_spec</artifactId> -->
+<!-- 		    <version>1.1.1</version> -->
+<!-- 		</dependency> -->
 
+		
+		
     </dependencies>
 </project>
