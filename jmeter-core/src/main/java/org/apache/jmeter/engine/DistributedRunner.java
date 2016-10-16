@@ -34,8 +34,8 @@ import java.util.Properties;
 
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * This class serves all responsibility of starting and stopping distributed tests.
@@ -45,7 +45,7 @@ import org.apache.log.Logger;
  * @see org.apache.jmeter.gui.action.RemoteStart
  */
 public class DistributedRunner {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(DistributedRunner.class);
 
     public static final String RETRIES_NUMBER = "client.tries"; // $NON-NLS-1$
     public static final String RETRIES_DELAY = "client.retries_delay"; // $NON-NLS-1$

@@ -38,9 +38,9 @@ import javax.swing.JPanel;
 
 import org.apache.jmeter.samplers.SampleSaveConfiguration;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.reflect.Functor;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Generates Configure pop-up dialogue for Listeners from all methods in SampleSaveConfiguration
@@ -51,7 +51,7 @@ import org.apache.log.Logger;
  */
 public class SavePropertyDialog extends JDialog implements ActionListener {
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(SavePropertyDialog.class);
 
     private static final long serialVersionUID = 232L;
 

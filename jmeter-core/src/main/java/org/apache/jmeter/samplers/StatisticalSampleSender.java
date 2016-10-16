@@ -19,8 +19,8 @@
 package org.apache.jmeter.samplers;
 
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ObjectStreamException;
 import java.io.Serializable;
@@ -37,7 +37,7 @@ import java.util.Map;
 public class StatisticalSampleSender extends AbstractSampleSender implements Serializable {
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(StatisticalSampleSender.class);
 
     private static final int DEFAULT_NUM_SAMPLE_THRESHOLD = 100;
 

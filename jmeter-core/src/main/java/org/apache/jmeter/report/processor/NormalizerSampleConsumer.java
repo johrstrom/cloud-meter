@@ -26,8 +26,9 @@ import org.apache.jmeter.report.core.SampleMetadata;
 import org.apache.jmeter.samplers.SampleSaveConfiguration;
 import org.apache.jmeter.save.CSVSaveService;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Consume samples using the JMeter timestamp property (defaulting to {@link SampleSaveConfiguration#MILLISECONDS}) and reproduce them as a long
@@ -37,7 +38,7 @@ import org.apache.log.Logger;
  */
 public class NormalizerSampleConsumer extends AbstractSampleConsumer {
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(NormalizerSampleConsumer.class);
 
     private static final String TIMESTAMP_FORMAT = 
             JMeterUtils.getPropDefault(

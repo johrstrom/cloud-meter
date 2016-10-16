@@ -23,16 +23,16 @@ import java.util.Arrays;
     
 import org.apache.jmeter.threads.JMeterVariables;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JMeterError;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Packages information regarding the target of a sample event, such as the
  * result from that event and the thread group it ran in.
  */
 public class SampleEvent implements Serializable {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(SampleEvent.class);
 
     private static final long serialVersionUID = 232L;
 

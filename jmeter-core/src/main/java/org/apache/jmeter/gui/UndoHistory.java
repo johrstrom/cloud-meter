@@ -31,8 +31,8 @@ import org.apache.jmeter.gui.tree.JMeterTreeModel;
 import org.apache.jmeter.gui.tree.JMeterTreeNode;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class serves storing Test Tree state and navigating through it
@@ -78,7 +78,7 @@ public class UndoHistory implements TreeModelListener, Serializable {
         }
     }
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(UndoHistory.class);
 
     /**
      * temporary storage for GUI tree expansion state
@@ -216,7 +216,7 @@ public class UndoHistory implements TreeModelListener, Serializable {
 
         // refresh the all ui
         guiInstance.updateCurrentGui();
-        guiInstance.getMainFrame().repaint();
+//        guiInstance.getMainFrame().repaint();
         notifyListeners();
     }
 
@@ -311,17 +311,17 @@ public class UndoHistory implements TreeModelListener, Serializable {
     private void saveTreeState(GuiPackage guiPackage) {
         savedExpanded.clear();
 
-        MainFrame mainframe = guiPackage.getMainFrame();
-        if (mainframe != null) {
-            final JTree tree = mainframe.getTree();
-            savedSelected = tree.getMinSelectionRow();
-
-            for (int rowN = 0; rowN < tree.getRowCount(); rowN++) {
-                if (tree.isExpanded(rowN)) {
-                    savedExpanded.add(Integer.valueOf(rowN));
-                }
-            }
-        }
+//        MainFrame mainframe = guiPackage.getMainFrame();
+//        if (mainframe != null) {
+//            final JTree tree = mainframe.getTree();
+//            savedSelected = tree.getMinSelectionRow();
+//
+//            for (int rowN = 0; rowN < tree.getRowCount(); rowN++) {
+//                if (tree.isExpanded(rowN)) {
+//                    savedExpanded.add(Integer.valueOf(rowN));
+//                }
+//            }
+//        }
     }
 
     /**
@@ -330,16 +330,16 @@ public class UndoHistory implements TreeModelListener, Serializable {
      * @param guiInstance GuiPackage to be used
      */
     private void restoreTreeState(GuiPackage guiInstance) {
-        final JTree tree = guiInstance.getMainFrame().getTree();
-
-        if (savedExpanded.size() > 0) {
-            for (int rowN : savedExpanded) {
-                tree.expandRow(rowN);
-            }
-        } else {
-            tree.expandRow(0);
-        }
-        tree.setSelectionRow(savedSelected);
+//        final JTree tree = guiInstance.getMainFrame().getTree();
+//
+//        if (savedExpanded.size() > 0) {
+//            for (int rowN : savedExpanded) {
+//                tree.expandRow(rowN);
+//            }
+//        } else {
+//            tree.expandRow(0);
+//        }
+//        tree.setSelectionRow(savedSelected);
     }
     
     /**

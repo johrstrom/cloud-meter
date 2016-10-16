@@ -96,12 +96,14 @@ import org.apache.jmeter.testelement.TestStateListener;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.gui.ComponentUtil;
-import org.apache.jorphan.logging.LoggingManager;
+//import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.LogEvent;
-import org.apache.log.LogTarget;
-import org.apache.log.Logger;
-import org.apache.log.Priority;
+//import org.apache.log.LogEvent;
+//import org.apache.log.LogTarget;
+//import org.apache.log.Logger;
+//import org.apache.log.Priority;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The main JMeter frame, containing the menu bar, test tree, and an area for
@@ -127,7 +129,7 @@ public class MainFrame extends JFrame implements TestStateListener, Remoteable, 
     private static final boolean DISPLAY_LOGGER_PANEL =
             JMeterUtils.getPropDefault("jmeter.loggerpanel.display", false); // $NON-NLS-1$
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(MainFrame.class);
 
     /** The menu bar. */
     private JMeterMenuBar menuBar;
@@ -185,7 +187,7 @@ public class MainFrame extends JFrame implements TestStateListener, Remoteable, 
     /**
      * LogTarget that receives ERROR or FATAL
      */
-    private transient ErrorsAndFatalsCounterLogTarget errorsAndFatalsCounterLogTarget;
+//    private transient ErrorsAndFatalsCounterLogTarget errorsAndFatalsCounterLogTarget;
     
     private javax.swing.Timer computeTestDurationTimer = new javax.swing.Timer(1000, new java.awt.event.ActionListener() {
         
@@ -511,15 +513,15 @@ public class MainFrame extends JFrame implements TestStateListener, Remoteable, 
         }
         mainPanel = createMainPanel();
 
-        logPanel = createLoggerPanel();
-        errorsAndFatalsCounterLogTarget = new ErrorsAndFatalsCounterLogTarget();
-        LoggingManager.addLogTargetToRootLogger(new LogTarget[]{
-                logPanel,
-                errorsAndFatalsCounterLogTarget
-        });
+//        logPanel = createLoggerPanel();
+//        errorsAndFatalsCounterLogTarget = new ErrorsAndFatalsCounterLogTarget();
+//        LoggingManager.addLogTargetToRootLogger(new LogTarget[]{
+//                logPanel,
+//                errorsAndFatalsCounterLogTarget
+//        });
 
         topAndDown.setTopComponent(mainPanel);
-        topAndDown.setBottomComponent(logPanel);
+//        topAndDown.setBottomComponent(logPanel);
 
         treeAndMain.setRightComponent(topAndDown);
 
@@ -621,7 +623,7 @@ public class MainFrame extends JFrame implements TestStateListener, Remoteable, 
         loggerPanel.setMinimumSize(new Dimension(0, 100));
         loggerPanel.setPreferredSize(new Dimension(0, 150));
         GuiPackage guiInstance = GuiPackage.getInstance();
-        guiInstance.setLoggerPanel(loggerPanel);
+//        guiInstance.setLoggerPanel(loggerPanel);
         guiInstance.getMenuItemLoggerPanel().getModel().setSelected(DISPLAY_LOGGER_PANEL);
         loggerPanel.setVisible(DISPLAY_LOGGER_PANEL);
         return loggerPanel;
@@ -818,45 +820,45 @@ public class MainFrame extends JFrame implements TestStateListener, Remoteable, 
         // NOOP
     }
 
-    /**
-     *
-     */
-    public final class ErrorsAndFatalsCounterLogTarget implements LogTarget, Clearable {
-        public AtomicInteger errorOrFatal = new AtomicInteger(0);
-
-        @Override
-        public void processEvent(LogEvent event) {
-            if(event.getPriority().equals(Priority.ERROR) ||
-                    event.getPriority().equals(Priority.FATAL_ERROR)) {
-                final int newValue = errorOrFatal.incrementAndGet();
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        errorsOrFatalsLabel.setForeground(Color.RED);
-                        errorsOrFatalsLabel.setText(Integer.toString(newValue));
-                    }
-                });
-            }
-        }
-
-        @Override
-        public void clearData() {
-            errorOrFatal.set(0);
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    errorsOrFatalsLabel.setForeground(Color.BLACK);
-                    errorsOrFatalsLabel.setText(Integer.toString(errorOrFatal.get()));
-                }
-            });
-        }
-    }
+//    /**
+//     *
+//     */
+//    public final class ErrorsAndFatalsCounterLogTarget implements LogTarget, Clearable {
+//        public AtomicInteger errorOrFatal = new AtomicInteger(0);
+//
+//        @Override
+//        public void processEvent(LogEvent event) {
+//            if(event.getPriority().equals(Priority.ERROR) ||
+//                    event.getPriority().equals(Priority.FATAL_ERROR)) {
+//                final int newValue = errorOrFatal.incrementAndGet();
+//                SwingUtilities.invokeLater(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        errorsOrFatalsLabel.setForeground(Color.RED);
+//                        errorsOrFatalsLabel.setText(Integer.toString(newValue));
+//                    }
+//                });
+//            }
+//        }
+//
+//        @Override
+//        public void clearData() {
+//            errorOrFatal.set(0);
+//            SwingUtilities.invokeLater(new Runnable() {
+//                @Override
+//                public void run() {
+//                    errorsOrFatalsLabel.setForeground(Color.BLACK);
+//                    errorsOrFatalsLabel.setText(Integer.toString(errorOrFatal.get()));
+//                }
+//            });
+//        }
+//    }
 
 
     @Override
     public void clearData() {
-        logPanel.clear();
-        errorsAndFatalsCounterLogTarget.clearData();
+//        logPanel.clear();
+//        errorsAndFatalsCounterLogTarget.clearData();
     }
 
     /**

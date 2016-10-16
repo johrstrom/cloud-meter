@@ -30,8 +30,8 @@ import java.util.Map;
 import org.apache.jmeter.save.SaveService;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.util.NameUpdater;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
@@ -42,7 +42,7 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
  *
  */
 public class ConversionHelp {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(ConversionHelp.class);
 
     private static final String CHAR_SET = "UTF-8"; //$NON-NLS-1$
 

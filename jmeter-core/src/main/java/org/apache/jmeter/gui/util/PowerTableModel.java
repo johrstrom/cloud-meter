@@ -25,11 +25,11 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 import org.apache.jorphan.collections.Data;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PowerTableModel extends DefaultTableModel {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(PowerTableModel.class);
 
     private static final long serialVersionUID = 233L;
 

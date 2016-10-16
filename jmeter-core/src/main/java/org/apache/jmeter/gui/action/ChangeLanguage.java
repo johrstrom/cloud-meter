@@ -29,9 +29,9 @@ import javax.swing.JOptionPane;
 import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JMeterError;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @version $Revision: 1741323 $
@@ -39,7 +39,7 @@ import org.apache.log.Logger;
 public class ChangeLanguage implements Command {
     private static final Set<String> commands = new HashSet<>();
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(ChangeLanguage.class);
 
     static {
         commands.add(ActionNames.CHANGE_LANGUAGE);

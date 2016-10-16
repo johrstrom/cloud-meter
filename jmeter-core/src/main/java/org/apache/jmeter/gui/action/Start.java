@@ -43,8 +43,8 @@ import org.apache.jmeter.timers.Timer;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.ListedHashTree;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Set of Actions to:
@@ -60,7 +60,7 @@ import org.apache.log.Logger;
  */
 public class Start extends AbstractAction {
     
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+    private static final Logger LOG = LoggerFactory.getLogger(Start.class);
 
     private static final Set<String> commands = new HashSet<>();
 

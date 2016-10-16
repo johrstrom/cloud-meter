@@ -29,8 +29,8 @@ import org.apache.jmeter.testelement.property.JMeterProperty;
 import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jmeter.util.StringUtilities;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.apache.oro.text.regex.MalformedPatternException;
 import org.apache.oro.text.regex.Pattern;
 import org.apache.oro.text.regex.PatternCompiler;
@@ -45,7 +45,7 @@ import org.apache.oro.text.regex.Util;
  *
  */
 public class ReplaceFunctionsWithStrings extends AbstractTransformer {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(ReplaceFunctionsWithStrings.class);
 
     // Functions are wrapped in ${ and }
     private static final String FUNCTION_REF_PREFIX = "${"; //$NON-NLS-1$

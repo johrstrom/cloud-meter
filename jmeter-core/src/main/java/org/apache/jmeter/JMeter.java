@@ -90,12 +90,12 @@ import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.SearchByClass;
 import org.apache.jorphan.gui.ComponentUtil;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.reflect.ClassTools;
 import org.apache.jorphan.util.HeapDumper;
 import org.apache.jorphan.util.JMeterException;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 
@@ -103,7 +103,7 @@ import com.thoughtworks.xstream.converters.ConversionException;
  * Main JMeter class; processes options and starts the GUI, non-GUI or server as appropriate.
  */
 public class JMeter implements JMeterPlugin {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(JMeter.class);
     
     public static final int UDP_PORT_DEFAULT = 4445; // needed for ShutdownClient
 
@@ -304,55 +304,55 @@ public class JMeter implements JMeterPlugin {
     /** should remote engines be stopped at end of non-GUI test? */
     private boolean remoteStop; 
 
-    /**
-     * Starts up JMeter in GUI mode
-     */
-    private void startGui(String testFile) {
-        String jMeterLaf = LookAndFeelCommand.getJMeterLaf();
-        try {
-            UIManager.setLookAndFeel(jMeterLaf);
-        } catch (Exception ex) {
-            log.warn("Could not set LAF to:"+jMeterLaf, ex);
-        }
-
-        PluginManager.install(this, true);
-
-        JMeterTreeModel treeModel = new JMeterTreeModel();
-        JMeterTreeListener treeLis = new JMeterTreeListener(treeModel);
-        final ActionRouter instance = ActionRouter.getInstance();
-        instance.populateCommandMap();
-        treeLis.setActionHandler(instance);
-        // NOTUSED: GuiPackage guiPack =
-        GuiPackage.getInstance(treeLis, treeModel);
-        MainFrame main = new MainFrame(treeModel, treeLis);
-        ComponentUtil.centerComponentInWindow(main, 80);
-        main.setVisible(true);
-        instance.actionPerformed(new ActionEvent(main, 1, ActionNames.ADD_ALL));
-        if (testFile != null) {
-            try {
-                File f = new File(testFile);
-                log.info("Loading file: " + f);
-                FileServer.getFileServer().setBaseForScript(f);
-
-                HashTree tree = SaveService.loadTree(f);
-
-                GuiPackage.getInstance().setTestPlanFile(f.getAbsolutePath());
-
-                Load.insertLoadedTree(1, tree);
-            } catch (ConversionException e) {
-                log.error("Failure loading test file", e);
-                JMeterUtils.reportErrorToUser(SaveService.CEtoString(e));
-            } catch (Exception e) {
-                log.error("Failure loading test file", e);
-                JMeterUtils.reportErrorToUser(e.toString());
-            }
-        } else {
-            JTree jTree = GuiPackage.getInstance().getMainFrame().getTree();
-            TreePath path = jTree.getPathForRow(0);
-            jTree.setSelectionPath(path);
-            FocusRequester.requestFocus(jTree);
-        }
-    }
+//    /**
+//     * Starts up JMeter in GUI mode
+//     */
+//    private void startGui(String testFile) {
+//        String jMeterLaf = LookAndFeelCommand.getJMeterLaf();
+//        try {
+//            UIManager.setLookAndFeel(jMeterLaf);
+//        } catch (Exception ex) {
+//            log.warn("Could not set LAF to:"+jMeterLaf, ex);
+//        }
+//
+//        PluginManager.install(this, true);
+//
+//        JMeterTreeModel treeModel = new JMeterTreeModel();
+//        JMeterTreeListener treeLis = new JMeterTreeListener(treeModel);
+//        final ActionRouter instance = ActionRouter.getInstance();
+//        instance.populateCommandMap();
+//        treeLis.setActionHandler(instance);
+//        // NOTUSED: GuiPackage guiPack =
+//        GuiPackage.getInstance(treeLis, treeModel);
+//        MainFrame main = new MainFrame(treeModel, treeLis);
+//        ComponentUtil.centerComponentInWindow(main, 80);
+//        main.setVisible(true);
+//        instance.actionPerformed(new ActionEvent(main, 1, ActionNames.ADD_ALL));
+//        if (testFile != null) {
+//            try {
+//                File f = new File(testFile);
+//                log.info("Loading file: " + f);
+//                FileServer.getFileServer().setBaseForScript(f);
+//
+//                HashTree tree = SaveService.loadTree(f);
+//
+//                GuiPackage.getInstance().setTestPlanFile(f.getAbsolutePath());
+//
+//                Load.insertLoadedTree(1, tree);
+//            } catch (ConversionException e) {
+//                log.error("Failure loading test file", e);
+//                JMeterUtils.reportErrorToUser(SaveService.CEtoString(e));
+//            } catch (Exception e) {
+//                log.error("Failure loading test file", e);
+//                JMeterUtils.reportErrorToUser(e.toString());
+//            }
+//        } else {
+//            JTree jTree = GuiPackage.getInstance().getMainFrame().getTree();
+//            TreePath path = jTree.getPathForRow(0);
+//            jTree.setSelectionPath(path);
+//            FocusRequester.requestFocus(jTree);
+//        }
+//    }
 
     /**
      * Takes the command line arguments and uses them to determine how to
@@ -466,9 +466,9 @@ public class JMeter implements JMeterPlugin {
                 CLOption testFileOpt = parser.getArgumentById(TESTFILE_OPT);
                 if (testFileOpt != null){
                     testFile = testFileOpt.getArgument();
-                    if (USE_LAST_JMX.equals(testFile)) {
-                        testFile = LoadRecentProject.getRecentFile(0);// most recent
-                    }
+//                    if (USE_LAST_JMX.equals(testFile)) {
+//                        testFile = LoadRecentProject.getRecentFile(0);// most recent
+//                    }
                 }
                 CLOption testReportOpt = parser.getArgumentById(REPORT_GENERATING_OPT);
                 if (testReportOpt != null) { // generate report from existing file
@@ -477,7 +477,7 @@ public class JMeter implements JMeterPlugin {
                     ReportGenerator generator = new ReportGenerator(reportFile, null);
                     generator.generate();
                 } else if (parser.getArgumentById(NONGUI_OPT) == null) { // not non-GUI => GUI
-                    startGui(testFile);
+//                    startGui(testFile);
                     startOptionalServers();
                 } else { // NON-GUI must be true
                     extractAndSetReportOutputFolder(parser);
@@ -506,7 +506,7 @@ public class JMeter implements JMeterPlugin {
             System.out.println("Incorrect Usage:"+e.getMessage());
             System.out.println(CLUtil.describeOptions(options).toString());
         } catch (Throwable e) {
-            log.fatalError("An error occurred: ",e);
+            log.error("A fatal error occurred: ",e);
             System.out.println("An error occurred: " + e.getMessage());
             System.exit(1); // TODO - could this be return?
         }
@@ -676,7 +676,7 @@ public class JMeter implements JMeterPlugin {
         if (parser.getArgumentById(JMLOGFILE_OPT) != null){
             String jmlogfile=parser.getArgumentById(JMLOGFILE_OPT).getArgument();
             jmlogfile = processLAST(jmlogfile, ".log");// $NON-NLS-1$
-            JMeterUtils.setProperty(LoggingManager.LOG_FILE,jmlogfile);
+//            JMeterUtils.setProperty(LoggingManager.LOG_FILE,jmlogfile);
         }
 
         JMeterUtils.initLogging();
@@ -703,7 +703,7 @@ public class JMeter implements JMeterPlugin {
                     Properties tmp = new Properties();
                     tmp.load(fis);
                     jmeterProps.putAll(tmp);
-                    LoggingManager.setLoggingLevels(tmp);//Do what would be done earlier
+//                    LoggingManager.setLoggingLevels(tmp);//Do what would be done earlier
                 }
             } catch (IOException e) {
                 log.warn("Error loading user property file: " + userProp, e);
@@ -751,7 +751,7 @@ public class JMeter implements JMeterPlugin {
                     Properties tmp = new Properties();
                     tmp.load(fis);
                     jmeterProps.putAll(tmp);
-                    LoggingManager.setLoggingLevels(tmp);//Do what would be done earlier
+//                    LoggingManager.setLoggingLevels(tmp);//Do what would be done earlier
                 } catch (FileNotFoundException e) {
                     log.warn("Can't find additional property file: " + name, e);
                 } catch (IOException e) {
@@ -813,10 +813,10 @@ public class JMeter implements JMeterPlugin {
             case LOGLEVEL:
                 if (value.length() > 0) { // Set category
                     log.info("LogLevel: " + name + "=" + value);
-                    LoggingManager.setPriority(value, name);
+//                    LoggingManager.setPriority(value, name);
                 } else { // Set root level
                     log.warn("LogLevel: " + name);
-                    LoggingManager.setPriority(name);
+//                    LoggingManager.setPriority(name);
                 }
                 break;
             case REMOTE_STOP:

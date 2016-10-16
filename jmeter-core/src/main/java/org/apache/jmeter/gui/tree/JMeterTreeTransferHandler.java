@@ -34,14 +34,14 @@ import javax.swing.tree.TreePath;
 
 import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.gui.util.MenuFactory;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JMeterTreeTransferHandler extends TransferHandler {
     
     private static final long serialVersionUID = 8560957372186260765L;
 
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+    private static final Logger LOG = LoggerFactory.getLogger(JMeterTreeTransferHandler.class);
   
     private DataFlavor nodeFlavor;
     private DataFlavor[] jMeterTreeNodeDataFlavors = new DataFlavor[1];

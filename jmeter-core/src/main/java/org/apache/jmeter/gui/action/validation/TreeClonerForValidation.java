@@ -24,8 +24,8 @@ import org.apache.jmeter.threads.AbstractThreadGroup;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.timers.Timer;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Clones the test tree,  skipping test elements that implement {@link Timer} by default.
@@ -33,7 +33,7 @@ import org.apache.log.Logger;
  */
 public class TreeClonerForValidation extends TreeCloner {
     
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+    private static final Logger LOG = LoggerFactory.getLogger(TreeClonerForValidation.class);
 
     /**
      * Number of Threads to configure when running a Thread Group during a validation

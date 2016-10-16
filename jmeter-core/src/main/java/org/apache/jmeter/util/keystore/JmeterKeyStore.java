@@ -37,8 +37,8 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jmeter.threads.JMeterContextService;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Use this Keystore for JMeter specific KeyStores.
@@ -46,7 +46,7 @@ import org.apache.log.Logger;
  */
 public final class JmeterKeyStore {
 
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+    private static final Logger LOG = LoggerFactory.getLogger(JmeterKeyStore.class);
 
     private final KeyStore store;
 

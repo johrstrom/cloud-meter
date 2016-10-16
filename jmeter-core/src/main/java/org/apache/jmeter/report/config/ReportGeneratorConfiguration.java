@@ -26,8 +26,8 @@ import java.util.regex.Pattern;
 import jodd.props.Props;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * The class ReportGeneratorConfiguration describes the configuration of the
@@ -37,7 +37,7 @@ import org.apache.log.Logger;
  */
 public class ReportGeneratorConfiguration {
 
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+    private static final Logger LOG = LoggerFactory.getLogger(ReportGeneratorConfiguration.class);
 
     public static final char KEY_DELIMITER = '.';
     public static final String REPORT_GENERATOR_KEY_PREFIX = "jmeter.reportgenerator";

@@ -32,8 +32,8 @@ import javax.net.ssl.SSLSocketFactory;
 import org.apache.commons.httpclient.ConnectTimeoutException;
 import org.apache.commons.httpclient.params.HttpConnectionParams;
 import org.apache.commons.httpclient.protocol.SecureProtocolSocketFactory;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Derived from EasySSLProtocolFactory
@@ -45,7 +45,7 @@ public class HttpSSLProtocolSocketFactory
     extends SSLSocketFactory // for java sockets
     implements SecureProtocolSocketFactory { // for Commons Httpclient sockets
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(HttpSSLProtocolSocketFactory.class);
 
     private final JsseSSLManager sslManager;
 

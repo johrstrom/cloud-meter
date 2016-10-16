@@ -31,16 +31,15 @@ import org.apache.jmeter.samplers.Sampler;
 import org.apache.jmeter.threads.JMeterContext;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.reflect.ClassFinder;
-import org.apache.log.Logger;
-
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 /**
  * CompoundFunction.
  *
  */
 public class CompoundVariable implements Function {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(CompoundVariable.class);
 
     private String rawParameters;
 

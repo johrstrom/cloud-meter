@@ -23,13 +23,13 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 
 import org.apache.jmeter.gui.GUIFactory;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class PluginManager {
     private static final PluginManager instance = new PluginManager();
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(PluginManager.class);
 
     private PluginManager() {
     }

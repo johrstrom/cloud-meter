@@ -29,9 +29,9 @@ import org.apache.jmeter.exceptions.IllegalUserActionException;
 import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.gui.tree.JMeterTreeNode;
 import org.apache.jmeter.testelement.TestElement;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.HeapDumper;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -42,7 +42,7 @@ import org.apache.log.Logger;
  *
  */
 public class What implements Command {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(What.class);
 
     private static final Set<String> commandSet;
 
@@ -66,9 +66,9 @@ public class What implements Command {
             System.out.println(guiClassName);
             log.info("TestElement:"+te.getClass().getName()+", guiClassName:"+guiClassName);
         } else if (ActionNames.DEBUG_ON.equals(e.getActionCommand())){
-            LoggingManager.setPriorityFullName("DEBUG",te.getClass().getName());//$NON-NLS-1$
+//            LoggingManager.setPriorityFullName("DEBUG",te.getClass().getName());//$NON-NLS-1$
         } else if (ActionNames.DEBUG_OFF.equals(e.getActionCommand())){
-            LoggingManager.setPriorityFullName("INFO",te.getClass().getName());//$NON-NLS-1$
+//            LoggingManager.setPriorityFullName("INFO",te.getClass().getName());//$NON-NLS-1$
         } else if (ActionNames.HEAP_DUMP.equals(e.getActionCommand())){
             try {
                 String s = HeapDumper.dumpHeap();

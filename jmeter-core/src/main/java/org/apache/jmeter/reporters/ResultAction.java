@@ -24,8 +24,8 @@ import org.apache.jmeter.samplers.SampleEvent;
 import org.apache.jmeter.samplers.SampleListener;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.testelement.OnErrorTestElement;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ResultAction - take action based on the status of the last Result
@@ -35,7 +35,7 @@ public class ResultAction extends OnErrorTestElement implements Serializable, Sa
 
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(ResultAction.class);
 
     /*
      * Constructor is initially called once for each occurrence in the test plan

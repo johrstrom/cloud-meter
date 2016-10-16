@@ -29,9 +29,9 @@ import java.io.UnsupportedEncodingException;
 import org.apache.jmeter.samplers.SampleSaveConfiguration;
 import org.apache.jmeter.save.CSVSaveService;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Reader class for reading CSV files.
@@ -43,7 +43,7 @@ import org.apache.log.Logger;
  */
 public class CsvSampleReader implements Closeable{
 
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+    private static final Logger LOG = LoggerFactory.getLogger(CsvSampleReader.class);
     private static final int BUF_SIZE = 10000;
 
     private static final String CHARSET = "ISO8859-1";

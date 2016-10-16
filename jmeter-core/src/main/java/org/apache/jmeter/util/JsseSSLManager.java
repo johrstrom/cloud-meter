@@ -42,8 +42,8 @@ import javax.net.ssl.X509TrustManager;
 import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
 import org.apache.jmeter.util.keystore.JmeterKeyStore;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The SSLManager handles the KeyStore information for JMeter. Basically, it
@@ -57,7 +57,7 @@ import org.apache.log.Logger;
  *
  */
 public class JsseSSLManager extends SSLManager {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(JsseSSLManager.class);
 
     private static final String HTTPS = "https"; // $NON-NLS-1$
 

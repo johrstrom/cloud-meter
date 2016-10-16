@@ -35,8 +35,8 @@ import org.apache.jmeter.threads.RemoteThreadsListenerTestElement;
 import org.apache.jmeter.threads.RemoteThreadsListenerWrapper;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * Converts the Remoteable Test and Sample Listeners in the test tree by wrapping
@@ -46,7 +46,7 @@ import org.apache.log.Logger;
  * 
  */
 public class ConvertListeners implements HashTreeTraverser {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(ConvertListeners.class);
 
     /**
      * {@inheritDoc}

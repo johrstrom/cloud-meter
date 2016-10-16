@@ -22,8 +22,8 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The standard remote sample reporting should be more friendly to the main purpose of
@@ -36,7 +36,7 @@ public class DataStrippingSampleSender extends AbstractSampleSender implements S
 
     private static final long serialVersionUID = -5556040298982085715L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(DataStrippingSampleSender.class);
 
     private final RemoteSampleListener listener;
     private final SampleSender decoratedSender;

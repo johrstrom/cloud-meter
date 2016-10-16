@@ -33,16 +33,18 @@ import org.apache.jmeter.samplers.Sampler;
 import org.apache.jmeter.threads.JMeterContext;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.threads.JMeterVariables;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class BSFTestElement extends ScriptingTestElement
     implements Serializable
 {
     private static final long serialVersionUID = 233L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+
+
+    private static final Logger log = LoggerFactory.getLogger(BSFTestElement.class);
 
     static {
         BSFManager.registerScriptingEngine("jexl", //$NON-NLS-1$
@@ -69,8 +71,8 @@ public abstract class BSFTestElement extends ScriptingTestElement
         final String fileName = getFilename();
         final String scriptParameters = getParameters();
         // Use actual class name for log
-        final Logger logger = LoggingManager.getLoggerForShortName(getClass().getName());
-        mgr.declareBean("log", logger, Logger.class); // $NON-NLS-1$
+//        final Logger logger = LoggingManager.getLoggerForShortName(getClass().getName());
+        mgr.declareBean("log", log, Logger.class); // $NON-NLS-1$
         mgr.declareBean("Label",label, String.class); // $NON-NLS-1$
         mgr.declareBean("FileName",fileName, String.class); // $NON-NLS-1$
         mgr.declareBean("Parameters", scriptParameters, String.class); // $NON-NLS-1$

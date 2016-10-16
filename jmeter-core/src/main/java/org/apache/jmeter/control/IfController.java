@@ -29,8 +29,8 @@ import org.apache.jmeter.samplers.Sampler;
 import org.apache.jmeter.testelement.ThreadListener;
 import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 
@@ -62,7 +62,7 @@ import org.mozilla.javascript.Scriptable;
 
 public class IfController extends GenericController implements Serializable, ThreadListener {
 
-    private static final Logger logger = LoggingManager.getLoggerForClass();
+    private static final Logger logger = LoggerFactory.getLogger(IfController.class);
 
     private static final long serialVersionUID = 241L;
 

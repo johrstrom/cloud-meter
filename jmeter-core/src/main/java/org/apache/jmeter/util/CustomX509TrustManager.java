@@ -22,8 +22,8 @@ import java.security.cert.X509Certificate;
 
 import javax.net.ssl.X509TrustManager;
 
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Custom TrustManager ignores all certificate errors
@@ -37,7 +37,7 @@ public class CustomX509TrustManager implements X509TrustManager
 {
     private final X509TrustManager defaultTrustManager;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(CustomX509TrustManager.class);
 
     public CustomX509TrustManager(final X509TrustManager defaultTrustManager) {
         super();

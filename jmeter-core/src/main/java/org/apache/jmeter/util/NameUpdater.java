@@ -29,16 +29,15 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Properties;
-
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class NameUpdater {
     private static final Properties nameMap;
     // Read-only access after class has been initialised
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(NameUpdater.class);
 
     private static final String NAME_UPDATER_PROPERTIES = 
             "META-INF/resources/org.apache.jmeter.nameupdater.properties"; // $NON-NLS-1$

@@ -18,8 +18,8 @@
 
 package org.apache.jmeter.samplers;
 
-import org.apache.log.Logger;
-import org.apache.jorphan.logging.LoggingManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ import java.io.Serializable;
  */
 
 public class HoldSampleSender extends AbstractSampleSender implements Serializable {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(HoldSampleSender.class);
 
     private static final long serialVersionUID = 240L;
 

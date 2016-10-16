@@ -34,15 +34,15 @@ import javax.swing.UIManager;
 
 import org.apache.jmeter.gui.util.JMeterMenuBar;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implements the Look and Feel menu item.
  */
 public class LookAndFeelCommand implements Command {
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(LookAndFeelCommand.class);
 
     private static final String JMETER_LAF = "jmeter.laf"; // $NON-NLS-1$
 

@@ -23,14 +23,14 @@ import java.io.Serializable;
 import org.apache.jmeter.engine.util.NoThreadClone;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestStateListener;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @version $Revision: 1595401 $
  */
 public class RemoteTestListenerWrapper extends AbstractTestElement implements TestStateListener, Serializable, NoThreadClone {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(RemoteTestListenerWrapper.class);
 
     private static final long serialVersionUID = 240L;
 

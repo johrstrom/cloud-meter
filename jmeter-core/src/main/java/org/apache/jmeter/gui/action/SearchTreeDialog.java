@@ -52,8 +52,8 @@ import org.apache.jmeter.gui.tree.JMeterTreeNode;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.gui.ComponentUtil;
 import org.apache.jorphan.gui.JLabeledTextField;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * FIXME Why is searchTF not getting focus correctly after having been setVisible(false) once
@@ -62,7 +62,7 @@ public class SearchTreeDialog extends JDialog implements ActionListener {
 
     private static final long serialVersionUID = -4436834972710248247L;
 
-    private static final Logger logger = LoggingManager.getLoggerForClass();
+    private static final Logger logger = LoggerFactory.getLogger(SearchTreeDialog.class);
 
     private static final Font FONT_DEFAULT = UIManager.getDefaults().getFont("TextField.font");
 

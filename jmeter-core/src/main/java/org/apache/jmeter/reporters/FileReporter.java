@@ -41,9 +41,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class loads data from a saved file and displays statistics about it.
@@ -54,7 +54,7 @@ import org.apache.log.Logger;
 public class FileReporter extends JPanel {
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(FileReporter.class);
 
     private final ConcurrentMap<String, List<Integer>> data = new ConcurrentHashMap<>();
 

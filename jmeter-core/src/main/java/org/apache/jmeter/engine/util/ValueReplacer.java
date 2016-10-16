@@ -32,14 +32,14 @@ import org.apache.jmeter.testelement.property.MultiProperty;
 import org.apache.jmeter.testelement.property.NumberProperty;
 import org.apache.jmeter.testelement.property.PropertyIterator;
 import org.apache.jmeter.testelement.property.StringProperty;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * Perfom replacement of ${variable} references.
  */
 public class ValueReplacer {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(ValueReplacer.class);
 
     private final CompoundVariable masterFunction = new CompoundVariable();
 

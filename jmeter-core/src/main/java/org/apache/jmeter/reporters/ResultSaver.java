@@ -33,9 +33,9 @@ import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.services.FileServer;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.threads.JMeterContextService;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Save Result responseData to a set of files
@@ -46,7 +46,7 @@ import org.apache.log.Logger;
  */
 // TODO - perhaps save other items such as headers?
 public class ResultSaver extends AbstractTestElement implements Serializable, SampleListener {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(ResultSaver.class);
 
     private static final long serialVersionUID = 240L;
 

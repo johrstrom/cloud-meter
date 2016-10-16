@@ -24,8 +24,8 @@ import javax.swing.JTextPane;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implements an HTML Pane with local hyperlinking enabled.
@@ -33,7 +33,7 @@ import org.apache.log.Logger;
 public class HtmlPane extends JTextPane {
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(HtmlPane.class);
 
     public HtmlPane() {
         this.addHyperlinkListener(new HyperlinkListener() {

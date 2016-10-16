@@ -20,7 +20,6 @@ package org.apache.jmeter.gui;
 
 import java.awt.Component;
 import java.awt.event.MouseEvent;
-import java.beans.Introspector;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -41,7 +40,6 @@ import org.apache.jmeter.gui.tree.JMeterTreeListener;
 import org.apache.jmeter.gui.tree.JMeterTreeModel;
 import org.apache.jmeter.gui.tree.JMeterTreeNode;
 import org.apache.jmeter.gui.util.JMeterToolBar;
-import org.apache.jmeter.services.FileServer;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.testbeans.gui.TestBeanGUI;
 import org.apache.jmeter.testelement.TestElement;
@@ -53,9 +51,8 @@ import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jmeter.util.LocaleChangeEvent;
 import org.apache.jmeter.util.LocaleChangeListener;
 import org.apache.jorphan.collections.HashTree;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * GuiPackage is a static class that provides convenient access to information
  * about the current state of JMeter's GUI. Any GUI class can grab a handle to
@@ -67,7 +64,7 @@ import org.apache.log.Logger;
  */
 public final class GuiPackage implements LocaleChangeListener, HistoryListener {
     /** Logging. */
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(GuiPackage.class);
 
     /** Singleton instance. */
     private static GuiPackage guiPack;
@@ -118,10 +115,10 @@ public final class GuiPackage implements LocaleChangeListener, HistoryListener {
      */
     private JCheckBoxMenuItem menuItemLoggerPanel;
 
-    /**
-     * Logger Panel reference
-     */
-    private LoggerPanel loggerPanel;
+//    /**
+//     * Logger Panel reference
+//     */
+//    private LoggerPanel loggerPanel;
 
     /**
      * History for tree states
@@ -544,7 +541,7 @@ public final class GuiPackage implements LocaleChangeListener, HistoryListener {
      * @return the main JMeter frame
      */
     public MainFrame getMainFrame() {
-        return mainFrame;
+        return null;
     }
 
     /**
@@ -616,32 +613,32 @@ public final class GuiPackage implements LocaleChangeListener, HistoryListener {
      */
     @Override
     public void localeChanged(LocaleChangeEvent event) {
-        // FIrst make sure we save the content of the current GUI (since we
-        // will flush it away):
-        updateCurrentNode();
-
-        // Forget about all GUIs we've created so far: we'll need to re-created
-        // them all!
-        guis = new HashMap<>();
-        nodesToGui = new HashMap<>();
-        testBeanGUIs = new HashMap<>();
-
-        // BeanInfo objects also contain locale-sensitive data -- flush them
-        // away:
-        Introspector.flushCaches();
-
-        // Now put the current GUI in place. [This code was copied from the
-        // EditCommand action -- we can't just trigger the action because that
-        // would populate the current node with the contents of the new GUI --
-        // which is empty.]
-        MainFrame mf = getMainFrame(); // Fetch once
-        if (mf == null) // Probably caused by unit testing on headless system
-        {
-            log.warn("Mainframe is null");
-        } else {
-            mf.setMainPanel((javax.swing.JComponent) getCurrentGui());
-            mf.setEditMenu(getTreeListener().getCurrentNode().createPopupMenu());
-        }
+//        // FIrst make sure we save the content of the current GUI (since we
+//        // will flush it away):
+//        updateCurrentNode();
+//
+//        // Forget about all GUIs we've created so far: we'll need to re-created
+//        // them all!
+//        guis = new HashMap<>();
+//        nodesToGui = new HashMap<>();
+//        testBeanGUIs = new HashMap<>();
+//
+//        // BeanInfo objects also contain locale-sensitive data -- flush them
+//        // away:
+//        Introspector.flushCaches();
+//
+//        // Now put the current GUI in place. [This code was copied from the
+//        // EditCommand action -- we can't just trigger the action because that
+//        // would populate the current node with the contents of the new GUI --
+//        // which is empty.]
+//        MainFrame mf = getMainFrame(); // Fetch once
+//        if (mf == null) // Probably caused by unit testing on headless system
+//        {
+//            log.warn("Mainframe is null");
+//        } else {
+//            mf.setMainPanel((javax.swing.JComponent) getCurrentGui());
+//            mf.setEditMenu(getTreeListener().getCurrentNode().createPopupMenu());
+//        }
     }
 
     private String testPlanFile;
@@ -656,17 +653,17 @@ public final class GuiPackage implements LocaleChangeListener, HistoryListener {
      *            The filepath of the current test plan
      */
     public void setTestPlanFile(String f) {
-        testPlanFile = f;
-        getMainFrame().setExtendedFrameTitle(testPlanFile);
-        // Enable file revert action if a file is used
-        getMainFrame().setFileRevertEnabled(f != null);
-        getMainFrame().setProjectFileLoaded(f);
-
-        try {
-            FileServer.getFileServer().setBasedir(testPlanFile);
-        } catch (IllegalStateException e1) {
-            log.error("Failure setting file server's base dir", e1);
-        }
+//        testPlanFile = f;
+//        getMainFrame().setExtendedFrameTitle(testPlanFile);
+//        // Enable file revert action if a file is used
+//        getMainFrame().setFileRevertEnabled(f != null);
+//        getMainFrame().setProjectFileLoaded(f);
+//
+//        try {
+//            FileServer.getFileServer().setBasedir(testPlanFile);
+//        } catch (IllegalStateException e1) {
+//            log.error("Failure setting file server's base dir", e1);
+//        }
     }
 
     public String getTestPlanFile() {
@@ -773,19 +770,19 @@ public final class GuiPackage implements LocaleChangeListener, HistoryListener {
         return menuItemLoggerPanel;
     }
 
-    /**
-     * @param loggerPanel LoggerPanel
-     */
-    public void setLoggerPanel(LoggerPanel loggerPanel) {
-        this.loggerPanel = loggerPanel;
-    }
-
-    /**
-     * @return the loggerPanel
-     */
-    public LoggerPanel getLoggerPanel() {
-        return loggerPanel;
-    }
+//    /**
+//     * @param loggerPanel LoggerPanel
+//     */
+//    public void setLoggerPanel(LoggerPanel loggerPanel) {
+//        this.loggerPanel = loggerPanel;
+//    }
+//
+//    /**
+//     * @return the loggerPanel
+//     */
+//    public LoggerPanel getLoggerPanel() {
+//        return loggerPanel;
+//    }
 
     /**
      * Navigate back and forward through undo history

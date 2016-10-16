@@ -46,10 +46,10 @@ import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jmeter.util.NameUpdater;
 import org.apache.jorphan.collections.HashTree;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JMeterError;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.ConversionException;
@@ -69,7 +69,7 @@ import com.thoughtworks.xstream.mapper.MapperWrapper;
  */
 public class SaveService {
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+    private static final Logger log = LoggerFactory.getLogger(SaveService.class);
 
     // Names of DataHolder entries for JTL processing
     public static final String SAMPLE_EVENT_OBJECT = "SampleEvent"; // $NON-NLS-1$
@@ -209,7 +209,7 @@ public class SaveService {
         try {
             fileVersion = getChecksumForPropertiesFile();
         } catch (IOException | NoSuchAlgorithmException e) {
-            log.fatalError("Can't compute checksum for saveservice properties file", e);
+            log.error("Fatal error, Can't compute checksum for saveservice properties file", e);
             throw new JMeterError("JMeter requires the checksum of saveservice properties file to continue", e);
         }
         try {
@@ -251,7 +251,7 @@ public class SaveService {
                 }
             }
         } catch (IOException e) {
-            log.fatalError("Bad saveservice properties file", e);
+            log.error("Fatal error, Bad saveservice properties file", e);
             throw new JMeterError("JMeter requires the saveservice properties file to continue");
         }
     }

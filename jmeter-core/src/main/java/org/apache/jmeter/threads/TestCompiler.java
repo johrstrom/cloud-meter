@@ -43,9 +43,8 @@ import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.timers.Timer;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * HashTreeTraverser implementation that traverses the Test Tree to build:
  * <ul>
@@ -55,7 +54,7 @@ import org.apache.log.Logger;
  */
 public class TestCompiler implements HashTreeTraverser {
 
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+    private static final Logger LOG = LoggerFactory.getLogger(TestCompiler.class);
 
     /** 
      * @deprecated since 3.0 will be removed in the next version 3.1. 

@@ -28,18 +28,17 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
 import org.apache.xml.utils.PrefixResolver;
 import org.apache.xml.utils.PrefixResolverDefault;
 import org.w3c.dom.Node;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * {@link PrefixResolver} implementation that loads prefix configuration from jmeter property xpath.namespace.config
  */
 public class PropertiesBasedPrefixResolver extends PrefixResolverDefault {
-    private static final Logger logger = LoggingManager.getLoggerForClass();
+    private static final Logger logger = LoggerFactory.getLogger(PropertiesBasedPrefixResolver.class);
     private static final String XPATH_NAMESPACE_CONFIG = "xpath.namespace.config";
     private static final Map<String, String> NAMESPACE_MAP = new HashMap<>();
     static {
