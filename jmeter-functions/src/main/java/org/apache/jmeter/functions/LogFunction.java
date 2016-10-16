@@ -26,9 +26,8 @@ import org.apache.jmeter.engine.util.CompoundVariable;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.samplers.Sampler;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
-import org.apache.log.Priority;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * <p>
@@ -47,7 +46,7 @@ import org.apache.log.Priority;
  * @since 2.2
  */
 public class LogFunction extends AbstractFunction {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(LogFunction.class);
 
     private static final List<String> desc = new LinkedList<>();
 
@@ -142,8 +141,9 @@ public class LogFunction extends AbstractFunction {
             printDetails(System.err, s, t, c);
         } else {
             // N.B. if the string is not recognised, DEBUG is assumed
-            Priority p = Priority.getPriorityForName(prio);
-            if (log.isPriorityEnabled(p)) {// Thread method is potentially expensive
+//            Priority p = Priority.getPriorityForName(prio);
+//            log
+//            if (log.isPriorityEnabled(p)) {// Thread method is potentially expensive
                 String tn = Thread.currentThread().getName();
                 StringBuilder sb = new StringBuilder(40);
                 sb.append(tn);
@@ -154,9 +154,11 @@ public class LogFunction extends AbstractFunction {
                     sb.append(DEFAULT_SEPARATOR);
                 }
                 sb.append(s);
-                log.log(p, sb.toString(), t);
+                //TODO fixme bc cloudmeter and slf4j broke
+                log.info(sb.toString());
+//                log.log(p, sb.toString(), t);
             }
-        }
+//        }
 
     }
 
