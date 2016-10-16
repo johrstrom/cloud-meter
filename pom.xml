@@ -17,6 +17,7 @@
      <module>jmeter-jorphan</module>
      <module>jmeter-core</module>
      <module>jmeter-components</module>
+     <module>jmeter-functions</module>
   </modules>
 
 	<dependencies>
