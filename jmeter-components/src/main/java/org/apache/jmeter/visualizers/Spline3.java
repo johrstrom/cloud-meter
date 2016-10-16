@@ -18,8 +18,8 @@
 
 package org.apache.jmeter.visualizers;
 
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /*
  * TODO : - implement ImageProducer interface - suggestions ;-)
@@ -84,7 +84,7 @@ import org.apache.log.Logger;
  *
  */
 public class Spline3 {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(Spline3.class);
 
     protected float[][] _coefficients;
 

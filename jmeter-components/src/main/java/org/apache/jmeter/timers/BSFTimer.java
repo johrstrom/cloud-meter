@@ -22,11 +22,11 @@ import org.apache.bsf.BSFException;
 import org.apache.bsf.BSFManager;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.util.BSFTestElement;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class BSFTimer extends BSFTestElement implements Cloneable, Timer, TestBean {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(BSFTimer.class);
 
     private static final long serialVersionUID = 4;
 

@@ -36,10 +36,10 @@ import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.threads.JMeterContext;
 import org.apache.jmeter.threads.JMeterVariables;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JMeterStopThreadException;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Read lines from a file and split int variables.
@@ -68,7 +68,7 @@ import org.apache.log.Logger;
  */
 public class CSVDataSet extends ConfigTestElement 
     implements TestBean, LoopIterationListener, NoConfigMerge {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(CSVDataSet.class);
 
     private static final long serialVersionUID = 232L;
 

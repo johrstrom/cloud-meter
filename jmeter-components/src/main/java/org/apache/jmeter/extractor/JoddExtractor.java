@@ -23,8 +23,8 @@ import java.util.List;
 import jodd.lagarto.dom.LagartoDOMBuilder;
 import jodd.lagarto.dom.Node;
 import jodd.lagarto.dom.NodeSelector;
-import jodd.log.LoggerFactory;
-import jodd.log.impl.Slf4jLoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jorphan.util.JOrphanUtils;
@@ -43,9 +43,9 @@ public class JoddExtractor implements Extractor {
 
     private static final String CACHE_KEY_PREFIX = JoddExtractor.class.getName()+"_PARSED_BODY";
     
-    static {
-        LoggerFactory.setLoggerFactory(new Slf4jLoggerFactory());
-    }
+//    static {
+//        LoggerFactory.setLoggerFactory(new Slf4jLoggerFactory());
+//    }
 
     /**
      * 

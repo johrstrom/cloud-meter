@@ -34,8 +34,8 @@ import java.math.BigDecimal;
 import javax.swing.JPanel;
 
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.jCharts.axisChart.AxisChart;
 import org.jCharts.chartData.AxisChartDataSet;
 import org.jCharts.chartData.ChartDataException;
@@ -56,7 +56,7 @@ public class RespTimeGraphChart extends JPanel {
 
     private static final long serialVersionUID = 280L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(RespTimeGraphChart.class);
 
     protected double[][] data;
     

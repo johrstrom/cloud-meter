@@ -29,8 +29,8 @@ import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestStateListener;
 import org.apache.jmeter.testelement.ThreadListener;
 import org.apache.jmeter.threads.JMeterContextService;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * The purpose of the SyncTimer is to block threads until X number of threads
@@ -39,7 +39,7 @@ import org.apache.log.Logger;
  *
  */
 public class SyncTimer extends AbstractTestElement implements Timer, Serializable, TestBean, TestStateListener, ThreadListener {
-    private static final Logger LOGGER = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(SyncTimer.class);
 
     /**
      * Wrapper to {@link CyclicBarrier} to allow lazy init of CyclicBarrier when SyncTimer is configured with 0
@@ -181,7 +181,7 @@ public class SyncTimer extends AbstractTestElement implements Timer, Serializabl
             } catch (InterruptedException | BrokenBarrierException e) {
                 return 0;
             } catch (TimeoutException e) {
-                LOGGER.warn("SyncTimer "+ getName() + " timeouted waiting for users after:"+getTimeoutInMs()+"ms");
+                log.warn("SyncTimer "+ getName() + " timeouted waiting for users after:"+getTimeoutInMs()+"ms");
                 return 0;
             } finally {
                 if(arrival == 0) {

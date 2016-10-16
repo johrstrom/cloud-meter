@@ -33,8 +33,8 @@ import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.ThreadListener;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * 
@@ -45,7 +45,7 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
 
     private static final long serialVersionUID = 1L;
 
-    private static final Logger LOG = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(SampleTimeout.class);
 
     private static final String TIMEOUT = "InterruptTimer.timeout"; //$NON-NLS-1$
 
@@ -76,10 +76,10 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
      * No-arg constructor.
      */
     public SampleTimeout() {
-        debug = LOG.isDebugEnabled();
+        debug = log.isDebugEnabled();
         execService = getExecutorService();
         if (debug) {
-            LOG.debug(whoAmI("InterruptTimer()", this));
+            log.debug(whoAmI("InterruptTimer()", this));
         }
     }
 
@@ -103,7 +103,7 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
     @Override
     public void sampleStarting(Sampler sampler) {
         if (debug) {
-            LOG.debug(whoAmI("sampleStarting()", this));
+            log.debug(whoAmI("sampleStarting()", this));
         }
         createTask(sampler);
     }
@@ -111,7 +111,7 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
     @Override
     public void sampleEnded(final Sampler sampler) {
         if (debug) {
-            LOG.debug(whoAmI("sampleEnded()", this));
+            log.debug(whoAmI("sampleEnded()", this));
         }
         cancelTask();
     }
@@ -133,10 +133,10 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
                 boolean interrupted = sampler.interrupt();
                 String elapsed = Double.toString((double)(System.nanoTime()-start)/ 1000000000)+" secs";
                 if (interrupted) {
-                    LOG.warn("Call Done interrupting " + getInfo(samp) + " took " + elapsed);
+                    log.warn("Call Done interrupting " + getInfo(samp) + " took " + elapsed);
                 } else {
                     if (debug) {
-                        LOG.debug("Call Didn't interrupt: " + getInfo(samp) + " took " + elapsed);
+                        log.debug("Call Didn't interrupt: " + getInfo(samp) + " took " + elapsed);
                     }
                 }
                 return null;
@@ -145,21 +145,21 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
         // schedule the interrupt to occur and save for possible cancellation 
         future = execService.schedule(call, timeout, TimeUnit.MILLISECONDS);
         if (debug) {
-            LOG.debug("Scheduled timer: @" + System.identityHashCode(future) + " " + getInfo(samp));
+            log.debug("Scheduled timer: @" + System.identityHashCode(future) + " " + getInfo(samp));
         }
     }
 
     @Override
     public void threadStarted() {
         if (debug) {
-            LOG.debug(whoAmI("threadStarted()", this));
+            log.debug(whoAmI("threadStarted()", this));
         }
      }
 
     @Override
     public void threadFinished() {
         if (debug) {
-            LOG.debug(whoAmI("threadFinished()", this));
+            log.debug(whoAmI("threadFinished()", this));
         }
         cancelTask(); // cancel future if any
      }
@@ -187,7 +187,7 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
             if (!future.isDone()) {
                 boolean cancelled = future.cancel(false);
                 if (debug) {
-                    LOG.debug("Cancelled timer: @" + System.identityHashCode(future) + " with result " + cancelled);
+                    log.debug("Cancelled timer: @" + System.identityHashCode(future) + " with result " + cancelled);
                 }
             }
             future = null;

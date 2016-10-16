@@ -29,9 +29,9 @@ import org.apache.jmeter.testelement.ThreadListener;
 import org.apache.jmeter.threads.JMeterContext;
 import org.apache.jmeter.threads.JMeterVariables;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
+import org.slf4j.LoggerFactory;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
 
 /**
  * JSON-PATH based extractor
@@ -40,7 +40,7 @@ import org.apache.log.Logger;
 public class JSONPostProcessor extends AbstractScopedTestElement implements Serializable, PostProcessor, ThreadListener{
 
     private static final long serialVersionUID = 1320798545214331506L;
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(JSONPostProcessor.class);
 
     private static final String JSON_PATH_EXPRESSIONS = "JSONPostProcessor.jsonPathExprs"; // $NON-NLS-1$
     private static final String REFERENCE_NAMES = "JSONPostProcessor.referenceNames"; // $NON-NLS-1$

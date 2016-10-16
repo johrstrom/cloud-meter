@@ -52,14 +52,14 @@ import org.apache.jmeter.testelement.property.CollectionProperty;
 import org.apache.jmeter.testelement.property.PropertyIterator;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.gui.GuiUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class UserParametersGui extends AbstractPreProcessorGui {
 
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(UserParametersGui.class);
 
     private static final String NAME_COL_RESOURCE = "name"; // $NON-NLS-1$
     private static final String USER_COL_RESOURCE = "user"; // $NON-NLS-1$

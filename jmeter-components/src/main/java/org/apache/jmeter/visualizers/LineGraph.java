@@ -29,8 +29,8 @@ import java.awt.Stroke;
 
 import javax.swing.JPanel;
 
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.jCharts.axisChart.AxisChart;
 import org.jCharts.chartData.AxisChartDataSet;
 import org.jCharts.chartData.DataSeries;
@@ -51,7 +51,7 @@ public class LineGraph extends JPanel {
 
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(LineGraph.class);
 
     protected double[][] data = null;
     protected String title, xAxisTitle, yAxisTitle;

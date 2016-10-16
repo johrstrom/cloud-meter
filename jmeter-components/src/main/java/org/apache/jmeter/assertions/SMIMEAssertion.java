@@ -42,9 +42,9 @@ import javax.mail.internet.MimeMultipart;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.jmeter.samplers.SampleResult;
-import org.apache.jorphan.logging.LoggingManager;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
 import org.bouncycastle.asn1.x500.RDN;
 import org.bouncycastle.asn1.x500.X500Name;
@@ -73,7 +73,7 @@ import org.bouncycastle.util.Store;
 class SMIMEAssertion {
 
     // Use the name of the test element, otherwise cannot enable/disable debug from the GUI
-    private static final Logger log = LoggingManager.getLoggerForShortName(SMIMEAssertionTestElement.class.getName());
+	private static final Logger log = LoggerFactory.getLogger(SMIMEAssertion.class);
 
     SMIMEAssertion() {
         super();

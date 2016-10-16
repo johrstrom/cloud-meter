@@ -34,8 +34,8 @@ import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.LongProperty;
 import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.tidy.Node;
 import org.w3c.tidy.Tidy;
 
@@ -46,7 +46,7 @@ public class HTMLAssertion extends AbstractTestElement implements Serializable, 
 
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(HTMLAssertion.class);
 
     public static final String DEFAULT_DOCTYPE = "omit"; //$NON-NLS-1$
 

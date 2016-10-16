@@ -25,16 +25,16 @@ import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.util.BeanShellInterpreter;
 import org.apache.jmeter.util.BeanShellTestElement;
-import org.apache.jorphan.logging.LoggingManager;
+import org.slf4j.LoggerFactory;
 import org.apache.jorphan.util.JMeterException;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
 
 public class BeanShellListener extends BeanShellTestElement
     implements Cloneable, SampleListener, TestBean, Visualizer, UnsharedComponent  {
     // N.B. Needs to implement Visualizer so that TestBeanGUI can find the correct GUI class
     // TODO - remove UnsharedComponent ? Probably does not make sense for a TestBean.
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(BeanShellListener.class);
 
     private static final long serialVersionUID = 4;
 

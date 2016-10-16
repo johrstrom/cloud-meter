@@ -25,8 +25,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.pool2.impl.GenericKeyedObjectPool;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * Pickle Graphite format 
@@ -35,7 +35,7 @@ import org.apache.log.Logger;
  * @since 2.13
  */
 class PickleGraphiteMetricsSender extends AbstractGraphiteMetricsSender {
-    private static final Logger LOG = LoggingManager.getLoggerForClass();    
+	private static final Logger log = LoggerFactory.getLogger(PickleGraphiteMetricsSender.class);
 
     /**
      * Pickle opcodes needed for implementation
@@ -75,8 +75,8 @@ class PickleGraphiteMetricsSender extends AbstractGraphiteMetricsSender {
         this.socketConnectionInfos = new SocketConnectionInfos(graphiteHost, graphitePort);
         this.socketOutputStreamPool = createSocketOutputStreamPool();
 
-        if(LOG.isInfoEnabled()) {
-            LOG.info("Created PickleGraphiteMetricsSender with host:"+graphiteHost+", port:"+graphitePort+", prefix:"+prefix);
+        if(log.isInfoEnabled()) {
+            log.info("Created PickleGraphiteMetricsSender with host:"+graphiteHost+", port:"+graphitePort+", prefix:"+prefix);
         }
     }
     
@@ -119,16 +119,16 @@ class PickleGraphiteMetricsSender extends AbstractGraphiteMetricsSender {
                     try {
                         socketOutputStreamPool.invalidateObject(socketConnectionInfos, out);
                     } catch (Exception e1) {
-                        LOG.warn("Exception invalidating socketOutputStream connected to graphite server '"+socketConnectionInfos.getHost()+"':"+socketConnectionInfos.getPort(), e1);
+                        log.warn("Exception invalidating socketOutputStream connected to graphite server '"+socketConnectionInfos.getHost()+"':"+socketConnectionInfos.getPort(), e1);
                     }
                 }
-                LOG.error("Error writing to Graphite:"+e.getMessage());
+                log.error("Error writing to Graphite:"+e.getMessage());
             }
             
             // if there was an error, we might miss some data. for now, drop those on the floor and
             // try to keep going.
-            if(LOG.isDebugEnabled()) {
-                LOG.debug("Wrote "+ metrics.size() +" metrics");
+            if(log.isDebugEnabled()) {
+                log.debug("Wrote "+ metrics.size() +" metrics");
             }
             metrics.clear();
         }

@@ -29,13 +29,13 @@ import org.apache.jmeter.engine.util.NoThreadClone;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.threads.JMeterVariables;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RandomVariableConfig extends ConfigTestElement
     implements TestBean, LoopIterationListener, NoThreadClone, NoConfigMerge
 {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(RandomVariableConfig.class);
 
     private static final long serialVersionUID = 233L;
 

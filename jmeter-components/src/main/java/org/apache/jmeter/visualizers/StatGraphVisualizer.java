@@ -82,10 +82,10 @@ import org.apache.jorphan.gui.NumberRenderer;
 import org.apache.jorphan.gui.ObjectTableModel;
 import org.apache.jorphan.gui.RateRenderer;
 import org.apache.jorphan.gui.RendererUtils;
-import org.apache.jorphan.logging.LoggingManager;
+import org.slf4j.LoggerFactory;
 import org.apache.jorphan.reflect.Functor;
 import org.apache.jorphan.util.JOrphanUtils;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
 
 /**
  * Aggregrate Table-Based Reporting Visualizer for JMeter. Props to the people
@@ -105,7 +105,7 @@ public class StatGraphVisualizer extends AbstractVisualizer implements Clearable
     private static final Float pct2Value =  new Float(Float.parseFloat(pct2Label)/100);
     private static final Float pct3Value =  new Float(Float.parseFloat(pct3Label)/100);
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(StatGraphVisualizer.class);
 
     static final String[] COLUMNS = { 
             "sampler_label",                  //$NON-NLS-1$

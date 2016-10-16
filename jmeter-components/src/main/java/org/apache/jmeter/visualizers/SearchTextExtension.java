@@ -52,12 +52,12 @@ import javax.swing.text.Highlighter;
 
 import org.apache.jmeter.gui.action.KeyStrokes;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class SearchTextExtension implements ActionListener, DocumentListener {
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(SearchTextExtension.class);
 
     private static final Font FONT_DEFAULT = UIManager.getDefaults().getFont("TextField.font");
 

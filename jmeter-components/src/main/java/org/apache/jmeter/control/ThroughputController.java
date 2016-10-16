@@ -29,8 +29,8 @@ import org.apache.jmeter.testelement.property.FloatProperty;
 import org.apache.jmeter.testelement.property.IntegerProperty;
 import org.apache.jmeter.testelement.property.JMeterProperty;
 import org.apache.jmeter.testelement.property.StringProperty;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;;
 
 /**
  * This class represents a controller that can control the number of times that
@@ -46,7 +46,7 @@ public class ThroughputController extends GenericController implements Serializa
 
     private static final long serialVersionUID = 233L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(ThroughputController.class);
     public static final int BYNUMBER = 0;
 
     public static final int BYPERCENT = 1;

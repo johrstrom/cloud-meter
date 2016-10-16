@@ -29,8 +29,8 @@ import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.LongProperty;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.threads.JMeterVariables;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * Provides a counter per-thread(user) or per-thread group.
@@ -66,7 +66,7 @@ public class CounterConfig extends AbstractTestElement
     // Used for per-thread/user storage of increment in Thread Group Main loop
     private transient ThreadLocal<Long> perTheadLastIterationNumber;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(CounterConfig.class);
 
     private void init() { // WARNING: called from ctor so must not be overridden (i.e. must be private or final)
         perTheadNumber = new ThreadLocal<Long>() {

@@ -25,8 +25,8 @@ import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.threads.JMeterContext;
 import org.apache.jmeter.threads.JMeterVariables;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ForeachController that iterates over a list of variables named XXXX_NN stored in {@link JMeterVariables}
@@ -36,7 +36,7 @@ import org.apache.log.Logger;
  *
  */
 public class ForeachController extends GenericController implements Serializable {
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(ForeachController.class);
 
     private static final long serialVersionUID = 240L;
 

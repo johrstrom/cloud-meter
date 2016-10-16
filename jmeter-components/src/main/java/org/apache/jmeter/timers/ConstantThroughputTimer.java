@@ -34,8 +34,8 @@ import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.threads.AbstractThreadGroup;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * This class implements a constant throughput timer. A Constant Throughtput
@@ -53,7 +53,7 @@ public class ConstantThroughputTimer extends AbstractTestElement implements Time
         final Object MUTEX = new Object();
         long lastScheduledTime = 0;
     }
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(ConstantThroughputTimer.class);
 
     private static final double MILLISEC_PER_MIN = 60000.0;
 

@@ -29,7 +29,7 @@ import javax.swing.JComponent;
 import javax.swing.Scrollable;
 
 import org.apache.jmeter.samplers.Clearable;
-// import org.apache.jorphan.logging.LoggingManager;
+// import org.slf4j.LoggerFactory;
 import org.apache.jorphan.math.NumberComparator;
 
 /**

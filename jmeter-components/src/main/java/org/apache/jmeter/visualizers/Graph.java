@@ -31,8 +31,8 @@ import javax.swing.SwingUtilities;
 
 import org.apache.jmeter.gui.util.JMeterColor;
 import org.apache.jmeter.samplers.Clearable;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * Implements a simple graph for displaying performance results.
@@ -41,7 +41,7 @@ import org.apache.log.Logger;
 public class Graph extends JComponent implements Scrollable, Clearable {
     private static final long serialVersionUID = 240L;
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(Graph.class);
 
     private boolean wantData = true;
 

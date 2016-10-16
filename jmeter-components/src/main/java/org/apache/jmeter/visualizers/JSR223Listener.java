@@ -29,14 +29,14 @@ import org.apache.jmeter.samplers.SampleListener;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.util.JSR223TestElement;
-import org.apache.jorphan.logging.LoggingManager;
-import org.apache.log.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class JSR223Listener extends JSR223TestElement
     implements Cloneable, SampleListener, TestBean, Visualizer {
 // N.B. Needs to implement Visualizer so that TestBeanGUI can find the correct GUI class
 
-    private static final Logger log = LoggingManager.getLoggerForClass();
+	private static final Logger log = LoggerFactory.getLogger(JSR223Listener.class);
 
     private static final long serialVersionUID = 234L;
 
