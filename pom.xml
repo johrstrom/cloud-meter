@@ -18,6 +18,7 @@
      <module>jmeter-core</module>
      <module>jmeter-components</module>
      <module>jmeter-functions</module>
+     <module>jmeter-protocols</module>
   </modules>
 
 	<dependencies>
