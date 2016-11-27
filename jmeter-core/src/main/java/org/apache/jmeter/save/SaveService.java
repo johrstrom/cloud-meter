@@ -78,8 +78,8 @@ public class SaveService {
     // Names of DataHolder entries for JMX processing
     public static final String TEST_CLASS_NAME = "TestClassName"; // $NON-NLS-1$
 
-    private static final class XStreamWrapper extends XStream {
-        private XStreamWrapper(ReflectionProvider reflectionProvider) {
+    public static final class XStreamWrapper extends XStream {
+        public XStreamWrapper(ReflectionProvider reflectionProvider) {
             super(reflectionProvider);
         }
 
