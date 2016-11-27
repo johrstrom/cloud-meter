@@ -121,7 +121,7 @@ public class SaveService {
     private static final String XML_HEADER = "<?xml version=\"1.0\" encoding=\"<ph>\"?>"; // $NON-NLS-1$
 
     // Default file name
-    private static final String SAVESERVICE_PROPERTIES_FILE = "/bin/saveservice.properties"; // $NON-NLS-1$
+    private static final String SAVESERVICE_PROPERTIES_FILE = "saveservice.properties"; // $NON-NLS-1$
 
     // Property name used to define file name
     private static final String SAVESERVICE_PROPERTIES = "saveservice_properties"; // $NON-NLS-1$
@@ -182,26 +182,30 @@ public class SaveService {
 
     public static Properties loadProperties() throws IOException{
         Properties nameMap = new Properties();
-        try (FileInputStream fis = new FileInputStream(JMeterUtils.getJMeterHome()
-                + JMeterUtils.getPropDefault(SAVESERVICE_PROPERTIES, SAVESERVICE_PROPERTIES_FILE))){
-            nameMap.load(fis);
-        }
+//        ClassLoader cls = new 
+        InputStream is = SaveService.class.getClassLoader().getResourceAsStream(SAVESERVICE_PROPERTIES_FILE);
+//        InputStream is = SaveService.class.getResourceAsStream();
+        nameMap.load(is);
+        
+//        try (FileInputStream fis = new FileInputStream(JMeterUtils.getJMeterHome()
+//                + JMeterUtils.getPropDefault(SAVESERVICE_PROPERTIES, SAVESERVICE_PROPERTIES_FILE))){
+//            nameMap.load(fis);
+//        }
         return nameMap;
     }
 
     private static String getChecksumForPropertiesFile()
             throws NoSuchAlgorithmException, IOException {
         MessageDigest md = MessageDigest.getInstance("SHA1");
-        try (FileReader fileReader = new FileReader(
-                    JMeterUtils.getJMeterHome()
-                    + JMeterUtils.getPropDefault(SAVESERVICE_PROPERTIES,
-                    SAVESERVICE_PROPERTIES_FILE));
-                BufferedReader reader = new BufferedReader(fileReader)) {
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                md.update(line.getBytes());
-            }
+        
+        InputStream is = SaveService.class.getClassLoader().getResourceAsStream(SAVESERVICE_PROPERTIES_FILE);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+        
+        String line = null;
+        while ((line = reader.readLine()) != null) {
+            md.update(line.getBytes());
         }
+        
         return JOrphanUtils.baToHexString(md.digest());
     }
     private static void initProps() {

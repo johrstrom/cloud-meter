@@ -211,6 +211,29 @@ public class JMeterUtils implements UnitTestManager {
     public static Properties loadProperties(String file) {
         return loadProperties(file, null);
     }
+    
+    public static void loadJmeterProperties(InputStream is){
+        Properties p = new Properties(System.getProperties());
+       
+        try {
+            p.load(is);
+        } catch (IOException e) {
+            try {
+                is =
+                    ClassLoader.getSystemResourceAsStream("org/apache/jmeter/jmeter.properties"); // $NON-NLS-1$
+                if (is == null) {
+                    throw new RuntimeException("Could not read JMeter properties file: jmeter.properties");
+                }
+                p.load(is);
+            } catch (IOException ex) {
+                // JMeter.fail("Could not read internal resource. " +
+                // "Archive is broken.");
+            }
+        } finally {
+            JOrphanUtils.closeQuietly(is);
+        }
+        appProperties = p;
+    }
 
     /**
      * This method loads a property file that may reside in the user space, or

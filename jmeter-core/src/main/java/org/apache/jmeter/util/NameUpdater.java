@@ -29,6 +29,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Properties;
+
+import org.apache.jmeter.save.SaveService;
 import org.apache.jorphan.util.JOrphanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,16 +47,18 @@ public final class NameUpdater {
     static {
         nameMap = new Properties();
         FileInputStream fis = null;
-        File f = new File(JMeterUtils.getJMeterHome(),
-                JMeterUtils.getPropDefault("upgrade_properties", // $NON-NLS-1$
-                        "/bin/upgrade.properties")); // $NON-NLS-1$
+       
+//        File f = new File(JMeterUtils.getJMeterHome(),
+//                JMeterUtils.getPropDefault("upgrade_properties", // $NON-NLS-1$
+//                        "/bin/upgrade.properties")); // $NON-NLS-1$
         try {
-            fis = new FileInputStream(f);
-            nameMap.load(fis);
+//            fis = new FileInputStream(f);
+            InputStream clis = SaveService.class.getClassLoader().getResourceAsStream("upgrade.properties");
+            nameMap.load(clis);
         } catch (FileNotFoundException e) {
             log.error("Could not find upgrade file: ", e);
         } catch (IOException e) {
-            log.error("Error processing upgrade file: "+f.getPath(), e);
+            log.error("Error processing upgrade file: + ", e.getClass() + "/" + e.getMessage());
         } finally {
             JOrphanUtils.closeQuietly(fis);
         }
@@ -65,7 +69,7 @@ public final class NameUpdater {
         try {
            enu = JMeterUtils.class.getClassLoader().getResources(NAME_UPDATER_PROPERTIES);
         } catch (IOException e) {
-           log.error("Error in finding additional nameupdater.properties files: ", e);
+           log.error("Error in finding additional nameupdater.properties files: ", e.getClass() + "/" + e.getMessage());
         }
 
         if(enu != null) {

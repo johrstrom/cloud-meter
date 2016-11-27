@@ -1,9 +1,14 @@
 package org.cloudmeter.controller;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.apache.jmeter.engine.JMeterEngineException;
+import org.apache.jmeter.engine.StandardJMeterEngine;
+import org.apache.jmeter.save.SaveService;
 import org.apache.jmeter.save.SaveService.XStreamWrapper;
+import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.engine.StandardCloudMeterEngine;
 import org.cloudmeter.model.request.RunRequest;
@@ -12,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +31,13 @@ public class RunController {
 	private static final Logger log = LoggerFactory.getLogger(RunController.class);
 	
 	private static final XStream JMXSAVER = new XStreamWrapper(new PureJavaReflectionProvider());
+	
+	static {
+		InputStream is = RunController.class.getClassLoader().getResourceAsStream("jmeter.properties");
+//		FileInputStream fis = new FileInputStream(is);
+		JMeterUtils.loadJmeterProperties(is);
+		
+	}
 	
     @RequestMapping(value = "/run", method = RequestMethod.POST, produces = "application/json" , 
     		consumes = { "application/x-www-form-urlencoded", "multipart/form-data" })
@@ -46,10 +57,12 @@ public class RunController {
     	
 
     	try {
-        	ScriptWrapper wrapper = (ScriptWrapper) JMXSAVER.fromXML(request.getTestPlan().getInputStream());
-        	HashTree test = wrapper.testPlan;
-        	
-        	StandardCloudMeterEngine e = new StandardCloudMeterEngine();
+//    		@SuppressWarnings("deprecation")
+			HashTree test = SaveService.loadTree(request.getTestPlan().getInputStream());
+//        	ScriptWrapper wrapper = (ScriptWrapper) JMXSAVER.fromXML(request.getTestPlan().getInputStream());
+//        	HashTree test = wrapper.getTestPlan();
+			
+        	StandardJMeterEngine e = new StandardJMeterEngine();
         	e.configure(test);
         	
 			e.runTest();
@@ -63,13 +76,7 @@ public class RunController {
     	
     	return null;
     }
-    
-    class ScriptWrapper {
-        // Used by ScriptWrapperConverter
-        String version = "";
-
-        HashTree testPlan;
-    }
+ 
     
 
 }

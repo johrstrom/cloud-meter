@@ -20,9 +20,13 @@ package org.apache.jmeter.save;
 
 import org.apache.jorphan.collections.HashTree;
 
-class ScriptWrapper {
+public class ScriptWrapper {
     // Used by ScriptWrapperConverter
-    String version = "";
+    public String version = "";
 
-    HashTree testPlan;
+    public HashTree testPlan;
+    
+    public HashTree getTestPlan(){
+    	return this.testPlan;
+    }
 }
