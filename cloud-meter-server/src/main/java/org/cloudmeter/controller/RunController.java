@@ -1,47 +1,66 @@
 package org.cloudmeter.controller;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 import org.apache.jmeter.engine.JMeterEngineException;
 import org.apache.jmeter.engine.StandardJMeterEngine;
+import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.save.SaveService;
-import org.apache.jmeter.save.SaveService.XStreamWrapper;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
-import org.cloudmeter.engine.StandardCloudMeterEngine;
+import org.cloudmeter.engine.CloudMeterEngine;
+import org.cloudmeter.messaging.SampleResultMessage;
 import org.cloudmeter.model.request.RunRequest;
 import org.cloudmeter.model.response.RunResultModel;
+import org.cloudmeter.utils.CloudMeterEngineException;
+import org.cloudmeter.utils.CloudMeterStartup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider;
 
 @Controller
-@RequestMapping("/testplan")
+@RequestMapping("/api/v1/test")
 public class RunController {
 
 	private static final Logger log = LoggerFactory.getLogger(RunController.class);
 	
-	private static final XStream JMXSAVER = new XStreamWrapper(new PureJavaReflectionProvider());
+	Map<String, CloudMeterEngine> cache = new ConcurrentHashMap();
 	
 	static {
-		InputStream is = RunController.class.getClassLoader().getResourceAsStream("jmeter.properties");
-//		FileInputStream fis = new FileInputStream(is);
-		JMeterUtils.loadJmeterProperties(is);
-		
+		try{
+			InputStream is = CloudMeterStartup.class.getClassLoader().getResourceAsStream("jmeter.properties");
+			JMeterUtils.loadJmeterProperties(is);
+			JMeterUtils.initLocale();
+			log.info("Property load complete. Cloud-Meter properties initialized.");
+			
+		}catch(Exception e){
+			log.error("exception while loading properties: " + e.getClass().toString() + "/" + e.getMessage());
+		}
+	}
+	
+    @MessageMapping("/sample-result")
+    @SendTo("/topic/testresults/{testId}")
+	public SampleResult temp(SampleResult result, @DestinationVariable String testId){
+		return result;
 	}
 	
     @RequestMapping(value = "/run", method = RequestMethod.POST, produces = "application/json" , 
     		consumes = { "application/x-www-form-urlencoded", "multipart/form-data" })
-    public @ResponseBody RunResultModel runTestPlan(@ModelAttribute RunRequest request) {
+    public @ResponseBody RunResultModel runTestPlan(@ModelAttribute RunRequest request) 
+    		throws CloudMeterEngineException {
     	
     	RunResultModel res = new RunResultModel();
     	
@@ -57,24 +76,24 @@ public class RunController {
     	
 
     	try {
-//    		@SuppressWarnings("deprecation")
+    		
 			HashTree test = SaveService.loadTree(request.getTestPlan().getInputStream());
-//        	ScriptWrapper wrapper = (ScriptWrapper) JMXSAVER.fromXML(request.getTestPlan().getInputStream());
-//        	HashTree test = wrapper.getTestPlan();
 			
-        	StandardJMeterEngine e = new StandardJMeterEngine();
+        	CloudMeterEngine e = new CloudMeterEngine();
         	e.configure(test);
         	
 			e.runTest();
-		} catch (JMeterEngineException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+			this.cache.put(e.getId(), e);
+			
+			res.setTestRunId(e.getId());
+			res.setMessage("success");
+			return res;
+			
+		} catch (JMeterEngineException | IOException e1) {
+			
+			throw new CloudMeterEngineException();
+		} 
     	
-    	return null;
     }
  
     

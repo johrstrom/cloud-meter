@@ -1,0 +1,57 @@
+/*************************
+ *  	Top Navigation Bar
+ *************************/
+
+#topnavbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+}
+
+#topnavbar-li {
+  float: left;
+}
+
+#topnavbar-li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Tahoma;
+}
+
+#topnavbar-li a:hover {
+  background-color: #333;
+}
+
+/*************************
+ *	Generic message box
+ ************************/
+
+#messagelist {
+  list-style-type: none; 
+}
+
+div.messagelist {
+  background-color: lightblue;
+  width: 200px;
+  height: 100px; 
+  padding: 35px; 
+  border: 25px solid navy;
+  text-align: center;
+}
+
+
+#messagebox-li a:hover {
+  background-color: darkblue;
+  text-color: white;
+}
+
+div.messagebox a:hover {
+  background-color: darkblue;
+  color: white;
+}
+

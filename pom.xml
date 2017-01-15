@@ -17,7 +17,7 @@
      <junit.version>4.12</junit.version>
      <com.lang3.version>3.4</com.lang3.version>
      <com.col.version>3.2.1</com.col.version>
-     <spring.version>1.4.1.RELEASE</spring.version>
+     <spring.version>1.4.3.RELEASE</spring.version>
   </properties>
  
   <modules>

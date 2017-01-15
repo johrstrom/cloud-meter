@@ -1,59 +1,64 @@
 package org.cloudmeter.engine;
 
 import java.util.Properties;
+import java.util.UUID;
 
 import org.apache.jmeter.engine.JMeterEngine;
 import org.apache.jmeter.engine.JMeterEngineException;
+import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jorphan.collections.HashTree;
 
-public class StandardCloudMeterEngine implements JMeterEngine, Runnable {
+public class CloudMeterEngine implements JMeterEngine, Runnable {
 
+	StandardJMeterEngine engine = new StandardJMeterEngine();
+	String id = UUID.randomUUID().toString();
+	
+	public CloudMeterEngine(){
+		this.engine = new StandardJMeterEngine();
+	}
+	
+	public String getId(){
+		return this.id;
+	}
+	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		this.engine.run();
 	}
 
 	@Override
 	public void configure(HashTree testPlan) {
-		// TODO Auto-generated method stub
-		
+		this.engine.configure(testPlan);
 	}
 
 	@Override
 	public void runTest() throws JMeterEngineException {
-		// TODO Auto-generated method stub
-		
+		this.engine.runTest();
 	}
 
 	@Override
 	public void stopTest(boolean now) {
-		// TODO Auto-generated method stub
-		
+		this.engine.stopTest();
 	}
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stub
-		
+		this.engine.reset();
 	}
 
 	@Override
 	public void setProperties(Properties p) {
-		// TODO Auto-generated method stub
-		
+		this.engine.setProperties(p);
 	}
 
 	@Override
 	public void exit() {
-		// TODO Auto-generated method stub
-		
+		this.engine.exit();
 	}
 
 	@Override
 	public boolean isActive() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.engine.isActive();
 	}
 
 }

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("org.cloudmeter")
-@EnableAutoConfiguration
+@EnableAutoConfiguration()
 public class CloudMeterApp {
 	
     public static void main(String[] args) {
