@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
-@RequestMapping("/api/v1/test")
+@RequestMapping("/api/v1/exec")
 public class RunController {
 
 	private static final Logger log = LoggerFactory.getLogger(RunController.class);
