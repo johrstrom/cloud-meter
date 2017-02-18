@@ -5,9 +5,9 @@ import org.apache.jorphan.collections.HashTreeTraverser;
 
 public class HashTreeModelConverter implements HashTreeTraverser {
 
-	TestPlan plan = new TestPlan();
+	TestPlanModel plan = new TestPlanModel();
 	
-	public TestPlan getTestPlanModel(){
+	public TestPlanModel getTestPlanModel(){
 		return this.plan;
 	}
 	

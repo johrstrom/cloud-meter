@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import javax.ws.rs.QueryParam;
+
 import org.apache.jmeter.engine.JMeterEngineException;
 import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.samplers.SampleResult;
@@ -14,6 +16,7 @@ import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.engine.CloudMeterEngine;
 import org.cloudmeter.messaging.SampleResultMessage;
+import org.cloudmeter.model.TestPlanModel;
 import org.cloudmeter.model.request.RunRequest;
 import org.cloudmeter.model.response.RunResultModel;
 import org.cloudmeter.utils.CloudMeterEngineException;
@@ -32,10 +35,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
-@RequestMapping("/api/v1/exec")
-public class RunController {
+@RequestMapping("/api/v1")
+public class V1Controller {
 
-	private static final Logger log = LoggerFactory.getLogger(RunController.class);
+	private static final Logger log = LoggerFactory.getLogger(V1Controller.class);
 	
 	Map<String, CloudMeterEngine> cache = new ConcurrentHashMap();
 	
@@ -97,5 +100,15 @@ public class RunController {
     }
  
     
+    @RequestMapping(value = "/testplan", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody TestPlanModel getTestPlan(@QueryParam(value = "name") String name){
+    
+    	if(name == null || name.isEmpty()){
+    		return new TestPlanModel();
+    	}else{
+    		return new TestPlanModel();
+    	}
+    	
+    }
 
 }

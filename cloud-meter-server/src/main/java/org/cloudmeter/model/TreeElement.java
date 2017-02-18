@@ -2,16 +2,24 @@ package org.cloudmeter.model;
 
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TreeElement {
+	
+	@JsonProperty("name")
 	private String name;
+	
+	@JsonProperty("enabled")
 	private boolean enabled;
+	
+	@JsonProperty("testclass")
 	private String testclass;
+	
+	@JsonProperty("testname")
 	private String testname;
 	
-	private Map<String, String> elementProps;
-	private Map<String, Boolean> boolProps;
-	private Map<String, String> stringProps;
-	private Map<String, Long> longProps;
+	@JsonProperty("properties")
+	private Map<String, TreeModelElementProperty> properties;
 	
 	/**
 	 * @return the name
@@ -68,62 +76,5 @@ public class TreeElement {
 	public void setTestclass(String testclass) {
 		this.testclass = testclass;
 	}
-
-	/**
-	 * @return the elementProps
-	 */
-	public Map<String, String> getElementProps() {
-		return elementProps;
-	}
-
-	/**
-	 * @param elementProps the elementProps to set
-	 */
-	public void setElementProps(Map<String, String> elementProps) {
-		this.elementProps = elementProps;
-	}
-
-	/**
-	 * @return the stringProps
-	 */
-	public Map<String, String> getStringProps() {
-		return stringProps;
-	}
-
-	/**
-	 * @param stringProps the stringProps to set
-	 */
-	public void setStringProps(Map<String, String> stringProps) {
-		this.stringProps = stringProps;
-	}
-
-	/**
-	 * @return the boolProps
-	 */
-	public Map<String, Boolean> getBoolProps() {
-		return boolProps;
-	}
-
-	/**
-	 * @param boolProps the boolProps to set
-	 */
-	public void setBoolProps(Map<String, Boolean> boolProps) {
-		this.boolProps = boolProps;
-	}
-
-	/**
-	 * @return the longProps
-	 */
-	public Map<String, Long> getLongProps() {
-		return longProps;
-	}
-
-	/**
-	 * @param longProps the longProps to set
-	 */
-	public void setLongProps(Map<String, Long> longProps) {
-		this.longProps = longProps;
-	}
-	
 	
 }

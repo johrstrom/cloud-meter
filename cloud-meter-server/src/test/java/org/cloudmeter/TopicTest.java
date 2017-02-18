@@ -9,13 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.AbstractSubscribableChannel;
 //import org.springframework.messaging.support.ChannelInterceptor;
 
+import org.cloudmeter.CloudMeterApp;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = CloudMeterApp.class)
 @WebAppConfiguration
 public class TopicTest {
 
-	@Autowired
-	AbstractSubscribableChannel chan; 
+//	@Autowired
+//	AbstractSubscribableChannel chan; 
 	
 	@Test
 	public void abc(){
