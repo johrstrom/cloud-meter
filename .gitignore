@@ -13,3 +13,5 @@
 *.prefs
 
 *.log
+
+change_logger.sh
