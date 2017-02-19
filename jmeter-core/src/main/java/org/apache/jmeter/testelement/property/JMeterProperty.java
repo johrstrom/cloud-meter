@@ -22,6 +22,10 @@ import java.io.Serializable;
 
 import org.apache.jmeter.testelement.TestElement;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public interface JMeterProperty extends Serializable, Cloneable, Comparable<JMeterProperty> {
     /**
      * Returns whether the property is a running version.
@@ -36,6 +40,7 @@ public interface JMeterProperty extends Serializable, Cloneable, Comparable<JMet
      *
      * @return the name of the property
      */
+    @JsonProperty("name")
     String getName();
 
     /**
@@ -76,18 +81,32 @@ public interface JMeterProperty extends Serializable, Cloneable, Comparable<JMet
      */
     void mergeIn(JMeterProperty prop);
 
+    @JsonProperty("integerValue")
+    @JsonInclude(Include.NON_NULL)
     int getIntValue();
 
+    @JsonProperty("longValue")
+    @JsonInclude(Include.NON_NULL)
     long getLongValue();
 
+    @JsonProperty("doubleValue")
+    @JsonInclude(Include.NON_NULL)
     double getDoubleValue();
 
+    @JsonProperty("floatValue")
+    @JsonInclude(Include.NON_NULL)
     float getFloatValue();
 
+    @JsonProperty("booleanValue")
+    @JsonInclude(Include.NON_NULL)
     boolean getBooleanValue();
 
+    @JsonProperty("stringValue")
+    @JsonInclude(Include.NON_NULL)
     String getStringValue();
 
+    @JsonProperty("objectValue")
+    @JsonInclude(Include.NON_NULL)
     Object getObjectValue();
 
     void setObjectValue(Object value);

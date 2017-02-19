@@ -46,6 +46,9 @@ import org.apache.jmeter.threads.JMeterContextService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  */
 public abstract class AbstractTestElement implements TestElement, Serializable, Searchable {
@@ -53,6 +56,7 @@ public abstract class AbstractTestElement implements TestElement, Serializable, 
 
     private static final Logger log = LoggerFactory.getLogger(AbstractTestElement.class);
 
+    @JsonProperty("properties")
     private final Map<String, JMeterProperty> propMap =
         Collections.synchronizedMap(new LinkedHashMap<String, JMeterProperty>());
 
@@ -61,11 +65,14 @@ public abstract class AbstractTestElement implements TestElement, Serializable, 
      */
     private transient Set<JMeterProperty> temporaryProperties;
 
+    @JsonIgnore
     private transient boolean runningVersion = false;
 
     // Thread-specific variables saved here to save recalculation
+    @JsonIgnore
     private transient JMeterContext threadContext = null;
 
+    @JsonIgnore
     private transient String threadName = null;
 
     @Override

@@ -35,6 +35,10 @@ import org.apache.jorphan.util.JOrphanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 public class TestPlan extends AbstractTestElement implements Serializable, TestStateListener {
     private static final long serialVersionUID = 233L;
 
@@ -90,6 +94,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
      *
      * @return functional mode
      */
+    @JsonInclude(Include.ALWAYS)
     public boolean isFunctionalMode() {
         return getPropertyAsBoolean(FUNCTIONAL_MODE);
     }
@@ -98,10 +103,12 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
         setProperty(new TestElementProperty(USER_DEFINED_VARIABLES, vars));
     }
 
+    @JsonIgnore
     public JMeterProperty getUserDefinedVariablesAsProperty() {
         return getProperty(USER_DEFINED_VARIABLES);
     }
 
+    @JsonIgnore
     public String getBasedir() {
         return getPropertyAsString(BASEDIR);
     }
@@ -111,15 +118,19 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
         setProperty(BASEDIR, b);
     }
 
+    //TODO fix
+    @JsonIgnore
     public Arguments getArguments() {
         return getVariables();
     }
 
+    @JsonIgnore
     public Map<String, String> getUserDefinedVariables() {
         Arguments args = getVariables();
         return args.getArgumentsAsMap();
     }
 
+    @JsonIgnore
     private Arguments getVariables() {
         Arguments args = (Arguments) getProperty(USER_DEFINED_VARIABLES).getObjectValue();
         if (args == null) {
@@ -139,6 +150,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
      *
      * @return mode
      */
+    @JsonIgnore
     public static boolean getFunctionalMode() {
         return functionalMode;
     }
@@ -151,6 +163,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
         setProperty(TEARDOWN_ON_SHUTDOWN, tearDown, false);
     }
 
+    @JsonIgnore
     public boolean isTearDownOnShutdown() {
         return getPropertyAsBoolean(TEARDOWN_ON_SHUTDOWN, false);
     }
@@ -178,6 +191,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
         this.setTestPlanClasspath(cat.toString());
     }
 
+    @JsonIgnore
     public String[] getTestPlanClasspathArray() {
         return JOrphanUtils.split(this.getTestPlanClasspath(),CLASSPATH_SEPARATOR);
     }
@@ -186,6 +200,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
      * Returns the classpath
      * @return classpath
      */
+    @JsonIgnore
     public String getTestPlanClasspath() {
         return getPropertyAsString(CLASSPATHS);
     }
@@ -195,6 +210,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
      *
      * @return serialized setting
      */
+    @JsonIgnore
     public boolean isSerialized() {
         return getPropertyAsBoolean(SERIALIZE_THREADGROUPS);
     }

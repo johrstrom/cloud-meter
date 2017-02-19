@@ -1,24 +1,32 @@
 package org.cloudmeter.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jorphan.collections.HashTree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class TestPlanModel {
 	
-	@JsonProperty("elements")
-	List<TreeElement> testPlanElements;
 	private static final Logger log = LoggerFactory.getLogger(TestPlanModel.class);
 	
-	@JsonProperty("elements")
-	public List<TreeElement> getElements(){
-		return this.testPlanElements;
-	}
+	
+	
+	@JsonProperty("hashTree")
+	@JsonSerialize(using = TestPlanSerializer.class)
+	private HashTree tree;
+	
+	
+	
+	
+	
+//	@JsonProperty("elements")
+//	public Map<Object, HashTree> getElements(){
+//		return this.testPlanElements;
+//	}
+	
 
 	public TestPlanModel(){
 		this(null);
@@ -29,11 +37,14 @@ public class TestPlanModel {
 			
 			log.debug("creating a new testplan model.");
 			
-			this.testPlanElements = new ArrayList<TreeElement>();
-			this.testPlanElements.add(new TreeElement());
+//			tree = new HashTree();
+//			tree.add
+			
+			this.tree = new HashTree(new TestPlan());
+//			this.testPlanElements.add(new TestPlan());
 			
 		}else{
-			HashTreeModelConverter converter = new HashTreeModelConverter();
+			
 			
 			
 		}

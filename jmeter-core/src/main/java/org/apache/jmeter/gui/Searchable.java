@@ -20,6 +20,8 @@ package org.apache.jmeter.gui;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Interface for nodes that are searchable.
  * <p>
@@ -35,6 +37,7 @@ public interface Searchable {
      * @throws Exception
      *             when something fails while getting the searchable tokens
      */
+	@JsonIgnore
     List<String> getSearchableTokens()
         throws Exception;
 }
