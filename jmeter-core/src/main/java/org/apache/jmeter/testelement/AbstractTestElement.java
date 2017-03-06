@@ -48,6 +48,7 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  */
@@ -180,6 +181,16 @@ public abstract class AbstractTestElement implements TestElement, Serializable, 
     @Override
     public String getComment(){
         return getProperty(TestElement.COMMENTS).getStringValue();
+    }
+    
+    @Override
+    public String getTestClass(){
+    	return getProperty(TestElement.TEST_CLASS).getStringValue();
+    }
+    
+    @Override
+    public void setTestClass(String className){
+    	setProperty(new StringProperty(TestElement.TEST_CLASS, className));
     }
 
     /**

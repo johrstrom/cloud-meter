@@ -332,4 +332,19 @@ public interface TestElement extends Cloneable {
      *            to be associated
      */
     void setComment(String comment);
+    
+    
+    /**
+     * Get the backing test class for this element
+     * 
+     * @return the name of the backing class.
+     */
+    String getTestClass();
+    
+    
+    /**
+     * Set the backing test class for this element
+     */
+    void setTestClass(String className);
+    
 }

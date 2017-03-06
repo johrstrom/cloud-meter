@@ -18,11 +18,15 @@
 
 package org.apache.jmeter.testelement.property;
 
+import org.apache.jmeter.json.serializers.StringPropertySerializer;
 import org.apache.jmeter.testelement.TestElement;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * @version $Revision: 1413956 $
  */
+@JsonSerialize(using = StringPropertySerializer.class)
 public class StringProperty extends AbstractProperty {
     private static final long serialVersionUID = 233L;
 

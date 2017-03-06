@@ -18,15 +18,6 @@ public class TestPlanModel {
 	@JsonSerialize(using = TestPlanSerializer.class)
 	private HashTree tree;
 	
-	
-	
-	
-	
-//	@JsonProperty("elements")
-//	public Map<Object, HashTree> getElements(){
-//		return this.testPlanElements;
-//	}
-	
 
 	public TestPlanModel(){
 		this(null);
@@ -37,11 +28,7 @@ public class TestPlanModel {
 			
 			log.debug("creating a new testplan model.");
 			
-//			tree = new HashTree();
-//			tree.add
-			
-			this.tree = new HashTree(new TestPlan());
-//			this.testPlanElements.add(new TestPlan());
+			this.tree = new HashTree(new TestPlan("Test Plan"));
 			
 		}else{
 			

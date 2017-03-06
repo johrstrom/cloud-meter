@@ -67,13 +67,14 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
     private static volatile boolean functionalMode = false;
 
     public TestPlan() {
-        // this("Test Plan");
+         this("Test Plan");
         // setFunctionalMode(false);
         // setSerialized(false);
     }
 
     public TestPlan(String name) {
         setName(name);
+        setTestClass(TestPlan.class.getName());
         // setFunctionalMode(false);
         // setSerialized(false);
     }
@@ -150,7 +151,6 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
      *
      * @return mode
      */
-    @JsonIgnore
     public static boolean getFunctionalMode() {
         return functionalMode;
     }

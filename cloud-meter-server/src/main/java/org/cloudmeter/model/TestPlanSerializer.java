@@ -3,7 +3,6 @@ package org.cloudmeter.model;
 import java.io.IOException;
 import java.util.Stack;
 
-import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
 import org.slf4j.Logger;
@@ -22,7 +21,7 @@ public class TestPlanSerializer extends JsonSerializer<HashTree>  {
 	public void serialize(HashTree arg0, JsonGenerator arg1, SerializerProvider arg2)
 			throws IOException, JsonProcessingException {
 		
-		log.debug("serializing a hash tree " + arg0);
+		log.debug("serializing a hash tree.");
 		
 		arg0.traverse(new JSonTraverser(arg1));
 		
