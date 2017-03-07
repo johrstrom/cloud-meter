@@ -1,5 +1,8 @@
 package org.apache.jmeter.json.serializers;
 
+import static org.apache.jmeter.json.serializers.SerializerConstants.TYPE;
+import static org.apache.jmeter.json.serializers.SerializerConstants.VALUE;
+
 import java.io.IOException;
 
 import org.apache.jmeter.testelement.property.DoubleProperty;
@@ -16,7 +19,8 @@ public class DoublePropertySerializer  extends JsonSerializer<DoubleProperty>{
 			throws IOException, JsonProcessingException {
 		
 		jsonGen.writeStartObject();
-		jsonGen.writeNumber(prop.getDoubleValue());
+		jsonGen.writeStringField(TYPE, DoubleProperty.class.getName());
+		jsonGen.writeNumberField(VALUE, prop.getDoubleValue());
 		jsonGen.writeEndObject();
 		
 	}
