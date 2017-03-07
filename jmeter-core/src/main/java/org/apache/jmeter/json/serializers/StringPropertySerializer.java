@@ -19,7 +19,7 @@ public class StringPropertySerializer extends JsonSerializer<StringProperty>{
 //		jsonGen.write
 		jsonGen.writeStartObject();
 		
-		jsonGen.writeStringField("name", prop.getName());
+//		jsonGen.writeStringField("name", prop.getName());
 		jsonGen.writeStringField("value", prop.getStringValue());
 		
 		jsonGen.writeEndObject();
