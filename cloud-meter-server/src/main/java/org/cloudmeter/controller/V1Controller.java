@@ -1,5 +1,6 @@
 package org.cloudmeter.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
@@ -106,6 +107,15 @@ public class V1Controller {
     	if(name == null || name.isEmpty()){
     		return new TestPlanModel();
     	}else{
+    		File testplan = new File("./testplans/" + name);
+			try {
+				HashTree tree = SaveService.loadTree(testplan);
+				return new TestPlanModel(tree);
+				
+			} catch (IOException e) {
+				log.error("Couldn't read file for tesplan {}. Message is {}", testplan, e.getMessage());
+			}
+    		
     		return new TestPlanModel();
     	}
     	

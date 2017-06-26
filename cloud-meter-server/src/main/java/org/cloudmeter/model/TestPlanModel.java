@@ -14,8 +14,8 @@ public class TestPlanModel {
 	
 	
 	
-	@JsonProperty("hashTree")
-	@JsonSerialize(using = TestPlanSerializer.class)
+	@JsonProperty("TestPlan")
+	@JsonSerialize(using = HashTreeSerializer.class)
 	private HashTree tree;
 	
 
@@ -24,16 +24,12 @@ public class TestPlanModel {
 	}
 	
 	public TestPlanModel(HashTree tree){
-		if(tree == null){
-			
-			log.debug("creating a new testplan model.");
-			
+		log.debug("creating a new testplan model.");
+		
+		if(tree == null){	
 			this.tree = new HashTree(new TestPlan("Test Plan"));
-			
 		}else{
-			
-			
-			
+			this.tree = tree;
 		}
 		
 	}
