@@ -15,4 +15,4 @@
 *.log
 
 change_logger.sh
-cloudmeter-server/testplans
+cloud-meter-server/testplans
