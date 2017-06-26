@@ -21,10 +21,14 @@ package org.apache.jmeter.testelement.property;
 import java.util.Collection;
 import java.util.Map;
 
+import org.apache.jmeter.json.serializers.PropertySerializer;
 import org.apache.jmeter.testelement.TestElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(using = PropertySerializer.class)
 public abstract class AbstractProperty implements JMeterProperty {
     private static final long serialVersionUID = 240L;
 

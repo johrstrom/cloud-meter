@@ -95,7 +95,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
      *
      * @return functional mode
      */
-    @JsonInclude(Include.ALWAYS)
+    @JsonIgnore
     public boolean isFunctionalMode() {
         return getPropertyAsBoolean(FUNCTIONAL_MODE);
     }
@@ -151,6 +151,7 @@ public class TestPlan extends AbstractTestElement implements Serializable, TestS
      *
      * @return mode
      */
+    @JsonIgnore
     public static boolean getFunctionalMode() {
         return functionalMode;
     }

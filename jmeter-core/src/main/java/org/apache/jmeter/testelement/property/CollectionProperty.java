@@ -22,8 +22,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+
+import org.apache.jmeter.json.serializers.PropertySerializer;
 import org.apache.jmeter.testelement.TestElement;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(using = PropertySerializer.class)
 public class CollectionProperty extends MultiProperty {
 
     private static final long serialVersionUID = 221L; // Remember to change this when the class changes ...

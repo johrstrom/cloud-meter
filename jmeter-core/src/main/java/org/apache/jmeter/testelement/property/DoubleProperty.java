@@ -18,11 +18,16 @@
 
 package org.apache.jmeter.testelement.property;
 
+
+import org.apache.jmeter.json.serializers.PropertySerializer;
 import org.apache.jmeter.testelement.TestElement;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * @version $Revision: 1730117 $
  */
+@JsonSerialize(using = PropertySerializer.class)
 public class DoubleProperty extends NumberProperty {
     private static final long serialVersionUID = 240L;
 

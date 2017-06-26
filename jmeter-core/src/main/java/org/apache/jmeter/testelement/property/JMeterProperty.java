@@ -20,12 +20,16 @@ package org.apache.jmeter.testelement.property;
 
 import java.io.Serializable;
 
+import org.apache.jmeter.json.serializers.PropertySerializer;
 import org.apache.jmeter.testelement.TestElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonSerialize(using = PropertySerializer.class)
 public interface JMeterProperty extends Serializable, Cloneable, Comparable<JMeterProperty> {
     /**
      * Returns whether the property is a running version.
@@ -40,7 +44,7 @@ public interface JMeterProperty extends Serializable, Cloneable, Comparable<JMet
      *
      * @return the name of the property
      */
-    @JsonProperty("name")
+    @JsonIgnore
     String getName();
 
     /**
