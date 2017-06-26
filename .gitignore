@@ -16,3 +16,4 @@
 
 change_logger.sh
 cloud-meter-server/testplans
+cloud-meter-server/*.json
