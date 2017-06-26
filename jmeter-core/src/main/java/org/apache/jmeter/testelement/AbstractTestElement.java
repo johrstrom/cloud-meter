@@ -169,6 +169,7 @@ public abstract class AbstractTestElement implements TestElement, Serializable, 
     }
 
     @Override
+    @JsonIgnore
     public String getName() {
         return getPropertyAsString(TestElement.NAME);
     }
@@ -179,11 +180,13 @@ public abstract class AbstractTestElement implements TestElement, Serializable, 
     }
 
     @Override
+    @JsonIgnore
     public String getComment(){
         return getProperty(TestElement.COMMENTS).getStringValue();
     }
     
     @Override
+    @JsonIgnore
     public String getTestClass(){
     	return getProperty(TestElement.TEST_CLASS).getStringValue();
     }
