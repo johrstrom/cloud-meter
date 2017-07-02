@@ -7,17 +7,15 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-//@EnableWebMvc
-//@EnableWebSocket
 public class CloudMeterConfig extends WebMvcConfigurerAdapter {
 //	implements WebSocketConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		super.addResourceHandlers(registry);
+		super.addResourceHandlers(registry);
 		
-//		registry.addResourceHandler("/css/**").addResourceLocations("classpath:/css/");
-//		registry.addResourceHandler("/static/html/**").addResourceLocations("classpath:/html/");
+		registry.addResourceHandler("/css/**").addResourceLocations("classpath:/css/");
+		registry.addResourceHandler("/static/html/**").addResourceLocations("classpath:/html/");
 		
 	}
 	

@@ -5,18 +5,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 import javax.ws.rs.QueryParam;
 
 import org.apache.jmeter.engine.JMeterEngineException;
-import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.save.SaveService;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.engine.CloudMeterEngine;
-import org.cloudmeter.messaging.SampleResultMessage;
 import org.cloudmeter.model.TestPlanModel;
 import org.cloudmeter.model.request.RunRequest;
 import org.cloudmeter.model.response.RunResultModel;
@@ -28,7 +25,6 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,7 +37,7 @@ public class V1Controller {
 
 	private static final Logger log = LoggerFactory.getLogger(V1Controller.class);
 	
-	Map<String, CloudMeterEngine> cache = new ConcurrentHashMap();
+	Map<String, CloudMeterEngine> cache = new ConcurrentHashMap<String, CloudMeterEngine>();
 	
 	static {
 		try{
