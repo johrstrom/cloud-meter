@@ -14,7 +14,7 @@ public class TestPlanModel {
 	
 	
 	
-	@JsonProperty("TestPlan")
+	@JsonProperty("CloudMeterTestPlan")
 	@JsonSerialize(using = HashTreeSerializer.class)
 	private HashTree tree;
 	

@@ -4,12 +4,12 @@ var CloudMeter = angular.module("CloudMeter", [] );
 CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scope,$http) {
 	
 	$scope.fileopts = ["Open", "New", "Save"];
-	$scope.testplan = {};
+	$scope.testplan = [{}];
 	
 	$scope.GetTestPlan = function () {
-		var promise = $http.get("http://localhost:8080/api/v1/testplan?name=blank.jmx");
+		var promise = $http.get("http://localhost:8080/api/v1/testplan?name=cm-test.jmx");
 		promise.then(function successCallBack(response){
-			$scope.testplan = response.data.TestPlan
+			$scope.testplan = response.data.CloudMeterTestPlan
 			
 		}, function errorCallback(error){
 			
@@ -23,6 +23,20 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
 		} 
 		console.log("new option is " + $scope.selectedFileOption)
 	};
+	
+	
+    $scope.deleteTestElement = function(data) {
+        data.nodes = [];
+    };
+    
+    $scope.addTestElement = function(data) {
+        var post = data.nodes.length + 1;
+        var newName = data.name + '-' + post;
+        data.nodes.push({name: newName,nodes: []});
+    };
+    
+    
+    $scope.tree = [{name: "Node", nodes: []}];
 	
 	
 }]);

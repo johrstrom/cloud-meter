@@ -20,7 +20,19 @@
 		
 		<br/>
 		
-		
+		<script type="text/ng-template"  id="test_element_renderer.html">
+    		{{ node.testelement.properties["TestElement.name"].value }}
+    		<!-- <button ng-click="addTestElement(data)">Add node</button>
+    		<button ng-click="deleteTestElement(data)" ng-show="data.nodes.length > 0">Delete nodes</button> -->
+    		<ul>
+        		<li ng-repeat="node in node.hashTree" ng-include="'test_element_renderer.html'"></li>
+    		</ul>
+		</script>
+
+
+		<div ng-model="workingTestPlan">
+			 <li ng-repeat="node in testplan" ng-include="'test_element_renderer.html'"></li>
+		</div>
 
 	</div>
 	
