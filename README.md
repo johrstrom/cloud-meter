@@ -3,9 +3,15 @@
 # Introduction
 
 This is an attempt to port the [Apache Jmeter](http://jmeter.apache.org/) project to a  
-[Spring](http://spring.io/projects) web applciation. The design goals behind the project 
-are to 1; use a web interface instead of a standalone client and 2; have a more distributed 
-layout for users.  
+[Spring](http://spring.io/projects) web applciation. 
+
+The reasons and design goals for this endeavor are:
+* Distributed Architecture
+** JMeter already runs distributed tests, but in a large organization it's hard to share testplans or compute 
+resources to run them. 
+** CloudMeter is entirely distributed so everyone can access testplans (given access roles), schedule tests to be 
+run on available resources, store and share results easily.
+
 
 The end goal for this layout would look something like this: Users connect throw a web browser
 to a cloud-meter server (either locally or clustered across a network). They store testplans in a
@@ -15,10 +21,15 @@ interact with other users test plans. Distributed test runs behave much like the
 # Disclaimer
 
 This project is still in 0.0.1-SNAPSHOT version, meaning if you happen to be reading this you're probably 
-about 6 months early. It does not work. It may do very little other than boot and it may not even do that.
+about 4 years early. It does not work. It may do very little other than boot and it may not even do that.
 
 I can make no guarantees about the working state of this project or the code.  If it's here, it compiles, 
 but that's about it at this time. I intend to be working on it a lot in the future and this README will change as 
 the maturity of this project increases.
 
-	
+# Current Status
+
+Right now I'm working a lot on the UI in js/Angular and the testplan api that backups up retrieving and saving test plans. 
+
+At this moment I'm mostly working on the static html pages (in cloud-meter-server/src/main/resources/scratch) so I can modify the frontend
+js and simply refresh my browser without having to recompile the jar.
