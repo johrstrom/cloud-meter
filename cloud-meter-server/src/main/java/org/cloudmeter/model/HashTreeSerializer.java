@@ -1,9 +1,7 @@
 package org.cloudmeter.model;
 
 import java.io.IOException;
-import java.util.LinkedList;
 
-import org.apache.jmeter.testelement.TestElement;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
 import org.slf4j.Logger;
@@ -24,17 +22,15 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		
 		log.debug("serializing a hash tree.");
 		
-		
-		generator.writeStartObject();
+		generator.writeStartArray();
 		tree.traverse(new JSonTraverser(generator));
-		generator.writeEndObject();
+		generator.writeEndArray();
 		
 	}
 	
 	class JSonTraverser implements HashTreeTraverser {
 
 		private JsonGenerator jsonGen;
-		 private final LinkedList<TestElement> stack = new LinkedList<>();
 		
 		JSonTraverser(JsonGenerator arg1){
 			this.jsonGen = arg1;
@@ -44,17 +40,9 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		public void addNode(Object node, HashTree subTree) {
 			log.debug("Adding node {} to tree.", node.getClass().getSimpleName());			
 			
-			stack.addFirst((TestElement) node);
-			
-			if(isNodeTestBench((TestElement) node)) {
-				return;
-			}
-			
 			try {
-				jsonGen.writeFieldName("hashTree");
-				jsonGen.writeStartObject();
+				jsonGen.writeStartArray();
 				
-				jsonGen.writeFieldName(node.getClass().getName());
 				jsonGen.writeObject(node);
 				
 			} catch (IOException e) {
@@ -72,14 +60,9 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		@Override
 		public void subtractNode() {
 			log.debug("Subtracting node");
-			TestElement ele = this.stack.pop();
-			
-			if(isNodeTestBench(ele)) {
-				return;
-			}
 			
 			try {
-				this.jsonGen.writeEndObject();
+				this.jsonGen.writeEndArray();
 			} catch (IOException e) {
 				log.error("Cannot finish node. Exception type: {}, message {},", 
 						e.getClass().getName(), e.getMessage());
@@ -89,20 +72,9 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		@Override
 		public void processPath() {
 			log.debug("processing path. ");
-//			try {
-//				this.jsonGen.writeEndObject();
-//			} catch (IOException e) {
-//				log.error("Cannot finish hashtree. Exception type: {}, message {},", 
-//						e.getClass().getName(), e.getMessage());
-//			}
 		}
 		
 	}
 	
-	
-	private boolean isNodeTestBench(TestElement ele) {
-		return ele.getPropertyAsString("TestElement.name").equals("WorkBench");
-	}
-
 
 }
