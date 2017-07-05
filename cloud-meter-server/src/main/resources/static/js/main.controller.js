@@ -1,2 +1,0 @@
-
-//var CloudMeterController = angular.controller(); 

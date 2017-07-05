@@ -6,21 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="../js/main.app.js"></script>
-<!-- <script src="../js/main.controller.js"></script> -->
 <title>CloudMeter</title>
 </head>
 
 <body>
 
-	<div ng-app="CloudMeter" ng-controller="CloudMeterController">
+	<div ng-app="CloudMeter" ng-controller="CloudMeterController" >
 		<label for="fileOptsSelect">File Options</label><br>
 		
-		<select name="fileOptsSelect" ng-model="opt" ng-change="fileOptionSelected(option)">
-			<option ng-repeat="option in fileopts" 
-				ng-value="{{option}}" >{{option}}</option>
+		<select name="fileOptsSelect" ng-model="selectedFileOption" ng-change="fileOptionsChanged();" >
+			 <option ng-repeat="option in fileopts">{{option}}</option> 
 		</select>
-
-		<testplan-ui />
+		
+		<br/>
+		
+		
 
 	</div>
 	

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import org.apache.jmeter.testelement.TestElement;
-import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
 import org.slf4j.Logger;
@@ -35,7 +34,7 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 	class JSonTraverser implements HashTreeTraverser {
 
 		private JsonGenerator jsonGen;
-//		 private final LinkedList<TestElement> stack = new LinkedList<>();
+		 private final LinkedList<TestElement> stack = new LinkedList<>();
 		
 		JSonTraverser(JsonGenerator arg1){
 			this.jsonGen = arg1;
@@ -44,7 +43,13 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		@Override
 		public void addNode(Object node, HashTree subTree) {
 			log.debug("Adding node {} to tree.", node.getClass().getSimpleName());			
-				
+			
+			stack.addFirst((TestElement) node);
+			
+			if(isNodeTestBench((TestElement) node)) {
+				return;
+			}
+			
 			try {
 				jsonGen.writeFieldName("hashTree");
 				jsonGen.writeStartObject();
@@ -67,7 +72,12 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		@Override
 		public void subtractNode() {
 			log.debug("Subtracting node");
-//			this.stack.pop();
+			TestElement ele = this.stack.pop();
+			
+			if(isNodeTestBench(ele)) {
+				return;
+			}
+			
 			try {
 				this.jsonGen.writeEndObject();
 			} catch (IOException e) {
@@ -87,6 +97,11 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 //			}
 		}
 		
+	}
+	
+	
+	private boolean isNodeTestBench(TestElement ele) {
+		return ele.getPropertyAsString("TestElement.name").equals("WorkBench");
 	}
 
 
