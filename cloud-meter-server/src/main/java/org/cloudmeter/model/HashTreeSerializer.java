@@ -2,7 +2,12 @@ package org.cloudmeter.model;
 
 import java.io.IOException;
 
-import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.control.GenericController;
+import org.apache.jmeter.reporters.AbstractListenerElement;
+import org.apache.jmeter.samplers.AbstractSampler;
+import org.apache.jmeter.testelement.TestPlan;
+import org.apache.jmeter.testelement.WorkBench;
+import org.apache.jmeter.threads.AbstractThreadGroup;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
 import org.slf4j.Logger;
@@ -48,27 +53,17 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 
 			
 			try {
-//				TestElement ele =  (TestElement) node;
-//				if(isNodeWorkBench((TestElement) node)){
-//					jsonGen.writeEndObject();	//close the testplan object
-//					jsonGen.writeObjectFieldStart("workbench");	
-//				}
+
 				jsonGen.writeStartObject();
 				jsonGen.writeObjectField("testelement", node);
+				jsonGen.writeStringField("type", determineElementType(node));
 				jsonGen.writeArrayFieldStart("hashTree");
-				
-				
-				
-				
-				
+								
 			} catch (IOException e) {
 				
 				log.error("Cannot add node {}. Exception type: {}, message {}.",
 						node.getClass().getSimpleName(), e.getClass().getName(), e.getMessage());
 			}
-//			  catch(ClassCastException e) {
-//				log.error("Can't cast node object to test element. Message {}.", e.getMessage()));
-//			}
 				
 
 		}
@@ -90,21 +85,26 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		@Override
 		public void processPath() {
 			log.debug("processing path. ");
-			
-//			try {
-//				this.jsonGen.writeEndArray();
-//			} catch (IOException e) {
-//				log.error("Cannot finish node. Exception type: {}, message {},", 
-//						e.getClass().getName(), e.getMessage());
-//			}
 		}
 		
-		
-//		private boolean isNodeWorkBench(TestElement ele) {
-//			return ele.getPropertyAsString("TestElement.name").equals("WorkBench");
-//		}
-
-		
+		private String determineElementType(Object ele) {
+			if (ele instanceof AbstractSampler) {
+				return "sampler";
+			}else if (ele instanceof AbstractListenerElement) {
+				return "listener";
+			}else if(ele instanceof AbstractThreadGroup) {
+				return "threadgroup";
+			}else if(ele instanceof GenericController) {
+				return "controller";
+			}else if(ele instanceof TestPlan) {
+				return "testplan";
+			}else if(ele instanceof WorkBench) {
+				return "workbench";
+			}else {
+				return "unknown";
+			}
+			
+		}
 		
 	}
 	

@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/home.css">
-  <script src="/webjars/jquery/jquery.min.js"></script>
-  <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-  <title>CloudMeter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/testplan.css">
+<!--   <script src="/webjars/jquery/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/main.app.js"></script>
+<title>CloudMeter</title>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="row">
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="filedropdown"
-    	 data-toggle="dropdown">File<span class="caret"></span></button>
-       <ul class="dropdown-menu" role="menu" aria-labelledby="filedropdown">
-         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Close</a></li>
-         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open</a></li>
-         <li role="presentation" class="divider"></li>
-         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Save</a></li>
-       </ul>
-     </div>
-   </div> <!-- top menu row -->
-</div>
+	<div ng-app="CloudMeter" ng-controller="CloudMeterController">
+		<label for="fileOptsSelect">File Options</label><br> <select name="fileOptsSelect"
+			ng-model="selectedFileOption" ng-change="fileOptionsChanged();">
+			<option ng-repeat="option in fileopts">{{option}}</option>
+		</select> <br />
 
-<!--
-<div class="container-fluid">
-  <h1>Hello World!</h1>
-  <p>Resize the browser window to see the effect.</p>
-  <div class="row">
-    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-    <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
-    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-  </div>
-</div>
--->
+		<script type="text/ng-template" id="test_element_renderer.html">
+			{{ node.testelement.properties["TestElement.name"].value }}
+    		<ul class="base-test-element" ng-class="getCSSCLassForElement(node)" >
+        		<li ng-repeat="node in node.hashTree" ng-include="'test_element_renderer.html'" />
+    		</ul>
+		</script>
+
+
+		<div ng-model="workingTestPlan">
+			<li ng-repeat="node in testplan" ng-include="'test_element_renderer.html'"></li>
+		</div>
+
+	</div>
 
 </body>
 </html>
