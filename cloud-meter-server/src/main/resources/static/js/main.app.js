@@ -35,6 +35,11 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
         data.nodes.push({name: newName,nodes: []});
     };
     
+    $scope.getCSSCLassForElement = function(element) {
+    	console.log("get css called")
+    	return "sampler"
+    }
+    
     
     $scope.tree = [{name: "Node", nodes: []}];
 	

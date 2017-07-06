@@ -1,0 +1,8 @@
+
+.base-test-element {
+	
+}
+
+.base-test-element.sampler {
+    list-style-image: url('../images/tree/sampler.png');
+}

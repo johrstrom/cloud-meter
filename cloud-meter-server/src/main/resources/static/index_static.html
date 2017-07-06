@@ -4,8 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/testplan.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="../js/main.app.js"></script>
+<script src="js/main.app.js"></script>
 <title>CloudMeter</title>
 </head>
 
@@ -18,14 +19,12 @@
 			 <option ng-repeat="option in fileopts">{{option}}</option> 
 		</select>
 		
-		<br/>
+		<br/>		
 		
 		<script type="text/ng-template"  id="test_element_renderer.html">
-    		{{ node.testelement.properties["TestElement.name"].value }}
-    		<!-- <button ng-click="addTestElement(data)">Add node</button>
-    		<button ng-click="deleteTestElement(data)" ng-show="data.nodes.length > 0">Delete nodes</button> -->
-    		<ul>
-        		<li ng-repeat="node in node.hashTree" ng-include="'test_element_renderer.html'"></li>
+			{{ node.testelement.properties["TestElement.name"].value }}
+    		<ul class="base-test-element" ng-class="getCSSCLassForElement(node)" >
+        		<li ng-repeat="node in node.hashTree" ng-include="'test_element_renderer.html'" />
     		</ul>
 		</script>
 
