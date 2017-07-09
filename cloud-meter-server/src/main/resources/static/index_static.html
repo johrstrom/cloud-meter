@@ -21,16 +21,20 @@
 		
 		<br/>		
 		
-		<script type="text/ng-template"  id="test_element_renderer.html">
+		<script type="text/ng-template"  id="test_element_renderer.html" >
 			{{ node.testelement.properties["TestElement.name"].value }}
-    		<ul class="base-test-element" ng-class="getCSSCLassForElement(node)" >
-        		<li ng-repeat="node in node.hashTree" ng-include="'test_element_renderer.html'" />
+    		<ul>
+        		<li ng-repeat="node in node.hashTree" ng-include="'test_element_renderer.html'" 
+				 	class="base-test-element" ng-class="getCSSCLassForElement(node)" />
     		</ul>
 		</script>
 
 
-		<div ng-model="workingTestPlan">
-			 <li ng-repeat="node in testplan" ng-include="'test_element_renderer.html'"></li>
+		<div ng-model="workingTestPlan" >
+			 <ul>
+			 	<li class="base-test-element" ng-class="getCSSCLassForElement(node)" 
+			 		ng-repeat="node in testplan" ng-include="'test_element_renderer.html'" />
+			 </ul>
 		</div>
 
 	</div>

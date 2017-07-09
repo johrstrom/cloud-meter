@@ -36,8 +36,8 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
     };
     
     $scope.getCSSCLassForElement = function(element) {
-    	console.log("get css called")
-    	return "sampler"
+    	console.log("get css returning " + element['type']);
+    	return element['type']; 
     }
     
     

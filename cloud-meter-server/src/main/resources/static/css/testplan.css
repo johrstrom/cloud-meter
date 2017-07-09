@@ -3,6 +3,42 @@
 	
 }
 
+.base-test-element.assertion {
+    list-style-image: url('../images/tree/assertion.png');
+}
+
+.base-test-element.config {
+    list-style-image: url('../images/tree/config.png');
+}
+
+.base-test-element.lisenter {
+    list-style-image: url('../images/tree/lisenter.png');
+}
+
+.base-test-element.post-processor {
+    list-style-image: url('../images/tree/post-processor.png');
+}
+
+.base-test-element.pre-processor {
+    list-style-image: url('../images/tree/pre-processor.png');
+}
+
 .base-test-element.sampler {
     list-style-image: url('../images/tree/sampler.png');
+}
+
+.base-test-element.testplan {
+    list-style-image: url('../images/tree/testplan.png');
+}
+
+.base-test-element.thread-group {
+    list-style-image: url('../images/tree/thread-group.png');
+}
+
+.base-test-element.timer {
+    list-style-image: url('../images/tree/timer.png');
+}
+
+.base-test-element.workbench {
+    list-style-image: url('../images/tree/workbench.png');
 }
