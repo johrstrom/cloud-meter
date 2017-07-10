@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/testplan.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="js/main.app.js"></script>
+<script src="js/contextMenu.js"></script>
 <title>CloudMeter</title>
 </head>
 
@@ -25,7 +26,8 @@
 			{{ node.testelement.properties["TestElement.name"].value }}
     		<ul>
         		<li ng-repeat="node in node.hashTree" ng-include="'test_element_renderer.html'" 
-				 	class="base-test-element" ng-class="getCSSCLassForElement(node)" />
+				 	class="base-test-element" ng-class="getCSSCLassForElement(node)" 
+ 					context-menu="treeOptionsForNode(node)" />
     		</ul>
 		</script>
 
@@ -33,7 +35,8 @@
 		<div ng-model="workingTestPlan" >
 			 <ul>
 			 	<li class="base-test-element" ng-class="getCSSCLassForElement(node)" 
-			 		ng-repeat="node in testplan" ng-include="'test_element_renderer.html'" />
+			 		ng-repeat="node in testplan" ng-include="'test_element_renderer.html'" 
+			 		context-menu="treeOptionsForNode(node)" />
 			 </ul>
 		</div>
 

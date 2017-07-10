@@ -3,6 +3,7 @@ package org.cloudmeter.model;
 import java.io.IOException;
 
 import org.apache.jmeter.assertions.Assertion;
+import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.control.Controller;
 import org.apache.jmeter.control.GenericController;
 import org.apache.jmeter.processor.PostProcessor;
@@ -95,7 +96,7 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		private String determineElementType(Object ele) {
 			if (ele instanceof Assertion) {
 				return "assertion";
-			}else if (ele instanceof Controller) { 
+			}else if (ele instanceof ConfigTestElement) { 
 				return "config";
 			}else if (ele instanceof AbstractListenerElement) {
 				return "listener";

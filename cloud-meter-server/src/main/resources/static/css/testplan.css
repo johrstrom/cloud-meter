@@ -1,6 +1,6 @@
 
 .base-test-element {
-	
+	cursor: pointer;
 }
 
 .base-test-element.assertion {
@@ -41,4 +41,17 @@
 
 .base-test-element.workbench {
     list-style-image: url('../images/tree/workbench.png');
+}
+
+
+.testplan-menu-tree {
+	cursor: pointer;
+	
+	border: 1px solid black;
+/*     margin-top: 100px; */
+/*     margin-bottom: 100px; */
+	width: 100px;
+/*     margin-right: 0px; */
+/*     margin-left: 0px; */
+    background-color: lightblue;
 }
