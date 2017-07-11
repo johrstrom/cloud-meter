@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import org.apache.jmeter.assertions.Assertion;
 import org.apache.jmeter.config.ConfigTestElement;
-import org.apache.jmeter.control.Controller;
-import org.apache.jmeter.control.GenericController;
 import org.apache.jmeter.processor.PostProcessor;
 import org.apache.jmeter.processor.PreProcessor;
 import org.apache.jmeter.reporters.AbstractListenerElement;

@@ -3,6 +3,7 @@ package org.cloudmeter.controller;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -11,16 +12,21 @@ import javax.ws.rs.QueryParam;
 import org.apache.jmeter.engine.JMeterEngineException;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.save.SaveService;
+import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.util.JMeterUtils;
+import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.engine.CloudMeterEngine;
+import org.cloudmeter.model.TestElementModel;
 import org.cloudmeter.model.TestPlanModel;
 import org.cloudmeter.model.request.RunRequest;
 import org.cloudmeter.model.response.RunResultModel;
+import org.cloudmeter.service.CloudMeterService;
 import org.cloudmeter.utils.CloudMeterEngineException;
 import org.cloudmeter.utils.CloudMeterStartup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -39,7 +45,10 @@ public class V1Controller {
 
 	private static final Logger log = LoggerFactory.getLogger(V1Controller.class);
 	
-	Map<String, CloudMeterEngine> cache = new ConcurrentHashMap<String, CloudMeterEngine>();
+	private static final Map<String, CloudMeterEngine> cache = new ConcurrentHashMap<String, CloudMeterEngine>();
+	
+	@Autowired
+	private CloudMeterService service;
 	
 	static {
 		try{
@@ -118,5 +127,17 @@ public class V1Controller {
     	}
     	
     }
+    
+    @RequestMapping(value = "/testelement", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody TestElementModel newTestElement(
+    		@QueryParam(value = "name") String name,
+    		@QueryParam(value = "type") String type){
+    	
+    	return this.service.newTestElement(name, type);
+    	
+    }
+    
+    
+
 
 }

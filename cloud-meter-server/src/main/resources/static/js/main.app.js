@@ -36,7 +36,13 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
 						{
 							html: menuTreeItemHtml('Thread Group'),
 							click: function ($itemScope, $event, modelValue, text, $li) {
-								
+								var promise = $http.get("http://localhost:8080/api/v1/testplan?name=cm-test.jmx");
+								promise.then(function successCallBack(response){
+									$itemScope.testplan = response.data.CloudMeterTestPlan
+									
+								}, function errorCallback(error){
+									
+								});
 							},
 						},
 					],
