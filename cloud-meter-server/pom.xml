@@ -67,6 +67,11 @@
 			<artifactId>jmeter-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+                <dependency>
+                        <groupId>org.cloudmeter</groupId>
+                        <artifactId>cloud-meter-core</artifactId>
+                        <version>${project.version}</version>
+                </dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>

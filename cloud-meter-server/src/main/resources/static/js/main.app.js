@@ -36,9 +36,9 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
 						{
 							html: menuTreeItemHtml('Thread Group'),
 							click: function ($itemScope, $event, modelValue, text, $li) {
-								var promise = $http.get("http://localhost:8080/api/v1/testplan?name=cm-test.jmx");
+								var promise = $http.get("http://localhost:8080/api/v1/testelement?type=thread-group");
 								promise.then(function successCallBack(response){
-									$itemScope.testplan = response.data.CloudMeterTestPlan
+//									$itemScope.testplan = response.data.CloudMeterTestPlan
 									
 								}, function errorCallback(error){
 									

@@ -8,11 +8,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class TestElementModel {
 	
-	@JsonProperty("testelement")
-	@JsonSerialize(using = TestElementSerializer.class)
+//	@JsonProperty("testelement")
+//	@JsonSerialize(using = TestElementSerializer.class)
 	private AbstractTestElement element;
-	
-	
+		
 	private String type;
 	
 	@JsonSerialize(using = HashTreeSerializer.class)

@@ -15,6 +15,8 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 	
 
 	private static final Map<String, Class<? extends AbstractTestElement>> classTypeLookup = typeToClassMap();
+	private static final Map<Class<? extends AbstractTestElement>, String> elementNameLookup = nameToClassMap();
+//	private static final Map<Class<? extends AbstractTestElement>, String> elementNameLookup = nameToClassMap();
     
 	
 	@Override
@@ -51,11 +53,21 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     	
     	return map;
     }
+	
+	private static Map<Class<? extends AbstractTestElement>, String> nameToClassMap() {
+    	HashMap<Class<? extends AbstractTestElement>, String>  map = new HashMap<>();
+    	
+    	map.put(ThreadGroup.class, "Thread Group");
+    	
+    	return map;
+    }
 
 
 	private void setElementName(final String name, TestElement ele) {
 		if(name != null && !name.equals("")) {
 			ele.setName(name);
+		}else {
+			ele.setName(elementNameLookup.get(ele));
 		}
 	}
 

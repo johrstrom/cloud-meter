@@ -30,6 +30,7 @@
 		<module>jmeter-protocols</module>
 		<module>jmeter-monitor</module>
 		<module>jmeter-junit</module>
+		<module>cloud-meter-core</module>
 		<module>cloud-meter-server</module>
 	</modules>
 
