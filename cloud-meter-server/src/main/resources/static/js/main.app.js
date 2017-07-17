@@ -36,9 +36,11 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
 						{
 							html: menuTreeItemHtml('Thread Group'),
 							click: function ($itemScope, $event, modelValue, text, $li) {
-								var promise = $http.get("http://localhost:8080/api/v1/testelement?type=thread-group");
+								
+								var promise = $http.get("http://localhost:8080/api/v1/testelement?type=thread-group&name=Thread Group");
 								promise.then(function successCallBack(response){
-//									$itemScope.testplan = response.data.CloudMeterTestPlan
+																		
+									$itemScope.node.hashTree.push(response.data);
 									
 								}, function errorCallback(error){
 									
@@ -88,7 +90,12 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
     }
     
     $scope.getCSSCLassForElement = function(element) {
-    	return element['type']; 
+    	
+    	if (element !== undefined)
+    		return element['type'];
+    	else 
+    		return "";
+    	
     }
     
 
@@ -96,18 +103,6 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
 	
 }]);
 
-
-CloudMeter.directive('ngRightClick', function($parse) {
-    return function(scope, element, attrs) {
-        var fn = $parse(attrs.ngRightClick);
-        element.bind('contextmenu', function(event) {
-            scope.$apply(function() {
-                event.preventDefault();
-                fn(scope, {$event:event});
-            });
-        });
-    };
-});
 
 
 

@@ -10,7 +10,7 @@ public class TestElementModel {
 	
 //	@JsonProperty("testelement")
 //	@JsonSerialize(using = TestElementSerializer.class)
-	private AbstractTestElement element;
+	private AbstractTestElement testelement;
 		
 	private String type;
 	
@@ -18,11 +18,11 @@ public class TestElementModel {
 	private HashTree hashTree;
 	
 	public AbstractTestElement getElement() {
-		return element;
+		return testelement;
 	}
 	
-	public void setElement(AbstractTestElement element) {
-		this.element = element;
+	public void setElement(AbstractTestElement testelement) {
+		this.testelement = testelement;
 	}
 
 	public String getType() {
