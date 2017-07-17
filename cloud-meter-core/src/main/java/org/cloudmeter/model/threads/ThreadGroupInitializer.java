@@ -6,14 +6,20 @@ import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.LongProperty;
 import org.apache.jmeter.threads.AbstractThreadGroup;
 import org.apache.jmeter.threads.ThreadGroup;
-import org.cloudmeter.model.TestElementInitizer;
+import org.cloudmeter.model.ModelInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ThreadGroupInitializer implements TestElementInitizer {
+public class ThreadGroupInitializer implements ModelInitializer {
 
+	
+	private static final Logger log = LoggerFactory.getLogger(ThreadGroupInitializer.class);
+	
 	@Override
 	public void initilizeElement(TestElement ele) {
+		
         if (ele instanceof AbstractThreadGroup) {
             ((AbstractThreadGroup) ele).setSamplerController(createController());
         }
@@ -28,13 +34,15 @@ public class ThreadGroupInitializer implements TestElementInitizer {
         ele.setProperty(new BooleanProperty(ThreadGroup.SCHEDULER, true));
         ele.setProperty(ThreadGroup.DURATION, "1");
         ele.setProperty(ThreadGroup.DELAY, "1");
-		
+        
 	}
 	
 	
 	
 	private LoopController createController() {
 		LoopController lc = new LoopController();
+		
+		lc.setLoops(LoopController.INFINITE_LOOP_COUNT);
 		
 		return lc;
 	}

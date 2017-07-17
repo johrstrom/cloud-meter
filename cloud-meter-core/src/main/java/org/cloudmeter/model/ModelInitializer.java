@@ -2,7 +2,7 @@ package org.cloudmeter.model;
 
 import org.apache.jmeter.testelement.TestElement;
 
-public interface TestElementInitizer {
+public interface ModelInitializer {
 
 		public void initilizeElement(TestElement ele);
 		

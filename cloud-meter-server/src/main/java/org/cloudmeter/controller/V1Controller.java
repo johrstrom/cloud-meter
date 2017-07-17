@@ -3,7 +3,6 @@ package org.cloudmeter.controller;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -12,9 +11,7 @@ import javax.ws.rs.QueryParam;
 import org.apache.jmeter.engine.JMeterEngineException;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.save.SaveService;
-import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.engine.CloudMeterEngine;
 import org.cloudmeter.model.TestElementModel;
