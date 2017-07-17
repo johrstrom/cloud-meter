@@ -23,7 +23,8 @@ public class ThreadGroupInitializer implements ModelInitializer {
         if (ele instanceof AbstractThreadGroup) {
             ((AbstractThreadGroup) ele).setSamplerController(createController());
         }
-//
+        
+        ele.setName("Thread Group");
         ele.setProperty(AbstractThreadGroup.NUM_THREADS, "1");
         ele.setProperty(ThreadGroup.RAMP_TIME, "1");
         ele.setProperty(new LongProperty(ThreadGroup.START_TIME, System.currentTimeMillis()));
