@@ -67,8 +67,6 @@ import org.apache.jmeter.protocol.http.control.Authorization;
 import org.apache.jmeter.protocol.http.control.Header;
 import org.apache.jmeter.protocol.http.control.HeaderManager;
 import org.apache.jmeter.protocol.http.control.RecordingController;
-import org.apache.jmeter.protocol.http.gui.AuthPanel;
-import org.apache.jmeter.protocol.http.gui.HeaderPanel;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampleResult;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerFactory;
@@ -115,10 +113,6 @@ public class ProxyControl extends GenericController {
     private static final String TRANSACTION_CONTROLLER_GUI = TransactionControllerGui.class.getName();
 
     private static final String LOGIC_CONTROLLER_GUI = LogicControllerGui.class.getName();
-
-    private static final String HEADER_PANEL = HeaderPanel.class.getName();
-
-    private static final String AUTH_PANEL = AuthPanel.class.getName();
 
     private static final String AUTH_MANAGER = AuthManager.class.getName();
 
@@ -847,7 +841,6 @@ public class ProxyControl extends GenericController {
      */
     private AuthManager newAuthorizationManager(Authorization authorization) throws IllegalUserActionException {
         AuthManager authManager = new AuthManager();
-        authManager.setProperty(TestElement.GUI_CLASS, AUTH_PANEL);
         authManager.setProperty(TestElement.TEST_CLASS, AUTH_MANAGER);
         authManager.setName("HTTP Authorization Manager");
         authManager.addAuth(authorization);
@@ -1160,7 +1153,6 @@ public class ProxyControl extends GenericController {
                         for (int i = 0; subConfigs != null && i < subConfigs.length; i++) {
                             if (subConfigs[i] instanceof HeaderManager) {
                                 final TestElement headerManager = subConfigs[i];
-                                headerManager.setProperty(TestElement.GUI_CLASS, HEADER_PANEL);
                                 treeModel.addComponent(headerManager, newNode);
                             }
                         }

@@ -32,7 +32,6 @@ import org.apache.commons.lang3.CharUtils;
 import org.apache.jmeter.protocol.http.config.MultipartUrlConfig;
 import org.apache.jmeter.protocol.http.control.Header;
 import org.apache.jmeter.protocol.http.control.HeaderManager;
-import org.apache.jmeter.protocol.http.gui.HeaderPanel;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerFactory;
 import org.apache.jmeter.protocol.http.util.ConversionUtils;
@@ -241,7 +240,6 @@ public class HttpRequestHdr {
         }
         manager.setName(JMeterUtils.getResString("header_manager_title")); // $NON-NLS-1$
         manager.setProperty(TestElement.TEST_CLASS, HeaderManager.class.getName());
-        manager.setProperty(TestElement.GUI_CLASS, HeaderPanel.class.getName());
         return manager;
     }
 

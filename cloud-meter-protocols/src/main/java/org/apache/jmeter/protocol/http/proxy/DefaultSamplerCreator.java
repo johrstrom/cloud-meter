@@ -33,7 +33,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.protocol.http.config.MultipartUrlConfig;
-import org.apache.jmeter.protocol.http.control.gui.HttpTestSampleGui;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerFactory;
 import org.apache.jmeter.protocol.http.sampler.PostWriter;
@@ -78,8 +77,6 @@ public class DefaultSamplerCreator extends AbstractSamplerCreator {
             Map<String, String> pageEncodings, Map<String, String> formEncodings) {
         // Instantiate the sampler
         HTTPSamplerBase sampler = HTTPSamplerFactory.newInstance(request.getHttpSamplerName());
-
-        sampler.setProperty(TestElement.GUI_CLASS, HttpTestSampleGui.class.getName());
 
         // Defaults
         sampler.setFollowRedirects(false);
