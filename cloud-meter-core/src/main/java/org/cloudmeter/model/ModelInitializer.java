@@ -4,6 +4,6 @@ import org.apache.jmeter.testelement.TestElement;
 
 public interface ModelInitializer {
 
-		public void initilizeElement(TestElement ele);
+		public TestElement initilizeElement(TestElement ele);
 		
 }

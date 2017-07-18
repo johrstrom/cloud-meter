@@ -22,9 +22,6 @@
 	</dependencyManagement>
 
 
-
-
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -67,11 +64,11 @@
 			<artifactId>jmeter-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-                <dependency>
-                        <groupId>org.cloudmeter</groupId>
-                        <artifactId>cloud-meter-core</artifactId>
-                        <version>${project.version}</version>
-                </dependency>
+		<dependency>
+			<groupId>org.cloudmeter</groupId>
+			<artifactId>cloud-meter-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
@@ -82,7 +79,6 @@
 			<artifactId>jmeter-protocols</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
@@ -95,17 +91,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-websocket</artifactId>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>org.springframework.boot</groupId> -->
-		<!-- <artifactId>spring-boot-starter-annotation</artifactId> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.springframework.boot</groupId> -->
-		<!-- <artifactId>spring-boot-dependencies</artifactId> -->
-		<!-- <type>pom</type> -->
-		<!-- <version>1.4.1.RELEASE</version> -->
-		<!-- <scope>import</scope> -->
-		<!-- </dependency> -->
 	</dependencies>
 
 	<build>

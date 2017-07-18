@@ -3,13 +3,10 @@ package org.cloudmeter.model;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jorphan.collections.HashTree;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class TestElementModel {
 	
-//	@JsonProperty("testelement")
-//	@JsonSerialize(using = TestElementSerializer.class)
 	private AbstractTestElement testelement;
 		
 	private String type;

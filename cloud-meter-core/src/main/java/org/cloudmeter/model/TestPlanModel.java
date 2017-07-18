@@ -11,9 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class TestPlanModel {
 	
 	private static final Logger log = LoggerFactory.getLogger(TestPlanModel.class);
-	
-	
-	
+
 	@JsonProperty("CloudMeterTestPlan")
 	@JsonSerialize(using = HashTreeSerializer.class)
 	private HashTree tree;
