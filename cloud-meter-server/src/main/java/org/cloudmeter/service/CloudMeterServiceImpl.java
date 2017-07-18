@@ -7,7 +7,6 @@ import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jorphan.collections.HashTree;
-import org.cloudmeter.controller.V1Controller;
 import org.cloudmeter.model.TestElementModel;
 import org.cloudmeter.utils.TestElementInitializer;
 import org.slf4j.Logger;
@@ -21,8 +20,6 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 	private static final Logger log = LoggerFactory.getLogger(CloudMeterServiceImpl.class);
 
 	private static final Map<String, Class<? extends AbstractTestElement>> classTypeLookup = typeToClassMap();
-	private static final Map<Class<? extends AbstractTestElement>, String> elementNameLookup = nameToClassMap();
-//	private static final Map<Class<? extends AbstractTestElement>, String> elementNameLookup = nameToClassMap();
     
 	
 	@Autowired
@@ -66,14 +63,6 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     	return map;
     }
 	
-	private static Map<Class<? extends AbstractTestElement>, String> nameToClassMap() {
-    	HashMap<Class<? extends AbstractTestElement>, String>  map = new HashMap<>();
-    	
-    	map.put(ThreadGroup.class, "Thread Group");
-    	
-    	return map;
-    }
-
 
 	private void setElementName(final String name, TestElement ele) {
 		if(name != null && !name.equals("")) {
