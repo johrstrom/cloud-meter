@@ -25,7 +25,7 @@
 	<modules>
 		<module>jmeter-jorphan</module>
 		<module>cloud-meter-core</module>
-		<module>jmeter-components</module>
+		<module>cloud-meter-components</module>
 		<module>jmeter-functions</module>
 		<module>jmeter-protocols</module>
 		<module>jmeter-monitor</module>
