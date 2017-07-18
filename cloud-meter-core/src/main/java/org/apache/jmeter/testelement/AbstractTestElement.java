@@ -19,7 +19,6 @@
 package org.apache.jmeter.testelement;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -28,7 +27,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.jmeter.gui.Searchable;
 import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.CollectionProperty;
 import org.apache.jmeter.testelement.property.IntegerProperty;
@@ -51,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  */
-public abstract class AbstractTestElement implements TestElement, Serializable, Searchable {
+public abstract class AbstractTestElement implements TestElement, Serializable {
     private static final long serialVersionUID = 240L;
 
     private static final Logger log = LoggerFactory.getLogger(AbstractTestElement.class);
@@ -640,21 +638,6 @@ public abstract class AbstractTestElement implements TestElement, Serializable, 
     @Override
     public void setEnabled(boolean enabled) {
         setProperty(new BooleanProperty(TestElement.ENABLED, enabled));
-    }
-
-    /** 
-     * {@inheritDoc}}
-     */
-    @Override
-    public List<String> getSearchableTokens() {
-        List<String> result = new ArrayList<>(25);
-        PropertyIterator iterator = propertyIterator();
-        while(iterator.hasNext()) {
-            JMeterProperty jMeterProperty = iterator.next();    
-            result.add(jMeterProperty.getName());
-            result.add(jMeterProperty.getStringValue());
-        }
-        return result;
     }
     
     /**

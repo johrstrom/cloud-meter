@@ -30,7 +30,6 @@ import java.util.Locale;
 
 import javax.swing.JOptionPane;
 
-import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.util.keystore.JmeterKeyStore;
 import org.apache.jorphan.util.JOrphanUtils;
 import org.slf4j.Logger;
@@ -159,24 +158,8 @@ public abstract class SSLManager {
      *
     */
     private String getPassword() {
-        String password = this.defaultpw;
-        if (null == password) {
-            final GuiPackage guiInstance = GuiPackage.getInstance();
-            if (guiInstance != null) {
-                synchronized (this) { // TODO is sync really needed?
-                    this.defaultpw = JOptionPane.showInputDialog(
-                            guiInstance.getMainFrame(),
-                            JMeterUtils.getResString("ssl_pass_prompt"),  // $NON-NLS-1$
-                            JMeterUtils.getResString("ssl_pass_title"),  // $NON-NLS-1$
-                            JOptionPane.QUESTION_MESSAGE);
-                    System.setProperty(KEY_STORE_PASSWORD, this.defaultpw);
-                    password = this.defaultpw;
-                }
-            } else {
-                log.warn("No password provided, and no GUI present so cannot prompt");
-            }
-        }
-        return password;
+        return this.defaultpw;	//TODO BUG alert right here
+        						//took out a large bit of this bc of GUI components
     }
 
     /**

@@ -18,18 +18,11 @@
 
 package org.apache.jmeter.plugin;
 
-import java.net.URL;
-
-import javax.swing.ImageIcon;
-
-import org.apache.jmeter.gui.GUIFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public final class PluginManager {
     private static final PluginManager instance = new PluginManager();
-
-    private static final Logger log = LoggerFactory.getLogger(PluginManager.class);
 
     private PluginManager() {
     }
@@ -49,25 +42,6 @@ public final class PluginManager {
     }
 
     private void installPlugin(JMeterPlugin plugin) {
-        String[][] icons = plugin.getIconMappings();
-        ClassLoader classloader = plugin.getClass().getClassLoader();
 
-        for (String[] icon : icons) {
-            URL resource = classloader.getResource(icon[1].trim());
-
-            if (resource == null) {
-                log.warn("Can't find icon for " + icon[0] + " - " + icon[1]);
-            } else {
-                GUIFactory.registerIcon(icon[0], new ImageIcon(resource));
-                if (icon.length > 2 && icon[2] != null) {
-                    URL resource2 = classloader.getResource(icon[2].trim());
-                    if (resource2 == null) {
-                        log.info("Can't find disabled icon for " + icon[0] + " - " + icon[2]);
-                    } else {
-                        GUIFactory.registerDisabledIcon(icon[0], new ImageIcon(resource2));
-                    }
-                }
-            }
-        }
     }
 }

@@ -25,7 +25,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.testelement.ThreadListener;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.reflect.ClassFinder;
@@ -89,10 +88,7 @@ public class RemoteThreadsListenerImpl extends UnicastRemoteObject implements
     @Override
     public void threadStarted() {
         JMeterContextService.incrNumberOfThreads();
-        GuiPackage gp =GuiPackage.getInstance();
-        if (gp != null) {// check there is a GUI
-            gp.getMainFrame().updateCounts();
-        }
+       
         for (RemoteThreadsLifeCycleListener listener : listeners) {
             listener.threadNumberIncreased(JMeterContextService.getNumberOfThreads());
         }
@@ -104,10 +100,7 @@ public class RemoteThreadsListenerImpl extends UnicastRemoteObject implements
     @Override
     public void threadFinished() {
         JMeterContextService.decrNumberOfThreads();
-        GuiPackage gp =GuiPackage.getInstance();
-        if (gp != null) {// check there is a GUI
-            gp.getMainFrame().updateCounts();
-        }
+       
         for (RemoteThreadsLifeCycleListener listener : listeners) {
             listener.threadNumberDecreased(JMeterContextService.getNumberOfThreads());
         }

@@ -35,7 +35,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.jmeter.engine.util.NoThreadClone;
-import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.samplers.Clearable;
 import org.apache.jmeter.samplers.Remoteable;
 import org.apache.jmeter.samplers.SampleEvent;
@@ -400,15 +399,11 @@ public class ResultCollector extends AbstractListenerElement implements SampleLi
                 JOrphanUtils.closeQuietly(dataReader);
                 JOrphanUtils.closeQuietly(bufferedInputStream);
                 if (!parsedOK) {
-                    GuiPackage.showErrorMessage(
-                                "Error loading results file - see log file",
-                                "Result file loader");
+                	//TODO bc I refactored a GUI alert here
                 }
             }
         } else {
-            GuiPackage.showErrorMessage(
-                    "Error loading results file - could not open file",
-                    "Result file loader");
+        	//TODO bc I refactored a GUI alert here
         }
     }
 

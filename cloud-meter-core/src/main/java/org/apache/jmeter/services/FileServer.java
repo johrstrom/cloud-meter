@@ -38,7 +38,6 @@ import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.commons.collections.ArrayStack;
-import org.apache.jmeter.gui.JMeterFileFilter;
 import org.apache.jmeter.save.CSVSaveService;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.util.JOrphanUtils;
@@ -495,34 +494,6 @@ public class FileServer {
         return false;
     }
 
-    /**
-     * Method will get a random file in a base directory 
-     * <p>
-     * TODO hey, not sure this
-     * method belongs here. FileServer is for threadsafe File access relative to
-     * current test's base directory.
-     *
-     * @param basedir
-     *            name of the directory in which the files can be found
-     * @param extensions
-     *            array of allowed extensions, if <code>null</code> is given,
-     *            any file be allowed
-     * @return a random File from the <code>basedir</code> that matches one of
-     *         the extensions
-     */
-    public File getRandomFile(String basedir, String[] extensions) {
-        File input = null;
-        if (basedir != null) {
-            File src = new File(basedir);
-            File[] lfiles = src.listFiles(new JMeterFileFilter(extensions));
-            if (lfiles != null) {
-                // lfiles cannot be null as it has been checked before
-                int count = lfiles.length;
-                input = lfiles[ThreadLocalRandom.current().nextInt(count)];
-            }
-        }
-        return input;
-    }
 
     /**
      * Get {@link File} instance for provided file path,

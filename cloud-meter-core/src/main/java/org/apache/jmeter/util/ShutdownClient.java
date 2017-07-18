@@ -23,15 +23,12 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-import org.apache.jmeter.JMeter;
-
-
 /**
  * Simple utility to send a shutdown message to a non-GUI instance of JMeter
  */
 public class ShutdownClient {
     public static void main(String[] args) throws IOException {
-        int port = JMeter.UDP_PORT_DEFAULT;
+        int port = 2013;
         if (args.length > 1){
             port = Integer.parseInt(args[1]);
         } else if (args.length == 0) {

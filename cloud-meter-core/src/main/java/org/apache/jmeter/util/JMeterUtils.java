@@ -50,7 +50,6 @@ import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jorphan.reflect.ClassFinder;
 import org.apache.jorphan.test.UnitTestManager;
 import org.apache.jorphan.util.JOrphanUtils;
@@ -1094,29 +1093,12 @@ public class JMeterUtils implements UnitTestManager {
     }
 
     /**
-     * Report an error through a dialog box.
-     *
-     * @param errorMsg - the error message.
-     * @param titleMsg - title string
+     * This function does nothing
+     * 
+     * @deprecated
      */
     public static void reportErrorToUser(String errorMsg, String titleMsg) {
-        if (errorMsg == null) {
-            errorMsg = "Unknown error - see log file";
-            log.warn("Unknown error", new Throwable("errorMsg == null"));
-        }
-        GuiPackage instance = GuiPackage.getInstance();
-        if (instance == null) {
-            System.out.println(errorMsg);
-            return; // Done
-        }
-        try {
-            JOptionPane.showMessageDialog(instance.getMainFrame(),
-                    errorMsg,
-                    titleMsg,
-                    JOptionPane.ERROR_MESSAGE);
-        } catch (HeadlessException e) {
-            log.warn("reportErrorToUser(\"" + errorMsg + "\") caused", e);
-        }
+ 
     }
 
     /**

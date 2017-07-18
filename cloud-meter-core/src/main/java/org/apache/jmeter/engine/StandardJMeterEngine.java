@@ -27,7 +27,6 @@ import java.util.Properties;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.jmeter.JMeter;
 import org.apache.jmeter.samplers.SampleEvent;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.testbeans.TestBeanHelper;
@@ -267,25 +266,20 @@ public class StandardJMeterEngine implements JMeterEngine, Runnable {
                 pause(10 * countStillActiveThreads());
                 boolean stopped = verifyThreadsStopped();
                 if (!stopped) {  // we totally failed to stop the test
-                    if (JMeter.isNonGUI()) {
-                        // TODO should we call test listeners? That might hang too ...
-                        log.error(JMeterUtils.getResString("stopping_test_failed")); //$NON-NLS-1$
-                        if (SYSTEM_EXIT_ON_STOP_FAIL) { // default is true
-                            log.error("Exiting");
-                            System.out.println("Fatal error, could not stop test, exiting");
-                            System.exit(1);
-                        } else {
-                            System.out.println("Fatal error, could not stop test");                            
-                        }
+                	log.error(JMeterUtils.getResString("stopping_test_failed")); //$NON-NLS-1$
+                	if (SYSTEM_EXIT_ON_STOP_FAIL) { // default is true
+                        log.error("Exiting");
+                        System.out.println("Fatal error, could not stop test, exiting");
+                        System.exit(1);
                     } else {
-                        JMeterUtils.reportErrorToUser(
-                                JMeterUtils.getResString("stopping_test_failed"), //$NON-NLS-1$
-                                JMeterUtils.getResString("stopping_test_title")); //$NON-NLS-1$
+                        System.out.println("Fatal error, could not stop test");                            
                     }
-                } // else will be done by threadFinished()
-            } else {
-                stopAllThreadGroups();
-            }
+                } else {
+                    JMeterUtils.reportErrorToUser(
+                            JMeterUtils.getResString("stopping_test_failed"), //$NON-NLS-1$
+                            JMeterUtils.getResString("stopping_test_title")); //$NON-NLS-1$
+                }
+            } // else will be done by threadFinished()
         }
     }
 
@@ -436,7 +430,7 @@ public class StandardJMeterEngine implements JMeterEngine, Runnable {
 
         notifyTestListenersOfEnd(testListeners);
         JMeterContextService.endTest();
-        if (JMeter.isNonGUI() && SYSTEM_EXIT_FORCED) {
+        if (SYSTEM_EXIT_FORCED) {
             log.info("Forced JVM shutdown requested at end of test");
             System.exit(0);
         }

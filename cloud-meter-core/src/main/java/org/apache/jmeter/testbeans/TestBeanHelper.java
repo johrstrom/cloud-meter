@@ -25,8 +25,6 @@ import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import org.apache.jmeter.testbeans.gui.GenericTestBeanCustomizer;
-import org.apache.jmeter.testbeans.gui.TableEditor;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.CollectionProperty;
 import org.apache.jmeter.testelement.property.JMeterProperty;
@@ -115,10 +113,10 @@ public class TestBeanHelper {
             }
             value = te;
         }
-        else if(jprop instanceof MultiProperty)
-        {
-            value = unwrapCollection((MultiProperty)jprop,(String)desc.getValue(TableEditor.CLASSNAME));
-        }
+//        else if(jprop instanceof MultiProperty)
+//        {
+//            value = unwrapCollection((MultiProperty)jprop,(String)desc.getValue(TableEditor.CLASSNAME));
+//        }
         // value was not provided, and this is allowed
         else if (jprop instanceof NullProperty &&
                 // use negative condition so missing (null) value is treated as FALSE
