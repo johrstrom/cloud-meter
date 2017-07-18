@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.cloudmeter</groupId>
+    <artifactId>cloud-meter-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>cloud-meter-components</artifactId>
+  
+  
+    <dependencies>
+    	<dependency>
+      		<groupId>org.cloudmeter</groupId>
+      		<artifactId>jmeter-core</artifactId>
+      		<version>${project.version}</version>
+    	</dependency>
+		<dependency>
+   			<groupId>javax.mail</groupId>
+    		<artifactId>mail</artifactId>
+    		<version>1.4.7</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.jodd</groupId>
+    		<artifactId>jodd-lagarto</artifactId>
+    		<version>3.6.7</version>
+		</dependency>
+		<dependency>
+    		<groupId>com.jayway.jsonpath</groupId>
+    		<artifactId>json-path</artifactId>
+    		<version>2.2.0</version>
+		</dependency>
+		<dependency>
+    		<groupId>jcharts</groupId>
+    		<artifactId>jcharts</artifactId>
+    		<version>0.7.5</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-pool2</artifactId>
+    		<version>2.4.2</version>
+		</dependency>
+	</dependencies>
+	
+</project>
