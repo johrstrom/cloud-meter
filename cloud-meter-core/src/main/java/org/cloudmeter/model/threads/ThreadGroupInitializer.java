@@ -13,11 +13,11 @@ import org.springframework.stereotype.Component;
 public class ThreadGroupInitializer implements ModelInitializer {
 	
 	@Override
-	public TestElement initilizeElement(TestElement ele) {
-		
-        if (ele instanceof AbstractThreadGroup) {
-            ((AbstractThreadGroup) ele).setSamplerController(createController());
-        }
+	public TestElement initilizeElement() {
+				
+		ThreadGroup ele = new ThreadGroup();
+		ele.setSamplerController(createController());
+        
                 
         ele.setName("Thread Group");
         ele.setProperty(AbstractThreadGroup.NUM_THREADS, "1");

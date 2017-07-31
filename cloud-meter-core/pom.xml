@@ -9,7 +9,7 @@
 	</parent>
 
 
-	<artifactId>cloudmeter-core</artifactId>
+	<artifactId>cloud-meter-core</artifactId>
 
 	<packaging>jar</packaging>
 
