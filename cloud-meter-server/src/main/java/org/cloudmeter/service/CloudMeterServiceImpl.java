@@ -8,7 +8,7 @@ import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.model.TestElementModel;
-import org.cloudmeter.utils.TestElementInitializer;
+import org.cloudmeter.server.util.TestElementFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,31 +23,27 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     
 	
 	@Autowired
-	private TestElementInitializer elementIniter; 
+	private TestElementFactory elementFactory; 
 	
 	@Override
 	public TestElementModel newTestElement(String name, String type) {
 		
     	if (type != null && !type.equals("")) {
     		Class<? extends AbstractTestElement> clazz = classTypeLookup.get(type);
-    		try {
-				
-    			AbstractTestElement instance = clazz.newInstance();
-				elementIniter.initilizeElement(instance);
-				this.setElementName(name, instance);
-				
-				TestElementModel model = new TestElementModel();
-				model.setElement(instance);
-				model.setType(type);
-				model.setHashTree(new HashTree());
-				
-				log.debug("returning new test element model " + model.toString());
-				
-				return model;
-				
-			} catch (InstantiationException | IllegalAccessException e) {
-				throw new IllegalArgumentException("Cannot instantiate elememnt of type " + type);
-			}
+    		
+			
+    		TestElement ele = elementFactory.newElement(clazz);
+			this.setElementName(name, ele);
+			
+			TestElementModel model = new TestElementModel();
+			model.setElement(ele);
+			model.setType(type);
+			model.setHashTree(new HashTree());
+			
+			log.debug("returning new test element model " + model.toString());
+			
+			return model;
+			
     	}else {
     		throw new IllegalArgumentException("type cannot be empty or null");
     	}

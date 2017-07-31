@@ -1,4 +1,4 @@
-package org.cloudmeter.utils;
+package org.cloudmeter.server.util;
 
 import java.io.InputStream;
 

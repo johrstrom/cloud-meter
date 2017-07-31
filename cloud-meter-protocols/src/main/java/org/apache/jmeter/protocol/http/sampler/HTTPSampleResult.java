@@ -21,10 +21,8 @@ package org.apache.jmeter.protocol.http.sampler;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.apache.jmeter.protocol.http.util.HTTPConstants;
@@ -264,14 +262,5 @@ public class HTTPSampleResult extends SampleResult {
         setResponseMessage(HTTP_NO_CONTENT_MSG);
     }
 
-    /* (non-Javadoc)
-     * @see org.apache.jmeter.samplers.SampleResult#getSearchableTokens()
-     */
-    @Override
-    public List<String> getSearchableTokens() throws Exception {
-        List<String> list = new ArrayList<>(super.getSearchableTokens());
-        list.add(getQueryString());
-        list.add(getCookies());
-        return list;
-    }
+
 }

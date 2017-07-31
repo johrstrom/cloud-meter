@@ -10,7 +10,7 @@
   	<dependencies>
       	<dependency>
       		<groupId>org.cloudmeter</groupId>
-      		<artifactId>jmeter-core</artifactId>
+      		<artifactId>cloud-meter-core</artifactId>
       		<version>${project.version}</version>
     	</dependency>
     	<dependency>

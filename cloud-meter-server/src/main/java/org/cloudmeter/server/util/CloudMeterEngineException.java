@@ -1,4 +1,4 @@
-package org.cloudmeter.utils;
+package org.cloudmeter.server.util;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.cloudmeter.model.response.RunResultModel;

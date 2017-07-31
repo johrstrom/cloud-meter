@@ -25,7 +25,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.jmeter.gui.Stoppable;
 import org.slf4j.LoggerFactory;
 import org.apache.jorphan.util.JOrphanUtils;
 import org.slf4j.Logger;
@@ -36,7 +35,7 @@ import org.slf4j.Logger;
  * For each client request, creates a thread to handle the request.
  *
  */
-public class HttpMirrorServer extends Thread implements Stoppable {
+public class HttpMirrorServer extends Thread {
 	private static final Logger log = LoggerFactory.getLogger(HttpMirrorServer.class);
 
     /**
@@ -150,7 +149,6 @@ public class HttpMirrorServer extends Thread implements Stoppable {
         }
     }
 
-    @Override
     public void stopServer() {
         running = false;
     }

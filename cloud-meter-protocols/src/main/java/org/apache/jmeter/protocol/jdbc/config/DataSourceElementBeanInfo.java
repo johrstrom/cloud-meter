@@ -29,7 +29,6 @@ import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jmeter.testbeans.BeanInfoSupport;
-import org.apache.jmeter.testbeans.gui.TypeEditor;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -49,58 +48,58 @@ public class DataSourceElementBeanInfo extends BeanInfoSupport {
     public DataSourceElementBeanInfo() {
         super(DataSourceElement.class);
     
-        createPropertyGroup("varName", new String[] { "dataSource" });
-
-        createPropertyGroup("pool", new String[] { "poolMax", "timeout", 
-                "trimInterval", "autocommit", "transactionIsolation"  });
-
-        createPropertyGroup("keep-alive", new String[] { "keepAlive", "connectionAge", "checkQuery" });
-
-        createPropertyGroup("database", new String[] { "dbUrl", "driver", "username", "password" });
-
-        PropertyDescriptor p = property("dataSource");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "");
-        p = property("poolMax");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "10");
-        p = property("timeout");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "10000");
-        p = property("trimInterval");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "60000");
-        p = property("autocommit");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, Boolean.TRUE);
-        p = property("transactionIsolation");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "DEFAULT");
-        p.setValue(NOT_EXPRESSION, Boolean.TRUE);
-        Set<String> modesSet = TRANSACTION_ISOLATION_MAP.keySet();
-        String[] modes = modesSet.toArray(new String[modesSet.size()]);
-        p.setValue(TAGS, modes);
-        p = property("keepAlive");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, Boolean.TRUE);
-        p = property("connectionAge");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "5000");
-        p = property("checkQuery");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "Select 1");
-        p = property("dbUrl");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "");
-        p = property("driver");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "");
-        p = property("username");
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "");
-        p = property("password", TypeEditor.PasswordEditor);
-        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
-        p.setValue(DEFAULT, "");
+//        createPropertyGroup("varName", new String[] { "dataSource" });
+//
+//        createPropertyGroup("pool", new String[] { "poolMax", "timeout", 
+//                "trimInterval", "autocommit", "transactionIsolation"  });
+//
+//        createPropertyGroup("keep-alive", new String[] { "keepAlive", "connectionAge", "checkQuery" });
+//
+//        createPropertyGroup("database", new String[] { "dbUrl", "driver", "username", "password" });
+//
+//        PropertyDescriptor p = property("dataSource");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "");
+//        p = property("poolMax");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "10");
+//        p = property("timeout");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "10000");
+//        p = property("trimInterval");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "60000");
+//        p = property("autocommit");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, Boolean.TRUE);
+//        p = property("transactionIsolation");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "DEFAULT");
+//        p.setValue(NOT_EXPRESSION, Boolean.TRUE);
+//        Set<String> modesSet = TRANSACTION_ISOLATION_MAP.keySet();
+//        String[] modes = modesSet.toArray(new String[modesSet.size()]);
+//        p.setValue(TAGS, modes);
+//        p = property("keepAlive");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, Boolean.TRUE);
+//        p = property("connectionAge");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "5000");
+//        p = property("checkQuery");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "Select 1");
+//        p = property("dbUrl");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "");
+//        p = property("driver");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "");
+//        p = property("username");
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "");
+//        p = property("password", TypeEditor.PasswordEditor);
+//        p.setValue(NOT_UNDEFINED, Boolean.TRUE);
+//        p.setValue(DEFAULT, "");
     }
 
     /**

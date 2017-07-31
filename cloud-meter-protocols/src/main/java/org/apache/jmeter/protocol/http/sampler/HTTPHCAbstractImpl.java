@@ -27,7 +27,6 @@ import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.jmeter.JMeter;
 import org.apache.jmeter.util.JMeterUtils;
 import org.slf4j.LoggerFactory;
 import org.apache.jorphan.util.JOrphanUtils;
@@ -51,9 +50,9 @@ public abstract class HTTPHCAbstractImpl extends HTTPAbstractImpl {
 
     protected static final boolean PROXY_DEFINED = PROXY_HOST.length() > 0 && PROXY_PORT > 0;
 
-    protected static final String PROXY_USER = JMeterUtils.getPropDefault(JMeter.HTTP_PROXY_USER,"");
+    protected static final String PROXY_USER = JMeterUtils.getPropDefault("proxy.user","");
 
-    protected static final String PROXY_PASS = JMeterUtils.getPropDefault(JMeter.HTTP_PROXY_PASS,"");
+    protected static final String PROXY_PASS = JMeterUtils.getPropDefault("proxy.password","");
 
     protected static final String PROXY_DOMAIN = JMeterUtils.getPropDefault("http.proxyDomain","");
 

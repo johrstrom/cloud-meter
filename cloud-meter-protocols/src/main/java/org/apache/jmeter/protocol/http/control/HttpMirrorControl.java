@@ -18,7 +18,6 @@
 
 package org.apache.jmeter.protocol.http.control;
 
-import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.property.IntegerProperty;
 
@@ -128,19 +127,13 @@ public class HttpMirrorControl extends AbstractTestElement {
     public void startHttpMirror() {
         server = new HttpMirrorServer(getPort(), getMaxPoolSize(), getMaxQueueSize());
         server.start();
-        GuiPackage instance = GuiPackage.getInstance();
-        if (instance != null) {
-            instance.register(server);
-        }
+        
     }
 
     public void stopHttpMirror() {
         if (server != null) {
             server.stopServer();
-            GuiPackage instance = GuiPackage.getInstance();
-            if (instance != null) {
-                instance.unregister(server);
-            }
+            
             try {
                 server.join(1000); // wait for server to stop
             } catch (InterruptedException e) {
