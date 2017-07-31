@@ -30,7 +30,6 @@ import org.apache.jmeter.engine.util.NoConfigMerge;
 import org.apache.jmeter.save.CSVSaveService;
 import org.apache.jmeter.services.FileServer;
 import org.apache.jmeter.testbeans.TestBean;
-import org.apache.jmeter.testbeans.gui.GenericTestBeanCustomizer;
 import org.apache.jmeter.testelement.property.JMeterProperty;
 import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.threads.JMeterContext;
@@ -115,32 +114,7 @@ public class CSVDataSet extends ConfigTestElement
      */
     @Override
     public void setProperty(JMeterProperty property) {
-        if (property instanceof StringProperty) {
-            final String propName = property.getName();
-            if (propName.equals("shareMode")) { // The original name of the property
-                final String propValue = property.getStringValue();
-                if (propValue.contains(" ")){ // variables are unlikely to contain spaces, so most likely a translation
-                    try {
-                        final BeanInfo beanInfo = Introspector.getBeanInfo(this.getClass());
-                        final ResourceBundle rb = (ResourceBundle) beanInfo.getBeanDescriptor().getValue(GenericTestBeanCustomizer.RESOURCE_BUNDLE);
-                        for(String resKey : CSVDataSetBeanInfo.SHARE_TAGS) {
-                            if (propValue.equals(rb.getString(resKey))) {
-                                if (log.isDebugEnabled()) {
-                                    log.debug("Converted " + propName + "=" + propValue + " to " + resKey  + " using Locale: " + rb.getLocale());
-                                }
-                                ((StringProperty) property).setValue(resKey); // reset the value
-                                super.setProperty(property);
-                                return;                                        
-                            }
-                        }
-                        // This could perhaps be a variable name
-                        log.warn("Could not translate " + propName + "=" + propValue + " using Locale: " + rb.getLocale());
-                    } catch (IntrospectionException e) {
-                        log.error("Could not find BeanInfo; cannot translate shareMode entries", e);
-                    }
-                }
-            }
-        }
+      
         super.setProperty(property);        
     }
 

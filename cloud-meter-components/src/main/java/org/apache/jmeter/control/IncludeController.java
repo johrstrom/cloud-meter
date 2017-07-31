@@ -23,7 +23,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 
-import org.apache.jmeter.gui.tree.JMeterTreeNode;
 import org.apache.jmeter.save.SaveService;
 import org.apache.jmeter.services.FileServer;
 import org.apache.jmeter.testelement.TestElement;
@@ -33,7 +32,7 @@ import org.apache.jorphan.collections.HashTree;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
-public class IncludeController extends GenericController implements ReplaceableController {
+public class IncludeController extends GenericController {
 	private static final Logger log = LoggerFactory.getLogger(IncludeController.class);
 
     private static final long serialVersionUID = 240L;
@@ -61,7 +60,6 @@ public class IncludeController extends GenericController implements ReplaceableC
     public Object clone() {
         // TODO - fix so that this is only called once per test, instead of at every clone
         // Perhaps save previous filename, and only load if it has changed?
-        this.resolveReplacementSubTree(null);
         IncludeController clone = (IncludeController) super.clone();
         clone.setIncludePath(this.getIncludePath());
         if (this.subtree != null) {
@@ -97,7 +95,6 @@ public class IncludeController extends GenericController implements ReplaceableC
      * The way ReplaceableController works is clone is called first,
      * followed by replace(HashTree) and finally getReplacement().
      */
-    @Override
     public HashTree getReplacementSubTree() {
         return subtree;
     }
@@ -105,11 +102,7 @@ public class IncludeController extends GenericController implements ReplaceableC
     public TestElement getReplacementElement() {
         return sub;
     }
-
-    @Override
-    public void resolveReplacementSubTree(JMeterTreeNode context) {
-        this.subtree = this.loadIncludedElements();
-    }
+   
 
     /**
      * load the included elements using SaveService

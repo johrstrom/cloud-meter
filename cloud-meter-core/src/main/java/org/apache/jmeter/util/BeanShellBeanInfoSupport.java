@@ -16,9 +16,19 @@
  *
  */
 
-package org.apache.jmeter.visualizers;
+package org.apache.jmeter.util;
 
-public interface AccumListener {
 
-    void updateGui(RunningSample s);
+import org.apache.jmeter.testbeans.BeanInfoSupport;
+import org.apache.jmeter.testbeans.TestBean;
+
+/**
+ * Parent class to handle common GUI design
+ */
+public abstract class BeanShellBeanInfoSupport extends BeanInfoSupport {
+
+    protected BeanShellBeanInfoSupport(Class<? extends TestBean> beanClass) {
+        super(beanClass);
+    }
+
 }

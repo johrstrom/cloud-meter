@@ -26,7 +26,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import org.apache.jmeter.testbeans.TestBean;
-import org.apache.jmeter.testbeans.gui.GenericTestBeanCustomizer;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestStateListener;
 import org.apache.jmeter.testelement.property.JMeterProperty;
@@ -275,7 +274,7 @@ public class ConstantThroughputTimer extends AbstractTestElement implements Time
                 final Object objectValue = property.getObjectValue();
                 try {
                     final BeanInfo beanInfo = Introspector.getBeanInfo(this.getClass());
-                    final ResourceBundle rb = (ResourceBundle) beanInfo.getBeanDescriptor().getValue(GenericTestBeanCustomizer.RESOURCE_BUNDLE);
+                    final ResourceBundle rb = (ResourceBundle) beanInfo.getBeanDescriptor().getValue("resourceBundle");
                     for(Enum<Mode> e : Mode.values()) {
                         final String propName = e.toString();
                         if (objectValue.equals(rb.getObject(propName))) {
