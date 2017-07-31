@@ -25,6 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.engine.TreeCloner;
+import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.IntegerProperty;
 import org.apache.jmeter.testelement.property.LongProperty;
@@ -93,6 +94,9 @@ public class ThreadGroup extends AbstractThreadGroup {
      * No-arg constructor.
      */
     public ThreadGroup() {
+    	this.setProperty(
+    			TestElement.MODEL_INITIALIZER, 
+    			org.cloudmeter.model.threads.ThreadGroupInitializer.class.getName());
     }
 
     /**

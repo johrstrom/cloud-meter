@@ -10,7 +10,9 @@ import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jmeter.testelement.WorkBench;
 import org.apache.jmeter.threads.AbstractThreadGroup;
 import org.apache.jmeter.timers.Timer;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ModelUtils {
 	
 	public ModelUtils() {}

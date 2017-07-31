@@ -32,7 +32,8 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     		Class<? extends AbstractTestElement> clazz = classTypeLookup.get(type);
     		
 			
-    		TestElement ele = elementFactory.newElement(clazz);
+    		//TODO throws null here if it can't instantiate!
+    		TestElement ele = elementFactory.newElement(clazz);    		
 			this.setElementName(name, ele);
 			
 			TestElementModel model = new TestElementModel();
@@ -65,5 +66,7 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 			ele.setName(name);
 		}
 	}
+	
+
 
 }
