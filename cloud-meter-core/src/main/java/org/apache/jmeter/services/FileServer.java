@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.commons.collections.ArrayStack;
-import org.cloudmeter.utils.JMeterFileFilter;
+import org.cloudmeter.util.JMeterFileFilter;
 import org.apache.jmeter.save.CSVSaveService;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.util.JOrphanUtils;

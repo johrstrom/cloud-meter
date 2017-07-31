@@ -1,4 +1,4 @@
-package org.cloudmeter.utils;
+package org.cloudmeter.util;
 
 import org.apache.jmeter.assertions.Assertion;
 import org.apache.jmeter.config.ConfigTestElement;

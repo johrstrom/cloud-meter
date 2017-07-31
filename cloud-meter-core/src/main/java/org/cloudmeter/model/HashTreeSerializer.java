@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
-import org.cloudmeter.utils.ModelUtils;
+import org.cloudmeter.util.ModelUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

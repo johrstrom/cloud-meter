@@ -16,7 +16,7 @@
  *
  */
 
-package org.cloudmeter.utils;
+package org.cloudmeter.util;
 
 import java.io.File;
 import java.util.Arrays;
