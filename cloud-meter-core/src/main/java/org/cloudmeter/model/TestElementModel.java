@@ -1,6 +1,16 @@
 package org.cloudmeter.model;
 
+import org.apache.jmeter.assertions.Assertion;
+import org.apache.jmeter.config.ConfigTestElement;
+import org.apache.jmeter.processor.PostProcessor;
+import org.apache.jmeter.processor.PreProcessor;
+import org.apache.jmeter.reporters.AbstractListenerElement;
+import org.apache.jmeter.samplers.AbstractSampler;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.testelement.TestPlan;
+import org.apache.jmeter.testelement.WorkBench;
+import org.apache.jmeter.threads.AbstractThreadGroup;
+import org.apache.jmeter.timers.Timer;
 import org.apache.jorphan.collections.HashTree;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -9,25 +19,25 @@ public class TestElementModel {
 	
 	private TestElement testelement;
 		
-	private String type;
+	private ModelType type;
 	
 	@JsonSerialize(using = HashTreeSerializer.class)
 	private HashTree hashTree;
 	
-	public TestElement getElement() {
+	public TestElement getTestElement() {
 		return testelement;
 	}
 	
-	public void setElement(TestElement testelement) {
+	public void setTestElement(TestElement testelement) {
 		this.testelement = testelement;
 	}
-
-	public String getType() {
+	
+	public ModelType getType() {
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setType(ModelType modelType) {
+		this.type = modelType;
 	}
 
 	public HashTree getHashTree() {
@@ -37,5 +47,50 @@ public class TestElementModel {
 	public void setHashTree(HashTree hashTree) {
 		this.hashTree = hashTree;
 	}
+	
+	public enum ModelType  {
+		assertion,
+		config,
+		listener,
+		post_processor,
+		pre_processor,
+		sampler,
+		testplan,
+		thread_group,
+		timer,
+		workbench,
+		unknown;
+	}
+
+	public static ModelType getElementType(Object ele) {
+		//first be sure it's a test element
+		if(!(ele instanceof TestElement)) 
+			return ModelType.unknown;
+		
+		else if (ele instanceof Assertion) {
+			return ModelType.assertion;
+		}else if (ele instanceof ConfigTestElement) { 
+			return ModelType.config;
+		}else if (ele instanceof AbstractListenerElement) {
+			return ModelType.listener;
+		}else if (ele instanceof PostProcessor ) {
+			return ModelType.post_processor;
+		}else if (ele instanceof PreProcessor ) {
+			return ModelType.pre_processor;
+		}else if (ele instanceof AbstractSampler) {
+			return ModelType.sampler;
+		}else if(ele instanceof TestPlan) {
+			return ModelType.testplan;
+		}else if(ele instanceof AbstractThreadGroup) {
+			return ModelType.thread_group;
+		}else if(ele instanceof Timer) {
+			return ModelType.timer;
+		}else if(ele instanceof WorkBench) {
+			return ModelType.workbench;
+		}else {
+			return ModelType.unknown;
+		}
+	}
+	
 
 }

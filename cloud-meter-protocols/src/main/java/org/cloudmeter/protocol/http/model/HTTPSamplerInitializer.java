@@ -3,18 +3,23 @@ package org.cloudmeter.protocol.http.model;
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.testelement.TestElement;
+import org.cloudmeter.model.AbstractInitialzer;
 import org.cloudmeter.model.ModelInitializer;
+import org.springframework.stereotype.Component;
 
-public class HTTPSamplerInitializer implements ModelInitializer {
+@Component
+public class HTTPSamplerInitializer extends AbstractInitialzer implements ModelInitializer {
+	
+	public static final String DEFAULT_NAME = "Http Sampler";
 	
 	private static final String EMPTY_STRING = "";
 
 	@Override
 	public TestElement initilizeElement() {
 		HTTPSamplerProxy ele = new HTTPSamplerProxy();
-		ele.setArguments(this.getDefaultArgs());
+		this.baseElement(ele);
 		
-		ele.setEnabled(true);
+		ele.setArguments(this.getDefaultArgs());
 		
 		ele.setProperty(HTTPSamplerProxy.DOMAIN, EMPTY_STRING);
 		ele.setProperty(HTTPSamplerProxy.PORT, EMPTY_STRING);
@@ -30,7 +35,7 @@ public class HTTPSamplerInitializer implements ModelInitializer {
 		ele.setProperty(HTTPSamplerProxy.CONNECT_TIMEOUT, EMPTY_STRING);
 		ele.setProperty(HTTPSamplerProxy.RESPONSE_TIMEOUT, EMPTY_STRING);
 		
-		
+		ele.setName(DEFAULT_NAME);
 		
 		return ele;
 		

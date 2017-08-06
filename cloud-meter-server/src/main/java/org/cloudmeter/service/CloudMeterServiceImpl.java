@@ -6,18 +6,15 @@ import java.util.Map;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.threads.ThreadGroup;
+import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.model.TestElementModel;
 import org.cloudmeter.server.util.TestElementFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CloudMeterServiceImpl implements CloudMeterService {
-	
-	private static final Logger log = LoggerFactory.getLogger(CloudMeterServiceImpl.class);
 
 	private static final Map<String, Class<? extends AbstractTestElement>> classTypeLookup = typeToClassMap();
     
@@ -37,11 +34,9 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 			this.setElementName(name, ele);
 			
 			TestElementModel model = new TestElementModel();
-			model.setElement(ele);
-			model.setType(type);
+			model.setTestElement(ele);
+			model.setType(TestElementModel.getElementType(ele));
 			model.setHashTree(new HashTree());
-			
-			log.debug("returning new test element model " + model.toString());
 			
 			return model;
 			
@@ -56,6 +51,7 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     	HashMap<String, Class<? extends AbstractTestElement>>  map = new HashMap<>();
     	
     	map.put("thread-group", ThreadGroup.class);
+    	map.put("http-sampler", HTTPSamplerProxy.class);
     	
     	return map;
     }
@@ -67,6 +63,8 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 		}
 	}
 	
+	
+
 
 
 }

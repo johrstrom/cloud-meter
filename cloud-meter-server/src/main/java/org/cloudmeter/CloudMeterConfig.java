@@ -20,20 +20,4 @@ public class CloudMeterConfig extends WebMvcConfigurerAdapter {
 		
 	}
 
-	
-//	@Override
-//	public void addViewControllers(ViewControllerRegistry registry) {
-//	    registry.addViewController("/").setViewName("forward:/static/html/home.html");
-//	}
-
-//	@Override
-//	public void registerWebSocketHandlers(WebSocketHandlerRegistry arg0) {
-//		arg0.addHandler(testRunHandler(), "/testrun");		
-//	}
-//	
-//    @Bean
-//    public TestRunHandler testRunHandler() {
-//        return new TestRunHandler();
-//    }
-
 }

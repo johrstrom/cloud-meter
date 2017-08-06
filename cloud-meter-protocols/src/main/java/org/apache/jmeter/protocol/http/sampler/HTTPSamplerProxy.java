@@ -22,6 +22,8 @@ import java.net.URL;
 
 import org.apache.jmeter.engine.event.LoopIterationEvent;
 import org.apache.jmeter.samplers.Interruptible;
+import org.apache.jmeter.testelement.TestElement;
+import org.cloudmeter.protocol.http.model.HTTPSamplerInitializer;
 
 /**
  * Proxy class that dispatches to the appropriate HTTP sampler.
@@ -39,7 +41,7 @@ public final class HTTPSamplerProxy extends HTTPSamplerBase implements Interrupt
     private transient volatile boolean notifyFirstSampleAfterLoopRestart;
 
     public HTTPSamplerProxy(){
-        super();
+    	this(null);
     }
     
     /**
@@ -49,7 +51,9 @@ public final class HTTPSamplerProxy extends HTTPSamplerBase implements Interrupt
      */
     public HTTPSamplerProxy(String impl){
         super();
-        setImplementation(impl);
+        if(impl != null)
+        	setImplementation(impl);
+        this.setProperty(TestElement.MODEL_INITIALIZER,HTTPSamplerInitializer.class.getName());
     }
         
     /** {@inheritDoc} */

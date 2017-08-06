@@ -23,15 +23,20 @@ public class TestElementFactory {
 
 	public TestElement newElement(Class<? extends AbstractTestElement> clazz) {
 		try {
+			
+			
 			AbstractTestElement instance = clazz.newInstance();
 			String initerName = instance.getPropertyAsString(TestElement.MODEL_INITIALIZER);
+			
+			log.debug("Instantiating a new {} with initializer {}", clazz.getName(), initerName);
 			Class<?> initerType = Class.forName(initerName);
 			ModelInitializer initer = (ModelInitializer) context.getBean(initerType);
 			
 			return initer.initilizeElement();
 			
 		} catch (Exception e) {
-			log.error("Couldn't initialize element {} with reason {}", clazz.getName(),e.getMessage());
+			log.error("Couldn't initialize element {} because of exception {} reason {}", 
+					clazz.getName(),e.getClass().getName(), e.getMessage());
 			
 			return null;
 		}

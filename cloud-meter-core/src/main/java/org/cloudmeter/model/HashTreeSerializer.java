@@ -4,10 +4,8 @@ import java.io.IOException;
 
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.HashTreeTraverser;
-import org.cloudmeter.util.ModelUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -16,9 +14,6 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 	
 	private static final Logger log = LoggerFactory.getLogger(HashTreeSerializer.class);
-	
-	@Autowired
-	private ModelUtils utils;
 
 	@Override
 	public void serialize(HashTree tree, JsonGenerator generator, SerializerProvider serializer){
@@ -49,21 +44,18 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 		public void addNode(Object node, HashTree subTree) {
 			log.debug("Adding node {} to tree.", node.getClass().getSimpleName());			
 
-
-			
 			try {
-
+				
 				jsonGen.writeStartObject();
 				jsonGen.writeObjectField("testelement", node);
-				jsonGen.writeStringField("type", utils.determineElementType(node));
+				jsonGen.writeStringField("type", TestElementModel.getElementType(node).toString());
 				jsonGen.writeArrayFieldStart("hashTree");
 								
 			} catch (IOException e) {
 				
 				log.error("Cannot add node {}. Exception type: {}, message {}.",
 						node.getClass().getSimpleName(), e.getClass().getName(), e.getMessage());
-			}
-				
+			}			
 
 		}
 
