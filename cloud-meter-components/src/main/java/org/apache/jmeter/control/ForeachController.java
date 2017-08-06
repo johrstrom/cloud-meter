@@ -20,7 +20,9 @@ package org.apache.jmeter.control;
 
 import java.io.Serializable;
 
+import org.apache.jmeter.control.model.ForeachControllerInitializer;
 import org.apache.jmeter.samplers.Sampler;
+import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.threads.JMeterContext;
@@ -57,6 +59,7 @@ public class ForeachController extends GenericController implements Serializable
     private static final String DEFAULT_SEPARATOR = "_";// $NON-NLS-1$
 
     public ForeachController() {
+    	this.setProperty(TestElement.MODEL_INITIALIZER, ForeachControllerInitializer.class.getName());
     }
     
 

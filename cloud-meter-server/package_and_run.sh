@@ -6,6 +6,6 @@ if [[ -n $1 ]]; then
 	cd ../cloud-meter-server
 fi
 
-mvn clean package "-Dmaven.test.skip=true"
+mvn clean package 
 
 java -jar "target/cloud-meter-server-0.0.1-SNAPSHOT.jar"

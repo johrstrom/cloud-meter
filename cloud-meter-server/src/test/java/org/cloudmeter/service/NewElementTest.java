@@ -27,9 +27,11 @@ public class NewElementTest {
 	@Autowired
 	private TestRestTemplate restTemplate;
 	
-
-	private static final String EXPECTED_HTTP_FILE = "target/test-classes/testelements/http_sampler.json";
-	private static final String TEST_ELEMENT_API = "/api/v1/testelement?type=http-sampler";
+	
+	private static final String FILE_BASE = "target/test-classes/testelements";
+	private static final String SAMPLER_BASE = FILE_BASE + "/samplers/";
+	
+	private static final String TEST_ELEMENT_API = "/api/v1/testelement";
 	private String target;
 	
 	@Before
@@ -39,14 +41,18 @@ public class NewElementTest {
 	
 	@Test
 	public void HTTPSamplerTest() {
-		JSONObject expectedJson = TestUtilities.readObjectFromFile(EXPECTED_HTTP_FILE);
-		String actualString = restTemplate.getForObject(target, String.class);
+		this.validateFileAgainstAPI("http-sampler", SAMPLER_BASE + "http.json");
+	}
+	
+	
+	
+	private void validateFileAgainstAPI(String type, String file) {
+		
+		JSONObject expectedJson = TestUtilities.readObjectFromFile(file);
+		String actualString = restTemplate.getForObject(target + "?type=" + type, String.class);
 		JSONObject actualJson = new JSONObject(actualString);
 		
-		JSONAssert.assertEquals(expectedJson, actualJson, true);
-//		actualJson
-		
-		
+		JSONAssert.assertEquals(expectedJson, actualJson, true);	
 	}
 	
 	

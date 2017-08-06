@@ -32,7 +32,7 @@ import org.apache.jmeter.samplers.Sampler;
  * The class is not thread-safe - it is only intended for use within a single thread.
  */
 public class JMeterContext {
-    private JMeterVariables variables;
+    private JMeterVariables variables = new JMeterVariables();
 
     private SampleResult previousResult;
 
@@ -63,7 +63,7 @@ public class JMeterContext {
     }
 
     private void clear0() {
-        variables = null;
+        variables = new JMeterVariables();
         previousResult = null;
         currentSampler = null;
         previousSampler = null;
