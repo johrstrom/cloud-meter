@@ -4,10 +4,12 @@ import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.model.AbstractInitialzer;
 import org.cloudmeter.model.ModelInitializer;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ArguementsInitializer extends AbstractInitialzer implements ModelInitializer {
 
-	public static final String DEFAULT_NAME = "Arguments"; 
+	public static final String DEFAULT_NAME = "User Defined Variables"; 
 	
 	@Override
 	public TestElement initilizeElement() {

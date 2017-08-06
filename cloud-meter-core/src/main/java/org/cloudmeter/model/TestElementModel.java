@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class TestElementModel {
 	
-	private TestElement testelement;
+	private TestElement testElement;
 		
 	private ModelType type;
 	
@@ -25,11 +25,11 @@ public class TestElementModel {
 	private HashTree hashTree;
 	
 	public TestElement getTestElement() {
-		return testelement;
+		return testElement;
 	}
 	
-	public void setTestElement(TestElement testelement) {
-		this.testelement = testelement;
+	public void setTestElement(TestElement testElement) {
+		this.testElement = testElement;
 	}
 	
 	public ModelType getType() {

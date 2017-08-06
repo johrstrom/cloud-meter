@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HTTPSamplerInitializer extends AbstractInitialzer implements ModelInitializer {
 	
-	public static final String DEFAULT_NAME = "Http Sampler";
+	public static final String DEFAULT_NAME = "HTTP Request";
 	
 	private static final String EMPTY_STRING = "";
 	
@@ -39,6 +39,7 @@ public class HTTPSamplerInitializer extends AbstractInitialzer implements ModelI
 		ele.setProperty(HTTPSamplerProxy.EMBEDDED_URL_RE, EMPTY_STRING);
 		ele.setProperty(HTTPSamplerProxy.CONNECT_TIMEOUT, EMPTY_STRING);
 		ele.setProperty(HTTPSamplerProxy.RESPONSE_TIMEOUT, EMPTY_STRING);
+		ele.setProperty(HTTPSamplerProxy.METHOD , HTTPSamplerProxy.DEFAULT_METHOD);
 		
 		return ele;
 		
