@@ -5,11 +5,11 @@ import java.util.Map;
 
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.testelement.TestElementFactory;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.model.TestElementModel;
-import org.cloudmeter.server.util.TestElementFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -8,6 +8,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.cloudmeter.test.TestUtilities;
 import org.json.JSONObject;
 import org.springframework.boot.context.embedded.LocalServerPort;
@@ -20,9 +21,6 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class NewElementTest {
 
-	@Autowired
-	private CloudMeterService service;
-	
     @LocalServerPort
     private int port;
 	

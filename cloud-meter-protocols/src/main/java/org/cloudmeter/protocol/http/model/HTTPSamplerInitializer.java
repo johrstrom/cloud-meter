@@ -3,8 +3,10 @@ package org.cloudmeter.protocol.http.model;
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.testelement.TestElementFactory;
 import org.cloudmeter.model.AbstractInitialzer;
 import org.cloudmeter.model.ModelInitializer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,13 +15,16 @@ public class HTTPSamplerInitializer extends AbstractInitialzer implements ModelI
 	public static final String DEFAULT_NAME = "Http Sampler";
 	
 	private static final String EMPTY_STRING = "";
+	
+	@Autowired
+	TestElementFactory factory;
 
 	@Override
 	public TestElement initilizeElement() {
 		HTTPSamplerProxy ele = new HTTPSamplerProxy();
-		this.baseElement(ele);
+		this.baseElement(ele, DEFAULT_NAME);
 		
-		ele.setArguments(this.getDefaultArgs());
+		ele.setArguments((Arguments) factory.newElement(Arguments.class));
 		
 		ele.setProperty(HTTPSamplerProxy.DOMAIN, EMPTY_STRING);
 		ele.setProperty(HTTPSamplerProxy.PORT, EMPTY_STRING);
@@ -35,19 +40,10 @@ public class HTTPSamplerInitializer extends AbstractInitialzer implements ModelI
 		ele.setProperty(HTTPSamplerProxy.CONNECT_TIMEOUT, EMPTY_STRING);
 		ele.setProperty(HTTPSamplerProxy.RESPONSE_TIMEOUT, EMPTY_STRING);
 		
-		ele.setName(DEFAULT_NAME);
-		
 		return ele;
 		
 	}
 	
-	protected Arguments getDefaultArgs() {
-		Arguments args = new Arguments();
-		
-//		args.
-		
-		return args;
-	}
 
 //    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
 //    <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
