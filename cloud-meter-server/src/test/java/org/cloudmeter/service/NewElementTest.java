@@ -45,6 +45,11 @@ public class NewElementTest {
 	}
 	
 	@Test
+	public void CriticalSectionControllerTest() {
+		this.validateFileAgainstAPI("critical-section-controller", CONTROLLER_BASE + "critical-section.json");
+	}
+	
+	@Test
 	public void ForEachControllerTest() {
 		this.validateFileAgainstAPI("foreach-controller", CONTROLLER_BASE + "foreach.json");
 	}

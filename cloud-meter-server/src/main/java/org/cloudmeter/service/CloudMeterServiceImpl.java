@@ -7,6 +7,7 @@ import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.TestElementFactory;
 import org.apache.jmeter.threads.ThreadGroup;
+import org.apache.jmeter.control.CriticalSectionController;
 import org.apache.jmeter.control.ForeachController;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jorphan.collections.HashTree;
@@ -53,7 +54,9 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     	
     	map.put("thread-group", ThreadGroup.class);
     	map.put("http-sampler", HTTPSamplerProxy.class);
+    	map.put("critical-section-controller", CriticalSectionController.class);
     	map.put("foreach-controller", ForeachController.class);
+    	
     	
     	return map;
     }

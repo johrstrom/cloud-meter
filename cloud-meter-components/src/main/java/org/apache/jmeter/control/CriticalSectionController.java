@@ -22,6 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.jmeter.control.model.CriticalSectionControllerInitializer;
 import org.apache.jmeter.samplers.Sampler;
 import org.apache.jmeter.testelement.TestStateListener;
 import org.apache.jmeter.testelement.ThreadListener;
@@ -78,7 +79,7 @@ public class CriticalSectionController extends GenericController implements
      * constructor
      */
     public CriticalSectionController() {
-        super();
+        this(null);
     }
 
     /**
@@ -87,7 +88,11 @@ public class CriticalSectionController extends GenericController implements
      */
     public CriticalSectionController(String name) {
         super();
+        if (name == null)
+        	name = "Critical Section Controller";
+        
         this.setName(name);
+        this.setProperty(MODEL_INITIALIZER, CriticalSectionControllerInitializer.class.getName());
     }
 
     /**

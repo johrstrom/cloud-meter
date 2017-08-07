@@ -1,0 +1,31 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "done": false,
+        "enabled": true,
+        "lockName": "global_lock",
+        "properties": {
+            "CriticalSectionController.lockName": {
+                "type": "StringProperty",
+                "value": "global_lock"
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.model_initializer": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.model.CriticalSectionControllerInitializer"
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Critical Section Controller"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.CriticalSectionController"
+            }
+        }
+    },
+    "type": "controller"
+}

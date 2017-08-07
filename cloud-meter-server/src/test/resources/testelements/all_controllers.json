@@ -4,37 +4,7 @@
             "hashTree": [
                 {
                     "hashTree": [
-                        {
-                            "hashTree": [],
-                            "testelement": {
-                                "done": false,
-                                "enabled": true,
-                                "lockName": "global_lock",
-                                "properties": {
-                                    "CriticalSectionController.lockName": {
-                                        "type": "StringProperty",
-                                        "value": "global_lock"
-                                    },
-                                    "TestElement.enabled": {
-                                        "type": "StringProperty",
-                                        "value": "true"
-                                    },
-                                    "TestElement.gui_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.gui.CriticalSectionControllerGui"
-                                    },
-                                    "TestElement.name": {
-                                        "type": "StringProperty",
-                                        "value": "Critical Section Controller"
-                                    },
-                                    "TestElement.test_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.CriticalSectionController"
-                                    }
-                                }
-                            },
-                            "type": "unknown"
-                        },
+
 
                         {
                             "hashTree": [],
