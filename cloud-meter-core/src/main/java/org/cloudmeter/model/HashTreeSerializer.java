@@ -47,7 +47,7 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 			try {
 				
 				jsonGen.writeStartObject();
-				jsonGen.writeObjectField("testelement", node);
+				jsonGen.writeObjectField("testElement", node);
 				jsonGen.writeStringField("type", TestElementModel.getElementType(node).toString());
 				jsonGen.writeArrayFieldStart("hashTree");
 								

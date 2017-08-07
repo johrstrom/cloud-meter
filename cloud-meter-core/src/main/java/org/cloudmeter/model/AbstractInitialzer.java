@@ -3,6 +3,8 @@ package org.cloudmeter.model;
 import org.apache.jmeter.testelement.TestElement;
 
 public abstract class AbstractInitialzer {
+	
+	public static final String EMPTY_STRING = "";
 
 	
 	protected void baseElement(TestElement ele, String name) {

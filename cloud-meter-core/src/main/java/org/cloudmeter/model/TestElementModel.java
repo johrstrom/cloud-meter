@@ -2,6 +2,7 @@ package org.cloudmeter.model;
 
 import org.apache.jmeter.assertions.Assertion;
 import org.apache.jmeter.config.ConfigTestElement;
+import org.apache.jmeter.control.Controller;
 import org.apache.jmeter.processor.PostProcessor;
 import org.apache.jmeter.processor.PreProcessor;
 import org.apache.jmeter.reporters.AbstractListenerElement;
@@ -51,6 +52,7 @@ public class TestElementModel {
 	public enum ModelType  {
 		assertion,
 		config,
+		controller,
 		listener,
 		post_processor,
 		pre_processor,
@@ -67,10 +69,12 @@ public class TestElementModel {
 		if(!(ele instanceof TestElement)) 
 			return ModelType.unknown;
 		
-		else if (ele instanceof Assertion) {
+		if (ele instanceof Assertion) {
 			return ModelType.assertion;
 		}else if (ele instanceof ConfigTestElement) { 
 			return ModelType.config;
+		}else if (ele instanceof Controller) {
+			return ModelType.controller;
 		}else if (ele instanceof AbstractListenerElement) {
 			return ModelType.listener;
 		}else if (ele instanceof PostProcessor ) {

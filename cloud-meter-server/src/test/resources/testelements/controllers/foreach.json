@@ -1,10 +1,8 @@
 {
     "hashTree": [],
-    "testelement": {
+    "testElement": {
         "done": false,
         "enabled": true,
-        "endIndexAsString": "",
-        "inputValString": "",
         "properties": {
             "ForeachController.inputVal": {
                 "type": "StringProperty",
@@ -35,9 +33,7 @@
                 "value": "org.apache.jmeter.control.ForeachController"
             }
         },
-        "returnValString": "",
-        "startIndexAsString": "",
         "useSeparator": true
     },
-    "type": "unknown"
+    "type": "controller"
 }

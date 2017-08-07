@@ -8,7 +8,6 @@ import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.cloudmeter.test.TestUtilities;
 import org.json.JSONObject;
 import org.springframework.boot.context.embedded.LocalServerPort;
@@ -30,6 +29,7 @@ public class NewElementTest {
 	
 	private static final String FILE_BASE = "target/test-classes/testelements";
 	private static final String SAMPLER_BASE = FILE_BASE + "/samplers/";
+	private static final String CONTROLLER_BASE = FILE_BASE + "/controllers/";
 	
 	private static final String TEST_ELEMENT_API = "/api/v1/testelement";
 	private String target;
@@ -42,6 +42,11 @@ public class NewElementTest {
 	@Test
 	public void HTTPSamplerTest() {
 		this.validateFileAgainstAPI("http-sampler", SAMPLER_BASE + "http.json");
+	}
+	
+	@Test
+	public void ForEachControllerTest() {
+		this.validateFileAgainstAPI("foreach-controller", CONTROLLER_BASE + "foreach.json");
 	}
 	
 	

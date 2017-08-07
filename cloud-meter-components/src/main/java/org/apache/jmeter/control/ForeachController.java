@@ -30,6 +30,8 @@ import org.apache.jmeter.threads.JMeterVariables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * ForeachController that iterates over a list of variables named XXXX_NN stored in {@link JMeterVariables}
  * where NN is a number starting from 1 to number of occurences.
@@ -52,7 +54,7 @@ public class ForeachController extends GenericController implements Serializable
 
     private static final String USE_SEPARATOR = "ForeachController.useSeparator";// $NON-NLS-1$
 
-    private static final String INDEX_DEFAULT_VALUE = ""; // start/end index default value for string getters and setters
+    public static final String INDEX_DEFAULT_VALUE = ""; // start/end index default value for string getters and setters
 
     private int loopCount = 0;
 
@@ -82,6 +84,7 @@ public class ForeachController extends GenericController implements Serializable
     /**
      * @return start index of loop as String
      */
+    @JsonIgnore
     public String getStartIndexAsString() {
         return getPropertyAsString(START_INDEX, INDEX_DEFAULT_VALUE);
     }
@@ -104,6 +107,7 @@ public class ForeachController extends GenericController implements Serializable
     /**
      * @return end index of loop
      */
+    @JsonIgnore
     public String getEndIndexAsString() {
         return getPropertyAsString(END_INDEX, INDEX_DEFAULT_VALUE);
     }
@@ -117,6 +121,7 @@ public class ForeachController extends GenericController implements Serializable
         return getInputValString();
     }
 
+    @JsonIgnore
     public String getInputValString() {
         return getPropertyAsString(INPUTVAL);
     }
@@ -130,6 +135,7 @@ public class ForeachController extends GenericController implements Serializable
         return getReturnValString();
     }
 
+    @JsonIgnore
     public String getReturnValString() {
         return getPropertyAsString(RETURNVAL);
     }
