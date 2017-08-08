@@ -1,17 +1,16 @@
 package org.apache.jmeter.control.model;
 
+import org.apache.jmeter.control.CriticalSectionController;
 import org.apache.jmeter.control.ForeachController;
 import org.junit.Test;
 
 import org.junit.Assert;
 
-public class ForeachControllerInitializerTest {
-	
-	ForeachControllerInitializer initer = new ForeachControllerInitializer();
-
+public class ControllerModelTest {
 	
 	@Test
-	public void initTest() {
+	public void testForEach() {
+		ForeachControllerInitializer initer = new ForeachControllerInitializer();
 		ForeachController ele = (ForeachController) initer.initilizeElement();
 				
 		Assert.assertFalse(ele.isDone());
@@ -21,6 +20,20 @@ public class ForeachControllerInitializerTest {
 		Assert.assertTrue("".equals(ele.getInputValString()));
 		Assert.assertTrue(ele.getUseSeparator());
 	
+	}
+	
+	
+	@Test
+	public void testCriticalSection() {
+		CriticalSectionControllerInitializer initer = new CriticalSectionControllerInitializer();
+		CriticalSectionController ele = (CriticalSectionController) initer.initilizeElement();
+		
+		Assert.assertTrue("global_lock".equals(ele.getLockName()));
+	}
+	
+	@Test
+	public void testIfController() {
+		
 	}
 	
 }
