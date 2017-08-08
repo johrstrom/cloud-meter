@@ -25,6 +25,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.SimpleScriptContext;
 
+import org.apache.jmeter.control.model.IfControllerInitializer;
 import org.apache.jmeter.samplers.Sampler;
 import org.apache.jmeter.testelement.ThreadListener;
 import org.apache.jmeter.testelement.property.StringProperty;
@@ -149,7 +150,7 @@ public class IfController extends GenericController implements Serializable, Thr
      * constructor
      */
     public IfController() {
-        super();
+    	this("");    	
     }
 
     /**
@@ -158,7 +159,9 @@ public class IfController extends GenericController implements Serializable, Thr
      */
     public IfController(String condition) {
         super();
-        this.setCondition(condition);
+        this.setProperty(MODEL_INITIALIZER, IfControllerInitializer.class.getName());
+        if(condition != null)
+        	this.setCondition(condition);
     }
 
     /**

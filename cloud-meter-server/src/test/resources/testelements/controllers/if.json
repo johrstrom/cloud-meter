@@ -1,0 +1,37 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "condition": "",
+        "done": false,
+        "enabled": true,
+        "evaluateAll": false,
+        "properties": {
+            "IfController.condition": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "IfController.evaluateAll": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.model_initializer": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.model.IfControllerInitializer"
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "If Controller"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.IfController"
+            }
+        },
+        "useExpression": false
+    },
+    "type": "controller"
+}

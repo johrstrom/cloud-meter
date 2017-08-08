@@ -4,11 +4,88 @@
             "hashTree": [
                 {
                     "hashTree": [
-
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "done": false,
+                                "enabled": true,
+                                "lockName": "global_lock",
+                                "properties": {
+                                    "CriticalSectionController.lockName": {
+                                        "type": "StringProperty",
+                                        "value": "global_lock"
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.control.gui.CriticalSectionControllerGui"
+                                    },
+                                    "TestElement.model_initializer": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.control.model.CriticalSectionControllerInitializer"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Critical Section Controller"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.control.CriticalSectionController"
+                                    }
+                                }
+                            },
+                            "type": "controller"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "done": false,
+                                "enabled": true,
+                                "properties": {
+                                    "ForeachController.inputVal": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "ForeachController.returnVal": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "ForeachController.useSeparator": {
+                                        "type": "BooleanProperty",
+                                        "value": true
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.control.gui.ForeachControlPanel"
+                                    },
+                                    "TestElement.model_initializer": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.control.model.ForeachControllerInitializer"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "ForEach Controller"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.control.ForeachController"
+                                    }
+                                },
+                                "useSeparator": true
+                            },
+                            "type": "controller"
+                        },
 
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "includePath": "",
@@ -37,11 +114,11 @@
                                 "replacementElement": null,
                                 "replacementSubTree": null
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "properties": {
@@ -72,11 +149,11 @@
                                 },
                                 "style": 1
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "loopString": "1",
@@ -108,11 +185,11 @@
                                     }
                                 }
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "properties": {
@@ -134,11 +211,11 @@
                                     }
                                 }
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "properties": {
@@ -165,11 +242,11 @@
                                 },
                                 "style": 1
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "properties": {
@@ -191,11 +268,11 @@
                                     }
                                 }
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": true,
                                 "enabled": true,
                                 "properties": {
@@ -223,11 +300,11 @@
                                 "runtime": 1,
                                 "runtimeString": "1"
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "properties": {
@@ -249,11 +326,11 @@
                                     }
                                 }
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "properties": {
@@ -280,11 +357,11 @@
                                 },
                                 "selection": ""
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": true,
                                 "enabled": true,
                                 "maxThroughput": "1",
@@ -326,11 +403,11 @@
                                 },
                                 "style": 1
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "done": false,
                                 "enabled": true,
                                 "generateParentSample": false,
@@ -363,11 +440,11 @@
                                     }
                                 }
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         },
                         {
                             "hashTree": [],
-                            "testelement": {
+                            "testElement": {
                                 "condition": "",
                                 "done": false,
                                 "enabled": true,
@@ -394,10 +471,10 @@
                                     }
                                 }
                             },
-                            "type": "unknown"
+                            "type": "controller"
                         }
                     ],
-                    "testelement": {
+                    "testElement": {
                         "delay": 0,
                         "done": false,
                         "duration": 0,
@@ -503,10 +580,10 @@
                         "scheduler": false,
                         "startTime": 1502056967000
                     },
-                    "type": "thread_group"
+                    "type": "controller"
                 }
             ],
-            "testelement": {
+            "testElement": {
                 "enabled": true,
                 "properties": {
                     "TestElement.enabled": {
@@ -551,7 +628,7 @@
         },
         {
             "hashTree": [],
-            "testelement": {
+            "testElement": {
                 "enabled": true,
                 "properties": {
                     "TestElement.enabled": {

@@ -2,6 +2,7 @@ package org.apache.jmeter.control.model;
 
 import org.apache.jmeter.control.CriticalSectionController;
 import org.apache.jmeter.control.ForeachController;
+import org.apache.jmeter.control.IfController;
 import org.junit.Test;
 
 import org.junit.Assert;
@@ -33,6 +34,11 @@ public class ControllerModelTest {
 	
 	@Test
 	public void testIfController() {
+		IfControllerInitializer initer = new IfControllerInitializer();
+		IfController ele = (IfController) initer.initilizeElement();
+		
+		Assert.assertTrue("".equals(ele.getCondition()));
+		Assert.assertFalse(ele.isEvaluateAll());
 		
 	}
 	
