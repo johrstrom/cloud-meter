@@ -3,6 +3,7 @@ package org.apache.jmeter.control.model;
 import org.apache.jmeter.control.CriticalSectionController;
 import org.apache.jmeter.control.ForeachController;
 import org.apache.jmeter.control.IfController;
+import org.apache.jmeter.control.IncludeController;
 import org.junit.Test;
 
 import org.junit.Assert;
@@ -39,6 +40,16 @@ public class ControllerModelTest {
 		
 		Assert.assertTrue("".equals(ele.getCondition()));
 		Assert.assertFalse(ele.isEvaluateAll());
+		
+	}
+	
+	@Test
+	public void testIncludeController() {
+		IncludeControllerInitializer initer = new IncludeControllerInitializer();
+		IncludeController ele = (IncludeController) initer.initilizeElement();
+		
+		Assert.assertTrue("".equals(ele.getIncludePath()));
+		
 		
 	}
 	

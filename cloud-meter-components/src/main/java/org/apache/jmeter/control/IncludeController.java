@@ -23,6 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 
+import org.apache.jmeter.control.model.IncludeControllerInitializer;
 import org.apache.jmeter.save.SaveService;
 import org.apache.jmeter.services.FileServer;
 import org.apache.jmeter.testelement.TestElement;
@@ -54,6 +55,7 @@ public class IncludeController extends GenericController {
      */
     public IncludeController() {
         super();
+        this.setProperty(MODEL_INITIALIZER, IncludeControllerInitializer.class.getName());
     }
 
     @Override

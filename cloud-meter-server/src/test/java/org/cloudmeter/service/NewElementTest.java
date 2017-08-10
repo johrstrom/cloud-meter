@@ -60,6 +60,11 @@ public class NewElementTest {
 		this.validateFileAgainstAPI("if-controller", CONTROLLER_BASE + "if.json");
 	}
 	
+	@Test
+	public void includeControllerTest() {
+		this.validateFileAgainstAPI("include-controller", CONTROLLER_BASE + "include.json");
+	}
+	
 	
 	
 	private void validateFileAgainstAPI(String type, String file) {

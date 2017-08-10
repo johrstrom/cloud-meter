@@ -56,6 +56,7 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     	map.put("critical-section-controller", CriticalSectionController.class);
     	map.put("foreach-controller", ForeachController.class);
     	map.put("if-controller", IfController.class);
+    	map.put("include-controller", IncludeController.class);
     	
     	
     	return map;

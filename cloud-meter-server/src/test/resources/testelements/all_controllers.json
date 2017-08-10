@@ -83,39 +83,7 @@
                             "type": "controller"
                         },
 
-                        {
-                            "hashTree": [],
-                            "testElement": {
-                                "done": false,
-                                "enabled": true,
-                                "includePath": "",
-                                "properties": {
-                                    "IncludeController.includepath": {
-                                        "type": "StringProperty",
-                                        "value": ""
-                                    },
-                                    "TestElement.enabled": {
-                                        "type": "StringProperty",
-                                        "value": "true"
-                                    },
-                                    "TestElement.gui_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.gui.IncludeControllerGui"
-                                    },
-                                    "TestElement.name": {
-                                        "type": "StringProperty",
-                                        "value": "Include Controller"
-                                    },
-                                    "TestElement.test_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.IncludeController"
-                                    }
-                                },
-                                "replacementElement": null,
-                                "replacementSubTree": null
-                            },
-                            "type": "controller"
-                        },
+
                         {
                             "hashTree": [],
                             "testElement": {

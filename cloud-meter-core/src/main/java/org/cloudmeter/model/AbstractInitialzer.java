@@ -2,7 +2,7 @@ package org.cloudmeter.model;
 
 import org.apache.jmeter.testelement.TestElement;
 
-public abstract class AbstractInitialzer {
+public abstract class AbstractInitialzer implements ModelInitializer {
 	
 	public static final String EMPTY_STRING = "";
 
