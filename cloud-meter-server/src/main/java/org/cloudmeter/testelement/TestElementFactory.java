@@ -1,4 +1,4 @@
-package org.apache.jmeter.testelement;
+package org.cloudmeter.testelement;
 
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;

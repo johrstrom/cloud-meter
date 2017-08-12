@@ -7,10 +7,7 @@ import org.apache.jmeter.testelement.property.LongProperty;
 import org.apache.jmeter.threads.AbstractThreadGroup;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.cloudmeter.model.ModelInitializer;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 
-@Component
 public class ThreadGroupInitializer implements ModelInitializer {
 	
 	@Override
