@@ -24,8 +24,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.jmeter.config.model.ArguementsInitializer;
-import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.CollectionProperty;
 import org.apache.jmeter.testelement.property.JMeterProperty;
 import org.apache.jmeter.testelement.property.PropertyIterator;
@@ -46,7 +44,6 @@ public class Arguments extends ConfigTestElement implements Serializable, Iterab
      */
     public Arguments() {
         setProperty(new CollectionProperty(ARGUMENTS, new ArrayList<Argument>()));
-        setProperty(TestElement.MODEL_INITIALIZER, ArguementsInitializer.class.getName());
     }
 
     /**

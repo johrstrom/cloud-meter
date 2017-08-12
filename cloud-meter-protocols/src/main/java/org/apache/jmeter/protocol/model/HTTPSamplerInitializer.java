@@ -1,12 +1,12 @@
-package org.cloudmeter.protocol.http.model;
+package org.apache.jmeter.protocol.model;
 
 import org.apache.jmeter.config.Arguments;
+import org.apache.jmeter.config.model.ArguementsInitializer;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.model.AbstractInitialzer;
-import org.cloudmeter.model.ModelInitializer;
 
-public class HTTPSamplerInitializer extends AbstractInitialzer implements ModelInitializer {
+public class HTTPSamplerInitializer extends AbstractInitialzer {
 	
 	public static final String DEFAULT_NAME = "HTTP Request";
 	
@@ -17,7 +17,8 @@ public class HTTPSamplerInitializer extends AbstractInitialzer implements ModelI
 		HTTPSamplerProxy ele = new HTTPSamplerProxy();
 		this.baseElement(ele, DEFAULT_NAME);
 		
-		ele.setArguments(new Arguments());
+		ArguementsInitializer initer = new ArguementsInitializer();
+		ele.setArguments((Arguments) initer.initilizeElement());
 		
 		ele.setProperty(HTTPSamplerProxy.DOMAIN, EMPTY_STRING);
 		ele.setProperty(HTTPSamplerProxy.PORT, EMPTY_STRING);

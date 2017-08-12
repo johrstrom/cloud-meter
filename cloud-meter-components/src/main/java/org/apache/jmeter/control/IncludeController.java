@@ -55,7 +55,6 @@ public class IncludeController extends GenericController {
      */
     public IncludeController() {
         super();
-        this.setProperty(MODEL_INITIALIZER, IncludeControllerInitializer.class.getName());
     }
 
     @Override

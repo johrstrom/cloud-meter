@@ -94,9 +94,7 @@ public class ThreadGroup extends AbstractThreadGroup {
      * No-arg constructor.
      */
     public ThreadGroup() {
-    	this.setProperty(
-    			TestElement.MODEL_INITIALIZER, 
-    			org.cloudmeter.model.threads.ThreadGroupInitializer.class.getName());
+    	
     }
 
     /**

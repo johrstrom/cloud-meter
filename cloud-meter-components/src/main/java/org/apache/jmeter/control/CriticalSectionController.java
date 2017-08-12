@@ -92,7 +92,6 @@ public class CriticalSectionController extends GenericController implements
         	name = "Critical Section Controller";
         
         this.setName(name);
-        this.setProperty(MODEL_INITIALIZER, CriticalSectionControllerInitializer.class.getName());
     }
 
     /**

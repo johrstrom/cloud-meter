@@ -159,7 +159,6 @@ public class IfController extends GenericController implements Serializable, Thr
      */
     public IfController(String condition) {
         super();
-        this.setProperty(MODEL_INITIALIZER, IfControllerInitializer.class.getName());
         if(condition != null)
         	this.setCondition(condition);
     }

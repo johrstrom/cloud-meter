@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
-import org.apache.jmeter.testelement.TestElementFactory;
+import org.cloudmeter.testelement.TestElementFactory;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.control.*;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;

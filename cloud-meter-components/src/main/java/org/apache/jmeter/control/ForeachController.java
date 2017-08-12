@@ -61,7 +61,7 @@ public class ForeachController extends GenericController implements Serializable
     private static final String DEFAULT_SEPARATOR = "_";// $NON-NLS-1$
 
     public ForeachController() {
-    	this.setProperty(TestElement.MODEL_INITIALIZER, ForeachControllerInitializer.class.getName());
+    	
     }
     
 

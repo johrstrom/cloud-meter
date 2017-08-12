@@ -18,10 +18,6 @@
                     "type": "BooleanProperty",
                     "value": true
                 },
-                "TestElement.model_initializer": {
-                    "type": "StringProperty",
-                    "value": "org.apache.jmeter.config.model.ArguementsInitializer"
-                },
                 "TestElement.name": {
                     "type": "StringProperty",
                     "value": "User Defined Variables"
@@ -120,10 +116,6 @@
             "TestElement.enabled": {
                 "type": "BooleanProperty",
                 "value": true
-            },
-            "TestElement.model_initializer": {
-                "type": "StringProperty",
-                "value": "org.cloudmeter.protocol.http.model.HTTPSamplerInitializer"
             },
             "TestElement.name": {
                 "type": "StringProperty",

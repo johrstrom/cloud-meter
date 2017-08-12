@@ -31,8 +31,6 @@ public interface TestElement extends Cloneable {
     String ENABLED = "TestElement.enabled"; //$NON-NLS-1$
 
     String TEST_CLASS = "TestElement.test_class"; //$NON-NLS-1$
-    
-    String MODEL_INITIALIZER = "TestElement.model_initializer"; //$NON-NLS-1$
 
     // Needed by AbstractTestElement.
     // Also TestElementConverter and TestElementPropertyConverter for handling empty comments
