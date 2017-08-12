@@ -3,9 +3,7 @@ package org.apache.jmeter.control.model;
 import org.apache.jmeter.control.ForeachController;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.model.AbstractInitialzer;
-import org.springframework.stereotype.Component;
 
-@Component
 public class ForeachControllerInitializer extends AbstractInitialzer {
 
 	public static final String DEFAULT_NAME = "ForEach Controller";
