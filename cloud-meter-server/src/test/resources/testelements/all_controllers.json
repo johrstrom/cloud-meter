@@ -127,37 +127,6 @@
                                 "done": false,
                                 "enabled": true,
                                 "properties": {
-                                    "InterleaveControl.style": {
-                                        "type": "IntegerProperty",
-                                        "value": 1
-                                    },
-                                    "TestElement.enabled": {
-                                        "type": "StringProperty",
-                                        "value": "true"
-                                    },
-                                    "TestElement.gui_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.gui.RandomControlGui"
-                                    },
-                                    "TestElement.name": {
-                                        "type": "StringProperty",
-                                        "value": "Random Controller"
-                                    },
-                                    "TestElement.test_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.RandomController"
-                                    }
-                                },
-                                "style": 1
-                            },
-                            "type": "controller"
-                        },
-                        {
-                            "hashTree": [],
-                            "testElement": {
-                                "done": false,
-                                "enabled": true,
-                                "properties": {
                                     "TestElement.enabled": {
                                         "type": "StringProperty",
                                         "value": "true"

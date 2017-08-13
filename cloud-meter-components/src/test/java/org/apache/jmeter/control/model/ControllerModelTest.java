@@ -63,6 +63,15 @@ public class ControllerModelTest {
 		Assert.assertTrue(ele.isEnabled());	
 	}
 	
+	@Test
+	public void randomControllerTest() {
+		RandomControllerInitializer initer = new RandomControllerInitializer();
+		RandomController ele = (RandomController) initer.initilizeElement();
+		
+		Assert.assertTrue("Random Controller".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());	
+		Assert.assertTrue(ele.getStyle() == 1);
+	}
 
 	
 }

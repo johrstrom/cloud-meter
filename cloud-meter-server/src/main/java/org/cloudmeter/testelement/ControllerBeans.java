@@ -75,4 +75,14 @@ public class ControllerBeans {
 		return (OnceOnlyController) initer.initilizeElement();
 	}
 	
+	@Bean
+	public RandomControllerInitializer RandomControllerInitializer() {
+		return new RandomControllerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public RandomController RandomController(RandomControllerInitializer initer) {
+		return (RandomController) initer.initilizeElement();
+	}
 }

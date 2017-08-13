@@ -76,6 +76,10 @@ public class NewElementTest {
 		this.validateFileAgainstAPI("once-only-controller", CONTROLLER_BASE + "once-only.json");
 	}
 	
+	@Test
+	public void randomControllerTest() {
+		this.validateFileAgainstAPI("random-controller", CONTROLLER_BASE + "random.json");
+	}
 	
 	private void validateFileAgainstAPI(String type, String file) {
 		
