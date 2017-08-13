@@ -66,6 +66,11 @@ public class NewElementTest {
 	}
 	
 	
+	@Test
+	public void loopControllerTest() {
+		this.validateFileAgainstAPI("loop-controller", CONTROLLER_BASE + "loop.json");
+	}
+	
 	
 	private void validateFileAgainstAPI(String type, String file) {
 		

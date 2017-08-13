@@ -53,4 +53,15 @@ public class ControllerBeans {
 		return (IncludeController) initer.initilizeElement();
 	}
 	
+	@Bean
+	public LoopControllerInitializer LoopControllerInitializer() {
+		return new LoopControllerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public LoopController LoopController(LoopControllerInitializer initer) {
+		return (LoopController) initer.initilizeElement();
+	}
+	
 }

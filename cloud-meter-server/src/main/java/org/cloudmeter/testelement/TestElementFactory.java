@@ -21,6 +21,9 @@ public class TestElementFactory {
 	}
 
 	public TestElement newElement(Class<? extends AbstractTestElement> clazz) {
+		if (clazz == null)
+			return null;
+		
 		try {
 			
 			return (TestElement) context.getBean(clazz.getSimpleName());

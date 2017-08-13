@@ -119,42 +119,7 @@
                             },
                             "type": "controller"
                         },
-                        {
-                            "hashTree": [],
-                            "testElement": {
-                                "done": false,
-                                "enabled": true,
-                                "loopString": "1",
-                                "loops": 1,
-                                "properties": {
-                                    "LoopController.continue_forever": {
-                                        "type": "BooleanProperty",
-                                        "value": true
-                                    },
-                                    "LoopController.loops": {
-                                        "type": "StringProperty",
-                                        "value": "1"
-                                    },
-                                    "TestElement.enabled": {
-                                        "type": "StringProperty",
-                                        "value": "true"
-                                    },
-                                    "TestElement.gui_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.gui.LoopControlPanel"
-                                    },
-                                    "TestElement.name": {
-                                        "type": "StringProperty",
-                                        "value": "Loop Controller"
-                                    },
-                                    "TestElement.test_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.LoopController"
-                                    }
-                                }
-                            },
-                            "type": "controller"
-                        },
+
                         {
                             "hashTree": [],
                             "testElement": {
