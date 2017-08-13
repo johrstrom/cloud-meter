@@ -74,6 +74,15 @@ public class ControllerModelTest {
 	}
 
 	
+	@Test
+	public void randomOrderControllerTest() {
+		RandomOrderControllerInitializer initer = new RandomOrderControllerInitializer();
+		RandomOrderController ele = (RandomOrderController) initer.initilizeElement();
+		
+		Assert.assertTrue("Random Order Controller".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());	
+	}
+	
 }
 
 

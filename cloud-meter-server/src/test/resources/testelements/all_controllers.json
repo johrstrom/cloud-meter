@@ -121,32 +121,7 @@
                         },
 
 
-                        {
-                            "hashTree": [],
-                            "testElement": {
-                                "done": false,
-                                "enabled": true,
-                                "properties": {
-                                    "TestElement.enabled": {
-                                        "type": "StringProperty",
-                                        "value": "true"
-                                    },
-                                    "TestElement.gui_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.gui.RandomOrderControllerGui"
-                                    },
-                                    "TestElement.name": {
-                                        "type": "StringProperty",
-                                        "value": "Random Order Controller"
-                                    },
-                                    "TestElement.test_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.RandomOrderController"
-                                    }
-                                }
-                            },
-                            "type": "controller"
-                        },
+
                         {
                             "hashTree": [],
                             "testElement": {
