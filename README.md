@@ -29,9 +29,17 @@ the maturity of this project increases.
 
 # Current Status
 
-Right now I'm working a lot on the UI in js/Angular and the testplan/testelement apis that backups up retrieving and saving test plans.
+Right now I'm working a lot on building out the /api/v1/testelement api. 
 
-Specifically the tree on the left hand side of the UI that actually manipulates the overall test plan.  
+This will enable users to create new items in the ui. 
 
-At this moment I'm mostly working on the static html pages (in cloud-meter-server/src/main/resources) so I can modify the frontend
-js and simply refresh my browser without having to recompile the jar.
+At this moment (at least when I'm working on the ui) I'm mostly working on the [static html pages](https://github.com/johrstrom/cloud-meter/blob/master/cloud-meter-server/src/main/resources/static/index_static.html) so I can modify the frontend js and simply refresh my browser without 
+having to recompile the jar.
+
+What's next
+* Once the testelement api is complete, the js frontend needs to be updated to interact with it fully
+At which point, you should be able to build out a tree on the left hand side.
+* Then, the all the center-right screen needs to show text fields, areas, check boxes etc to actually update
+and interact with the elements themselves. 
+* Then comes storage. Once we can interact with test plans, we'll need to be able to store 
+* By the time that happens, I'm sure I'll have this list updated so I don't really have to finish it now.
