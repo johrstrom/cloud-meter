@@ -83,6 +83,16 @@ public class ControllerModelTest {
 		Assert.assertTrue(ele.isEnabled());	
 	}
 	
+	@Test
+	public void switchControllerTest() {
+		SwitchControllerInitializer initer = new SwitchControllerInitializer();
+		SwitchController ele = (SwitchController) initer.initilizeElement();
+		
+		Assert.assertTrue("Switch Controller".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());	
+		Assert.assertTrue("".equals(ele.getSelection()));	
+	}
+	
 }
 
 

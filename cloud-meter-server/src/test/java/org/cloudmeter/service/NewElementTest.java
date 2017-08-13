@@ -86,6 +86,11 @@ public class NewElementTest {
 		this.validateFileAgainstAPI("random-order-controller", CONTROLLER_BASE + "random-order.json");
 	}
 	
+	@Test
+	public void switchControllerTest() {
+		this.validateFileAgainstAPI("switch-controller", CONTROLLER_BASE + "switch.json");
+	}
+	
 	private void validateFileAgainstAPI(String type, String file) {
 		
 		JSONObject expectedJson = TestUtilities.readObjectFromFile(file);

@@ -180,37 +180,7 @@
                             },
                             "type": "controller"
                         },
-                        {
-                            "hashTree": [],
-                            "testElement": {
-                                "done": false,
-                                "enabled": true,
-                                "properties": {
-                                    "SwitchController.value": {
-                                        "type": "StringProperty",
-                                        "value": ""
-                                    },
-                                    "TestElement.enabled": {
-                                        "type": "StringProperty",
-                                        "value": "true"
-                                    },
-                                    "TestElement.gui_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.gui.SwitchControllerGui"
-                                    },
-                                    "TestElement.name": {
-                                        "type": "StringProperty",
-                                        "value": "Switch Controller"
-                                    },
-                                    "TestElement.test_class": {
-                                        "type": "StringProperty",
-                                        "value": "org.apache.jmeter.control.SwitchController"
-                                    }
-                                },
-                                "selection": ""
-                            },
-                            "type": "controller"
-                        },
+
                         {
                             "hashTree": [],
                             "testElement": {

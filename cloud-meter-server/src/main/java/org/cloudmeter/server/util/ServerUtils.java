@@ -40,6 +40,7 @@ public class ServerUtils {
     	map.put("random-controller", RandomController.class);
     	map.put("random-order-controller", RandomOrderController.class);
 //    	map.put("simple-controller", SimpleController.class);
+    	map.put("switch-controller", SwitchController.class);
     	map.put("throughput-controller", ThroughputController.class);
     	map.put("transaction-controller", TransactionController.class);
     	map.put("while-controller", WhileController.class);

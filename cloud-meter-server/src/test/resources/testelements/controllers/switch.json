@@ -1,0 +1,27 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "done": false,
+        "enabled": true,
+        "properties": {
+            "SwitchController.value": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Switch Controller"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.SwitchController"
+            }
+        },
+        "selection": ""
+    },
+    "type": "controller"
+}

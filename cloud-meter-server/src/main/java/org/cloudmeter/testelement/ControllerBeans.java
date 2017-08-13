@@ -96,4 +96,15 @@ public class ControllerBeans {
 	public RandomOrderController RandomOrderController(RandomOrderControllerInitializer initer) {
 		return (RandomOrderController) initer.initilizeElement();
 	}
+	
+	@Bean
+	public SwitchControllerInitializer SwitchControllerInitializer() {
+		return new SwitchControllerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public SwitchController SwitchController(SwitchControllerInitializer initer) {
+		return (SwitchController) initer.initilizeElement();
+	}
 }
