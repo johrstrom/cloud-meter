@@ -1,0 +1,42 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "done": true,
+        "enabled": true,
+        "maxThroughput": "1",
+        "perThread": false,
+        "percentThroughput": "1.0",
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Throughput Controller"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.ThroughputController"
+            },
+            "ThroughputController.maxThroughput": {
+                "type": "IntegerProperty",
+                "value": 1
+            },
+            "ThroughputController.perThread": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "ThroughputController.percentThroughput": {
+                "type": "FloatProperty",
+                "value": 1.0
+            },
+            "ThroughputController.style": {
+                "type": "IntegerProperty",
+                "value": 1
+            }
+        },
+        "style": 1
+    },
+    "type": "controller"
+}

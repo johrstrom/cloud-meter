@@ -107,4 +107,15 @@ public class ControllerBeans {
 	public SwitchController SwitchController(SwitchControllerInitializer initer) {
 		return (SwitchController) initer.initilizeElement();
 	}
+	
+	@Bean
+	public ThroughputControllerInitializer ThroughputControllerInitializer() {
+		return new ThroughputControllerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ThroughputController ThroughputController(ThroughputControllerInitializer initer) {
+		return (ThroughputController) initer.initilizeElement();
+	}
 }

@@ -93,6 +93,19 @@ public class ControllerModelTest {
 		Assert.assertTrue("".equals(ele.getSelection()));	
 	}
 	
+	@Test
+	public void throughputControllerTest() {
+		ThroughputControllerInitializer initer = new ThroughputControllerInitializer();
+		ThroughputController ele = (ThroughputController) initer.initilizeElement();
+		
+		Assert.assertTrue("Throughput Controller".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());	
+		Assert.assertTrue("1".equals(ele.getMaxThroughput()));
+		Assert.assertFalse(ele.isPerThread());
+		Assert.assertTrue("1.0".equals(ele.getPercentThroughput()));
+		Assert.assertTrue(ele.getStyle() == 1);
+	}
+	
 }
 
 
