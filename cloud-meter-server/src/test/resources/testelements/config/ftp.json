@@ -1,0 +1,53 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "properties": {
+            "FTPSampler.binarymode": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "FTPSampler.filename": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "FTPSampler.inputdata": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "FTPSampler.localfilename": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "FTPSampler.port": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "FTPSampler.saveresponse": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "FTPSampler.server": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "FTPSampler.upload": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "FTP Request Defaults"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.config.ConfigTestElement"
+            }
+        }
+    },
+    "type": "config"
+}

@@ -2,10 +2,8 @@ package org.cloudmeter.service;
 
 import java.util.Map;
 
-import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.testelement.TestElementFactory;
-import org.apache.jorphan.collections.HashTree;
 import org.cloudmeter.model.TestElementModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,7 +14,7 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 
 	@Autowired
 	@Qualifier("testElementNameLookup")
-	private Map<String, Class<? extends AbstractTestElement>> classTypeLookup;
+	private Map<String, String> apiTypeToBeanLookup;
   
 	@Autowired
 	private TestElementFactory elementFactory;
@@ -25,19 +23,11 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 	public TestElementModel newTestElement(String name, String type) {
 		
     	if (type != null && !type.equals("")) {
-    		Class<? extends AbstractTestElement> clazz = classTypeLookup.get(type);
     		
-			
+    		String beanName = this.apiTypeToBeanLookup.get(type);
+    		
     		//TODO throws null here if it can't instantiate!
-    		TestElement ele = elementFactory.newElement(clazz);    		
-			this.setElementName(name, ele);
-			
-			TestElementModel model = new TestElementModel();
-			model.setTestElement(ele);
-			model.setType(TestElementModel.getElementType(ele));
-			model.setHashTree(new HashTree());
-			
-			return model;
+    		return elementFactory.newElementByBeanName(beanName);		
 			
     	}else {
     		throw new IllegalArgumentException("type cannot be empty or null");

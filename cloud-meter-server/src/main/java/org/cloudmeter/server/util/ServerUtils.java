@@ -3,10 +3,6 @@ package org.cloudmeter.server.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.jmeter.control.*;
-import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
-import org.apache.jmeter.testelement.AbstractTestElement;
-import org.apache.jmeter.threads.ThreadGroup;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -14,37 +10,59 @@ import org.springframework.stereotype.Component;
 public class ServerUtils {
 	
 	@Bean
-	public Map<String, Class<? extends AbstractTestElement>> testElementNameLookup() {
-    	HashMap<String, Class<? extends AbstractTestElement>>  map = new HashMap<>();
+	public Map<String, String> testElementNameLookup() {
+    	HashMap<String, String>  map = new HashMap<>();
     	
-    	map.put("thread-group", ThreadGroup.class);
-    	map.put("http-sampler", HTTPSamplerProxy.class);
+    	map.put("thread-group", "ThreadGroup");
+    	map.put("http-sampler", "HTTPSamplerProxy");
 
     	map.putAll(this.controllerElements());
+    	map.putAll(this.configElements());
     	
     	return map;
     }
 	
 	
-	private  Map<String, Class<? extends AbstractTestElement>> controllerElements() {
-		HashMap<String, Class<? extends AbstractTestElement>>  map = new HashMap<>();
+	private  Map<String, String> controllerElements() {
+		HashMap<String, String>  map = new HashMap<>();
 		
-    	map.put("critical-section-controller", CriticalSectionController.class);
-    	map.put("foreach-controller", ForeachController.class);
-    	map.put("if-controller", IfController.class);
-    	map.put("include-controller", IncludeController.class);
- 	
-    	map.put("loop-controller", LoopController.class);
+    	map.put("critical-section-controller", "CriticalSectionController");
+    	map.put("foreach-controller", "ForeachController");
+    	map.put("if-controller", "IfController");
+    	map.put("include-controller", "IncludeController");
+    	map.put("loop-controller", "LoopController");
 //    	map.put("module-controller", ModuleController.class);
-    	map.put("once-only-controller", OnceOnlyController.class);
-    	map.put("random-controller", RandomController.class);
-    	map.put("random-order-controller", RandomOrderController.class);
+    	map.put("once-only-controller", "OnceOnlyController");
+    	map.put("random-controller", "RandomController");
+    	map.put("random-order-controller", "RandomOrderController");
 //    	map.put("simple-controller", SimpleController.class);
-    	map.put("switch-controller", SwitchController.class);
-    	map.put("throughput-controller", ThroughputController.class);
-    	map.put("transaction-controller", TransactionController.class);
-    	map.put("while-controller", WhileController.class);
+    	map.put("switch-controller", "SwitchController");
+    	map.put("throughput-controller", "ThroughputController");
+    	map.put("transaction-controller", "TransactionController");
+    	map.put("while-controller", "WhileController");
     	
+		return map;
+	}
+	
+	private  Map<String, String> configElements() {
+		HashMap<String, String>  map = new HashMap<>();
+		
+		map.put("http-auth-config", "AuthManager");
+		map.put("http-cache-config", "CacheManager");
+		map.put("http-cookie-config", "CookieManager");
+		map.put("csv-dataset", "CSVDataSet");
+		map.put("ftp-config", "ConfigTestElement");
+		map.put("http-header-config", "HeaderManager");
+		map.put("http-default-config", "ConfigTestElement");
+		map.put("java-config", "JavaConfig");
+		map.put("jdbc-config", "DataSourceElement");
+		map.put("keystore-config", "KeystoreConfig");
+		map.put("login-config", "ConfigTestElement");
+		map.put("random-value-config", "RandomVariableConfig");
+		map.put("simple-config", "ConfigTestElement");
+		map.put("tcp-config", "ConfigTestElement");
+		map.put("user-defined-config", "Arguments");
+		
 		return map;
 	}
 

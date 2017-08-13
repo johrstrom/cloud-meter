@@ -1,0 +1,29 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"enabled": true,
+		"properties": {
+			"ConfigTestElement.password": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"ConfigTestElement.username": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "Login Config Element"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.config.ConfigTestElement"
+			}
+		}
+	},
+	"type": "config"
+}

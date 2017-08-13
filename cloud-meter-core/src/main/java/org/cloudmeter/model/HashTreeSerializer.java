@@ -18,8 +18,6 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 	@Override
 	public void serialize(HashTree tree, JsonGenerator generator, SerializerProvider serializer){
 		
-		log.debug("serializing a hash tree.");
-		
 		try {
 			generator.writeStartArray();
 			tree.traverse(new JSonTraverser(generator));
@@ -75,7 +73,7 @@ public class HashTreeSerializer extends JsonSerializer<HashTree>  {
 
 		@Override
 		public void processPath() {
-			log.debug("processing path. ");
+			// do nothing
 		}
 		
 		

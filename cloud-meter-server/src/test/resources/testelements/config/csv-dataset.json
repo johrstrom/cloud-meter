@@ -1,0 +1,65 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "delimiter": null,
+        "enabled": true,
+        "fileEncoding": null,
+        "filename": null,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "CSV Data Set Config"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.config.CSVDataSet"
+            },
+            "delimiter": {
+                "type": "StringProperty",
+                "value": ","
+            },
+            "fileEncoding": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "filename": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "ignoreFirstLine": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "quotedData": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "recycle": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "shareMode": {
+                "type": "StringProperty",
+                "value": "shareMode.all"
+            },
+            "stopThread": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "variableNames": {
+                "type": "StringProperty",
+                "value": ""
+            }
+        },
+        "quotedData": false,
+        "recycle": true,
+        "shareMode": null,
+        "stopThread": false,
+        "variableNames": null
+    },
+    "type": "config"
+}

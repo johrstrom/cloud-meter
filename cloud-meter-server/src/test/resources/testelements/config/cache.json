@@ -1,0 +1,32 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "clearEachIteration": false,
+        "enabled": true,
+        "maxSize": 5000,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "HTTP Cache Manager"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.control.CacheManager"
+            },
+            "clearEachIteration": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "useExpires": {
+                "type": "BooleanProperty",
+                "value": false
+            }
+        },
+        "useExpires": false
+    },
+    "type": "config"
+}

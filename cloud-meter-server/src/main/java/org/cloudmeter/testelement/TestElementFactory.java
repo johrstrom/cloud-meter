@@ -1,7 +1,8 @@
 package org.cloudmeter.testelement;
 
-import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jorphan.collections.HashTree;
+import org.cloudmeter.model.TestElementModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +21,23 @@ public class TestElementFactory {
 		
 	}
 
-	public TestElement newElement(Class<? extends AbstractTestElement> clazz) {
-		if (clazz == null)
+	public TestElementModel newElementByBeanName(String name) {
+		if (name == null)
 			return null;
 		
 		try {
+			TestElementModel model = new TestElementModel();
 			
-			return (TestElement) context.getBean(clazz.getSimpleName());
+			TestElement ele = (TestElement) context.getBean(name);
+			model.setTestElement(ele);
+			model.setType(TestElementModel.getElementType(ele));
+			model.setHashTree(new HashTree());
+			
+			return model;
 						
 		} catch (Exception e) {
 			log.error("Couldn't initialize element {} because of exception {} reason {}", 
-					clazz.getName(),e.getClass().getName(), e.getMessage());
+					name,e.getClass().getName(), e.getMessage());
 			
 			return null;
 		}

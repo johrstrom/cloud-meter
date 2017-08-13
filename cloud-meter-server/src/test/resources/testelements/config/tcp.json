@@ -1,0 +1,49 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"enabled": true,
+		"properties": {
+			"TCPSampler.closeConnection": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"TCPSampler.nodelay": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"TCPSampler.port": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"TCPSampler.reUseConnection": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TCPSampler.request": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"TCPSampler.server": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"TCPSampler.timeout": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "TCP Sampler Config"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.config.ConfigTestElement"
+			}
+		}
+	},
+	"type": "config"
+}

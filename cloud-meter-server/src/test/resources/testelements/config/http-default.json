@@ -1,0 +1,57 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "properties": {
+            "HTTPSampler.concurrentPool": {
+                "type": "StringProperty",
+                "value": "6"
+            },
+            "HTTPSampler.connect_timeout": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.contentEncoding": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.domain": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.path": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.port": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.protocol": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.response_timeout": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPsampler.Arguments": {
+                "type": "TestElementProperty",
+                "value": "TODO"
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "HTTP Request Defaults"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.config.ConfigTestElement"
+            }
+        }
+    },
+    "type": "config"
+}

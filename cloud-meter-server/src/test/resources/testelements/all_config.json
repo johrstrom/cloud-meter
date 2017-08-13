@@ -1,0 +1,928 @@
+{
+    "CloudMeterTestPlan": [
+        {
+            "hashTree": [
+                {
+                    "hashTree": [
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "end": 9223372036854775807,
+                                "endAsString": "",
+                                "format": "",
+                                "increment": 0,
+                                "incrementAsString": "",
+                                "perUser": false,
+                                "properties": {
+                                    "CounterConfig.end": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.format": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.incr": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.name": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.per_user": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "CounterConfig.start": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.modifiers.gui.CounterConfigGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Counter"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.modifiers.CounterConfig"
+                                    }
+                                },
+                                "resetOnThreadGroupIteration": false,
+                                "start": 0,
+                                "startAsString": "",
+                                "varName": ""
+                            },
+                            "type": "unknown"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "delimiter": null,
+                                "enabled": true,
+                                "fileEncoding": null,
+                                "filename": null,
+                                "properties": {
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.testbeans.gui.TestBeanGUI"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "CSV Data Set Config"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.CSVDataSet"
+                                    },
+                                    "delimiter": {
+                                        "type": "StringProperty",
+                                        "value": ","
+                                    },
+                                    "fileEncoding": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "filename": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "ignoreFirstLine": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "quotedData": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "recycle": {
+                                        "type": "BooleanProperty",
+                                        "value": true
+                                    },
+                                    "shareMode": {
+                                        "type": "StringProperty",
+                                        "value": "shareMode.all"
+                                    },
+                                    "stopThread": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "variableNames": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    }
+                                },
+                                "quotedData": false,
+                                "recycle": true,
+                                "shareMode": null,
+                                "stopThread": false,
+                                "variableNames": null
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "properties": {
+                                    "FTPSampler.binarymode": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "FTPSampler.filename": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "FTPSampler.inputdata": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "FTPSampler.localfilename": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "FTPSampler.port": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "FTPSampler.saveresponse": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "FTPSampler.server": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "FTPSampler.upload": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.ftp.config.gui.FtpConfigGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "FTP Request Defaults"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.ConfigTestElement"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "authCount": 0,
+                                "authObjects": {
+                                    "type": "CollectionProperty",
+                                    "value": "TODO"
+                                },
+                                "clearEachIteration": false,
+                                "columnCount": 6,
+                                "editable": true,
+                                "enabled": true,
+                                "properties": {
+                                    "AuthManager.auth_list": {
+                                        "type": "CollectionProperty",
+                                        "value": "TODO"
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.gui.AuthPanel"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "HTTP Authorization Manager"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.control.AuthManager"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "clearEachIteration": false,
+                                "enabled": true,
+                                "maxSize": 5000,
+                                "properties": {
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.gui.CacheManagerGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "HTTP Cache Manager"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.control.CacheManager"
+                                    },
+                                    "clearEachIteration": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "useExpires": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    }
+                                },
+                                "useExpires": false
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "clearEachIteration": false,
+                                "cookieCount": 0,
+                                "cookies": {
+                                    "type": "CollectionProperty",
+                                    "value": "TODO"
+                                },
+                                "enabled": true,
+                                "implementation": "org.apache.jmeter.protocol.http.control.HC4CookieHandler",
+                                "policy": "standard",
+                                "properties": {
+                                    "CookieManager.clearEachIteration": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "CookieManager.cookies": {
+                                        "type": "CollectionProperty",
+                                        "value": "TODO"
+                                    },
+                                    "CookieManager.implementation": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.control.HC4CookieHandler"
+                                    },
+                                    "CookieManager.policy": {
+                                        "type": "StringProperty",
+                                        "value": "standard"
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.gui.CookiePanel"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "HTTP Cookie Manager"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.control.CookieManager"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "columnCount": 2,
+                                "enabled": true,
+                                "headers": {
+                                    "type": "CollectionProperty",
+                                    "value": "TODO"
+                                },
+                                "properties": {
+                                    "HeaderManager.headers": {
+                                        "type": "CollectionProperty",
+                                        "value": "TODO"
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.gui.HeaderPanel"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "HTTP Header Manager"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.control.HeaderManager"
+                                    }
+                                },
+                                "soapheader": null
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "properties": {
+                                    "HTTPSampler.concurrentPool": {
+                                        "type": "StringProperty",
+                                        "value": "6"
+                                    },
+                                    "HTTPSampler.connect_timeout": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "HTTPSampler.contentEncoding": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "HTTPSampler.domain": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "HTTPSampler.path": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "HTTPSampler.port": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "HTTPSampler.protocol": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "HTTPSampler.response_timeout": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "HTTPsampler.Arguments": {
+                                        "type": "TestElementProperty",
+                                        "value": "TODO"
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.http.config.gui.HttpDefaultsGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "HTTP Request Defaults"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.ConfigTestElement"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
+
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "autocommit": false,
+                                "checkQuery": null,
+                                "connectionAge": null,
+                                "dataSource": null,
+                                "dbUrl": null,
+                                "driver": null,
+                                "enabled": true,
+                                "keepAlive": false,
+                                "password": null,
+                                "poolMax": null,
+                                "properties": {
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.testbeans.gui.TestBeanGUI"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "JDBC Connection Configuration"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.jdbc.config.DataSourceElement"
+                                    },
+                                    "autocommit": {
+                                        "type": "BooleanProperty",
+                                        "value": true
+                                    },
+                                    "checkQuery": {
+                                        "type": "StringProperty",
+                                        "value": "Select 1"
+                                    },
+                                    "connectionAge": {
+                                        "type": "StringProperty",
+                                        "value": "5000"
+                                    },
+                                    "dataSource": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "dbUrl": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "driver": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "keepAlive": {
+                                        "type": "BooleanProperty",
+                                        "value": true
+                                    },
+                                    "password": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "poolMax": {
+                                        "type": "StringProperty",
+                                        "value": "10"
+                                    },
+                                    "timeout": {
+                                        "type": "StringProperty",
+                                        "value": "10000"
+                                    },
+                                    "transactionIsolation": {
+                                        "type": "StringProperty",
+                                        "value": "DEFAULT"
+                                    },
+                                    "trimInterval": {
+                                        "type": "StringProperty",
+                                        "value": "60000"
+                                    },
+                                    "username": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    }
+                                },
+                                "timeout": null,
+                                "transactionIsolation": null,
+                                "trimInterval": null,
+                                "username": null
+                            },
+                            "type": "unknown"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "clientCertAliasVarName": null,
+                                "enabled": true,
+                                "endIndex": null,
+                                "preload": null,
+                                "properties": {
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.testbeans.gui.TestBeanGUI"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Keystore Configuration"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.KeystoreConfig"
+                                    },
+                                    "clientCertAliasVarName": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "endIndex": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "preload": {
+                                        "type": "StringProperty",
+                                        "value": "True"
+                                    },
+                                    "startIndex": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    }
+                                },
+                                "startIndex": null
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "properties": {
+                                    "ConfigTestElement.password": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "ConfigTestElement.username": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.gui.LoginConfigGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Login Config Element"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.ConfigTestElement"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "maximumValue": null,
+                                "minimumValue": null,
+                                "outputFormat": null,
+                                "perThread": false,
+                                "properties": {
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.testbeans.gui.TestBeanGUI"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Random Variable"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.RandomVariableConfig"
+                                    },
+                                    "maximumValue": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "minimumValue": {
+                                        "type": "StringProperty",
+                                        "value": "1"
+                                    },
+                                    "outputFormat": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "perThread": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "randomSeed": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "variableName": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    }
+                                },
+                                "randomSeed": null,
+                                "variableName": null
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "properties": {
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.gui.SimpleConfigGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Simple Config Element"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.ConfigTestElement"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "properties": {
+                                    "TCPSampler.closeConnection": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "TCPSampler.nodelay": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "TCPSampler.port": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "TCPSampler.reUseConnection": {
+                                        "type": "BooleanProperty",
+                                        "value": true
+                                    },
+                                    "TCPSampler.request": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "TCPSampler.server": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "TCPSampler.timeout": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.tcp.config.gui.TCPConfigGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "TCP Sampler Config"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.ConfigTestElement"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "argumentCount": 0,
+                                "arguments": {
+                                    "type": "CollectionProperty",
+                                    "value": "TODO"
+                                },
+                                "argumentsAsMap": {},
+                                "enabled": true,
+                                "properties": {
+                                    "Arguments.arguments": {
+                                        "type": "CollectionProperty",
+                                        "value": "TODO"
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.gui.ArgumentsPanel"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "User Defined Variables"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.config.Arguments"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        }
+                    ],
+                    "testElement": {
+                        "delay": 0,
+                        "done": false,
+                        "duration": 0,
+                        "enabled": true,
+                        "endTime": 1502657286000,
+                        "numThreads": 1,
+                        "numberOfThreads": 0,
+                        "onErrorStartNextLoop": false,
+                        "onErrorStopTest": false,
+                        "onErrorStopTestNow": false,
+                        "onErrorStopThread": false,
+                        "properties": {
+                            "TestElement.enabled": {
+                                "type": "StringProperty",
+                                "value": "true"
+                            },
+                            "TestElement.gui_class": {
+                                "type": "StringProperty",
+                                "value": "org.apache.jmeter.threads.gui.ThreadGroupGui"
+                            },
+                            "TestElement.name": {
+                                "type": "StringProperty",
+                                "value": "Thread Group"
+                            },
+                            "TestElement.test_class": {
+                                "type": "StringProperty",
+                                "value": "org.apache.jmeter.threads.ThreadGroup"
+                            },
+                            "ThreadGroup.delay": {
+                                "type": "StringProperty",
+                                "value": ""
+                            },
+                            "ThreadGroup.duration": {
+                                "type": "StringProperty",
+                                "value": ""
+                            },
+                            "ThreadGroup.end_time": {
+                                "type": "LongProperty",
+                                "value": 1502657286000
+                            },
+                            "ThreadGroup.main_controller": {
+                                "type": "TestElementProperty",
+                                "value": "TODO"
+                            },
+                            "ThreadGroup.num_threads": {
+                                "type": "StringProperty",
+                                "value": "1"
+                            },
+                            "ThreadGroup.on_sample_error": {
+                                "type": "StringProperty",
+                                "value": "continue"
+                            },
+                            "ThreadGroup.ramp_time": {
+                                "type": "StringProperty",
+                                "value": "1"
+                            },
+                            "ThreadGroup.scheduler": {
+                                "type": "BooleanProperty",
+                                "value": false
+                            },
+                            "ThreadGroup.start_time": {
+                                "type": "LongProperty",
+                                "value": 1502657286000
+                            }
+                        },
+                        "rampUp": 1,
+                        "samplerController": {
+                            "done": false,
+                            "enabled": true,
+                            "loopString": "1",
+                            "loops": 1,
+                            "properties": {
+                                "LoopController.continue_forever": {
+                                    "type": "BooleanProperty",
+                                    "value": false
+                                },
+                                "LoopController.loops": {
+                                    "type": "StringProperty",
+                                    "value": "1"
+                                },
+                                "TestElement.enabled": {
+                                    "type": "StringProperty",
+                                    "value": "true"
+                                },
+                                "TestElement.gui_class": {
+                                    "type": "StringProperty",
+                                    "value": "org.apache.jmeter.control.gui.LoopControlPanel"
+                                },
+                                "TestElement.name": {
+                                    "type": "StringProperty",
+                                    "value": "Loop Controller"
+                                },
+                                "TestElement.test_class": {
+                                    "type": "StringProperty",
+                                    "value": "org.apache.jmeter.control.LoopController"
+                                }
+                            }
+                        },
+                        "scheduler": false,
+                        "startTime": 1502657286000
+                    },
+                    "type": "controller"
+                }
+            ],
+            "testElement": {
+                "enabled": true,
+                "properties": {
+                    "TestElement.enabled": {
+                        "type": "StringProperty",
+                        "value": "true"
+                    },
+                    "TestElement.gui_class": {
+                        "type": "StringProperty",
+                        "value": "org.apache.jmeter.control.gui.TestPlanGui"
+                    },
+                    "TestElement.name": {
+                        "type": "StringProperty",
+                        "value": "Test Plan"
+                    },
+                    "TestElement.test_class": {
+                        "type": "StringProperty",
+                        "value": "org.apache.jmeter.testelement.TestPlan"
+                    },
+                    "TestPlan.comments": {
+                        "type": "StringProperty",
+                        "value": ""
+                    },
+                    "TestPlan.functional_mode": {
+                        "type": "BooleanProperty",
+                        "value": false
+                    },
+                    "TestPlan.serialize_threadgroups": {
+                        "type": "BooleanProperty",
+                        "value": false
+                    },
+                    "TestPlan.user_define_classpath": {
+                        "type": "StringProperty",
+                        "value": ""
+                    },
+                    "TestPlan.user_defined_variables": {
+                        "type": "TestElementProperty",
+                        "value": "TODO"
+                    }
+                }
+            },
+            "type": "testplan"
+        },
+        {
+            "hashTree": [],
+            "testElement": {
+                "enabled": true,
+                "properties": {
+                    "TestElement.enabled": {
+                        "type": "StringProperty",
+                        "value": "true"
+                    },
+                    "TestElement.gui_class": {
+                        "type": "StringProperty",
+                        "value": "org.apache.jmeter.control.gui.WorkBenchGui"
+                    },
+                    "TestElement.name": {
+                        "type": "StringProperty",
+                        "value": "WorkBench"
+                    },
+                    "TestElement.test_class": {
+                        "type": "StringProperty",
+                        "value": "org.apache.jmeter.testelement.WorkBench"
+                    },
+                    "WorkBench.save": {
+                        "type": "BooleanProperty",
+                        "value": true
+                    }
+                },
+                "saveWorkBench": true
+            },
+            "type": "workbench"
+        }
+    ]
+}
+

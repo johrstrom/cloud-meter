@@ -1,0 +1,45 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "clearEachIteration": false,
+        "cookieCount": 0,
+        "cookies": {
+            "type": "CollectionProperty",
+            "value": "TODO"
+        },
+        "enabled": true,
+        "implementation": "org.apache.jmeter.protocol.http.control.HC4CookieHandler",
+        "policy": "standard",
+        "properties": {
+            "CookieManager.clearEachIteration": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "CookieManager.cookies": {
+                "type": "CollectionProperty",
+                "value": "TODO"
+            },
+            "CookieManager.implementation": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.control.HC4CookieHandler"
+            },
+            "CookieManager.policy": {
+                "type": "StringProperty",
+                "value": "standard"
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "HTTP Cookie Manager"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.control.CookieManager"
+            }
+        }
+    },
+    "type": "config"
+}

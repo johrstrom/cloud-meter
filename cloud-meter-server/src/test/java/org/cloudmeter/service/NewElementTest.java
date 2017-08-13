@@ -20,6 +20,7 @@ public class NewElementTest {
 	private static final String FILE_BASE = "target/test-classes/testelements";
 	private static final String SAMPLER_BASE = FILE_BASE + "/samplers/";
 	private static final String CONTROLLER_BASE = FILE_BASE + "/controllers/";
+	private static final String CONFIG_BASE = FILE_BASE + "/controllers/";
 	
 	@Autowired
 	private TestUtilities utilities;
@@ -101,7 +102,10 @@ public class NewElementTest {
 		utilities.validateFileAgainstAPI("while-controller", CONTROLLER_BASE + "while.json");
 	}
 	
-
+//	@Test
+//	public void authConfigTest() {
+//		utilities.validateFileAgainstAPI("auth-config", CONFIG_BASE + "auth.json");
+//	}
 	
 	
 }

@@ -1,0 +1,33 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"argumentCount": 0,
+		"arguments": {
+			"type": "CollectionProperty",
+			"value": "TODO"
+		},
+		"argumentsAsMap": {
+			
+		},
+		"enabled": true,
+		"properties": {
+			"Arguments.arguments": {
+				"type": "CollectionProperty",
+				"value": "TODO"
+			},
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "User Defined Variables"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.config.Arguments"
+			}
+		}
+	},
+	"type": "config"
+}

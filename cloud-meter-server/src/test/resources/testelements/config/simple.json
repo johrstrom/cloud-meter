@@ -1,0 +1,21 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"enabled": true,
+		"properties": {
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "Simple Config Element"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.config.ConfigTestElement"
+			}
+		}
+	},
+	"type": "config"
+}

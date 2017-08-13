@@ -1,0 +1,51 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"enabled": true,
+		"maximumValue": null,
+		"minimumValue": null,
+		"outputFormat": null,
+		"perThread": false,
+		"properties": {
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "Random Variable"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.config.RandomVariableConfig"
+			},
+			"maximumValue": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"minimumValue": {
+				"type": "StringProperty",
+				"value": "1"
+			},
+			"outputFormat": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"perThread": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"randomSeed": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"variableName": {
+				"type": "StringProperty",
+				"value": ""
+			}
+		},
+		"randomSeed": null,
+		"variableName": null
+	},
+	"type": "config"
+}

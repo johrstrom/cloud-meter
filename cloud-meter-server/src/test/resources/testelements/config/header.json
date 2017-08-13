@@ -1,0 +1,31 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "columnCount": 2,
+        "enabled": true,
+        "headers": {
+            "type": "CollectionProperty",
+            "value": "TODO"
+        },
+        "properties": {
+            "HeaderManager.headers": {
+                "type": "CollectionProperty",
+                "value": "TODO"
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "HTTP Header Manager"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.control.HeaderManager"
+            }
+        },
+        "soapheader": null
+    },
+    "type": "config"
+}
