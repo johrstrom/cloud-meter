@@ -1,0 +1,55 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "end": 9223372036854775807,
+        "endAsString": "",
+        "format": "",
+        "increment": 0,
+        "incrementAsString": "",
+        "perUser": false,
+        "properties": {
+            "CounterConfig.end": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "CounterConfig.format": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "CounterConfig.incr": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "CounterConfig.name": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "CounterConfig.per_user": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "CounterConfig.start": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TestElement.enabled": {
+                "type": BooleanProperty,
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Counter"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.modifiers.CounterConfig"
+            }
+        },
+        "resetOnThreadGroupIteration": false,
+        "start": 0,
+        "startAsString": "",
+        "varName": ""
+    },
+    "type": "unknown"
+}

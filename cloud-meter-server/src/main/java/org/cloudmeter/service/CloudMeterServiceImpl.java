@@ -2,8 +2,7 @@ package org.cloudmeter.service;
 
 import java.util.Map;
 
-import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.testelement.TestElementFactory;
+import org.cloudmeter.testelement.TestElementModelFactory;
 import org.cloudmeter.model.TestElementModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +16,7 @@ public class CloudMeterServiceImpl implements CloudMeterService {
 	private Map<String, String> apiTypeToBeanLookup;
   
 	@Autowired
-	private TestElementFactory elementFactory;
+	private TestElementModelFactory elementFactory;
 	
 	@Override
 	public TestElementModel newTestElement(String name, String type) {
@@ -34,12 +33,5 @@ public class CloudMeterServiceImpl implements CloudMeterService {
     	}
     	
 	}	
-
-	private void setElementName(final String name, TestElement ele) {
-		if(name != null && !name.equals("")) {
-			ele.setName(name);
-		}
-	}
-
 
 }

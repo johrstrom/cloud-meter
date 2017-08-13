@@ -20,7 +20,7 @@ public class NewElementTest {
 	private static final String FILE_BASE = "target/test-classes/testelements";
 	private static final String SAMPLER_BASE = FILE_BASE + "/samplers/";
 	private static final String CONTROLLER_BASE = FILE_BASE + "/controllers/";
-	private static final String CONFIG_BASE = FILE_BASE + "/controllers/";
+	private static final String CONFIG_BASE = FILE_BASE + "/config/";
 	
 	@Autowired
 	private TestUtilities utilities;
@@ -102,10 +102,90 @@ public class NewElementTest {
 		utilities.validateFileAgainstAPI("while-controller", CONTROLLER_BASE + "while.json");
 	}
 	
-//	@Test
-//	public void authConfigTest() {
-//		utilities.validateFileAgainstAPI("auth-config", CONFIG_BASE + "auth.json");
-//	}
+	/**
+	 * Controller tests end
+	 * 
+	 * Config tests begin
+	 */
 	
+	@Test
+	public void authConfigTest() {
+		utilities.validateFileAgainstAPI("http-auth-config", CONFIG_BASE + "auth.json");
+	}
 	
+	@Test
+	public void cacheConfigTest() {
+		utilities.validateFileAgainstAPI("http-cache-config", CONFIG_BASE + "cache.json");
+	}
+	
+	@Test
+	public void cookieConfigTest() {
+		utilities.validateFileAgainstAPI("http-cookie-config", CONFIG_BASE + "cookie.json");
+	}
+	
+	@Test
+	public void counterConfigTest() {
+		utilities.validateFileAgainstAPI("counter", CONFIG_BASE + "counter.json");
+	}
+	
+	@Test
+	public void csvDataSetTest() {
+		utilities.validateFileAgainstAPI("csv-dataset", CONFIG_BASE + "csv-dataset.json");
+	}
+	
+	@Test
+	public void ftpConfigTest() {
+		utilities.validateFileAgainstAPI("ftp-config", CONFIG_BASE + "ftp-config.json");
+	}
+	
+	@Test
+	public void httpDefaultConfigTest() {
+		utilities.validateFileAgainstAPI("http-default-config", CONFIG_BASE + "http-default.json");
+	}
+	
+	@Test
+	public void javaConfigTest() {
+		utilities.validateFileAgainstAPI("java-config", CONFIG_BASE + "java.json");
+	}
+	
+	@Test
+	public void jdbcConfigTest() {
+		utilities.validateFileAgainstAPI("jdbc-config", CONFIG_BASE + "jdbc.json");
+	}
+	
+	@Test
+	public void keystoreConfigTest() {
+		utilities.validateFileAgainstAPI("keystore-config", CONFIG_BASE + "keystore.json");
+	}
+	
+	@Test
+	public void loginConfigTest() {
+		utilities.validateFileAgainstAPI("login-config", CONFIG_BASE + "login.json");
+	}
+	
+	@Test
+	public void randomValueConfigTest() {
+		utilities.validateFileAgainstAPI("random-value-config", CONFIG_BASE + "random-value.json");
+	}
+	
+	@Test
+	public void simpleConfigTest() {
+		utilities.validateFileAgainstAPI("simple-config", CONFIG_BASE + "simple.json");
+	}
+	
+	@Test
+	public void tcpConfigTest() {
+		utilities.validateFileAgainstAPI("tcp-config", CONFIG_BASE + "tcp.json");
+	}
+	
+	@Test
+	public void userDefinedVariablesTest() {
+		utilities.validateFileAgainstAPI("user-defined-variables", CONFIG_BASE + "user-defined-variables.json");
+	}
+	
+	/**
+	 * Config tests 
+	 * 
+	 * 
+	 */
 }

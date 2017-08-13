@@ -10,14 +10,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TestElementFactory {
+public class TestElementModelFactory {
 	
-	private static final Logger log = LoggerFactory.getLogger(TestElementFactory.class);
+	private static final Logger log = LoggerFactory.getLogger(TestElementModelFactory.class);
 	
 	@Autowired
 	private ApplicationContext context;
 	
-	public TestElementFactory(){
+	public TestElementModelFactory(){
 		
 	}
 
