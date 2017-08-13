@@ -54,6 +54,14 @@ public class ControllerModelTest {
 		Assert.assertTrue(ele.isEnabled());	
 	}
 	
+	@Test
+	public void onceOnlyControllerTest() {
+		OnceOnlyControllerInitializer initer = new OnceOnlyControllerInitializer();
+		OnceOnlyController ele = (OnceOnlyController) initer.initilizeElement();
+		
+		Assert.assertTrue("Once Only Controller".equals(ele.getName()));	
+		Assert.assertTrue(ele.isEnabled());	
+	}
 	
 
 	

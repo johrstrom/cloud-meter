@@ -1,0 +1,22 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "done": false,
+        "enabled": true,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Once Only Controller"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.OnceOnlyController"
+            }
+        }
+    },
+    "type": "controller"
+}

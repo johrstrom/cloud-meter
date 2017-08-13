@@ -71,6 +71,11 @@ public class NewElementTest {
 		this.validateFileAgainstAPI("loop-controller", CONTROLLER_BASE + "loop.json");
 	}
 	
+	@Test
+	public void onceOnlyControllerTest() {
+		this.validateFileAgainstAPI("once-only-controller", CONTROLLER_BASE + "once-only.json");
+	}
+	
 	
 	private void validateFileAgainstAPI(String type, String file) {
 		

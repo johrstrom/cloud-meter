@@ -64,4 +64,15 @@ public class ControllerBeans {
 		return (LoopController) initer.initilizeElement();
 	}
 	
+	@Bean
+	public OnceOnlyControllerInitializer OnceOnlyControllerInitializer() {
+		return new OnceOnlyControllerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public OnceOnlyController OnceOnlyController(OnceOnlyControllerInitializer initer) {
+		return (OnceOnlyController) initer.initilizeElement();
+	}
+	
 }

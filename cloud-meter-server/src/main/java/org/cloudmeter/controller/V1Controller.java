@@ -42,10 +42,14 @@ public class V1Controller {
 
 	private static final Logger log = LoggerFactory.getLogger(V1Controller.class);
 	
-	private static final Map<String, CloudMeterEngine> cache = new ConcurrentHashMap<String, CloudMeterEngine>();
+	private final Map<String, CloudMeterEngine> cache;
 	
 	@Autowired
 	private CloudMeterService service;
+	
+	public V1Controller() {
+		this.cache = new ConcurrentHashMap<String, CloudMeterEngine>();
+	}
 	
 	static {
 		try{
@@ -84,7 +88,8 @@ public class V1Controller {
     	
 
     	try {
-    		
+    	    		
+			@SuppressWarnings("deprecation")
 			HashTree test = SaveService.loadTree(request.getTestPlan().getInputStream());
 			
         	CloudMeterEngine e = new CloudMeterEngine();
