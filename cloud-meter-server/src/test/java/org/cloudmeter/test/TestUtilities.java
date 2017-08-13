@@ -9,11 +9,27 @@ import org.json.JSONObject;
 
 
 import org.junit.Assert;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TestUtilities {
 	
 	
-	public static JSONObject readObjectFromFile(String filename) {
+	@Autowired
+	private TestRestTemplate restTemplate;
+    
+    private String testElementTarget = "http://localhost" +  TEST_ELEMENT_API;
+    private static final String TEST_ELEMENT_API = "/api/v1/testelement";
+   
+    
+    public void setPort(int port) {
+    	this.testElementTarget = "http://localhost:" + port + TEST_ELEMENT_API;
+    }
+	
+	public JSONObject readObjectFromFile(String filename) {
 		
 		try {
             InputStream is = new FileInputStream(filename);
@@ -25,6 +41,16 @@ public class TestUtilities {
 			return null;
 		}
 		
+	}
+	
+	
+	public void validateFileAgainstAPI(String type, String file) {
+		
+		JSONObject expectedJson = this.readObjectFromFile(file);
+		String actualString = restTemplate.getForObject(testElementTarget + "?type=" + type, String.class);
+		JSONObject actualJson = new JSONObject(actualString);
+		
+		JSONAssert.assertEquals(expectedJson, actualJson, true);	
 	}
 	
 	

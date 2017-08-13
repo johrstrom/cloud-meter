@@ -1,0 +1,27 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "condition": "",
+        "done": false,
+        "enabled": true,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "While Controller"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.WhileController"
+            },
+            "WhileController.condition": {
+                "type": "StringProperty",
+                "value": ""
+            }
+        }
+    },
+    "type": "controller"
+}

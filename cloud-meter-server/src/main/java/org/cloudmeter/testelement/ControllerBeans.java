@@ -129,4 +129,15 @@ public class ControllerBeans {
 	public TransactionController TransactionController(TransactionControllerInitializer initer) {
 		return (TransactionController) initer.initilizeElement();
 	}
+	
+	@Bean
+	public WhileControllerInitializer WhileControllerInitializer() {
+		return new WhileControllerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public WhileController WhileController(WhileControllerInitializer initer) {
+		return (WhileController) initer.initilizeElement();
+	}
 }

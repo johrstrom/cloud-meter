@@ -4,113 +4,104 @@ import org.cloudmeter.CloudMeterApp;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.cloudmeter.test.TestUtilities;
-import org.json.JSONObject;
 import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {CloudMeterApp.class})
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class NewElementTest {
-
-    @LocalServerPort
-    private int port;
-	
-	@Autowired
-	private TestRestTemplate restTemplate;
-	
 	
 	private static final String FILE_BASE = "target/test-classes/testelements";
 	private static final String SAMPLER_BASE = FILE_BASE + "/samplers/";
 	private static final String CONTROLLER_BASE = FILE_BASE + "/controllers/";
 	
-	private static final String TEST_ELEMENT_API = "/api/v1/testelement";
-	private String target;
+	@Autowired
+	private TestUtilities utilities;
+
+	@LocalServerPort
+	int port;
 	
-	@Before
+	
+	@Before 
 	public void setup() {
-		target = "http://localhost:" + port + TEST_ELEMENT_API;
+		utilities.setPort(port);
 	}
 	
 	@Test
 	public void HTTPSamplerTest() {
-		this.validateFileAgainstAPI("http-sampler", SAMPLER_BASE + "http.json");
+		utilities.validateFileAgainstAPI("http-sampler", SAMPLER_BASE + "http.json");
 	}
 	
 	@Test
 	public void criticalSectionControllerTest() {
-		this.validateFileAgainstAPI("critical-section-controller", CONTROLLER_BASE + "critical-section.json");
+		utilities.validateFileAgainstAPI("critical-section-controller", CONTROLLER_BASE + "critical-section.json");
 	}
 	
 	@Test
 	public void forEachControllerTest() {
-		this.validateFileAgainstAPI("foreach-controller", CONTROLLER_BASE + "foreach.json");
+		utilities.validateFileAgainstAPI("foreach-controller", CONTROLLER_BASE + "foreach.json");
 	}
 	
 	
 	@Test
 	public void ifControllerTest() {
-		this.validateFileAgainstAPI("if-controller", CONTROLLER_BASE + "if.json");
+		utilities.validateFileAgainstAPI("if-controller", CONTROLLER_BASE + "if.json");
 	}
 	
 	@Test
 	public void includeControllerTest() {
-		this.validateFileAgainstAPI("include-controller", CONTROLLER_BASE + "include.json");
+		utilities.validateFileAgainstAPI("include-controller", CONTROLLER_BASE + "include.json");
 	}
 	
 	
 	@Test
 	public void loopControllerTest() {
-		this.validateFileAgainstAPI("loop-controller", CONTROLLER_BASE + "loop.json");
+		utilities.validateFileAgainstAPI("loop-controller", CONTROLLER_BASE + "loop.json");
 	}
 	
 	@Test
 	public void onceOnlyControllerTest() {
-		this.validateFileAgainstAPI("once-only-controller", CONTROLLER_BASE + "once-only.json");
+		utilities.validateFileAgainstAPI("once-only-controller", CONTROLLER_BASE + "once-only.json");
 	}
 	
 	@Test
 	public void randomControllerTest() {
-		this.validateFileAgainstAPI("random-controller", CONTROLLER_BASE + "random.json");
+		utilities.validateFileAgainstAPI("random-controller", CONTROLLER_BASE + "random.json");
 	}
 	
 	@Test
 	public void randomOrderControllerTest() {
-		this.validateFileAgainstAPI("random-order-controller", CONTROLLER_BASE + "random-order.json");
+		utilities.validateFileAgainstAPI("random-order-controller", CONTROLLER_BASE + "random-order.json");
 	}
 	
 	@Test
 	public void switchControllerTest() {
-		this.validateFileAgainstAPI("switch-controller", CONTROLLER_BASE + "switch.json");
+		utilities.validateFileAgainstAPI("switch-controller", CONTROLLER_BASE + "switch.json");
 	}
 	
 	
 	@Test
 	public void throughputControllerTest() {
-		this.validateFileAgainstAPI("throughput-controller", CONTROLLER_BASE + "throughput.json");
+		utilities.validateFileAgainstAPI("throughput-controller", CONTROLLER_BASE + "throughput.json");
 	}
 	
 	@Test
 	public void transactionControllerTest() {
-		this.validateFileAgainstAPI("transaction-controller", CONTROLLER_BASE + "transaction.json");
+		utilities.validateFileAgainstAPI("transaction-controller", CONTROLLER_BASE + "transaction.json");
 	}
 	
-	
-	private void validateFileAgainstAPI(String type, String file) {
-		
-		JSONObject expectedJson = TestUtilities.readObjectFromFile(file);
-		String actualString = restTemplate.getForObject(target + "?type=" + type, String.class);
-		JSONObject actualJson = new JSONObject(actualString);
-		
-		JSONAssert.assertEquals(expectedJson, actualJson, true);	
+	@Test
+	public void whileControllerTest() {
+		utilities.validateFileAgainstAPI("while-controller", CONTROLLER_BASE + "while.json");
 	}
+	
+
 	
 	
 }

@@ -106,6 +106,16 @@ public class ControllerModelTest {
 		Assert.assertTrue(ele.getStyle() == 1);
 	}
 	
+	@Test
+	public void whileControllerTest() {
+		WhileControllerInitializer initer = new WhileControllerInitializer();
+		WhileController ele = (WhileController) initer.initilizeElement();
+		
+		Assert.assertTrue("While Controller".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());	
+		Assert.assertTrue("".contentEquals(ele.getCondition()));
+	}
+	
 }
 
 
