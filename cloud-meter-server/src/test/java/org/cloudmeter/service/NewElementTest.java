@@ -97,6 +97,11 @@ public class NewElementTest {
 		this.validateFileAgainstAPI("throughput-controller", CONTROLLER_BASE + "throughput.json");
 	}
 	
+	@Test
+	public void transactionControllerTest() {
+		this.validateFileAgainstAPI("transaction-controller", CONTROLLER_BASE + "transaction.json");
+	}
+	
 	
 	private void validateFileAgainstAPI(String type, String file) {
 		

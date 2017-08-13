@@ -32,6 +32,9 @@ import org.apache.jmeter.threads.JMeterVariables;
 import org.apache.jmeter.threads.ListenerNotifier;
 import org.apache.jmeter.threads.SamplePackage;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.slf4j.Logger;
 
 /**
@@ -131,6 +134,7 @@ public class TransactionController extends GenericController implements SampleLi
      * @return {@code true} if a parent sample will be generated
      */
     @Deprecated
+    @JsonIgnore
     public boolean isParent() {
         return isGenerateParentSample();
     }

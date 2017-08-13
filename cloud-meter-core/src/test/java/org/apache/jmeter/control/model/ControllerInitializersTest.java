@@ -17,5 +17,16 @@ public class ControllerInitializersTest {
 		Assert.assertTrue(ele.getLoops() == 1);
 		Assert.assertTrue(ele.getPropertyAsBoolean("LoopController.continue_forever"));
 	}
+	
+	@Test
+	public void transactionControllerTest() {
+		TransactionControllerInitializer initer = new TransactionControllerInitializer();
+		TransactionController ele = (TransactionController) initer.initilizeElement();
+		
+		Assert.assertTrue("Transaction Controller".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());	
+		Assert.assertFalse(ele.isGenerateParentSample());
+		Assert.assertFalse(ele.isIncludeTimers());
+	}
 
 }

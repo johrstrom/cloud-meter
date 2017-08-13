@@ -118,4 +118,15 @@ public class ControllerBeans {
 	public ThroughputController ThroughputController(ThroughputControllerInitializer initer) {
 		return (ThroughputController) initer.initilizeElement();
 	}
+	
+	@Bean
+	public TransactionControllerInitializer TransactionControllerInitializer() {
+		return new TransactionControllerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public TransactionController TransactionController(TransactionControllerInitializer initer) {
+		return (TransactionController) initer.initilizeElement();
+	}
 }

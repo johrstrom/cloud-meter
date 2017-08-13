@@ -1,0 +1,32 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "done": false,
+        "enabled": true,
+        "generateParentSample": false,
+        "includeTimers": false,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Transaction Controller"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.control.TransactionController"
+            },
+            "TransactionController.includeTimers": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "TransactionController.parent": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+        }
+    },
+    "type": "controller"
+}
