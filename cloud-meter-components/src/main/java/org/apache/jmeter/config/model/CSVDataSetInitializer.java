@@ -19,6 +19,7 @@ public class CSVDataSetInitializer extends AbstractInitialzer {
 		ele.setShareMode("shareMode.all");
 		ele.setStopThread(false);
 		ele.setVariableNames(EMPTY_STRING);
+		ele.setProperty("ignoreFirstLine", false);
 		
 		return ele;
 	}

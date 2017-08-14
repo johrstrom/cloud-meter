@@ -3,9 +3,8 @@ package org.apache.jmeter.config.model;
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.model.AbstractInitialzer;
-import org.cloudmeter.model.ModelInitializer;
 
-public class ArguementsInitializer extends AbstractInitialzer implements ModelInitializer {
+public class ArgumentsInitializer extends AbstractInitialzer {
 
 	public static final String DEFAULT_NAME = "User Defined Variables"; 
 	

@@ -1,7 +1,7 @@
 package org.apache.jmeter.protocol.model;
 
 import org.apache.jmeter.config.Arguments;
-import org.apache.jmeter.config.model.ArguementsInitializer;
+import org.apache.jmeter.config.model.ArgumentsInitializer;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.model.AbstractInitialzer;
@@ -17,7 +17,7 @@ public class HTTPSamplerInitializer extends AbstractInitialzer {
 		HTTPSamplerProxy ele = new HTTPSamplerProxy();
 		this.baseElement(ele, DEFAULT_NAME);
 		
-		ArguementsInitializer initer = new ArguementsInitializer();
+		ArgumentsInitializer initer = new ArgumentsInitializer();
 		ele.setArguments((Arguments) initer.initilizeElement());
 		
 		ele.setProperty(HTTPSamplerProxy.DOMAIN, EMPTY_STRING);

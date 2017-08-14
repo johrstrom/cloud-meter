@@ -1,10 +1,12 @@
 package org.apache.jmeter.control.model;
 
+import org.apache.jmeter.config.model.ArgumentsInitializer;
 import org.apache.jmeter.control.*;
+import org.apache.jmeter.testelement.TestElement;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ControllerInitializersTest {
+public class ModelInitializerTest {
 	
 	
 	@Test
@@ -28,5 +30,17 @@ public class ControllerInitializersTest {
 		Assert.assertFalse(ele.isGenerateParentSample());
 		Assert.assertFalse(ele.isIncludeTimers());
 	}
+	
+	@Test
+	public void argumentsIniterTest() {
+		ArgumentsInitializer initer = new ArgumentsInitializer();
+		TestElement ele = initer.initilizeElement();
+		
+		Assert.assertTrue(ele != null);
+		Assert.assertTrue("User Defined Variables".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());
+		Assert.assertTrue(ele.getPropertyAsBoolean(TestElement.ENABLED));		
+	}
+	
 
 }

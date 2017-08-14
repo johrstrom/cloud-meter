@@ -1,7 +1,7 @@
 package org.apache.jmeter.protocol.model;
 
 import org.apache.jmeter.config.ConfigTestElement;
-import org.apache.jmeter.config.model.ArguementsInitializer;
+import org.apache.jmeter.config.model.ArgumentsInitializer;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.TestElementProperty;
@@ -13,7 +13,7 @@ public class HTTPDefaultsInitializer extends AbstractInitialzer {
 	public TestElement initilizeElement() {
 		ConfigTestElement ele = new ConfigTestElement();
 		this.baseElement(ele, "HTTP Request Defaults");
-		ArguementsInitializer argsIniter = new ArguementsInitializer();
+		ArgumentsInitializer argsIniter = new ArgumentsInitializer();
 		
 		ele.setProperty(HTTPSampler.CONCURRENT_POOL, "6");
 		ele.setProperty(HTTPSampler.CONNECT_TIMEOUT, EMPTY_STRING);

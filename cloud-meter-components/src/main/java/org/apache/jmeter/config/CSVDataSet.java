@@ -201,6 +201,7 @@ public class CSVDataSet extends ConfigTestElement
      */
     public void setFilename(String filename) {
         this.filename = filename;
+        this.setProperty("filename", filename);
     }
 
     /**
@@ -216,6 +217,7 @@ public class CSVDataSet extends ConfigTestElement
      */
     public void setFileEncoding(String fileEncoding) {
         this.fileEncoding = fileEncoding;
+        this.setProperty("fileEncoding", fileEncoding);
     }
 
     /**
@@ -231,6 +233,7 @@ public class CSVDataSet extends ConfigTestElement
      */
     public void setVariableNames(String variableNames) {
         this.variableNames = variableNames;
+        this.setProperty("variableNames", variableNames);
     }
 
     public String getDelimiter() {
@@ -239,6 +242,7 @@ public class CSVDataSet extends ConfigTestElement
 
     public void setDelimiter(String delimiter) {
         this.delimiter = delimiter;
+        this.setProperty("delimiter", delimiter);
     }
 
     public boolean getQuotedData() {
@@ -247,6 +251,7 @@ public class CSVDataSet extends ConfigTestElement
 
     public void setQuotedData(boolean quoted) {
         this.quoted = quoted;
+        this.setProperty("quotedData", this.quoted);
     }
 
     public boolean getRecycle() {
@@ -255,6 +260,7 @@ public class CSVDataSet extends ConfigTestElement
 
     public void setRecycle(boolean recycle) {
         this.recycle = recycle;
+        this.setProperty("recycle", recycle);
     }
 
     public boolean getStopThread() {
@@ -263,6 +269,7 @@ public class CSVDataSet extends ConfigTestElement
 
     public void setStopThread(boolean value) {
         this.stopThread = value;
+        this.setProperty("stopThread", value);
     }
 
     public String getShareMode() {
@@ -271,5 +278,6 @@ public class CSVDataSet extends ConfigTestElement
 
     public void setShareMode(String value) {
         this.shareMode = value;
+        this.setProperty("shareMode", value);
     }
 }

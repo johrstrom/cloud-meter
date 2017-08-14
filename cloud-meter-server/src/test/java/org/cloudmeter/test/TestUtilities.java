@@ -48,6 +48,7 @@ public class TestUtilities {
 		
 		JSONObject expectedJson = this.readObjectFromFile(file);
 		String actualString = restTemplate.getForObject(testElementTarget + "?type=" + type, String.class);
+		Assert.assertTrue(actualString != null);
 		JSONObject actualJson = new JSONObject(actualString);
 		
 		JSONAssert.assertEquals(expectedJson, actualJson, true);	
