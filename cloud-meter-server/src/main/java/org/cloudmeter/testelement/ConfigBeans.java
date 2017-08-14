@@ -1,6 +1,7 @@
 package org.cloudmeter.testelement;
 
 import org.apache.jmeter.protocol.model.*;
+import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.protocol.http.control.*;
 import org.apache.jmeter.modifiers.*;
 import org.apache.jmeter.modifiers.model.*;
@@ -67,4 +68,38 @@ public class ConfigBeans {
 	public CSVDataSet CSVDataSet(CSVDataSetInitializer initer) {
 		return (CSVDataSet) initer.initilizeElement();
 	}
+	
+	@Bean
+	public FTPConfigInitializer FTPConfigInitializer() {
+		return new FTPConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConfigTestElement FTPConfig(FTPConfigInitializer initer) {
+		return (ConfigTestElement) initer.initilizeElement();
+	}
+	
+	@Bean
+	public HeaderManagerInitializer HeaderManagerInitializer() {
+		return new HeaderManagerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public HeaderManager HeaderManager(HeaderManagerInitializer initer) {
+		return (HeaderManager) initer.initilizeElement();
+	}
+	
+	@Bean
+	public HTTPDefaultsInitializer HTTPDefaultsInitializer() {
+		return new HTTPDefaultsInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConfigTestElement HTTPDefaults(HTTPDefaultsInitializer initer) {
+		return (ConfigTestElement) initer.initilizeElement();
+	}
+	
 }

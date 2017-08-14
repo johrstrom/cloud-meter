@@ -135,12 +135,17 @@ public class NewElementTest {
 	
 	@Test
 	public void ftpConfigTest() {
-		utilities.validateFileAgainstAPI("ftp-config", CONFIG_BASE + "ftp-config.json");
+		utilities.validateFileAgainstAPI("ftp-config", CONFIG_BASE + "ftp.json");
+	}
+	
+	@Test
+	public void httpHeaderConfigTest() {
+		utilities.validateFileAgainstAPI("http-header-config", CONFIG_BASE + "header.json");
 	}
 	
 	@Test
 	public void httpDefaultConfigTest() {
-		utilities.validateFileAgainstAPI("http-default-config", CONFIG_BASE + "http-default.json");
+		utilities.validateFileAgainstAPI("http-defaults-config", CONFIG_BASE + "http-defaults.json");
 	}
 	
 	@Test

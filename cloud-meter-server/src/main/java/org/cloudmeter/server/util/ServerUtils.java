@@ -52,9 +52,9 @@ public class ServerUtils {
 		map.put("http-cookie-config", "CookieManager");
 		map.put("counter", "CounterConfig");
 		map.put("csv-dataset", "CSVDataSet");
-		map.put("ftp-config", "ConfigTestElement");
+		map.put("ftp-config", "FTPConfig");
 		map.put("http-header-config", "HeaderManager");
-		map.put("http-default-config", "ConfigTestElement");
+		map.put("http-defaults-config", "HTTPDefaults");
 		map.put("java-config", "JavaConfig");
 		map.put("jdbc-config", "DataSourceElement");
 		map.put("keystore-config", "KeystoreConfig");
