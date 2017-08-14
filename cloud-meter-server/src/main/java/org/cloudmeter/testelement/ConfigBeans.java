@@ -2,6 +2,10 @@ package org.cloudmeter.testelement;
 
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.http.control.*;
+import org.apache.jmeter.modifiers.*;
+import org.apache.jmeter.modifiers.model.*;
+import org.apache.jmeter.config.*;
+import org.apache.jmeter.config.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -40,5 +44,27 @@ public class ConfigBeans {
 	@Autowired
 	public CookieManager CookieManager(CookieManagerInitializer initer) {
 		return (CookieManager) initer.initilizeElement();
+	}
+	
+	@Bean
+	public CounterConfigInitializer CounterConfigInitializer() {
+		return new CounterConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public CounterConfig CounterConfig(CounterConfigInitializer initer) {
+		return (CounterConfig) initer.initilizeElement();
+	}
+	
+	@Bean
+	public CSVDataSetInitializer CSVDataSetInitializer() {
+		return new CSVDataSetInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public CSVDataSet CSVDataSet(CSVDataSetInitializer initer) {
+		return (CSVDataSet) initer.initilizeElement();
 	}
 }

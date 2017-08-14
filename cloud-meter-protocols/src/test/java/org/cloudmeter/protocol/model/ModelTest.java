@@ -61,4 +61,6 @@ public class ModelTest {
 		Assert.assertTrue("standard".equals(ele.getPolicy()));
 		Assert.assertTrue(ele.getCookieCount() == 0);
 	}
+	
+	
 }

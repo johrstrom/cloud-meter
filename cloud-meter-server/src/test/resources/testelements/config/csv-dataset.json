@@ -1,10 +1,10 @@
 {
     "hashTree": [],
     "testElement": {
-        "delimiter": null,
+        "delimiter": ",",
         "enabled": true,
-        "fileEncoding": null,
-        "filename": null,
+        "fileEncoding": "",
+        "filename": "",
         "properties": {
             "TestElement.enabled": {
                 "type": "BooleanProperty",
@@ -57,9 +57,9 @@
         },
         "quotedData": false,
         "recycle": true,
-        "shareMode": null,
+        "shareMode": "shareMode.all",
         "stopThread": false,
-        "variableNames": null
+        "variableNames": ""
     },
     "type": "config"
 }

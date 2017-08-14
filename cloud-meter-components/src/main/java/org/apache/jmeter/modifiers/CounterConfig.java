@@ -30,6 +30,9 @@ import org.apache.jmeter.testelement.property.LongProperty;
 import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.threads.JMeterVariables;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.slf4j.Logger;
 
 /**
@@ -157,6 +160,7 @@ public class CounterConfig extends AbstractTestElement
         return getPropertyAsLong(START);
     }
 
+    @JsonIgnore
     public String getStartAsString() {
         return getPropertyAsString(START);
     }
@@ -195,6 +199,7 @@ public class CounterConfig extends AbstractTestElement
        return propertyAsLong;
     }
 
+    @JsonIgnore
     public String getEndAsString(){
         return getPropertyAsString(END);
     }
@@ -211,6 +216,7 @@ public class CounterConfig extends AbstractTestElement
         return getPropertyAsLong(INCREMENT);
     }
 
+    @JsonIgnore
     public String getIncrementAsString() {
         return getPropertyAsString(INCREMENT);
     }

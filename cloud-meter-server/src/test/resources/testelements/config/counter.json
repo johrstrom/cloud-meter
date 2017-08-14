@@ -3,15 +3,13 @@
     "testElement": {
         "enabled": true,
         "end": 9223372036854775807,
-        "endAsString": "",
         "format": "",
         "increment": 0,
-        "incrementAsString": "",
         "perUser": false,
         "properties": {
             "CounterConfig.end": {
-                "type": "StringProperty",
-                "value": ""
+                "type": "LongProperty",
+                "value": 9223372036854775807
             },
             "CounterConfig.format": {
                 "type": "StringProperty",
@@ -30,11 +28,11 @@
                 "value": false
             },
             "CounterConfig.start": {
-                "type": "StringProperty",
-                "value": ""
+                "type": "LongProperty",
+                "value": 0
             },
             "TestElement.enabled": {
-                "type": BooleanProperty,
+                "type": "BooleanProperty",
                 "value": true
             },
             "TestElement.name": {
@@ -48,7 +46,6 @@
         },
         "resetOnThreadGroupIteration": false,
         "start": 0,
-        "startAsString": "",
         "varName": ""
     },
     "type": "unknown"
