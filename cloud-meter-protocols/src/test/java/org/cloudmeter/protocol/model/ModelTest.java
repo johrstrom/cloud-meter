@@ -9,6 +9,7 @@ import org.apache.jmeter.protocol.http.control.*;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
+import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.protocol.model.*;
 import org.junit.Assert;
 import org.junit.Test;
@@ -142,6 +143,33 @@ public class ModelTest {
 		Assert.assertTrue("100".equals(argMap.get("Sleep_Time")));
 		Assert.assertTrue("OK".equals(argMap.get("Status")));
 			
+	}
+	
+	
+	@Test
+	public void jdbcConfigTest() {
+		JDBCConfigInitializer initer = new JDBCConfigInitializer();
+		DataSourceElement ele = (DataSourceElement) initer.initilizeElement();
+		
+		Assert.assertTrue(ele != null);
+		Assert.assertTrue(ele.isEnabled());
+		Assert.assertTrue("JDBC Connection Configuration".equals(ele.getName()));
+		
+		
+		Assert.assertTrue(ele.isAutocommit());
+		Assert.assertTrue("Select 1".equals(ele.getCheckQuery()));
+		Assert.assertTrue("5000".equals(ele.getConnectionAge()));
+		Assert.assertTrue("".equals(ele.getDataSource()));
+		Assert.assertTrue("".equals(ele.getDbUrl()));
+		Assert.assertTrue("".equals(ele.getDriver()));
+		Assert.assertTrue(ele.isKeepAlive());
+		Assert.assertTrue("".equals(ele.getPassword()));
+		Assert.assertTrue("10".equals(ele.getPoolMax()));
+		Assert.assertTrue("10000".equals(ele.getTimeout()));
+		Assert.assertTrue("DEFAULT".equals(ele.getTransactionIsolation()));
+		Assert.assertTrue("60000".equals(ele.getTrimInterval()));
+		Assert.assertTrue("".equals(ele.getUsername()));
+		
 	}
 	
 }

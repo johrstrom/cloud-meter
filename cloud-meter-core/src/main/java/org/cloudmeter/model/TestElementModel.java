@@ -1,6 +1,7 @@
 package org.cloudmeter.model;
 
 import org.apache.jmeter.assertions.Assertion;
+import org.apache.jmeter.config.ConfigElement;
 import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.control.Controller;
 import org.apache.jmeter.processor.PostProcessor;
@@ -71,7 +72,7 @@ public class TestElementModel {
 		
 		if (ele instanceof Assertion) {
 			return ModelType.assertion;
-		}else if (ele instanceof ConfigTestElement) { 
+		}else if (ele instanceof ConfigTestElement || ele instanceof ConfigElement) { 
 			return ModelType.config;
 		}else if (ele instanceof Controller) {
 			return ModelType.controller;

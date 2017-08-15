@@ -41,21 +41,21 @@ public class DataSourceElement extends AbstractTestElement
 	private static final Logger log = LoggerFactory.getLogger(DataSourceElement.class);
 
     private static final long serialVersionUID = 234L;
-
-    private transient String dataSource;
-    private transient String driver;
-    private transient String dbUrl;
-    private transient String username;
-    private transient String password;
-    private transient String checkQuery;
-    private transient String poolMax;
-    private transient String connectionAge;
-    private transient String timeout;
-    private transient String trimInterval;
-    private transient String transactionIsolation;
-
-    private transient boolean keepAlive;
-    private transient boolean autocommit;
+    
+    public static final String DATA_SOURCE = "DataSourceElement.dataSource";
+    public static final String DRIVER = "DataSourceElement.driver";
+    public static final String DB_URL = "DataSourceElement.dbUrl";
+    public static final String USERNAME = "DataSourceElement.username";
+    public static final String PASSWORD = "DataSourceElement.password";
+    public static final String CHECK_QUERY = "DataSourceElement.checkQuery";
+    public static final String POOL_MAX = "DataSourceElement.poolMax";
+    public static final String CONNECTION_AGE = "DataSourceElement.connectionAge";
+    public static final String TIMEOUT = "DataSourceElement.timeout";
+    public static final String TRIM_INTERVAL = "DataSourceElement.trimInterval";
+    public static final String TRANSACTION_ISOLATION = "DataSourceElement.transactionIsolation";
+    public static final String AUTO_COMMIT = "DataSourceElement.autocommit";
+    public static final String KEEP_ALIVE = "DataSourceElement.keepAlive";
+    
 
     /*
      *  The datasource is set up by testStarted and cleared by testEnded.
@@ -241,7 +241,7 @@ public class DataSourceElement extends AbstractTestElement
         // log is required to ensure errors are available
         //source.enableLogging(new LogKitLogger(log));
         if(log.isDebugEnabled()) {
-            log.debug("PoolConfiguration:"+this.dataSource);
+            log.debug("PoolConfiguration:"+this.getDataSource());
         }
         return dataSource;
     }
@@ -323,7 +323,7 @@ public class DataSourceElement extends AbstractTestElement
      * @return Returns the checkQuery.
      */
     public String getCheckQuery() {
-        return checkQuery;
+        return this.getPropertyAsString(CHECK_QUERY);
     }
 
     /**
@@ -331,14 +331,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The checkQuery to set.
      */
     public void setCheckQuery(String checkQuery) {
-        this.checkQuery = checkQuery;
+        this.setProperty(CHECK_QUERY, checkQuery);
     }
 
     /**
      * @return Returns the connectionAge.
      */
     public String getConnectionAge() {
-        return connectionAge;
+        return this.getPropertyAsString(CONNECTION_AGE);
     }
 
     /**
@@ -346,14 +346,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The connectionAge to set.
      */
     public void setConnectionAge(String connectionAge) {
-        this.connectionAge = connectionAge;
+        this.setProperty(CONNECTION_AGE, connectionAge);
     }
 
     /**
      * @return Returns the poolname.
      */
     public String getDataSource() {
-        return dataSource;
+        return this.getPropertyAsString(DATA_SOURCE);
     }
 
     /**
@@ -361,7 +361,7 @@ public class DataSourceElement extends AbstractTestElement
      *            The poolname to set.
      */
     public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
+        this.setProperty(DATA_SOURCE, dataSource);
     }
     
     private String getDataSourceName() {
@@ -372,7 +372,7 @@ public class DataSourceElement extends AbstractTestElement
      * @return Returns the dbUrl.
      */
     public String getDbUrl() {
-        return dbUrl;
+        return this.getPropertyAsString(DB_URL);
     }
 
     /**
@@ -380,14 +380,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The dbUrl to set.
      */
     public void setDbUrl(String dbUrl) {
-        this.dbUrl = dbUrl;
+        this.setProperty(DB_URL, dbUrl);
     }
 
     /**
      * @return Returns the driver.
      */
     public String getDriver() {
-        return driver;
+        return this.getPropertyAsString(DRIVER);
     }
 
     /**
@@ -395,14 +395,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The driver to set.
      */
     public void setDriver(String driver) {
-        this.driver = driver;
+        this.setProperty(DRIVER, driver);
     }
 
     /**
      * @return Returns the password.
      */
     public String getPassword() {
-        return password;
+        return this.getPropertyAsString(PASSWORD);
     }
 
     /**
@@ -410,14 +410,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The password to set.
      */
     public void setPassword(String password) {
-        this.password = password;
+        this.setProperty(PASSWORD, password);
     }
 
     /**
      * @return Returns the poolMax.
      */
     public String getPoolMax() {
-        return poolMax;
+        return this.getPropertyAsString(POOL_MAX);
     }
 
     /**
@@ -425,14 +425,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The poolMax to set.
      */
     public void setPoolMax(String poolMax) {
-        this.poolMax = poolMax;
+        this.setProperty(POOL_MAX, poolMax);
     }
 
     /**
      * @return Returns the timeout.
      */
     public String getTimeout() {
-        return timeout;
+        return this.getPropertyAsString(TIMEOUT);
     }
 
     /**
@@ -440,14 +440,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The timeout to set.
      */
     public void setTimeout(String timeout) {
-        this.timeout = timeout;
+        this.setProperty(TIMEOUT, timeout);
     }
 
     /**
      * @return Returns the trimInterval.
      */
     public String getTrimInterval() {
-        return trimInterval;
+        return this.getPropertyAsString(TRIM_INTERVAL);
     }
 
     /**
@@ -455,14 +455,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The trimInterval to set.
      */
     public void setTrimInterval(String trimInterval) {
-        this.trimInterval = trimInterval;
+        this.setProperty(TRIM_INTERVAL, trimInterval);
     }
 
     /**
      * @return Returns the username.
      */
     public String getUsername() {
-        return username;
+        return this.getPropertyAsString(USERNAME);
     }
 
     /**
@@ -470,14 +470,15 @@ public class DataSourceElement extends AbstractTestElement
      *            The username to set.
      */
     public void setUsername(String username) {
-        this.username = username;
+        this.setProperty(USERNAME, username);
     }
 
     /**
      * @return Returns the autocommit.
      */
     public boolean isAutocommit() {
-        return autocommit;
+        return this.getPropertyAsBoolean(AUTO_COMMIT);
+       
     }
 
     /**
@@ -485,14 +486,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The autocommit to set.
      */
     public void setAutocommit(boolean autocommit) {
-        this.autocommit = autocommit;
+        this.setProperty(AUTO_COMMIT, autocommit);
     }
 
     /**
      * @return Returns the keepAlive.
      */
     public boolean isKeepAlive() {
-        return keepAlive;
+        return this.getPropertyAsBoolean(KEEP_ALIVE);
     }
 
     /**
@@ -500,14 +501,14 @@ public class DataSourceElement extends AbstractTestElement
      *            The keepAlive to set.
      */
     public void setKeepAlive(boolean keepAlive) {
-        this.keepAlive = keepAlive;
+        this.setProperty(KEEP_ALIVE, keepAlive);
     }
 
     /**
      * @return the transaction isolation level
      */
     public String getTransactionIsolation() {
-        return transactionIsolation;
+        return this.getPropertyAsString(TRANSACTION_ISOLATION);
     }
 
     /**
@@ -515,6 +516,6 @@ public class DataSourceElement extends AbstractTestElement
      * use the default of the driver.
      */
     public void setTransactionIsolation(String transactionIsolation) {
-        this.transactionIsolation = transactionIsolation;
+    	this.setProperty(TRANSACTION_ISOLATION, transactionIsolation);
     }
 }

@@ -1,16 +1,16 @@
 {
 	"hashTree": [],
 	"testElement": {
-		"autocommit": false,
-		"checkQuery": null,
-		"connectionAge": null,
-		"dataSource": null,
-		"dbUrl": null,
-		"driver": null,
+		"autocommit": true,
+		"checkQuery": "Select 1",
+		"connectionAge": "5000",
+		"dataSource": "",
+		"dbUrl": "",
+		"driver": "",
 		"enabled": true,
-		"keepAlive": false,
-		"password": null,
-		"poolMax": null,
+		"keepAlive": true,
+		"password": "",
+		"poolMax": "10",
 		"properties": {
 			"TestElement.enabled": {
 				"type": "BooleanProperty",
@@ -24,63 +24,63 @@
 				"type": "StringProperty",
 				"value": "org.apache.jmeter.protocol.jdbc.config.DataSourceElement"
 			},
-			"autocommit": {
+			"DataSourceElement.autocommit": {
 				"type": "BooleanProperty",
 				"value": true
 			},
-			"checkQuery": {
+			"DataSourceElement.checkQuery": {
 				"type": "StringProperty",
 				"value": "Select 1"
 			},
-			"connectionAge": {
+			"DataSourceElement.connectionAge": {
 				"type": "StringProperty",
 				"value": "5000"
 			},
-			"dataSource": {
+			"DataSourceElement.dataSource": {
 				"type": "StringProperty",
 				"value": ""
 			},
-			"dbUrl": {
+			"DataSourceElement.dbUrl": {
 				"type": "StringProperty",
 				"value": ""
 			},
-			"driver": {
+			"DataSourceElement.driver": {
 				"type": "StringProperty",
 				"value": ""
 			},
-			"keepAlive": {
+			"DataSourceElement.keepAlive": {
 				"type": "BooleanProperty",
 				"value": true
 			},
-			"password": {
+			"DataSourceElement.password": {
 				"type": "StringProperty",
 				"value": ""
 			},
-			"poolMax": {
+			"DataSourceElement.poolMax": {
 				"type": "StringProperty",
 				"value": "10"
 			},
-			"timeout": {
+			"DataSourceElement.timeout": {
 				"type": "StringProperty",
 				"value": "10000"
 			},
-			"transactionIsolation": {
+			"DataSourceElement.transactionIsolation": {
 				"type": "StringProperty",
 				"value": "DEFAULT"
 			},
-			"trimInterval": {
+			"DataSourceElement.trimInterval": {
 				"type": "StringProperty",
 				"value": "60000"
 			},
-			"username": {
+			"DataSourceElement.username": {
 				"type": "StringProperty",
 				"value": ""
 			}
 		},
-		"timeout": null,
-		"transactionIsolation": null,
-		"trimInterval": null,
-		"username": null
+		"timeout": "10000",
+		"transactionIsolation": "DEFAULT",
+		"trimInterval": "60000",
+		"username": ""
 	},
-	"type": "unknown"
+	"type": "config"
 }

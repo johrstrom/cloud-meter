@@ -3,6 +3,7 @@ package org.cloudmeter.testelement;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.http.control.*;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
+import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.modifiers.*;
 import org.apache.jmeter.modifiers.model.*;
 import org.apache.jmeter.config.*;
@@ -112,4 +113,17 @@ public class ConfigBeans {
 	public JavaConfig JavaConfig(JavaConfigInitializer initer) {
 		return (JavaConfig) initer.initilizeElement();
 	}
+	
+	@Bean
+	public JDBCConfigInitializer JDBCConfigInitializer() {
+		return new JDBCConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public DataSourceElement DataSourceElement(JDBCConfigInitializer initer) {
+		return (DataSourceElement) initer.initilizeElement();
+	}
 }
+
+
