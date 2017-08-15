@@ -23,5 +23,20 @@ public class ConfigModelTest {
 		Assert.assertFalse(ele.getStopThread());
 		Assert.assertTrue("".equals(ele.getVariableNames()));
 	}
+	
+	@Test
+	public void keystoreConfigTest() {
+		KeystoreConfigInitializer initer = new KeystoreConfigInitializer();
+		KeystoreConfig ele = (KeystoreConfig) initer.initilizeElement();
+	
+		Assert.assertTrue(ele != null);
+		Assert.assertTrue(ele.isEnabled());
+		Assert.assertTrue("Keystore Configuration".equals(ele.getName()));
+		Assert.assertTrue("".equals(ele.getClientCertAliasVarName()));
+		Assert.assertTrue("".equals(ele.getEndIndex()));
+		Assert.assertTrue("".equals(ele.getStartIndex()));
+		Assert.assertTrue(ele.isPreload());
+		
+	}
 
 }

@@ -35,13 +35,10 @@ public class KeystoreConfig extends ConfigTestElement implements TestBean, TestS
     private static final long serialVersionUID = -5781402012242794890L;
 	private static final Logger log = LoggerFactory.getLogger(KeystoreConfig.class);
 
-    private static final String KEY_STORE_START_INDEX = "https.keyStoreStartIndex"; // $NON-NLS-1$
-    private static final String KEY_STORE_END_INDEX   = "https.keyStoreEndIndex"; // $NON-NLS-1$
-
-    private String startIndex;
-    private String endIndex;
-    private String preload;
-    private String clientCertAliasVarName;
+    private static final String KEY_STORE_START_INDEX = "https.keyStoreStartIndex"; 
+    private static final String KEY_STORE_END_INDEX   = "https.keyStoreEndIndex"; 
+    private static final String KEY_STORE_PRELOAD   = "https.keyStorePreload"; 
+    private static final String KEY_STORE_CLIENT_CERT_ALIAS_VAR_NAME = "https.keyStoreClientCertAliasVarName";    
     
     public KeystoreConfig() {
         super();
@@ -72,87 +69,89 @@ public class KeystoreConfig extends ConfigTestElement implements TestBean, TestS
         int startIndexAsInt = JMeterUtils.getPropDefault(KEY_STORE_START_INDEX, 0);
         int endIndexAsInt = JMeterUtils.getPropDefault(KEY_STORE_END_INDEX, 0);
         
-        if(!StringUtils.isEmpty(this.startIndex)) {
+        if(!StringUtils.isEmpty(this.getStartIndex())) {
             try {
-                startIndexAsInt = Integer.parseInt(this.startIndex);
+                startIndexAsInt = Integer.parseInt(this.getStartIndex());
             } catch(NumberFormatException e) {
-                log.warn("Failed parsing startIndex :'"+this.startIndex+"', will default to:'"+startIndexAsInt+"', error message:"+ e.getMessage(), e);
+                log.warn("Failed parsing startIndex :'"+this.getStartIndex()+"', "
+                		+ "will default to:'"+startIndexAsInt+"', error message:"+ e.getMessage(), e);
             }
         } 
         
-        if(!StringUtils.isEmpty(this.endIndex)) {
+        if(!StringUtils.isEmpty(this.getEndIndex())) {
             try {
-                endIndexAsInt = Integer.parseInt(this.endIndex);
+                endIndexAsInt = Integer.parseInt(this.getEndIndex());
             } catch(NumberFormatException e) {
-                log.warn("Failed parsing endIndex :'"+this.endIndex+"', will default to:'"+endIndexAsInt+"', error message:"+ e.getMessage(), e);
+                log.warn("Failed parsing endIndex :'"+this.getEndIndex()+"', "
+                		+ "will default to:'"+endIndexAsInt+"', error message:"+ e.getMessage(), e);
             }
         } 
         if(startIndexAsInt>endIndexAsInt) {
             throw new JMeterStopTestException("Keystore Config error : Alias start index must be lower than Alias end index");
         }
-        log.info("Configuring Keystore with (preload:"+preload+", startIndex:"+
+        log.info("Configuring Keystore with (preload:"+this.isPreload()+", startIndex:"+
                 startIndexAsInt+", endIndex:"+endIndexAsInt+
-                ", clientCertAliasVarName:'" + clientCertAliasVarName +"')");
+                ", clientCertAliasVarName:'" + this.getClientCertAliasVarName() +"')");
 
-        SSLManager.getInstance().configureKeystore(Boolean.parseBoolean(preload),
+        SSLManager.getInstance().configureKeystore(this.isPreload(),
                 startIndexAsInt, 
                 endIndexAsInt,
-                clientCertAliasVarName);
+                this.getClientCertAliasVarName());
     }
 
     /**
      * @return the endIndex
      */
     public String getEndIndex() {
-        return endIndex;
+        return this.getPropertyAsString(KEY_STORE_END_INDEX);
     }
 
     /**
      * @param endIndex the endIndex to set
      */
     public void setEndIndex(String endIndex) {
-        this.endIndex = endIndex;
+        this.setProperty(KEY_STORE_END_INDEX, endIndex);
     }
 
     /**
      * @return the startIndex
      */
     public String getStartIndex() {
-        return startIndex;
+        return this.getPropertyAsString(KEY_STORE_START_INDEX);
     }
 
     /**
      * @param startIndex the startIndex to set
      */
     public void setStartIndex(String startIndex) {
-        this.startIndex = startIndex;
+        this.setProperty(KEY_STORE_START_INDEX, startIndex);
     }
 
     /**
      * @return the preload
      */
-    public String getPreload() {
-        return preload;
+    public boolean isPreload() {
+        return this.getPropertyAsBoolean(KEY_STORE_PRELOAD);
     }
 
     /**
      * @param preload the preload to set
      */
-    public void setPreload(String preload) {
-        this.preload = preload;
+    public void setPreload(boolean preload) {
+    	this.setProperty(KEY_STORE_PRELOAD, preload);
     }
 
     /**
      * @return the clientCertAliasVarName
      */
     public String getClientCertAliasVarName() {
-        return clientCertAliasVarName;
+        return this.getPropertyAsString(KEY_STORE_CLIENT_CERT_ALIAS_VAR_NAME);
     }
 
     /**
      * @param clientCertAliasVarName the clientCertAliasVarName to set
      */
     public void setClientCertAliasVarName(String clientCertAliasVarName) {
-        this.clientCertAliasVarName = clientCertAliasVarName;
+        this.setProperty(KEY_STORE_CLIENT_CERT_ALIAS_VAR_NAME, clientCertAliasVarName);
     }
 }

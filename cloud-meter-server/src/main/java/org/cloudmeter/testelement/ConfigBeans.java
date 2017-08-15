@@ -124,6 +124,17 @@ public class ConfigBeans {
 	public DataSourceElement DataSourceElement(JDBCConfigInitializer initer) {
 		return (DataSourceElement) initer.initilizeElement();
 	}
+	
+	@Bean
+	public KeystoreConfigInitializer KeystoreConfigInitializer() {
+		return new KeystoreConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public KeystoreConfig KeystoreConfig(KeystoreConfigInitializer initer) {
+		return (KeystoreConfig) initer.initilizeElement();
+	}
 }
 
 
