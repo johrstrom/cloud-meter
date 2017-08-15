@@ -1,8 +1,8 @@
 package org.cloudmeter.testelement;
 
 import org.apache.jmeter.protocol.model.*;
-import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.protocol.http.control.*;
+import org.apache.jmeter.protocol.java.config.JavaConfig;
 import org.apache.jmeter.modifiers.*;
 import org.apache.jmeter.modifiers.model.*;
 import org.apache.jmeter.config.*;
@@ -101,5 +101,15 @@ public class ConfigBeans {
 	public ConfigTestElement HTTPDefaults(HTTPDefaultsInitializer initer) {
 		return (ConfigTestElement) initer.initilizeElement();
 	}
+		
+	@Bean
+	public JavaConfigInitializer JavaConfigInitializer() {
+		return new JavaConfigInitializer();
+	}
 	
+	@Bean
+	@Autowired
+	public JavaConfig JavaConfig(JavaConfigInitializer initer) {
+		return (JavaConfig) initer.initilizeElement();
+	}
 }

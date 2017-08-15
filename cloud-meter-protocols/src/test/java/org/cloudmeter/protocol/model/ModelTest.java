@@ -1,11 +1,14 @@
 package org.cloudmeter.protocol.model;
 
+import java.util.Map;
+
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.protocol.ftp.sampler.FTPSampler;
 import org.apache.jmeter.protocol.http.control.*;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
+import org.apache.jmeter.protocol.java.config.JavaConfig;
 import org.apache.jmeter.protocol.model.*;
 import org.junit.Assert;
 import org.junit.Test;
@@ -113,6 +116,32 @@ public class ModelTest {
 		Assert.assertTrue("".equals(ele.getPropertyAsString(HTTPSampler.RESPONSE_TIMEOUT)));
 		Assert.assertTrue(ele.getProperty(HTTPSampler.ARGUMENTS) != null);		
 		
+	}
+	
+	public void javaConfigTest() {
+		JavaConfigInitializer initer = new JavaConfigInitializer();
+		JavaConfig ele = (JavaConfig) initer.initilizeElement();
+		
+
+		Assert.assertTrue(ele != null);
+		Assert.assertTrue(ele.isEnabled());
+		Assert.assertTrue("Java Request Defaults".equals(ele.getName()));
+		Assert.assertTrue("org.apache.jmeter.protocol.java.test.JavaTest"
+				.equals(ele.getPropertyAsString("classname")));
+		
+		Arguments args = ele.getArguments();
+		Assert.assertTrue(args.getArgumentCount() == 8);
+		Map<String, String> argMap = args.getArgumentsAsMap();
+		
+		Assert.assertTrue("".equals(argMap.get("Label")));
+		Assert.assertTrue("".equals(argMap.get("ResponseMessage")));
+		Assert.assertTrue("".equals(argMap.get("ResponseCode")));
+		Assert.assertTrue("".equals(argMap.get("ResultData")));
+		Assert.assertTrue("".equals(argMap.get("SamplerData")));
+		Assert.assertTrue("0xFF".equals(argMap.get("Sleep_Mask")));
+		Assert.assertTrue("100".equals(argMap.get("Sleep_Time")));
+		Assert.assertTrue("OK".equals(argMap.get("Status")));
+			
 	}
 	
 }
