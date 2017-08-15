@@ -1,7 +1,8 @@
-package org.apache.jmeter.control.model;
+package org.apache.jmeter.model;
 
-import org.apache.jmeter.config.model.ArgumentsInitializer;
+import org.apache.jmeter.config.model.*;
 import org.apache.jmeter.control.*;
+import org.apache.jmeter.control.model.*;
 import org.apache.jmeter.testelement.TestElement;
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,7 +33,7 @@ public class ModelInitializerTest {
 	}
 	
 	@Test
-	public void argumentsIniterTest() {
+	public void argumentsConfigIniterTest() {
 		ArgumentsInitializer initer = new ArgumentsInitializer();
 		TestElement ele = initer.initilizeElement();
 		
@@ -40,6 +41,19 @@ public class ModelInitializerTest {
 		Assert.assertTrue("User Defined Variables".equals(ele.getName()));
 		Assert.assertTrue(ele.isEnabled());
 		Assert.assertTrue(ele.getPropertyAsBoolean(TestElement.ENABLED));		
+	}
+	
+	@Test
+	public void loginConfigIniterTest() {
+		LoginConfigInitializer initer = new LoginConfigInitializer();
+		TestElement ele = initer.initilizeElement();
+		
+		Assert.assertTrue(ele != null);
+		Assert.assertTrue("Login Config Element".equals(ele.getName()));
+		Assert.assertTrue(ele.isEnabled());
+		Assert.assertTrue(ele.getPropertyAsBoolean(TestElement.ENABLED));
+		Assert.assertTrue("".equals(ele.getPropertyAsString("ConfigTestElement.password")));	
+		Assert.assertTrue("".equals(ele.getPropertyAsString("ConfigTestElement.username")));	
 	}
 	
 

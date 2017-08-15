@@ -135,6 +135,17 @@ public class ConfigBeans {
 	public KeystoreConfig KeystoreConfig(KeystoreConfigInitializer initer) {
 		return (KeystoreConfig) initer.initilizeElement();
 	}
+	
+	@Bean
+	public LoginConfigInitializer LoginConfigInitializer() {
+		return new LoginConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConfigTestElement LoginConfig(LoginConfigInitializer initer) {
+		return (ConfigTestElement) initer.initilizeElement();
+	}
 }
 
 

@@ -42,19 +42,19 @@ public class DataSourceElement extends AbstractTestElement
 
     private static final long serialVersionUID = 234L;
     
-    public static final String DATA_SOURCE = "DataSourceElement.dataSource";
-    public static final String DRIVER = "DataSourceElement.driver";
-    public static final String DB_URL = "DataSourceElement.dbUrl";
-    public static final String USERNAME = "DataSourceElement.username";
-    public static final String PASSWORD = "DataSourceElement.password";
-    public static final String CHECK_QUERY = "DataSourceElement.checkQuery";
-    public static final String POOL_MAX = "DataSourceElement.poolMax";
-    public static final String CONNECTION_AGE = "DataSourceElement.connectionAge";
-    public static final String TIMEOUT = "DataSourceElement.timeout";
-    public static final String TRIM_INTERVAL = "DataSourceElement.trimInterval";
-    public static final String TRANSACTION_ISOLATION = "DataSourceElement.transactionIsolation";
-    public static final String AUTO_COMMIT = "DataSourceElement.autocommit";
-    public static final String KEEP_ALIVE = "DataSourceElement.keepAlive";
+    private static final String DATA_SOURCE = "DataSourceElement.dataSource";
+    private static final String DRIVER = "DataSourceElement.driver";
+    private static final String DB_URL = "DataSourceElement.dbUrl";
+    private static final String USERNAME = "DataSourceElement.username";
+    private static final String PASSWORD = "DataSourceElement.password";
+    private static final String CHECK_QUERY = "DataSourceElement.checkQuery";
+    private static final String POOL_MAX = "DataSourceElement.poolMax";
+    private static final String CONNECTION_AGE = "DataSourceElement.connectionAge";
+    private static final String TIMEOUT = "DataSourceElement.timeout";
+    private static final String TRIM_INTERVAL = "DataSourceElement.trimInterval";
+    private static final String TRANSACTION_ISOLATION = "DataSourceElement.transactionIsolation";
+    private static final String AUTO_COMMIT = "DataSourceElement.autocommit";
+    private static final String KEEP_ALIVE = "DataSourceElement.keepAlive";
     
 
     /*
