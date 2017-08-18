@@ -1,0 +1,49 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "LDAP Request Defaults"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.config.ConfigTestElement"
+            },
+            "arguments": {
+                "type": "CollectionProperty",
+                "value": "TODO"
+            },
+            "base_entry_dn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "port": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "rootdn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "servername": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "test": {
+                "type": "StringProperty",
+                "value": "add"
+            },
+            "user_defined": {
+                "type": "BooleanProperty",
+                "value": false
+            }
+        }
+    },
+    "type": "config"
+}

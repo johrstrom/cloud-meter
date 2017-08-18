@@ -58,6 +58,8 @@ public class ServerUtils {
 		map.put("java-config", "JavaConfig");
 		map.put("jdbc-config", "DataSourceElement");
 		map.put("keystore-config", "KeystoreConfig");
+		map.put("ldap-extended-config", "LDAPExtendedConfig");
+		map.put("ldap-config", "LDAPConfig");
 		map.put("login-config", "LoginConfig");
 		map.put("random-value-config", "RandomVariableConfig");
 		map.put("simple-config", "ConfigTestElement");

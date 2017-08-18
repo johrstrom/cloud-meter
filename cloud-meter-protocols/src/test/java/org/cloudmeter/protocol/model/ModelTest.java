@@ -11,6 +11,7 @@ import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.protocol.model.*;
+import org.apache.jmeter.testelement.TestElement;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,9 +24,7 @@ public class ModelTest {
 		HTTPSamplerInitializer initer = new HTTPSamplerInitializer();
 		HTTPSamplerProxy ele = (HTTPSamplerProxy) initer.initilizeElement();
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue("HTTP Request".equals(ele.getName()));
-		
+		this.baseModelAssertions("HTTP Request", ele);
 	}
 	
 	
@@ -34,8 +33,8 @@ public class ModelTest {
 		AuthManagerInitializer initer = new AuthManagerInitializer();
 		AuthManager ele = (AuthManager) initer.initilizeElement();
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue("HTTP Authorization Manager".equals(ele.getName()));
+		this.baseModelAssertions("HTTP Authorization Manager", ele);
+		
 		Assert.assertTrue(ele.getAuthCount() == 0);
 		Assert.assertTrue(ele.isEditable());
 		Assert.assertFalse(ele.getClearEachIteration());
@@ -47,9 +46,9 @@ public class ModelTest {
 	public void httpCacheTest() {
 		CacheManagerInitializer initer = new CacheManagerInitializer();
 		CacheManager ele = (CacheManager) initer.initilizeElement();
+			
+		this.baseModelAssertions("HTTP Cache Manager", ele);
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue("HTTP Cache Manager".equals(ele.getName()));
 		Assert.assertTrue(ele.getMaxSize() == 5000);
 		Assert.assertFalse(ele.getClearEachIteration());
 		Assert.assertFalse(ele.getUseExpires());
@@ -61,9 +60,9 @@ public class ModelTest {
 	public void httpCookieTest() {
 		CookieManagerInitializer initer = new CookieManagerInitializer();
 		CookieManager ele = (CookieManager) initer.initilizeElement();
+
+		this.baseModelAssertions("HTTP Cookie Manager", ele);
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue("HTTP Cookie Manager".equals(ele.getName()));
 		Assert.assertFalse(ele.getClearEachIteration());
 		Assert.assertTrue("org.apache.jmeter.protocol.http.control.HC4CookieHandler".equals(ele.getImplementation()));
 		Assert.assertTrue("standard".equals(ele.getPolicy()));
@@ -75,9 +74,8 @@ public class ModelTest {
 		FTPConfigInitializer initer = new FTPConfigInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue(ele.isEnabled());
-		Assert.assertTrue("FTP Request Defaults".equals(ele.getName()));
+		this.baseModelAssertions("FTP Request Defaults", ele);
+		
 		Assert.assertFalse(ele.getPropertyAsBoolean(FTPSampler.BINARY_MODE));
 		Assert.assertTrue("".equals(ele.getPropertyAsString(FTPSampler.REMOTE_FILENAME)));
 		Assert.assertTrue("".equals(ele.getPropertyAsString(FTPSampler.INPUT_DATA)));
@@ -94,9 +92,7 @@ public class ModelTest {
 		HeaderManagerInitializer initer = new HeaderManagerInitializer();
 		HeaderManager ele = (HeaderManager) initer.initilizeElement();
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue("HTTP Header Manager".equals(ele.getName()));
-		
+		this.baseModelAssertions("HTTP Header Manager", ele);
 	}
 	
 	@Test
@@ -104,9 +100,8 @@ public class ModelTest {
 		HTTPDefaultsInitializer initer = new HTTPDefaultsInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue(ele.isEnabled());
-		Assert.assertTrue("HTTP Request Defaults".equals(ele.getName()));
+		this.baseModelAssertions("HTTP Request Defaults", ele);
+		
 		Assert.assertTrue("6".equals(ele.getPropertyAsString(HTTPSampler.CONCURRENT_POOL)));
 		Assert.assertTrue("".equals(ele.getPropertyAsString(HTTPSampler.CONNECT_TIMEOUT)));
 		Assert.assertTrue("".equals(ele.getPropertyAsString(HTTPSampler.CONTENT_ENCODING)));
@@ -123,10 +118,8 @@ public class ModelTest {
 		JavaConfigInitializer initer = new JavaConfigInitializer();
 		JavaConfig ele = (JavaConfig) initer.initilizeElement();
 		
-
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue(ele.isEnabled());
-		Assert.assertTrue("Java Request Defaults".equals(ele.getName()));
+		this.baseModelAssertions("Java Request Defaults", ele);
+		
 		Assert.assertTrue("org.apache.jmeter.protocol.java.test.JavaTest"
 				.equals(ele.getPropertyAsString("classname")));
 		
@@ -151,11 +144,8 @@ public class ModelTest {
 		JDBCConfigInitializer initer = new JDBCConfigInitializer();
 		DataSourceElement ele = (DataSourceElement) initer.initilizeElement();
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue(ele.isEnabled());
-		Assert.assertTrue("JDBC Connection Configuration".equals(ele.getName()));
-		
-		
+		this.baseModelAssertions("JDBC Connection Configuration", ele);
+	
 		Assert.assertTrue(ele.isAutocommit());
 		Assert.assertTrue("Select 1".equals(ele.getCheckQuery()));
 		Assert.assertTrue("5000".equals(ele.getConnectionAge()));
@@ -171,5 +161,54 @@ public class ModelTest {
 		Assert.assertTrue("".equals(ele.getUsername()));
 		
 	}
+	
+	@Test
+	public void ldapExtendedConfigTest() {
+		LDAPExtendedConfigInitializer initer = new LDAPExtendedConfigInitializer();
+		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
+		
+		this.baseModelAssertions("LDAP Extended Request Defaults", ele);
+		
+		Assert.assertSame("",ele.getPropertyAsString("attributes"));
+		Assert.assertSame("",ele.getPropertyAsString("comparedn"));
+		Assert.assertSame("",ele.getPropertyAsString("comparefilt"));
+		Assert.assertSame("",ele.getPropertyAsString("connection_timeout"));
+		Assert.assertSame("",ele.getPropertyAsString("countlimit"));
+		Assert.assertFalse(ele.getPropertyAsBoolean("deref_aliases"));
+		Assert.assertSame("",ele.getPropertyAsString("modddn"));
+		Assert.assertSame("",ele.getPropertyAsString("newdn"));
+		Assert.assertFalse(ele.getPropertyAsBoolean("parseflag"));
+		Assert.assertSame("",ele.getPropertyAsString("port"));
+		Assert.assertFalse(ele.getPropertyAsBoolean("return_object"));
+		Assert.assertSame("",ele.getPropertyAsString("rootdn"));
+		Assert.assertTrue(ele.getPropertyAsInt("scope") ==  2);
+		Assert.assertFalse("",ele.getPropertyAsBoolean("secure"));
+		Assert.assertSame("",ele.getPropertyAsString("servername"));
+		Assert.assertSame("",ele.getPropertyAsString("timelimit"));
+		Assert.assertSame("",ele.getPropertyAsString("user_dn"));
+		Assert.assertSame("",ele.getPropertyAsString("user_pw"));
+	}
+	
+	
+	@Test
+	public void ldapConfigTest() {
+		LDAPConfigInitializer initer = new LDAPConfigInitializer();
+		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
+		
+		Assert.assertSame("",ele.getPropertyAsString("attributes"));
+		Assert.assertSame("",ele.getPropertyAsString("base_entry_dn"));
+		Assert.assertSame("",ele.getPropertyAsString("port"));
+		Assert.assertSame("",ele.getPropertyAsString("rootdn"));
+		Assert.assertSame("",ele.getPropertyAsString("servername"));
+		Assert.assertSame("add",ele.getPropertyAsString("test"));
+		Assert.assertFalse(ele.getPropertyAsBoolean("user_defined"));
+	}
+	
+	private void baseModelAssertions(String expectedName, TestElement ele) {
+		Assert.assertTrue(ele != null);
+		Assert.assertTrue(ele.isEnabled());
+		Assert.assertSame(expectedName, ele.getName());
+	}
+
 	
 }

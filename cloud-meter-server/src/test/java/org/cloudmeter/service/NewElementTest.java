@@ -163,6 +163,17 @@ public class NewElementTest {
 		utilities.validateFileAgainstAPI("keystore-config", CONFIG_BASE + "keystore.json");
 	}
 	
+	
+	@Test
+	public void ldapExtendedConfigTest() {
+		utilities.validateFileAgainstAPI("ldap-extended-config", CONFIG_BASE + "ldap-extended.json");
+	}
+	
+	@Test
+	public void ldapConfigTest() {
+		utilities.validateFileAgainstAPI("ldap-config", CONFIG_BASE + "ldap.json");
+	}
+	
 	@Test
 	public void loginConfigTest() {
 		utilities.validateFileAgainstAPI("login-config", CONFIG_BASE + "login.json");

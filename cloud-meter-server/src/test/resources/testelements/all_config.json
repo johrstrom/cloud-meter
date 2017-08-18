@@ -4,7 +4,62 @@
             "hashTree": [
                 {
                     "hashTree": [
-
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "enabled": true,
+                                "end": 9223372036854775807,
+                                "format": "",
+                                "increment": 0,
+                                "perUser": false,
+                                "properties": {
+                                    "CounterConfig.end": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.format": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.incr": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.name": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "CounterConfig.per_user": {
+                                        "type": "BooleanProperty",
+                                        "value": false
+                                    },
+                                    "CounterConfig.start": {
+                                        "type": "StringProperty",
+                                        "value": ""
+                                    },
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.modifiers.gui.CounterConfigGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Counter"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.modifiers.CounterConfig"
+                                    }
+                                },
+                                "resetOnThreadGroupIteration": false,
+                                "start": 0,
+                                "varName": ""
+                            },
+                            "type": "unknown"
+                        },
                         {
                             "hashTree": [],
                             "testElement": {
@@ -349,20 +404,89 @@
                             },
                             "type": "config"
                         },
-
+                        {
+                            "hashTree": [],
+                            "testElement": {
+                                "arguments": {
+                                    "argumentCount": 8,
+                                    "arguments": {
+                                        "type": "CollectionProperty",
+                                        "value": "TODO"
+                                    },
+                                    "argumentsAsMap": {
+                                        "Label": "",
+                                        "ResponseCode": "",
+                                        "ResponseMessage": "",
+                                        "ResultData": "",
+                                        "SamplerData": "",
+                                        "Sleep_Mask": "0xFF",
+                                        "Sleep_Time": "100",
+                                        "Status": "OK"
+                                    },
+                                    "enabled": true,
+                                    "properties": {
+                                        "Arguments.arguments": {
+                                            "type": "CollectionProperty",
+                                            "value": "TODO"
+                                        },
+                                        "TestElement.enabled": {
+                                            "type": "StringProperty",
+                                            "value": "true"
+                                        },
+                                        "TestElement.gui_class": {
+                                            "type": "StringProperty",
+                                            "value": "org.apache.jmeter.config.gui.ArgumentsPanel"
+                                        },
+                                        "TestElement.test_class": {
+                                            "type": "StringProperty",
+                                            "value": "org.apache.jmeter.config.Arguments"
+                                        }
+                                    }
+                                },
+                                "classname": "org.apache.jmeter.protocol.java.test.JavaTest",
+                                "enabled": true,
+                                "properties": {
+                                    "TestElement.enabled": {
+                                        "type": "StringProperty",
+                                        "value": "true"
+                                    },
+                                    "TestElement.gui_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.java.config.gui.JavaConfigGui"
+                                    },
+                                    "TestElement.name": {
+                                        "type": "StringProperty",
+                                        "value": "Java Request Defaults"
+                                    },
+                                    "TestElement.test_class": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.java.config.JavaConfig"
+                                    },
+                                    "arguments": {
+                                        "type": "TestElementProperty",
+                                        "value": "TODO"
+                                    },
+                                    "classname": {
+                                        "type": "StringProperty",
+                                        "value": "org.apache.jmeter.protocol.java.test.JavaTest"
+                                    }
+                                }
+                            },
+                            "type": "config"
+                        },
                         {
                             "hashTree": [],
                             "testElement": {
                                 "autocommit": false,
-                                "checkQuery": null,
-                                "connectionAge": null,
-                                "dataSource": null,
-                                "dbUrl": null,
-                                "driver": null,
+                                "checkQuery": "",
+                                "connectionAge": "",
+                                "dataSource": "",
+                                "dbUrl": "",
+                                "driver": "",
                                 "enabled": true,
                                 "keepAlive": false,
-                                "password": null,
-                                "poolMax": null,
+                                "password": "",
+                                "poolMax": "",
                                 "properties": {
                                     "TestElement.enabled": {
                                         "type": "StringProperty",
@@ -433,20 +557,20 @@
                                         "value": ""
                                     }
                                 },
-                                "timeout": null,
-                                "transactionIsolation": null,
-                                "trimInterval": null,
-                                "username": null
+                                "timeout": "",
+                                "transactionIsolation": "",
+                                "trimInterval": "",
+                                "username": ""
                             },
-                            "type": "unknown"
+                            "type": "config"
                         },
                         {
                             "hashTree": [],
                             "testElement": {
-                                "clientCertAliasVarName": null,
+                                "clientCertAliasVarName": "",
                                 "enabled": true,
-                                "endIndex": null,
-                                "preload": null,
+                                "endIndex": "",
+                                "preload": false,
                                 "properties": {
                                     "TestElement.enabled": {
                                         "type": "StringProperty",
@@ -481,7 +605,7 @@
                                         "value": ""
                                     }
                                 },
-                                "startIndex": null
+                                "startIndex": ""
                             },
                             "type": "config"
                         },
@@ -685,7 +809,9 @@
                                 }
                             },
                             "type": "config"
-                        }
+                        },
+
+     
                     ],
                     "testElement": {
                         "delay": 0,

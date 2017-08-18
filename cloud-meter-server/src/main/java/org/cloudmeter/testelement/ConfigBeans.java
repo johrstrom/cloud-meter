@@ -146,6 +146,28 @@ public class ConfigBeans {
 	public ConfigTestElement LoginConfig(LoginConfigInitializer initer) {
 		return (ConfigTestElement) initer.initilizeElement();
 	}
+	
+	@Bean
+	public LDAPExtendedConfigInitializer LDAPExtendedConfigInitializer() {
+		return new LDAPExtendedConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConfigTestElement LDAPExtendedConfig(LDAPExtendedConfigInitializer initer) {
+		return (ConfigTestElement) initer.initilizeElement();
+	}
+	
+	@Bean
+	public LDAPConfigInitializer LDAPConfigInitializer() {
+		return new LDAPConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConfigTestElement LDAPConfig(LDAPConfigInitializer initer) {
+		return (ConfigTestElement) initer.initilizeElement();
+	}
 }
 
 
