@@ -52,4 +52,15 @@ public class TimerBeans {
 	public GaussianRandomTimer GaussianRandomTimer(GaussianRandomTimerInitializer initer) {
 		return (GaussianRandomTimer) initer.initilizeElement();
 	}
+	
+	@Bean
+	public JSR223TimerInitializer JSR223TimerInitializer() {
+		return new JSR223TimerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public JSR223Timer JSR223Timer(JSR223TimerInitializer initer) {
+		return (JSR223Timer) initer.initilizeElement();
+	}
 }

@@ -128,11 +128,4 @@ public abstract class BSFTestElement extends ScriptingTestElement
         }
     }
 
-    public String getScriptLanguage() {
-        return scriptLanguage;
-    }
-
-    public void setScriptLanguage(String s) {
-        scriptLanguage = s;
-    }
 }

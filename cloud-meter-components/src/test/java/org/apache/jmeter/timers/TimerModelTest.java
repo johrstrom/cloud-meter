@@ -2,6 +2,7 @@ package org.apache.jmeter.timers;
 
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.timers.model.*;
+import org.apache.jmeter.util.ScriptingTestElement;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -44,7 +45,7 @@ public class TimerModelTest {
 	}
 	
 	@Test
-	public void GaussianRandomTimerTest() {
+	public void gaussianRandomTimerTest() {
 		GaussianRandomTimerInitializer initer = new GaussianRandomTimerInitializer();
 		GaussianRandomTimer ele = (GaussianRandomTimer) initer.initilizeElement();
 		
@@ -54,11 +55,30 @@ public class TimerModelTest {
 		Assert.assertEquals(100.0, ele.getRange(), 0.01);
 	}
 
+	@Test
+	public void JSR223TimerTest() {
+		JSR223TimerInitializer initer = new JSR223TimerInitializer();
+		JSR223Timer ele = (JSR223Timer) initer.initilizeElement();
+		
+		this.baseModelAssertions("JSR223 Timer", ele);
+		this.baseScriptingAssertions("groovy", ele);
+		
+		Assert.assertSame("", ele.getCacheKey());
+		
+	}
 	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);
 		Assert.assertTrue(ele.isEnabled());
 		Assert.assertSame(expectedName, ele.getName());
 	}
+	
+	private void baseScriptingAssertions(String expectedLanguage, ScriptingTestElement ele) {
+		Assert.assertSame("", ele.getFilename());
+		Assert.assertSame("", ele.getParameters());
+		Assert.assertSame("", ele.getScript());
+		Assert.assertSame(expectedLanguage, ele.getScriptLanguage());
+	}
+	
 	
 }

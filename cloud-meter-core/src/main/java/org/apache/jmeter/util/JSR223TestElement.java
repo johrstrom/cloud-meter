@@ -68,7 +68,7 @@ public abstract class JSR223TestElement extends ScriptingTestElement
     private static final long serialVersionUID = 233L;
 
     /** If not empty then script in ScriptText will be compiled and cached */
-    private String cacheKey = "";
+    private static final String JSR223_CACHE_KEY = "JSR223TestElement.cacheKey";
     
     /** md5 of the script, used as an unique key for the cache */
     private String scriptMd5 = null;
@@ -188,7 +188,7 @@ public abstract class JSR223TestElement extends ScriptingTestElement
                 throw new ScriptException("Script file '"+scriptFile.getAbsolutePath()+"' does not exist or is unreadable for element:"+getName());
             }
         } else if (!StringUtils.isEmpty(getScript())) {
-            if (supportsCompilable && !StringUtils.isEmpty(cacheKey)) {
+            if (supportsCompilable && !StringUtils.isEmpty(this.getCacheKey())) {
                 computeScriptMD5();
                 CompiledScript compiledScript = compiledScriptsCache.get(this.scriptMd5);
                 if (compiledScript == null) {
@@ -224,14 +224,14 @@ public abstract class JSR223TestElement extends ScriptingTestElement
      * @return the cacheKey
      */
     public String getCacheKey() {
-        return cacheKey;
+        return this.getPropertyAsString(JSR223_CACHE_KEY);
     }
 
     /**
      * @param cacheKey the cacheKey to set
      */
     public void setCacheKey(String cacheKey) {
-        this.cacheKey = cacheKey;
+    	this.setProperty(JSR223_CACHE_KEY, cacheKey);
     }
 
     /**
@@ -267,11 +267,11 @@ public abstract class JSR223TestElement extends ScriptingTestElement
         this.scriptMd5 = null;
     }
     
-    public String getScriptLanguage() {
-        return scriptLanguage;
-    }
-
-    public void setScriptLanguage(String s) {
-        scriptLanguage = s;
-    }
+//    public String getScriptLanguage() {
+//        return scriptLanguage;
+//    }
+//
+//    public void setScriptLanguage(String s) {
+//        scriptLanguage = s;
+//    }
 }

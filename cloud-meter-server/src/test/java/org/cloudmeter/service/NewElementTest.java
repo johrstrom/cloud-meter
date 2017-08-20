@@ -227,7 +227,7 @@ public class NewElementTest {
 	}
 	
 	@Test
-	public void jsr223RandomTimerTest() {
+	public void jsr223TimerTest() {
 		utilities.validateFileAgainstAPI("jsr223-timer", TIMER_BASE + "jsr223.json");
 	}
 	

@@ -29,14 +29,14 @@ public abstract class ScriptingTestElement extends AbstractTestElement {
     private static final long serialVersionUID = 281L;
 
     //++ For TestBean implementations only
-    private String parameters = ""; // passed to file or script
+    protected static final String SCRIPTING_ELEMENT_PARAMETERS = "ScriptingTestElement.parameters"; 
 
-    private String filename = ""; // file to source (overrides script)
+    protected static final String SCRIPTING_ELEMENT_FILENAME = "ScriptingTestElement.filename"; 
 
-    private String script = ""; // script (if file not provided)
+    protected static final String SCRIPTING_ELEMENT_SCRIPT = "ScriptingTestElement.script";
 
-    protected String scriptLanguage = ""; // BSF/JSR223 language to use
-    //-- For TestBean implementations only
+    protected static final String SCRIPTING_ELEMENT_LANG = "ScriptingTestElement.scriptLanguage";
+   
 
     public ScriptingTestElement() {
         super();
@@ -50,7 +50,7 @@ public abstract class ScriptingTestElement extends AbstractTestElement {
      * @return the script to execute
      */
     public String getScript(){
-        return script;
+        return this.getPropertyAsString(SCRIPTING_ELEMENT_SCRIPT);
     }
 
     /**
@@ -61,23 +61,31 @@ public abstract class ScriptingTestElement extends AbstractTestElement {
      * @param s the script to execute (may be blank)
      */
     public void setScript(String s){
-        script=s;
+       this.setProperty(SCRIPTING_ELEMENT_SCRIPT, s);
     }
 
     public String getParameters() {
-        return parameters;
+        return this.getPropertyAsString(SCRIPTING_ELEMENT_PARAMETERS);
     }
 
     public void setParameters(String s) {
-        parameters = s;
+    	this.setProperty(SCRIPTING_ELEMENT_PARAMETERS, s);
     }
 
     public String getFilename() {
-        return filename;
+        return this.getPropertyAsString(SCRIPTING_ELEMENT_FILENAME);
     }
 
     public void setFilename(String s) {
-        filename = s;
+        this.setProperty(SCRIPTING_ELEMENT_FILENAME, s);
+    }
+    
+    public String getScriptLanguage() {
+        return this.getPropertyAsString(SCRIPTING_ELEMENT_LANG);
+    }
+
+    public void setScriptLanguage(String s) {
+        this.setProperty(SCRIPTING_ELEMENT_LANG, s);
     }
 
 
