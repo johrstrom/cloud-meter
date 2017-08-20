@@ -180,6 +180,18 @@ public class ConfigBeans {
 		return (RandomVariableConfig) initer.initilizeElement();
 	}
 	
+	
+	@Bean
+	public SimpleConfigInitializer SimpleConfigInitializer() {
+		return new SimpleConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConfigTestElement SimpleConfig(SimpleConfigInitializer initer) {
+		return (ConfigTestElement) initer.initilizeElement();
+	}
+	
 }
 
 

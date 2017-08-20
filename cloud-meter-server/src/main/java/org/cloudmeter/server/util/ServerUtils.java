@@ -62,7 +62,7 @@ public class ServerUtils {
 		map.put("ldap-config", "LDAPConfig");
 		map.put("login-config", "LoginConfig");
 		map.put("random-variable-config", "RandomVariableConfig");
-		map.put("simple-config", "ConfigTestElement");
+		map.put("simple-config", "SimpleConfig");
 		map.put("tcp-config", "ConfigTestElement");
 		map.put("user-defined-config", "Arguments");
 		

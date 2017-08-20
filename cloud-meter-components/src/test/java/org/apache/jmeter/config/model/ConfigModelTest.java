@@ -53,6 +53,14 @@ public class ConfigModelTest {
 		Assert.assertSame("", ele.getVariableName());		
 	}
 	
+	@Test
+	public void simpleConfigTest() {
+		SimpleConfigInitializer initer = new SimpleConfigInitializer();
+		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
+	
+		this.baseModelAssertions("Simple Config Element", ele);
+	}
+	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);
 		Assert.assertTrue(ele.isEnabled());
