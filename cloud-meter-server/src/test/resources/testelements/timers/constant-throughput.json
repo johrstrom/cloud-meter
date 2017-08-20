@@ -1,0 +1,30 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "calcMode": 0,
+        "enabled": true,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanPropery",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Constant Throughput Timer"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.timers.ConstantThroughputTimer"
+            },
+            "calcMode": {
+                "type": "IntegerProperty",
+                "value": 0
+            },
+            "throughput": {
+                "type": "DoubleProperty"
+            }
+        },
+        "throughput": 0.0
+    },
+    "type": "timer"
+}

@@ -1,0 +1,27 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "delay": "300",
+        "enabled": true,
+        "properties": {
+            "ConstantTimer.delay": {
+                "type": "StringProperty",
+                "value": "300"
+            },
+            "TestElement.enabled": {
+                "type": "BooleanPropery",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Constant Timer"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.timers.ConstantTimer"
+            }
+        },
+        "range": 0.0
+    },
+    "type": "timer"
+}

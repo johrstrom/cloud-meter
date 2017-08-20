@@ -18,6 +18,7 @@ public class ServerUtils {
 
     	map.putAll(this.controllerElements());
     	map.putAll(this.configElements());
+    	map.putAll(this.timerElements());
     	
     	return map;
     }
@@ -66,6 +67,21 @@ public class ServerUtils {
 		map.put("tcp-config", "TCPConfig");
 		map.put("user-defined-variables", "UserDefinedVariables");
 		
+		return map;
+	}
+	
+	private  Map<String, String> timerElements() {
+		HashMap<String, String>  map = new HashMap<>();
+		
+		map.put("bean-shell-timer", "BeanShellTimer");
+		map.put("constant-throughput-timer", "ConstantThroughputTimer");
+		map.put("constant-timer", "ConstantTimer");
+		map.put("gaussian-random-timer", "GaussianRandomTimer");
+		map.put("jsr223-timer", "JSR223Timer");
+		map.put("poission-random-timer", "PoissonRandomTimer");
+		map.put("synchronization-timer", "SynchronizationTimer");
+		map.put("uniform-random-timer", "UniformRandomTimer");
+				
 		return map;
 	}
 

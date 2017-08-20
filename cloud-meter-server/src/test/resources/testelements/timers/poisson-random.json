@@ -1,0 +1,31 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "delay": "300",
+        "enabled": true,
+        "properties": {
+            "ConstantTimer.delay": {
+                "type": "StringProperty",
+                "value": "300"
+            },
+            "RandomTimer.range": {
+                "type": "StringProperty",
+                "value": "100"
+            },
+            "TestElement.enabled": {
+                "type": "BooleanPropery",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Poisson Random Timer"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.timers.PoissonRandomTimer"
+            }
+        },
+        "range": 100.0
+    },
+    "type": "timer"
+}

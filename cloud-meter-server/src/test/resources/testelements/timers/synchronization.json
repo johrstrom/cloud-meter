@@ -1,0 +1,31 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "groupSize": 0,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanPropery",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Synchronizing Timer"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.timers.SyncTimer"
+            },
+            "groupSize": {
+                "type": "IntegerProperty",
+                "value": 0
+            },
+            "timeoutInMs": {
+                "type": "LongProperty",
+                "value": 0
+            }
+        },
+        "timeoutInMs": 0
+    },
+    "type": "timer"
+}

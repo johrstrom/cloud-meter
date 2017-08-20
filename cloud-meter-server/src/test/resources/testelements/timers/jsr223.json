@@ -1,0 +1,46 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "cacheKey": "",
+        "enabled": true,
+        "filename": "",
+        "parameters": "",
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanPropery",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "JSR223 Timer"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.timers.JSR223Timer"
+            },
+            "cacheKey": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "filename": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "parameters": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "script": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "scriptLanguage": {
+                "type": "StringProperty",
+                "value": "groovy"
+            }
+        },
+        "script": "",
+        "scriptLanguage": ""
+    },
+    "type": "timer"
+}

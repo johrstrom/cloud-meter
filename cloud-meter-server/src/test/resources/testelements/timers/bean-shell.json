@@ -1,0 +1,41 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "filename": "",
+        "parameters": "",
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "BeanShell Timer"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.timers.BeanShellTimer"
+            },
+            "filename": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "parameters": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "resetInterpreter": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "script": {
+                "type": "StringProperty",
+                "value": ""
+            }
+        },
+        "resetInterpreter": false,
+        "script": ""
+    },
+    "type": "timer"
+}

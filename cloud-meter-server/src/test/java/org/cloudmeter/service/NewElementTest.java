@@ -21,6 +21,7 @@ public class NewElementTest {
 	private static final String SAMPLER_BASE = FILE_BASE + "/samplers/";
 	private static final String CONTROLLER_BASE = FILE_BASE + "/controllers/";
 	private static final String CONFIG_BASE = FILE_BASE + "/config/";
+	private static final String TIMER_BASE = FILE_BASE + "/timers/";
 	
 	@Autowired
 	private TestUtilities utilities;
@@ -200,8 +201,50 @@ public class NewElementTest {
 	}
 	
 	/**
-	 * Config tests 
+	 * Config tests end
 	 * 
-	 * 
+	 * Timer tests start 
 	 */
+	
+	@Test
+	public void beanShellTimerTest() {
+		utilities.validateFileAgainstAPI("bean-shell-timer", TIMER_BASE + "bean-shell.json");
+	}
+	
+	@Test
+	public void constantThroughputTimerTest() {
+		utilities.validateFileAgainstAPI("constant-throughput-timer", TIMER_BASE + "constant-throughput.json");
+	}
+	
+	@Test
+	public void constantTimerTest() {
+		utilities.validateFileAgainstAPI("constant-timer", TIMER_BASE + "constant.json");
+	}
+	
+	@Test
+	public void jsr223RandomTimerTest() {
+		utilities.validateFileAgainstAPI("jsr223-timer", TIMER_BASE + "jsr223.json");
+	}
+	
+	@Test
+	public void poissonRandomTimerTest() {
+		utilities.validateFileAgainstAPI("poisson-random-timer", TIMER_BASE + "poisson-random.json");
+	}
+	
+	@Test
+	public void SychronizationTimerTest() {
+		utilities.validateFileAgainstAPI("synchronization-timer", TIMER_BASE + "synchronization.json");
+	}
+	
+	@Test
+	public void uniformRandomTimerTest() {
+		utilities.validateFileAgainstAPI("uniform-random-timer", TIMER_BASE + "uniform-random.json");
+	}
+	
+	/**
+	 * Timer tests end
+	 * 
+	 *  
+	 */
+	
 }
