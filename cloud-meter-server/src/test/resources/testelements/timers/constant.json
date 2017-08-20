@@ -1,12 +1,12 @@
 {
     "hashTree": [],
     "testElement": {
-        "delay": "300",
+        "delay": 300,
         "enabled": true,
         "properties": {
             "ConstantTimer.delay": {
-                "type": "StringProperty",
-                "value": "300"
+                "type": "IntegerProperty",
+                "value": 300
             },
             "ConstantTimer.range": {
                 "type": "DoubleProperty",

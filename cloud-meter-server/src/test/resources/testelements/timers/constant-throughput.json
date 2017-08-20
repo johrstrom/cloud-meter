@@ -21,7 +21,8 @@
                 "value": 0
             },
             "ConstantThroughputTimer.throughput": {
-                "type": "DoubleProperty"
+                "type": "DoubleProperty",
+                "value": 0.0
             }
         },
         "throughput": 0.0

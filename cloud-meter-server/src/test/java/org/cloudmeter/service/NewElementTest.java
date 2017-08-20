@@ -222,6 +222,11 @@ public class NewElementTest {
 	}
 	
 	@Test
+	public void gaussianRandomTimerTest() {
+		utilities.validateFileAgainstAPI("gaussian-random-timer", TIMER_BASE + "gaussian-random.json");
+	}
+	
+	@Test
 	public void jsr223RandomTimerTest() {
 		utilities.validateFileAgainstAPI("jsr223-timer", TIMER_BASE + "jsr223.json");
 	}

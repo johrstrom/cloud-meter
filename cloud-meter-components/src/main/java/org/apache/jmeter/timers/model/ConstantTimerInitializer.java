@@ -11,7 +11,7 @@ public class ConstantTimerInitializer extends AbstractInitializer {
 		ConstantTimer ele = new ConstantTimer();
 		this.baseElement(ele, "Constant Timer");
 		
-		ele.setDelay("300");
+		ele.setDelay(300);
 		ele.setRange(0.0);
 		
 		return ele;

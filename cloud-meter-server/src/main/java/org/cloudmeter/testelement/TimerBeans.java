@@ -41,4 +41,15 @@ public class TimerBeans {
 	public ConstantTimer ConstantTimer(ConstantTimerInitializer initer) {
 		return (ConstantTimer) initer.initilizeElement();
 	}
+	
+	@Bean
+	public GaussianRandomTimerInitializer GaussianRandomTimerInitializer() {
+		return new GaussianRandomTimerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public GaussianRandomTimer GaussianRandomTimer(GaussianRandomTimerInitializer initer) {
+		return (GaussianRandomTimer) initer.initilizeElement();
+	}
 }

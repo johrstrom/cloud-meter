@@ -39,8 +39,19 @@ public class TimerModelTest {
 		
 		this.baseModelAssertions("Constant Timer", ele);
 		
-		Assert.assertSame("300",ele.getDelay());
+		Assert.assertTrue(ele.getDelay() == 300);
 		Assert.assertEquals(0.0, ele.getRange(), 0.01);
+	}
+	
+	@Test
+	public void GaussianRandomTimerTest() {
+		GaussianRandomTimerInitializer initer = new GaussianRandomTimerInitializer();
+		GaussianRandomTimer ele = (GaussianRandomTimer) initer.initilizeElement();
+		
+		this.baseModelAssertions("Gaussian Random Timer", ele);
+		
+		Assert.assertTrue(ele.getDelay() == 300);
+		Assert.assertEquals(100.0, ele.getRange(), 0.01);
 	}
 
 	

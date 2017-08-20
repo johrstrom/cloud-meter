@@ -50,7 +50,7 @@ public class ConstantTimer extends AbstractTestElement implements Timer, Seriali
      * Set the delay for this timer.
      * @param delay The delay for this timer
      */
-    public void setDelay(String delay) {
+    public void setDelay(int delay) {
         setProperty(DELAY, delay);
     }
 
@@ -72,8 +72,8 @@ public class ConstantTimer extends AbstractTestElement implements Timer, Seriali
      *
      * @return the delay value for display.
      */
-    public String getDelay() {
-        return getPropertyAsString(DELAY);
+    public int getDelay() {
+        return getPropertyAsInt(DELAY);
     }
 
     /**
