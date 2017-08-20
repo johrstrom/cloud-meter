@@ -181,7 +181,7 @@ public class NewElementTest {
 	
 	@Test
 	public void randomValueConfigTest() {
-		utilities.validateFileAgainstAPI("random-value-config", CONFIG_BASE + "random-value.json");
+		utilities.validateFileAgainstAPI("random-variable-config", CONFIG_BASE + "random-variable.json");
 	}
 	
 	@Test

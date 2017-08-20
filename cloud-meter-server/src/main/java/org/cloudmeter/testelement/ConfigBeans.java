@@ -168,6 +168,18 @@ public class ConfigBeans {
 	public ConfigTestElement LDAPConfig(LDAPConfigInitializer initer) {
 		return (ConfigTestElement) initer.initilizeElement();
 	}
+	
+	@Bean
+	public RandomVariableConfigInitializer RandomVariableConfigInitializer() {
+		return new RandomVariableConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public RandomVariableConfig RandomVariableConfig(RandomVariableConfigInitializer initer) {
+		return (RandomVariableConfig) initer.initilizeElement();
+	}
+	
 }
 
 

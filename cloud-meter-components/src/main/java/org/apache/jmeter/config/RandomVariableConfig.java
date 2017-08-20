@@ -44,17 +44,12 @@ public class RandomVariableConfig extends ConfigTestElement
      *  needs to be protected by a lock (either sync. or volatile) to ensure safe publication.
      */
 
-    private String minimumValue;
-
-    private String maximumValue;
-
-    private String variableName;
-
-    private String outputFormat;
-
-    private String randomSeed;
-
-    private boolean perThread;
+    private static final String RVAL_CFG_MIN_VALUE = "RandomVariableConfig.minimumValue";
+    private static final String RVAL_CFG_MAX_VALUE = "RandomVariableConfig.maximumValue";
+    private static final String RVAL_CFG_VARIABLE_NAME = "RandomVariableConfig.variableName";
+    private static final String RVAL_CFG_OUPUT_FMT = "RandomVariableConfig.outputFormat";
+    private static final String RVAL_CFG_RANDOM_SEED = "RandomVariableConfig.randomSeed";
+    private static final String RVAL_CFG_PER_THREAD = "RandomVariableConfig.perThread";
 
     // This class is not cloned per thread, so this is shared
     private Random globalRandom = null;
@@ -144,49 +139,49 @@ public class RandomVariableConfig extends ConfigTestElement
      * @return the minValue
      */
     public synchronized String getMinimumValue() {
-        return minimumValue;
+        return this.getPropertyAsString(RVAL_CFG_MIN_VALUE);
     }
 
     /**
      * @param minValue the minValue to set
      */
     public synchronized void setMinimumValue(String minValue) {
-        this.minimumValue = minValue;
+        this.setProperty(RVAL_CFG_MIN_VALUE, minValue);
     }
 
     /**
      * @return the maxvalue
      */
     public synchronized String getMaximumValue() {
-        return maximumValue;
+        return this.getPropertyAsString(RVAL_CFG_MAX_VALUE);
     }
 
     /**
      * @param maxvalue the maxvalue to set
      */
     public synchronized void setMaximumValue(String maxvalue) {
-        this.maximumValue = maxvalue;
+        this.setProperty(RVAL_CFG_MAX_VALUE, maxvalue);
     }
 
     /**
      * @return the variableName
      */
     public synchronized String getVariableName() {
-        return variableName;
+        return this.getPropertyAsString(RVAL_CFG_VARIABLE_NAME);
     }
 
     /**
      * @param variableName the variableName to set
      */
     public synchronized void setVariableName(String variableName) {
-        this.variableName = variableName;
+        this.setProperty(RVAL_CFG_VARIABLE_NAME, variableName);
     }
 
     /**
      * @return the randomSeed
      */
     public synchronized String getRandomSeed() {
-        return randomSeed;
+        return this.getPropertyAsString(RVAL_CFG_RANDOM_SEED);
     }
 
     /**
@@ -194,6 +189,7 @@ public class RandomVariableConfig extends ConfigTestElement
      */
     private synchronized long getRandomSeedAsLong() {
         long seed = 0;
+        String randomSeed = this.getRandomSeed();
         if (randomSeed.length()==0){
             seed = System.currentTimeMillis();
         }  else {
@@ -211,33 +207,33 @@ public class RandomVariableConfig extends ConfigTestElement
      * @param randomSeed the randomSeed to set
      */
     public synchronized void setRandomSeed(String randomSeed) {
-        this.randomSeed = randomSeed;
+        this.setProperty(RVAL_CFG_RANDOM_SEED, randomSeed);
     }
 
     /**
      * @return the perThread
      */
     public synchronized boolean getPerThread() {
-        return perThread;
+        return this.getPropertyAsBoolean(RVAL_CFG_PER_THREAD);
     }
 
     /**
      * @param perThread the perThread to set
      */
     public synchronized void setPerThread(boolean perThread) {
-        this.perThread = perThread;
+        this.setProperty(RVAL_CFG_PER_THREAD, perThread);
     }
     /**
      * @return the outputFormat
      */
     public synchronized String getOutputFormat() {
-        return outputFormat;
+        return this.getPropertyAsString(RVAL_CFG_OUPUT_FMT);
     }
     /**
      * @param outputFormat the outputFormat to set
      */
     public synchronized void setOutputFormat(String outputFormat) {
-        this.outputFormat = outputFormat;
+        this.setProperty(RVAL_CFG_OUPUT_FMT, outputFormat);
     }
 
 }
