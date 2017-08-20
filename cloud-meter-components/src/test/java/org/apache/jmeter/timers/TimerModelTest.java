@@ -67,6 +67,39 @@ public class TimerModelTest {
 		
 	}
 	
+	@Test
+	public void poissonRandomTimerTest() {
+		PoissonRandomTimerInitializer initer = new PoissonRandomTimerInitializer();
+		PoissonRandomTimer ele = (PoissonRandomTimer) initer.initilizeElement();
+		
+		this.baseModelAssertions("Poisson Random Timer", ele);
+		
+		Assert.assertTrue(ele.getDelay() == 300);
+		Assert.assertEquals(100.0, ele.getRange(), 0.01);
+	}
+	
+	@Test
+	public void synchronizationTimerTest() {
+		SyncTimerInitializer initer = new SyncTimerInitializer();
+		SyncTimer ele = (SyncTimer) initer.initilizeElement();
+		
+		this.baseModelAssertions("Synchronizing Timer", ele);
+		
+		Assert.assertTrue(ele.getGroupSize() == 0);
+		Assert.assertTrue(ele.getTimeoutInMs() == 0);
+	}
+	
+	@Test
+	public void uniformRandomTimerTest() {
+		UniformRandomTimerInitializer initer = new UniformRandomTimerInitializer();
+		UniformRandomTimer ele = (UniformRandomTimer) initer.initilizeElement();
+		
+		this.baseModelAssertions("Uniform Random Timer", ele);
+		
+		Assert.assertTrue(ele.getDelay() == 0);
+		Assert.assertEquals(100.0, ele.getRange(), 0.01);
+	}
+	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);
 		Assert.assertTrue(ele.isEnabled());

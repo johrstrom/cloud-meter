@@ -18,17 +18,12 @@
 
 package org.apache.jmeter.timers;
 
-import java.beans.PropertyDescriptor;
-
 import org.apache.jmeter.testbeans.BeanInfoSupport;
 
 public class SyncTimerBeanInfo extends BeanInfoSupport {
 
     public SyncTimerBeanInfo() {
         super(SyncTimer.class);
-
-   
-
     }
 
 }

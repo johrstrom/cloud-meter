@@ -41,6 +41,13 @@ import org.slf4j.Logger;
 public class SyncTimer extends AbstractTestElement implements Timer, Serializable, TestBean, TestStateListener, ThreadListener {
 	private static final Logger log = LoggerFactory.getLogger(SyncTimer.class);
 
+	private static final String SYNC_TIMER_GROUP_SIZE = "SyncTimer.groupSize";
+	private static final String SYNC_TIMER_TIME_OUT_MS = "SyncTimer.timeoutInMs";
+	
+    private static final long serialVersionUID = 2;
+
+    private transient BarrierWrapper barrier;
+    
     /**
      * Wrapper to {@link CyclicBarrier} to allow lazy init of CyclicBarrier when SyncTimer is configured with 0
      */
@@ -134,13 +141,7 @@ public class SyncTimer extends AbstractTestElement implements Timer, Serializabl
         }
     }
 
-    private static final long serialVersionUID = 2;
 
-    private transient BarrierWrapper barrier;
-
-    private int groupSize;
-    
-    private long timeoutInMs;
 
     // Ensure transient object is created by the server
     private Object readResolve(){
@@ -152,7 +153,7 @@ public class SyncTimer extends AbstractTestElement implements Timer, Serializabl
      * @return Returns the numThreads.
      */
     public int getGroupSize() {
-        return groupSize;
+        return this.getPropertyAsInt(SYNC_TIMER_GROUP_SIZE);
     }
 
     /**
@@ -160,7 +161,7 @@ public class SyncTimer extends AbstractTestElement implements Timer, Serializabl
      *            The numThreads to set.
      */
     public void setGroupSize(int numThreads) {
-        this.groupSize = numThreads;
+       this.setProperty(SYNC_TIMER_GROUP_SIZE, numThreads);
     }
 
     /**
@@ -170,6 +171,7 @@ public class SyncTimer extends AbstractTestElement implements Timer, Serializabl
     public long delay() {
         if(getGroupSize()>=0) {
             int arrival = 0;
+            long timeoutInMs = this.getTimeoutInMs();
             try {
                 if(timeoutInMs==0) {
                     arrival = this.barrier.await();                    
@@ -266,13 +268,13 @@ public class SyncTimer extends AbstractTestElement implements Timer, Serializabl
      * @return the timeoutInMs
      */
     public long getTimeoutInMs() {
-        return timeoutInMs;
+        return this.getPropertyAsLong(SYNC_TIMER_TIME_OUT_MS);
     }
 
     /**
      * @param timeoutInMs the timeoutInMs to set
      */
     public void setTimeoutInMs(long timeoutInMs) {
-        this.timeoutInMs = timeoutInMs;
+        this.setProperty(SYNC_TIMER_TIME_OUT_MS, timeoutInMs);
     }
 }

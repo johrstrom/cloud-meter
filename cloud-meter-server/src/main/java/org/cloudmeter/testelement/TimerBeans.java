@@ -63,4 +63,37 @@ public class TimerBeans {
 	public JSR223Timer JSR223Timer(JSR223TimerInitializer initer) {
 		return (JSR223Timer) initer.initilizeElement();
 	}
+	
+	@Bean
+	public PoissonRandomTimerInitializer PoissonRandomTimerInitializer() {
+		return new PoissonRandomTimerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public PoissonRandomTimer PoissonRandomTimer(PoissonRandomTimerInitializer initer) {
+		return (PoissonRandomTimer) initer.initilizeElement();
+	}
+	
+	@Bean
+	public SyncTimerInitializer SyncTimerInitializer() {
+		return new SyncTimerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public SyncTimer SyncTimer(SyncTimerInitializer initer) {
+		return (SyncTimer) initer.initilizeElement();
+	}
+	
+	@Bean
+	public UniformRandomTimerInitializer UniformRandomTimerInitializer() {
+		return new UniformRandomTimerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public UniformRandomTimer UniformRandomTimer(UniformRandomTimerInitializer initer) {
+		return (UniformRandomTimer) initer.initilizeElement();
+	}
 }

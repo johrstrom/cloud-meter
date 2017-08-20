@@ -237,8 +237,8 @@ public class NewElementTest {
 	}
 	
 	@Test
-	public void SychronizationTimerTest() {
-		utilities.validateFileAgainstAPI("synchronization-timer", TIMER_BASE + "synchronization.json");
+	public void syncTimerTest() {
+		utilities.validateFileAgainstAPI("sync-timer", TIMER_BASE + "synchronization.json");
 	}
 	
 	@Test

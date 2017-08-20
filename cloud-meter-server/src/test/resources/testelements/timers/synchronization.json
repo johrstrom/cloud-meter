@@ -16,11 +16,11 @@
                 "type": "StringProperty",
                 "value": "org.apache.jmeter.timers.SyncTimer"
             },
-            "groupSize": {
+            "SyncTimer.groupSize": {
                 "type": "IntegerProperty",
                 "value": 0
             },
-            "timeoutInMs": {
+            "SyncTimer.timeoutInMs": {
                 "type": "LongProperty",
                 "value": 0
             }

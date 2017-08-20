@@ -78,8 +78,8 @@ public class ServerUtils {
 		map.put("constant-timer", "ConstantTimer");
 		map.put("gaussian-random-timer", "GaussianRandomTimer");
 		map.put("jsr223-timer", "JSR223Timer");
-		map.put("poission-random-timer", "PoissonRandomTimer");
-		map.put("synchronization-timer", "SynchronizationTimer");
+		map.put("poisson-random-timer", "PoissonRandomTimer");
+		map.put("sync-timer", "SyncTimer");
 		map.put("uniform-random-timer", "UniformRandomTimer");
 				
 		return map;

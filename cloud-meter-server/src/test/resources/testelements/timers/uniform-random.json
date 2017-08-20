@@ -1,16 +1,16 @@
 {
     "hashTree": [],
     "testElement": {
-        "delay": "0",
+        "delay": 0,
         "enabled": true,
         "properties": {
             "ConstantTimer.delay": {
-                "type": "StringProperty",
-                "value": "0"
+                "type": "IntegerProperty",
+                "value": 0
             },
             "RandomTimer.range": {
-                "type": "StringProperty",
-                "value": "100.0"
+                "type": "DoubleProperty",
+                "value": 100.0
             },
             "TestElement.enabled": {
                 "type": "BooleanProperty",
