@@ -51,6 +51,10 @@ public class PropertySerializer extends JsonSerializer<AbstractProperty> {
 		generator.writeStringField(VALUE,"TODO");
 	}
 	
+	public void writeDoubleProperty(AbstractProperty prop, JsonGenerator generator) throws IOException{
+		generator.writeNumberField(VALUE, prop.getDoubleValue());		
+	}
+	
 	public void writeFloatProperty(AbstractProperty prop, JsonGenerator generator) throws IOException{
 		generator.writeNumberField(VALUE, prop.getFloatValue());		
 	}

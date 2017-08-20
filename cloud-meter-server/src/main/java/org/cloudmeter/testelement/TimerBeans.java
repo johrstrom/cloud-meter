@@ -30,4 +30,15 @@ public class TimerBeans {
 	public ConstantThroughputTimer ConstantThroughputTimer(ConstantThroughputTimerInitializer initer) {
 		return (ConstantThroughputTimer) initer.initilizeElement();
 	}
+	
+	@Bean
+	public ConstantTimerInitializer ConstantTimerInitializer() {
+		return new ConstantTimerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConstantTimer ConstantTimer(ConstantTimerInitializer initer) {
+		return (ConstantTimer) initer.initilizeElement();
+	}
 }

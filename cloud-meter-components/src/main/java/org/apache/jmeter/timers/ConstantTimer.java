@@ -23,6 +23,7 @@ import java.io.Serializable;
 import org.apache.jmeter.engine.event.LoopIterationEvent;
 import org.apache.jmeter.engine.event.LoopIterationListener;
 import org.apache.jmeter.testelement.AbstractTestElement;
+import org.apache.jmeter.testelement.property.DoubleProperty;
 import org.apache.jmeter.util.JMeterUtils;
 
 /**
@@ -34,7 +35,8 @@ public class ConstantTimer extends AbstractTestElement implements Timer, Seriali
 
     private static final long serialVersionUID = 240L;
 
-    public static final String DELAY = "ConstantTimer.delay"; //$NON-NLS-1$
+    public static final String DELAY = "ConstantTimer.delay";
+    public static final String RANGE = "ConstantTimer.range";
 
     private long delay = 0;
 
@@ -58,7 +60,11 @@ public class ConstantTimer extends AbstractTestElement implements Timer, Seriali
      *
      */
     public void setRange(double range) {
-        // NOOP
+    	DoubleProperty prop = new DoubleProperty();
+    	prop.setName(RANGE);
+    	prop.setValue((float) range);
+    
+        this.setProperty(prop);
     }
 
     /**
@@ -76,7 +82,7 @@ public class ConstantTimer extends AbstractTestElement implements Timer, Seriali
      * @return the range (always zero for this timer).
      */
     public double getRange() {
-        return 0;
+        return this.getPropertyAsDouble(RANGE);
     }
 
     /**

@@ -8,6 +8,10 @@
                 "type": "StringProperty",
                 "value": "300"
             },
+            "ConstantTimer.range": {
+                "type": "DoubleProperty",
+                "value": 0.0
+            },
             "TestElement.enabled": {
                 "type": "BooleanProperty",
                 "value": true
