@@ -63,8 +63,8 @@ public class ServerUtils {
 		map.put("login-config", "LoginConfig");
 		map.put("random-variable-config", "RandomVariableConfig");
 		map.put("simple-config", "SimpleConfig");
-		map.put("tcp-config", "ConfigTestElement");
-		map.put("user-defined-config", "Arguments");
+		map.put("tcp-config", "TCPConfig");
+		map.put("user-defined-variables", "UserDefinedVariables");
 		
 		return map;
 	}

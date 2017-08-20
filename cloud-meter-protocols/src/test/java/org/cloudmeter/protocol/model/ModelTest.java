@@ -11,6 +11,7 @@ import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.protocol.model.*;
+import org.apache.jmeter.protocol.tcp.sampler.TCPSampler;
 import org.apache.jmeter.testelement.TestElement;
 import org.junit.Assert;
 import org.junit.Test;
@@ -195,6 +196,8 @@ public class ModelTest {
 		LDAPConfigInitializer initer = new LDAPConfigInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 		
+		this.baseModelAssertions("LDAP Request Defaults", ele);
+		
 		Assert.assertSame("",ele.getPropertyAsString("attributes"));
 		Assert.assertSame("",ele.getPropertyAsString("base_entry_dn"));
 		Assert.assertSame("",ele.getPropertyAsString("port"));
@@ -203,6 +206,25 @@ public class ModelTest {
 		Assert.assertSame("add",ele.getPropertyAsString("test"));
 		Assert.assertFalse(ele.getPropertyAsBoolean("user_defined"));
 	}
+	
+
+	@Test
+	public void tcpConfigTest() {
+		TCPConfigInitializer initer = new TCPConfigInitializer();
+		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
+		
+		this.baseModelAssertions("TCP Sampler Config", ele);
+		
+		Assert.assertFalse(ele.getPropertyAsBoolean(TCPSampler.CLOSE_CONNECTION));
+		Assert.assertFalse(ele.getPropertyAsBoolean(TCPSampler.NODELAY));
+		Assert.assertTrue(ele.getPropertyAsInt(TCPSampler.PORT) == 0);
+		Assert.assertTrue(ele.getPropertyAsBoolean(TCPSampler.RE_USE_CONNECTION));
+		Assert.assertSame("", ele.getPropertyAsString(TCPSampler.REQUEST));
+		Assert.assertSame("", ele.getPropertyAsString(TCPSampler.SERVER));
+		Assert.assertTrue(ele.getPropertyAsInt(TCPSampler.TIMEOUT) == 0);
+	}
+	
+
 	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);

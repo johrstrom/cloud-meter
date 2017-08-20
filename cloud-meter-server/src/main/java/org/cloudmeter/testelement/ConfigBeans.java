@@ -192,6 +192,28 @@ public class ConfigBeans {
 		return (ConfigTestElement) initer.initilizeElement();
 	}
 	
+	@Bean
+	public TCPConfigInitializer TCPConfigInitializer() {
+		return new TCPConfigInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConfigTestElement TCPConfig(TCPConfigInitializer initer) {
+		return (ConfigTestElement) initer.initilizeElement();
+	}
+	
+	
+	@Bean
+	public ArgumentsInitializer ArgumentsInitializer() {
+		return new ArgumentsInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public Arguments UserDefinedVariables(ArgumentsInitializer initer) {
+		return (Arguments) initer.initilizeElement();
+	}
 }
 
 

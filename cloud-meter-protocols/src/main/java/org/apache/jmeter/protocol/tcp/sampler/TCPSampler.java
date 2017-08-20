@@ -281,7 +281,7 @@ public class TCPSampler extends AbstractSampler implements ThreadListener, Inter
         return getPropertyAsString(REQUEST);
     }
 
-    public void setTimeout(String newTimeout) {
+    public void setTimeout(int newTimeout) {
         this.setProperty(TIMEOUT, newTimeout);
     }
 
