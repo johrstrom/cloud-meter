@@ -20,6 +20,17 @@ public class TimerModelTest {
 		Assert.assertSame("", ele.getScript());
 	
 	}
+	
+	@Test
+	public void constantThroughputTimer() {
+		ConstantThroughputTimerInitializer initer = new ConstantThroughputTimerInitializer();
+		ConstantThroughputTimer ele = (ConstantThroughputTimer) initer.initilizeElement();
+		
+		this.baseModelAssertions("Constant Throughput Timer", ele);
+		
+		Assert.assertTrue(ele.getCalcMode() == 0);
+		Assert.assertEquals(0.0, ele.getThroughput(), 0.01);
+	}
 
 	
 	private void baseModelAssertions(String expectedName, TestElement ele) {

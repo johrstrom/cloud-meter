@@ -5,7 +5,7 @@
         "groupSize": 0,
         "properties": {
             "TestElement.enabled": {
-                "type": "BooleanPropery",
+                "type": "BooleanProperty",
                 "value": true
             },
             "TestElement.name": {

@@ -19,4 +19,15 @@ public class TimerBeans {
 	public BeanShellTimer BeanShellTimer(BeanShellTimerInitializer initer) {
 		return (BeanShellTimer) initer.initilizeElement();
 	}
+	
+	@Bean
+	public ConstantThroughputTimerInitializer ConstantThroughputTimerInitializer() {
+		return new ConstantThroughputTimerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ConstantThroughputTimer ConstantThroughputTimer(ConstantThroughputTimerInitializer initer) {
+		return (ConstantThroughputTimer) initer.initilizeElement();
+	}
 }

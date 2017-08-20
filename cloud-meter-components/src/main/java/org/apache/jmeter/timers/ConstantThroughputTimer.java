@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentMap;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.testelement.TestStateListener;
+import org.apache.jmeter.testelement.property.DoubleProperty;
 import org.apache.jmeter.testelement.property.JMeterProperty;
 import org.apache.jmeter.testelement.property.StringProperty;
 import org.apache.jmeter.threads.AbstractThreadGroup;
@@ -90,7 +91,8 @@ public class ConstantThroughputTimer extends AbstractTestElement implements Time
     /**
      * Desired throughput, in samples per minute.
      */
-    private double throughput;
+    private static final String CTT_THROUGHPUT = "ConstantThroughputTimer.throughput";
+    private static final String CTT_MODE_INDEX = "ConstantThroughputTimer.calcMode";
 
     //For calculating throughput across all threads
     private static final ThroughputInfo allThreadsInfo = new ThroughputInfo();
@@ -113,7 +115,10 @@ public class ConstantThroughputTimer extends AbstractTestElement implements Time
      *            Desired sampling rate, in samples per minute.
      */
     public void setThroughput(double throughput) {
-        this.throughput = throughput;
+    	DoubleProperty prop = new DoubleProperty();
+    	prop.setName(CTT_THROUGHPUT);
+    	prop.setValue((float) throughput);
+        this.setProperty(prop);
     }
 
     /**
@@ -122,15 +127,16 @@ public class ConstantThroughputTimer extends AbstractTestElement implements Time
      * @return the rate at which samples should occur, in samples per minute.
      */
     public double getThroughput() {
-        return throughput;
+        return this.getPropertyAsDouble(CTT_THROUGHPUT);
     }
 
     public int getCalcMode() {
-        return mode.ordinal();
+    	return this.getPropertyAsInt(CTT_MODE_INDEX);
     }
 
     public void setCalcMode(int mode) {
         this.mode = Mode.values()[mode];
+        this.setProperty(CTT_MODE_INDEX, mode);
     }
 
     /**

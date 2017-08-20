@@ -5,7 +5,7 @@
         "enabled": true,
         "properties": {
             "TestElement.enabled": {
-                "type": "BooleanPropery",
+                "type": "BooleanProperty",
                 "value": true
             },
             "TestElement.name": {
@@ -16,11 +16,11 @@
                 "type": "StringProperty",
                 "value": "org.apache.jmeter.timers.ConstantThroughputTimer"
             },
-            "calcMode": {
+            "ConstantThroughputTimer.calcMode": {
                 "type": "IntegerProperty",
                 "value": 0
             },
-            "throughput": {
+            "ConstantThroughputTimer.throughput": {
                 "type": "DoubleProperty"
             }
         },

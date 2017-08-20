@@ -13,7 +13,7 @@
                 "value": "100.0"
             },
             "TestElement.enabled": {
-                "type": "BooleanPropery",
+                "type": "BooleanProperty",
                 "value": true
             },
             "TestElement.name": {
