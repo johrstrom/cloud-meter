@@ -1,6 +1,6 @@
-package org.apache.jmeter.control.model;
+package org.apache.jmeter.control;
 
-import org.apache.jmeter.control.*;
+import org.apache.jmeter.control.model.*;
 import org.junit.Test;
 
 import org.junit.Assert;

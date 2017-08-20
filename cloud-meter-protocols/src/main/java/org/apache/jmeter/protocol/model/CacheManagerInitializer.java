@@ -2,9 +2,9 @@ package org.apache.jmeter.protocol.model;
 
 import org.apache.jmeter.protocol.http.control.CacheManager;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class CacheManagerInitializer extends AbstractInitialzer {
+public class CacheManagerInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

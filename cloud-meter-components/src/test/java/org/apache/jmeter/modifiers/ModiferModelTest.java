@@ -1,6 +1,6 @@
-package org.apache.jmeter.modifiers.model;
+package org.apache.jmeter.modifiers;
 
-import org.apache.jmeter.modifiers.CounterConfig;
+import org.apache.jmeter.modifiers.model.CounterConfigInitializer;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -2,9 +2,9 @@ package org.apache.jmeter.config.model;
 
 import org.apache.jmeter.config.KeystoreConfig;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class KeystoreConfigInitializer  extends AbstractInitialzer {
+public class KeystoreConfigInitializer  extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

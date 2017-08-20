@@ -4,9 +4,9 @@ import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.config.model.ArgumentsInitializer;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class HTTPSamplerInitializer extends AbstractInitialzer {
+public class HTTPSamplerInitializer extends AbstractInitializer {
 	
 	public static final String DEFAULT_NAME = "HTTP Request";
 	

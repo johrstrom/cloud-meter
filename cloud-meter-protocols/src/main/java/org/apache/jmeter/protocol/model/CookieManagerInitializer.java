@@ -3,9 +3,9 @@ package org.apache.jmeter.protocol.model;
 import org.apache.jmeter.protocol.http.control.CookieManager;
 import org.apache.jmeter.protocol.http.control.HC4CookieHandler;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class CookieManagerInitializer extends AbstractInitialzer {
+public class CookieManagerInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

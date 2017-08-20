@@ -2,9 +2,9 @@ package org.apache.jmeter.config.model;
 
 import org.apache.jmeter.config.CSVDataSet;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class CSVDataSetInitializer extends AbstractInitialzer {
+public class CSVDataSetInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

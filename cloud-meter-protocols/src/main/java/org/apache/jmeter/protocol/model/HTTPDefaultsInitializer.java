@@ -5,9 +5,9 @@ import org.apache.jmeter.config.model.ArgumentsInitializer;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.TestElementProperty;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class HTTPDefaultsInitializer extends AbstractInitialzer {
+public class HTTPDefaultsInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

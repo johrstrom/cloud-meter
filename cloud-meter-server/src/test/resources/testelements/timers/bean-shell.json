@@ -17,19 +17,19 @@
                 "type": "StringProperty",
                 "value": "org.apache.jmeter.timers.BeanShellTimer"
             },
-            "filename": {
+            "BeanShellTestElement.filename": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "parameters": {
+            "BeanShellTestElement.parameters": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "resetInterpreter": {
+            "BeanShellTestElement.resetInterpreter": {
                 "type": "BooleanProperty",
                 "value": false
             },
-            "script": {
+            "BeanShellTestElement.script": {
                 "type": "StringProperty",
                 "value": ""
             }

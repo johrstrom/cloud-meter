@@ -3,9 +3,9 @@ package org.apache.jmeter.protocol.model;
 import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.protocol.tcp.sampler.TCPSampler;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class TCPConfigInitializer extends AbstractInitialzer {
+public class TCPConfigInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

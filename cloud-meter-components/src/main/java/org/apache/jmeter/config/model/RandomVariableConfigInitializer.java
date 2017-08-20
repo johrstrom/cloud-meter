@@ -2,9 +2,9 @@ package org.apache.jmeter.config.model;
 
 import org.apache.jmeter.config.RandomVariableConfig;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class RandomVariableConfigInitializer extends AbstractInitialzer {
+public class RandomVariableConfigInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

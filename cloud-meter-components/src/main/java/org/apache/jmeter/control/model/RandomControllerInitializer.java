@@ -2,9 +2,9 @@ package org.apache.jmeter.control.model;
 
 import org.apache.jmeter.control.RandomController;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class RandomControllerInitializer extends AbstractInitialzer {
+public class RandomControllerInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

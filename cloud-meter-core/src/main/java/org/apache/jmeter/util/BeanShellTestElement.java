@@ -39,13 +39,10 @@ public abstract class BeanShellTestElement extends AbstractTestElement
     private static final long serialVersionUID = 4;
 
     //++ For TestBean implementations only
-    private String parameters; // passed to file or script
-
-    private String filename; // file to source (overrides script)
-
-    private String script; // script (if file not provided)
-
-    private boolean resetInterpreter = false;
+    private static final String BEAN_SHELL_TIMER_PARAMETERS = "BeanShellTestElement.parameters"; 
+    private static final String BEAN_SHELL_TIMER_FILENAME = "BeanShellTestElement.filename"; 
+    private static final String BEAN_SHELL_TIMER_SCRIPT = "BeanShellTestElement.script"; 
+    private static final String BEAN_SHELL_TIMER_RESET =  "BeanShellTestElement.resetInterpreter";
     //-- For TestBean implementations only
 
 
@@ -98,9 +95,9 @@ public abstract class BeanShellTestElement extends AbstractTestElement
     }
 
     private void init() { // WARNING: called from ctor so must not be overridden (i.e. must be private or final)
-        parameters=""; // ensure variables are not null
-        filename="";
-        script="";
+        this.setParameters(""); // ensure variables are not null
+        this.setFilename("");
+        this.setScript("");
         try {
             String initFileName = JMeterUtils.getProperty(getInitFileProperty());
             hasInitFile = initFileName != null;
@@ -161,7 +158,7 @@ public abstract class BeanShellTestElement extends AbstractTestElement
      * @return the script to execute
      */
     public String getScript(){
-        return script;
+        return this.getPropertyAsString(BEAN_SHELL_TIMER_SCRIPT);
     }
 
     /**
@@ -172,7 +169,7 @@ public abstract class BeanShellTestElement extends AbstractTestElement
      * @param s the script to execute (may be blank)
      */
     public void setScript(String s){
-        script=s;
+        this.setProperty(BEAN_SHELL_TIMER_SCRIPT, s);
     }
 
     @Override
@@ -255,27 +252,27 @@ public abstract class BeanShellTestElement extends AbstractTestElement
 
     // Overridden by non-TestBean implementations to return the property value instead
     public String getParameters() {
-        return parameters;
+        return this.getPropertyAsString(BEAN_SHELL_TIMER_PARAMETERS);
     }
 
     public void setParameters(String s) {
-        parameters = s;
+        this.setProperty(BEAN_SHELL_TIMER_PARAMETERS, s);
     }
 
     // Overridden by non-TestBean implementations to return the property value instead
     public String getFilename() {
-        return filename;
+        return this.getPropertyAsString(BEAN_SHELL_TIMER_FILENAME);
     }
 
     public void setFilename(String s) {
-        filename = s;
+    	this.setProperty(BEAN_SHELL_TIMER_FILENAME, s);
     }
 
     public boolean isResetInterpreter() {
-        return resetInterpreter;
+        return this.getPropertyAsBoolean(BEAN_SHELL_TIMER_RESET);
     }
 
     public void setResetInterpreter(boolean b) {
-        resetInterpreter = b;
+        this.setProperty(BEAN_SHELL_TIMER_RESET, b);
     }
 }

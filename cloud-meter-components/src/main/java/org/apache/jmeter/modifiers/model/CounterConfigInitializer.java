@@ -2,9 +2,9 @@ package org.apache.jmeter.modifiers.model;
 
 import org.apache.jmeter.modifiers.CounterConfig;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class CounterConfigInitializer extends AbstractInitialzer {
+public class CounterConfigInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

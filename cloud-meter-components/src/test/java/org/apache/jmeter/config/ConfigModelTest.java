@@ -1,6 +1,6 @@
-package org.apache.jmeter.config.model;
+package org.apache.jmeter.config;
 
-import org.apache.jmeter.config.*;
+import org.apache.jmeter.config.model.*;
 import org.apache.jmeter.testelement.TestElement;
 import org.junit.Assert;
 import org.junit.Test;

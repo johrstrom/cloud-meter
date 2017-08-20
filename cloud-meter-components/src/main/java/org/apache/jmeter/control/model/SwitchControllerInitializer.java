@@ -1,11 +1,10 @@
 package org.apache.jmeter.control.model;
 
-
 import org.apache.jmeter.control.SwitchController;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class SwitchControllerInitializer extends AbstractInitialzer {
+public class SwitchControllerInitializer extends AbstractInitializer {
 	
 	@Override
 	public TestElement initilizeElement() {

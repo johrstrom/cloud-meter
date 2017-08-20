@@ -2,9 +2,9 @@ package org.apache.jmeter.control.model;
 
 import org.apache.jmeter.control.OnceOnlyController;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class OnceOnlyControllerInitializer extends AbstractInitialzer {
+public class OnceOnlyControllerInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

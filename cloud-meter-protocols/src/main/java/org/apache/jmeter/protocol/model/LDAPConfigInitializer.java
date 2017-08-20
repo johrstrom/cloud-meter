@@ -3,9 +3,9 @@ package org.apache.jmeter.protocol.model;
 import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.CollectionProperty;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class LDAPConfigInitializer extends AbstractInitialzer {
+public class LDAPConfigInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

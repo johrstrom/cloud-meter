@@ -2,9 +2,9 @@ package org.apache.jmeter.control.model;
 
 import org.apache.jmeter.control.WhileController;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class WhileControllerInitializer extends AbstractInitialzer {
+public class WhileControllerInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {

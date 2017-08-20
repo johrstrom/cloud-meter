@@ -2,9 +2,9 @@ package org.apache.jmeter.control.model;
 
 import org.apache.jmeter.control.ForeachController;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class ForeachControllerInitializer extends AbstractInitialzer {
+public class ForeachControllerInitializer extends AbstractInitializer {
 
 	public static final String DEFAULT_NAME = "ForEach Controller";
 	

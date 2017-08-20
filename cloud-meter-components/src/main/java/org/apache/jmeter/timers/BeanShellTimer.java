@@ -38,6 +38,10 @@ public class BeanShellTimer extends BeanShellTestElement implements Cloneable, T
         return INIT_FILE;
     }
 
+    public BeanShellTimer() {
+    	super();
+    }
+    
     /**
      * {@inheritDoc}
      */

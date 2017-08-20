@@ -2,9 +2,9 @@ package org.apache.jmeter.protocol.model;
 
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.testelement.TestElement;
-import org.cloudmeter.model.AbstractInitialzer;
+import org.cloudmeter.model.AbstractInitializer;
 
-public class JDBCConfigInitializer extends AbstractInitialzer {
+public class JDBCConfigInitializer extends AbstractInitializer {
 
 	@Override
 	public TestElement initilizeElement() {
