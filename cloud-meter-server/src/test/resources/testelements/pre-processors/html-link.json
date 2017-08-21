@@ -1,0 +1,21 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "HTML Link Parser"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.modifier.AnchorModifier"
+            }
+        }
+    },
+    "type": "pre_processor"
+}

@@ -103,31 +103,29 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
 
     // Query types (used to communicate with GUI)
     // N.B. These must not be changed, as they are used in the JMX files
-    static final String SELECT   = "Select Statement"; // $NON-NLS-1$
-    static final String UPDATE   = "Update Statement"; // $NON-NLS-1$
-    static final String CALLABLE = "Callable Statement"; // $NON-NLS-1$
-    static final String PREPARED_SELECT = "Prepared Select Statement"; // $NON-NLS-1$
-    static final String PREPARED_UPDATE = "Prepared Update Statement"; // $NON-NLS-1$
-    static final String COMMIT   = "Commit"; // $NON-NLS-1$
-    static final String ROLLBACK = "Rollback"; // $NON-NLS-1$
-    static final String AUTOCOMMIT_FALSE = "AutoCommit(false)"; // $NON-NLS-1$
-    static final String AUTOCOMMIT_TRUE  = "AutoCommit(true)"; // $NON-NLS-1$
+    public static final String SELECT   = "Select Statement"; // $NON-NLS-1$
+    public static final String UPDATE   = "Update Statement"; // $NON-NLS-1$
+    public static final String CALLABLE = "Callable Statement"; // $NON-NLS-1$
+    public static final String PREPARED_SELECT = "Prepared Select Statement"; // $NON-NLS-1$
+    public static final String PREPARED_UPDATE = "Prepared Update Statement"; // $NON-NLS-1$
+    public static final String COMMIT   = "Commit"; // $NON-NLS-1$
+    public static final String ROLLBACK = "Rollback"; // $NON-NLS-1$
+    public static final String AUTOCOMMIT_FALSE = "AutoCommit(false)"; // $NON-NLS-1$
+    public static final String AUTOCOMMIT_TRUE  = "AutoCommit(true)"; // $NON-NLS-1$
 
-    static final String RS_STORE_AS_STRING = "Store as String"; // $NON-NLS-1$
-    static final String RS_STORE_AS_OBJECT = "Store as Object"; // $NON-NLS-1$
-    static final String RS_COUNT_RECORDS = "Count Records"; // $NON-NLS-1$
+    public static final String RS_STORE_AS_STRING = "Store as String"; // $NON-NLS-1$
+    public static final String RS_STORE_AS_OBJECT = "Store as Object"; // $NON-NLS-1$
+    public static final String RS_COUNT_RECORDS = "Count Records"; // $NON-NLS-1$
 
-    private String query = ""; // $NON-NLS-1$
-
-    private String dataSource = ""; // $NON-NLS-1$
-
-    private String queryType = SELECT;
-    private String queryArguments = ""; // $NON-NLS-1$
-    private String queryArgumentsTypes = ""; // $NON-NLS-1$
-    private String variableNames = ""; // $NON-NLS-1$
-    private String resultSetHandler = RS_STORE_AS_STRING; 
-    private String resultVariable = ""; // $NON-NLS-1$
-    private String queryTimeout = ""; // $NON-NLS-1$
+    private static final String JDBC_QUERY = "JDBCTestElement.query"; 
+    private static final String JDBC_DATASOURCE = "JDBCTestElement.dataSource";
+    private static final String JDBC_QUERY_TYPE = "JDBCTestElement.queryType";
+    private static final String JDBC_QUERY_ARGS = "JDBCTestElement.queryArguments"; 
+    private static final String JDBC_QUERY_ARG_TYPES = "JDBCTestElement.queryArgumentsTypes"; 
+    private static final String JDBC_VARIABLE_NAMES = "JDBCTestElement.variableNames";
+    private static final String JDBC_RESULT_HANDLER = "JDBCTestElement.resultSetHandler";  
+    private static final String JDBC_RESULT_VARIABLE = "JDBCTestElement.resultVariable";
+    private static final String JDBC_QUERY_TIMEOUT = "JDBCTestElement.queryTimeout";
 
     /**
      *  Cache of PreparedStatements stored in a per-connection basis. Each entry of this
@@ -162,7 +160,7 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
             String _queryType = getQueryType();
             if (SELECT.equals(_queryType)) {
                 stmt = conn.createStatement();
-                stmt.setQueryTimeout(getIntegerQueryTimeout());
+                stmt.setQueryTimeout(getQueryTimeout());
                 ResultSet rs = null;
                 try {
                     rs = stmt.executeQuery(getQuery());
@@ -180,7 +178,7 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
                 return sb.getBytes(ENCODING);
             } else if (UPDATE.equals(_queryType)) {
                 stmt = conn.createStatement();
-                stmt.setQueryTimeout(getIntegerQueryTimeout());
+                stmt.setQueryTimeout(getQueryTimeout());
                 stmt.executeUpdate(getQuery());
                 int updateCount = stmt.getUpdateCount();
                 String results = updateCount + " updates";
@@ -256,7 +254,7 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
                     sb.append(i+1);
                     sb.append("] ");
                     sb.append(o);
-                    if( o instanceof java.sql.ResultSet && RS_COUNT_RECORDS.equals(resultSetHandler)) {
+                    if( o instanceof java.sql.ResultSet && RS_COUNT_RECORDS.equals(this.getResultSetHandler())) {
                         sb.append(" ").append(countRows((ResultSet) o)).append(" rows");
                     }
                     sb.append("\n");
@@ -271,10 +269,10 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
                         Object o = outputValues.get(i);
                         if( o instanceof java.sql.ResultSet ) { 
                             ResultSet resultSet = (ResultSet) o;
-                            if(RS_STORE_AS_OBJECT.equals(resultSetHandler)) {
+                            if(RS_STORE_AS_OBJECT.equals(this.getResultSetHandler())) {
                                 jmvars.putObject(name, o);
                             }
-                            else if( RS_COUNT_RECORDS.equals(resultSetHandler)) {
+                            else if( RS_COUNT_RECORDS.equals(this.getResultSetHandler())) {
                                 jmvars.put(name,o.toString()+" "+countRows(resultSet)+" rows");
                             }
                             else {
@@ -446,14 +444,14 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
             } else {
                 pstmt = conn.prepareStatement(getQuery());
             }
-            pstmt.setQueryTimeout(getIntegerQueryTimeout());
+            pstmt.setQueryTimeout(getQueryTimeout());
             // PreparedStatementMap is associated to one connection so 
             //  2 threads cannot use the same PreparedStatement map at the same time
             preparedStatementMap.put(getQuery(), pstmt);
         } else {
-            int timeoutInS = getIntegerQueryTimeout();
+            int timeoutInS = getQueryTimeout();
             if(pstmt.getQueryTimeout() != timeoutInS) {
-                pstmt.setQueryTimeout(getIntegerQueryTimeout());
+                pstmt.setQueryTimeout(getQueryTimeout());
             }
         }
         pstmt.clearParameters();
@@ -578,36 +576,23 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
             log.warn("Error closing ResultSet", e);
         }
     }    
-    
-    /**
-     * @return the integer representation queryTimeout
-     */
-    public int getIntegerQueryTimeout() {
-        int timeout = 0;
-        try {
-            timeout = Integer.parseInt(queryTimeout);
-        } catch (NumberFormatException nfe) {
-            timeout = 0;
-        }
-        return timeout;
-    }
 
     /**
      * @return the queryTimeout
      */
-    public String getQueryTimeout() {
-        return queryTimeout ;
+    public int getQueryTimeout() {
+        return this.getPropertyAsInt(JDBC_QUERY_TIMEOUT);
     }
 
     /**
      * @param queryTimeout query timeout in seconds
      */
-    public void setQueryTimeout(String queryTimeout) {
-        this.queryTimeout = queryTimeout;
+    public void setQueryTimeout(int queryTimeout) {
+        this.setProperty(JDBC_QUERY_TIMEOUT, queryTimeout);
     }
 
     public String getQuery() {
-        return query;
+        return this.getPropertyAsString(JDBC_QUERY);
     }
 
     @Override
@@ -629,14 +614,14 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
      *            The query to set.
      */
     public void setQuery(String query) {
-        this.query = query;
+        this.setProperty(JDBC_QUERY, query);
     }
 
     /**
      * @return Returns the dataSource.
      */
     public String getDataSource() {
-        return dataSource;
+        return this.getPropertyAsString(JDBC_DATASOURCE);
     }
 
     /**
@@ -644,79 +629,79 @@ public abstract class AbstractJDBCTestElement extends AbstractTestElement implem
      *            The dataSource to set.
      */
     public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
+        this.setProperty(JDBC_DATASOURCE, dataSource);
     }
 
     /**
      * @return Returns the queryType.
      */
     public String getQueryType() {
-        return queryType;
+        return this.getPropertyAsString(JDBC_QUERY_TYPE);
     }
 
     /**
      * @param queryType The queryType to set.
      */
     public void setQueryType(String queryType) {
-        this.queryType = queryType;
+        this.setProperty(JDBC_QUERY_TYPE, queryType);
     }
 
     public String getQueryArguments() {
-        return queryArguments;
+        return this.getPropertyAsString(JDBC_QUERY_ARGS);
     }
 
     public void setQueryArguments(String queryArguments) {
-        this.queryArguments = queryArguments;
+        this.setProperty(JDBC_QUERY_ARGS, queryArguments);
     }
 
     public String getQueryArgumentsTypes() {
-        return queryArgumentsTypes;
+        return this.getPropertyAsString(JDBC_QUERY_ARG_TYPES);
     }
 
     public void setQueryArgumentsTypes(String queryArgumentsType) {
-        this.queryArgumentsTypes = queryArgumentsType;
+        this.setProperty(JDBC_QUERY_ARG_TYPES, queryArgumentsType);
     }
 
     /**
      * @return the variableNames
      */
     public String getVariableNames() {
-        return variableNames;
+        return this.getPropertyAsString(JDBC_VARIABLE_NAMES);
     }
 
     /**
      * @param variableNames the variableNames to set
      */
     public void setVariableNames(String variableNames) {
-        this.variableNames = variableNames;
+        this.setProperty(JDBC_VARIABLE_NAMES, variableNames);
     }
 
     /**
      * @return the resultSetHandler
      */
     public String getResultSetHandler() {
-        return resultSetHandler;
+        return this.getPropertyAsString(JDBC_RESULT_HANDLER);
     }
 
     /**
      * @param resultSetHandler the resultSetHandler to set
      */
     public void setResultSetHandler(String resultSetHandler) {
-        this.resultSetHandler = resultSetHandler;
+        this.setProperty(JDBC_RESULT_HANDLER, resultSetHandler);
     }
 
     /**
      * @return the resultVariable
      */
     public String getResultVariable() {
-        return resultVariable ;
+        return this.getPropertyAsString(JDBC_RESULT_VARIABLE);
     }
 
     /**
      * @param resultVariable the variable name in which results will be stored
      */
     public void setResultVariable(String resultVariable) {
-        this.resultVariable = resultVariable;
+        this.setProperty(JDBC_RESULT_VARIABLE, resultVariable);
     }    
 
 

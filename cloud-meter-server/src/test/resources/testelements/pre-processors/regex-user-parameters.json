@@ -1,0 +1,36 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "properties": {
+            "RegExUserParameters.param_names_gr_nr": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "RegExUserParameters.param_values_gr_nr": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "RegExUserParameters.regex_ref_name": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "RegEx User Parameters"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.modifier.RegExUserParameters"
+            }
+        },
+        "regExParamValuesGrNr": "",
+        "regExRefName": "",
+        "regParamNamesGrNr": ""
+    },
+    "type": "pre_processor"
+}

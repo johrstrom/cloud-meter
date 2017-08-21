@@ -4,14 +4,13 @@
             "hashTree": [
                 {
                     "hashTree": [
-
                     ],
                     "testElement": {
                         "delay": 0,
                         "done": false,
                         "duration": 0,
                         "enabled": true,
-                        "endTime": 1503190570000,
+                        "endTime": 1503197761000,
                         "numThreads": 1,
                         "numberOfThreads": 0,
                         "onErrorStartNextLoop": false,
@@ -19,9 +18,10 @@
                         "onErrorStopTestNow": false,
                         "onErrorStopThread": false,
                         "properties": {
-                                        "type": "BooleanPropery",
-                                        "value": true
-                                    },
+                            "TestElement.enabled": {
+                                "type": "StringProperty",
+                                "value": "true"
+                            },
                             "TestElement.name": {
                                 "type": "StringProperty",
                                 "value": "Thread Group"
@@ -40,7 +40,7 @@
                             },
                             "ThreadGroup.end_time": {
                                 "type": "LongProperty",
-                                "value": 1503190570000
+                                "value": 1503197761000
                             },
                             "ThreadGroup.main_controller": {
                                 "type": "TestElementProperty",
@@ -64,7 +64,7 @@
                             },
                             "ThreadGroup.start_time": {
                                 "type": "LongProperty",
-                                "value": 1503190570000
+                                "value": 1503197761000
                             }
                         },
                         "rampUp": 1,
@@ -97,7 +97,7 @@
                             }
                         },
                         "scheduler": false,
-                        "startTime": 1503190570000
+                        "startTime": 1503197761000
                     },
                     "type": "controller"
                 }
@@ -108,6 +108,10 @@
                     "TestElement.enabled": {
                         "type": "StringProperty",
                         "value": "true"
+                    },
+                    "TestElement.gui_class": {
+                        "type": "StringProperty",
+                        "value": "org.apache.jmeter.control.gui.TestPlanGui"
                     },
                     "TestElement.name": {
                         "type": "StringProperty",
@@ -149,6 +153,10 @@
                     "TestElement.enabled": {
                         "type": "StringProperty",
                         "value": "true"
+                    },
+                    "TestElement.gui_class": {
+                        "type": "StringProperty",
+                        "value": "org.apache.jmeter.control.gui.WorkBenchGui"
                     },
                     "TestElement.name": {
                         "type": "StringProperty",

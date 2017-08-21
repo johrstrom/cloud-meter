@@ -1,0 +1,26 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "properties": {
+            "InterruptTimer.timeout": {
+                "type": "StringProperty",
+                "value": "10000"
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Sample Timeout"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.modifiers.SampleTimeout"
+            }
+        },
+        "timeout": "10000"
+    },
+    "type": "unknown"
+}

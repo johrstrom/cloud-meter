@@ -6,10 +6,13 @@ import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.protocol.ftp.sampler.FTPSampler;
 import org.apache.jmeter.protocol.http.control.*;
+import org.apache.jmeter.protocol.http.modifier.AnchorModifier;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
+import org.apache.jmeter.protocol.jdbc.AbstractJDBCTestElement;
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
+import org.apache.jmeter.protocol.jdbc.processor.JDBCPreProcessor;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.tcp.sampler.TCPSampler;
 import org.apache.jmeter.testelement.TestElement;
@@ -224,7 +227,35 @@ public class ModelTest {
 		Assert.assertTrue(ele.getPropertyAsInt(TCPSampler.TIMEOUT) == 0);
 	}
 	
-
+	@Test
+	public void htmlLinkPreProcessorTest() {
+		HTMLLinkPreProcessorInitializer initer = new HTMLLinkPreProcessorInitializer();
+		AnchorModifier ele = (AnchorModifier) initer.initilizeElement();
+		
+		this.baseModelAssertions("HTML Link Parser", ele);
+	}
+	
+	@Test
+	public void jdbcPreProcessorTest() {
+		JDBCPreProcessorInitializer initer = new JDBCPreProcessorInitializer();
+		JDBCPreProcessor ele = (JDBCPreProcessor) initer.initilizeElement();
+		
+		this.baseModelAssertions("JDBC PreProcessor", ele);
+		this.baseJDBCAssertions(ele);
+	}
+	
+	private void baseJDBCAssertions(AbstractJDBCTestElement ele) {
+		Assert.assertSame("Select Statement", ele.getQueryType());
+		Assert.assertSame("Store as String", ele.getResultSetHandler());
+		Assert.assertTrue(ele.getQueryTimeout() == 0);
+		
+		Assert.assertSame("", ele.getDataSource());
+		Assert.assertSame("", ele.getQuery());
+		Assert.assertSame("", ele.getQueryArguments());
+		Assert.assertSame("", ele.getQueryArgumentsTypes());
+		Assert.assertSame("", ele.getVariableNames());
+		Assert.assertSame("", ele.getResultVariable());		
+	}
 	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);

@@ -22,6 +22,7 @@ public class NewElementTest {
 	private static final String CONTROLLER_BASE = FILE_BASE + "/controllers/";
 	private static final String CONFIG_BASE = FILE_BASE + "/config/";
 	private static final String TIMER_BASE = FILE_BASE + "/timers/";
+	private static final String PRE_PROCCESSOR_BASE = FILE_BASE + "/pre-processors/";
 	
 	@Autowired
 	private TestUtilities utilities;
@@ -249,7 +250,53 @@ public class NewElementTest {
 	/**
 	 * Timer tests end
 	 * 
-	 *  
+	 * Pre Processors start
+	 */
+	
+	@Test
+	public void beanShellPreProcessorTest() {
+		utilities.validateFileAgainstAPI("bean-shell-pre-processor", PRE_PROCCESSOR_BASE + "bean-shell.json");
+	}
+	
+	@Test
+	public void htmlLinkPreProcessorTest() {
+		utilities.validateFileAgainstAPI("html-link-pre-processor", PRE_PROCCESSOR_BASE + "html-link.json");
+	}
+	
+	@Test
+	public void jdbcPreProcessorTest() {
+		utilities.validateFileAgainstAPI("jdbc-pre-processor", PRE_PROCCESSOR_BASE + "jdbc.json");
+	}
+	
+	@Test
+	public void jsr223PreProcessorTest() {
+		utilities.validateFileAgainstAPI("jsr223-pre-processor", PRE_PROCCESSOR_BASE + "jsr223.json");
+	}
+	
+	@Test
+	public void regexUserParamsPreProcessorTest() {
+		utilities.validateFileAgainstAPI("regex-user-parameters-pre-processor", PRE_PROCCESSOR_BASE + "regex-user-paremeters.json");
+	}
+	
+	@Test
+	public void sampleTimeoutPreProcessorTest() {
+		utilities.validateFileAgainstAPI("sample-timeout-pre-processor", PRE_PROCCESSOR_BASE + "sample-timout.json");
+	}
+	
+	@Test
+	public void urlreWritePreProcessorTest() {
+		utilities.validateFileAgainstAPI("url-rewrite-pre-processor", PRE_PROCCESSOR_BASE + "url-rewrite.json");
+	}
+	
+	@Test
+	public void userParamsPreProcessorTest() {
+		utilities.validateFileAgainstAPI("user-parameters-pre-processor", PRE_PROCCESSOR_BASE + "user-parameters.json");
+	}
+	
+	/**
+	 * Pre Processors end
+	 * 
+	 * 
 	 */
 	
 }

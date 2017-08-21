@@ -1,0 +1,41 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "filename": "",
+        "parameters": "",
+        "properties": {
+            "BeanShellTestElement.filename": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "BeanShellTestElement.parameters": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "BeanShellTestElement.script": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "BeanShell PreProcessor"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.modifiers.BeanShellPreProcessor"
+            },
+            "BeanShellTestElement.resetInterpreter": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+        },
+        "resetInterpreter": false,
+        "script": ""
+    },
+    "type": "pre_processor"
+}

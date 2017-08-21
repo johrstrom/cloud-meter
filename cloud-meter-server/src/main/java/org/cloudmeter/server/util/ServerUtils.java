@@ -19,6 +19,7 @@ public class ServerUtils {
     	map.putAll(this.controllerElements());
     	map.putAll(this.configElements());
     	map.putAll(this.timerElements());
+    	map.putAll(this.preProcessorElements());
     	
     	return map;
     }
@@ -81,6 +82,21 @@ public class ServerUtils {
 		map.put("poisson-random-timer", "PoissonRandomTimer");
 		map.put("sync-timer", "SyncTimer");
 		map.put("uniform-random-timer", "UniformRandomTimer");
+				
+		return map;
+	}
+	
+	private  Map<String, String> preProcessorElements() {
+		HashMap<String, String>  map = new HashMap<>();
+		
+		map.put("bean-shell-pre-processor", "BeanShellPreProcessor");
+		map.put("html-link-pre-processor", "HTMLLinkPreProcessor");
+		map.put("jdbc-pre-processor", "JDBCPreProcessor");
+		map.put("jsr223-pre-processor", "JSR223PreProcessor");
+		map.put("regex-user-parameters-pre-processor", "RegexUserParametersPreProcessor");
+		map.put("sample-timeout-pre-processor", "SampleTimeoutPreProcessor");
+		map.put("url-rewrite-pre-processor", "URLReWritePreProcessor");
+		map.put("user-parameters-pre-processor", "UserParametersPreProcessor");
 				
 		return map;
 	}

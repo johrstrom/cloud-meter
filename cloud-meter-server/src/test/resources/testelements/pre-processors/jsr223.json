@@ -1,0 +1,46 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "cacheKey": "",
+        "enabled": true,
+        "filename": "",
+        "parameters": "",
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "JSR223 PreProcessor"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.modifiers.JSR223PreProcessor"
+            },
+            "cacheKey": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "filename": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "parameters": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "script": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "scriptLanguage": {
+                "type": "StringProperty",
+                "value": "groovy"
+            }
+        },
+        "script": "",
+        "scriptLanguage": ""
+    },
+    "type": "pre_processor"
+}

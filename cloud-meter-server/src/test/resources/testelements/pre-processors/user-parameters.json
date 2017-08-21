@@ -1,0 +1,42 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "enabled": true,
+        "names": {
+            "type": "CollectionProperty",
+            "value": "TODO"
+        },
+        "perIteration": false,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "User Parameters"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.modifiers.UserParameters"
+            },
+            "UserParameters.names": {
+                "type": "CollectionProperty",
+                "value": "TODO"
+            },
+            "UserParameters.per_iteration": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "UserParameters.thread_values": {
+                "type": "CollectionProperty",
+                "value": "TODO"
+            }
+        },
+        "threadLists": {
+            "type": "CollectionProperty",
+            "value": "TODO"
+        }
+    },
+    "type": "pre_processor"
+}

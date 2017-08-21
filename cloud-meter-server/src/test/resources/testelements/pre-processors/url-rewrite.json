@@ -1,0 +1,51 @@
+
+
+{
+    "hashTree": [],
+    "testElement": {
+        "argumentName": "",
+        "enabled": true,
+        "pathExtension": false,
+        "pathExtensionNoEquals": false,
+        "pathExtensionNoQuestionmark": false,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "HTTP URL Re-writing Modifier"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.modifier.URLRewritingModifier"
+            },
+            "argument_name": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "cache_value": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "encode": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "path_extension": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "path_extension_no_equals": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "path_extension_no_questionmark": {
+                "type": "BooleanProperty",
+                "value": false
+            }
+        }
+    },
+    "type": "pre_processor"
+}
