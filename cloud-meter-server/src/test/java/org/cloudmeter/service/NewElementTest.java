@@ -275,12 +275,12 @@ public class NewElementTest {
 	
 	@Test
 	public void regexUserParamsPreProcessorTest() {
-		utilities.validateFileAgainstAPI("regex-user-parameters-pre-processor", PRE_PROCCESSOR_BASE + "regex-user-paremeters.json");
+		utilities.validateFileAgainstAPI("regex-user-parameters-pre-processor", PRE_PROCCESSOR_BASE + "regex-user-parameters.json");
 	}
 	
 	@Test
 	public void sampleTimeoutPreProcessorTest() {
-		utilities.validateFileAgainstAPI("sample-timeout-pre-processor", PRE_PROCCESSOR_BASE + "sample-timout.json");
+		utilities.validateFileAgainstAPI("sample-timeout-pre-processor", PRE_PROCCESSOR_BASE + "sample-timeout.json");
 	}
 	
 	@Test

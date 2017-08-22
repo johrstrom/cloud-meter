@@ -93,10 +93,10 @@ public class ServerUtils {
 		map.put("html-link-pre-processor", "HTMLLinkPreProcessor");
 		map.put("jdbc-pre-processor", "JDBCPreProcessor");
 		map.put("jsr223-pre-processor", "JSR223PreProcessor");
-		map.put("regex-user-parameters-pre-processor", "RegexUserParametersPreProcessor");
-		map.put("sample-timeout-pre-processor", "SampleTimeoutPreProcessor");
-		map.put("url-rewrite-pre-processor", "URLReWritePreProcessor");
-		map.put("user-parameters-pre-processor", "UserParametersPreProcessor");
+		map.put("regex-user-parameters-pre-processor", "RegExUserParameters");
+		map.put("sample-timeout-pre-processor", "SampleTimeout");
+		map.put("url-rewrite-pre-processor", "URLRewritingModifier");
+		map.put("user-parameters-pre-processor", "UserParameters");
 				
 		return map;
 	}

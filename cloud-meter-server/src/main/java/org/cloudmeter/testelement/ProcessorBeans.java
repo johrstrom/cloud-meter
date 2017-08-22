@@ -2,6 +2,7 @@ package org.cloudmeter.testelement;
 
 import org.apache.jmeter.modifiers.model.*;
 import org.apache.jmeter.protocol.http.modifier.AnchorModifier;
+import org.apache.jmeter.protocol.http.modifier.*;
 import org.apache.jmeter.modifiers.*;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.http.model.*;
@@ -55,5 +56,49 @@ public class ProcessorBeans {
 	@Autowired
 	public JSR223PreProcessor JSR223PreProcessor(JSR223PreProcessorInitializer initer) {
 		return (JSR223PreProcessor) initer.initilizeElement();
+	}
+	
+	@Bean
+	public RegExUserParametersInitializer RegExUserParametersInitializer() {
+		return new RegExUserParametersInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public RegExUserParameters RegExUserParameters(RegExUserParametersInitializer initer) {
+		return (RegExUserParameters) initer.initilizeElement();
+	}
+	
+	@Bean
+	public SampleTimeoutInitializer SampleTimeoutInitializer() {
+		return new SampleTimeoutInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public SampleTimeout SampleTimeout(SampleTimeoutInitializer initer) {
+		return (SampleTimeout) initer.initilizeElement();
+	}
+	
+	@Bean
+	public URLRewritingInitializer URLRewritingInitializer() {
+		return new URLRewritingInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public URLRewritingModifier URLRewritingModifier(URLRewritingInitializer initer) {
+		return (URLRewritingModifier) initer.initilizeElement();
+	}
+
+	@Bean
+	public UserParametersInitializer UserParametersInitializer() {
+		return new UserParametersInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public UserParameters UserParameters(UserParametersInitializer initer) {
+		return (UserParameters) initer.initilizeElement();
 	}
 }

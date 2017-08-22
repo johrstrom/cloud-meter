@@ -4,8 +4,8 @@
         "enabled": true,
         "properties": {
             "InterruptTimer.timeout": {
-                "type": "StringProperty",
-                "value": "10000"
+                "type": "LongProperty",
+                "value": 10000
             },
             "TestElement.enabled": {
                 "type": "BooleanProperty",
@@ -20,7 +20,7 @@
                 "value": "org.apache.jmeter.modifiers.SampleTimeout"
             }
         },
-        "timeout": "10000"
+        "timeout": 10000
     },
     "type": "unknown"
 }
