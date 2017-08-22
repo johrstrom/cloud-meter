@@ -64,7 +64,6 @@ public class TimerModelTest {
 		this.baseScriptingAssertions("groovy", ele);
 		
 		Assert.assertSame("", ele.getCacheKey());
-		
 	}
 	
 	@Test

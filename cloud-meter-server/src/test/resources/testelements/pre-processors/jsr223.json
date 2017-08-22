@@ -18,29 +18,29 @@
                 "type": "StringProperty",
                 "value": "org.apache.jmeter.modifiers.JSR223PreProcessor"
             },
-            "cacheKey": {
+            "JSR223TestElement.cacheKey": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "filename": {
+            "ScriptingTestElement.filename": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "parameters": {
+            "ScriptingTestElement.parameters": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "script": {
+            "ScriptingTestElement.script": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "scriptLanguage": {
+            "ScriptingTestElement.scriptLanguage": {
                 "type": "StringProperty",
                 "value": "groovy"
             }
         },
         "script": "",
-        "scriptLanguage": ""
+        "scriptLanguage": "groovy"
     },
     "type": "pre_processor"
 }

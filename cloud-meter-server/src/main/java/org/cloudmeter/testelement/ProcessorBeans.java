@@ -4,6 +4,7 @@ import org.apache.jmeter.modifiers.model.*;
 import org.apache.jmeter.protocol.http.modifier.AnchorModifier;
 import org.apache.jmeter.modifiers.*;
 import org.apache.jmeter.protocol.model.*;
+import org.apache.jmeter.protocol.http.model.*;
 import org.apache.jmeter.protocol.jdbc.processor.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -43,5 +44,16 @@ public class ProcessorBeans {
 	@Autowired
 	public JDBCPreProcessor JDBCPreProcessor(JDBCPreProcessorInitializer initer) {
 		return (JDBCPreProcessor) initer.initilizeElement();
+	}
+	
+	@Bean
+	public JSR223PreProcessorInitializer JSR223PreProcessorInitializer() {
+		return new JSR223PreProcessorInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public JSR223PreProcessor JSR223PreProcessor(JSR223PreProcessorInitializer initer) {
+		return (JSR223PreProcessor) initer.initilizeElement();
 	}
 }

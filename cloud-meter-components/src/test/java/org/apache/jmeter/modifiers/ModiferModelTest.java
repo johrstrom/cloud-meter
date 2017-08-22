@@ -1,8 +1,8 @@
 package org.apache.jmeter.modifiers;
 
-import org.apache.jmeter.modifiers.model.BeanShellPreProcessorInitializer;
-import org.apache.jmeter.modifiers.model.CounterConfigInitializer;
+import org.apache.jmeter.modifiers.model.*;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.util.ScriptingTestElement;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -37,10 +37,28 @@ public class ModiferModelTest {
 	
 	}
 	
+	@Test
+	public void JSR223PreProcessorTest() {
+		JSR223PreProcessorInitializer initer = new JSR223PreProcessorInitializer();
+		JSR223PreProcessor ele = (JSR223PreProcessor) initer.initilizeElement();
+		
+		this.baseModelAssertions("JSR223 PreProcessor", ele);
+		this.baseScriptingAssertions("groovy", ele);
+		
+		Assert.assertSame("", ele.getCacheKey());
+	}
 	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);
 		Assert.assertTrue(ele.isEnabled());
 		Assert.assertSame(expectedName, ele.getName());
 	}
+	
+	private void baseScriptingAssertions(String expectedLanguage, ScriptingTestElement ele) {
+		Assert.assertSame("", ele.getFilename());
+		Assert.assertSame("", ele.getParameters());
+		Assert.assertSame("", ele.getScript());
+		Assert.assertSame(expectedLanguage, ele.getScriptLanguage());
+	}
+	
 }

@@ -2,6 +2,7 @@ package org.cloudmeter.testelement;
 
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.http.control.*;
+import org.apache.jmeter.protocol.http.model.*;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.modifiers.*;

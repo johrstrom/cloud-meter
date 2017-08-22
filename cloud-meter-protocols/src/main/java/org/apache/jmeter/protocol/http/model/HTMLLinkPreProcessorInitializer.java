@@ -1,4 +1,4 @@
-package org.apache.jmeter.protocol.model;
+package org.apache.jmeter.protocol.http.model;
 
 import org.apache.jmeter.protocol.http.modifier.AnchorModifier;
 import org.apache.jmeter.testelement.TestElement;

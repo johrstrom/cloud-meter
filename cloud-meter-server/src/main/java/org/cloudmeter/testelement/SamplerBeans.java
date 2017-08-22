@@ -1,7 +1,7 @@
 package org.cloudmeter.testelement;
 
 import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
-import org.apache.jmeter.protocol.model.*;
+import org.apache.jmeter.protocol.http.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

@@ -10,10 +10,9 @@ public class JSR223TimerInitializer extends ScriptingElementInitializer {
 	public TestElement initilizeElement() {
 		JSR223Timer ele = new JSR223Timer();
 		this.baseElement(ele, "JSR223 Timer");
-		this.initScriptingElement(ele);
+		this.initScriptingElement(ele, "groovy");
 		
 		ele.setCacheKey(EMPTY_STRING);
-		ele.setScriptLanguage("groovy");
 		
 		
 		return ele;

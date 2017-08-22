@@ -1,4 +1,4 @@
-package org.apache.jmeter.protocol.model;
+package org.apache.jmeter.protocol.http.model;
 
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.config.model.ArgumentsInitializer;

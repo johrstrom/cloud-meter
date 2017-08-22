@@ -25,11 +25,11 @@
 	<modules>
 		<module>jmeter-jorphan</module>
 		<module>cloud-meter-core</module>
+		<module>cloud-meter-test</module>
 		<module>cloud-meter-components</module>
 		<module>jmeter-functions</module>
 		<module>cloud-meter-protocols</module>
 		<module>jmeter-monitor</module>
-		<module>jmeter-junit</module>
 		<module>cloud-meter-server</module>
 	</modules>
 
