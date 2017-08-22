@@ -87,7 +87,7 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
      * Set the timeout for this timer.
      * @param timeout The timeout for this timer
      */
-    public void setTimeout(String timeout) {
+    public void setTimeout(long timeout) {
         setProperty(TIMEOUT, timeout);
     }
 
@@ -96,8 +96,8 @@ public class SampleTimeout extends AbstractTestElement implements Serializable, 
      *
      * @return the timeout value for display.
      */
-    public String getTimeout() {
-        return getPropertyAsString(TIMEOUT);
+    public long getTimeout() {
+        return getPropertyAsLong(TIMEOUT);
     }
 
     @Override

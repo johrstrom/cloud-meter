@@ -2,6 +2,7 @@ package org.apache.jmeter.modifiers;
 
 import org.apache.jmeter.modifiers.model.*;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.testelement.property.CollectionProperty;
 import org.apache.jmeter.util.ScriptingTestElement;
 import org.junit.Assert;
 import org.junit.Test;
@@ -48,6 +49,32 @@ public class ModiferModelTest {
 		Assert.assertSame("", ele.getCacheKey());
 	}
 	
+	@Test
+	public void sampleTimeoutTest() {
+		SampleTimeoutInitializer initer = new SampleTimeoutInitializer();
+		SampleTimeout ele = (SampleTimeout) initer.initilizeElement();
+		this.baseModelAssertions("Sample Timeout", ele);
+		
+		Assert.assertTrue(ele.getTimeout() == 10000);
+	}
+	
+	@Test
+	public void UserParametersTest() {
+		UserParametersInitializer initer = new UserParametersInitializer();
+		UserParameters ele = (UserParameters) initer.initilizeElement();
+		this.baseModelAssertions("User Parameters", ele);
+		
+		Assert.assertFalse(ele.isPerIteration());
+		
+		this.collectionCompare(
+				this.createNewCollectionProperty(UserParameters.NAMES), 
+				ele.getNames());
+		this.collectionCompare(
+				this.createNewCollectionProperty(UserParameters.THREAD_VALUES), 
+				ele.getThreadLists());
+		
+	}
+	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);
 		Assert.assertTrue(ele.isEnabled());
@@ -59,6 +86,22 @@ public class ModiferModelTest {
 		Assert.assertSame("", ele.getParameters());
 		Assert.assertSame("", ele.getScript());
 		Assert.assertSame(expectedLanguage, ele.getScriptLanguage());
+	}
+	
+	private void collectionCompare(CollectionProperty expected, CollectionProperty actual) {
+		Assert.assertSame(expected.getName(), actual.getName());
+		Assert.assertTrue(expected.size() == actual.size());
+		
+		for(int i = 0; i < expected.size(); i++) {
+			Assert.assertSame(expected.get(i), actual.get(i));
+		}
+	}
+	
+	private CollectionProperty createNewCollectionProperty(String name) {
+		CollectionProperty prop = new CollectionProperty();
+		prop.setName(name);
+		
+		return prop;
 	}
 	
 }

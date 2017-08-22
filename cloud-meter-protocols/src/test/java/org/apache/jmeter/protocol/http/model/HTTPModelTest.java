@@ -3,6 +3,8 @@ package org.apache.jmeter.protocol.http.model;
 import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.protocol.http.control.*;
 import org.apache.jmeter.protocol.http.modifier.AnchorModifier;
+import org.apache.jmeter.protocol.http.modifier.RegExUserParameters;
+import org.apache.jmeter.protocol.http.modifier.URLRewritingModifier;
 import org.apache.jmeter.protocol.http.sampler.*;
 import org.apache.jmeter.testelement.TestElement;
 import org.junit.Assert;
@@ -79,6 +81,32 @@ public class HTTPModelTest {
 		
 		this.baseModelAssertions("HTML Link Parser", ele);
 	}
+	
+	@Test
+	public void RegExUserParametersTest() {
+		RegExUserParametersInitializer initer = new RegExUserParametersInitializer();
+		RegExUserParameters ele = (RegExUserParameters) initer.initilizeElement();
+		
+		this.baseModelAssertions("RegEx User Parameters", ele);
+		Assert.assertSame("", ele.getRegExParamValuesGrNr());
+		Assert.assertSame("", ele.getRegExRefName());
+		Assert.assertSame("", ele.getRegParamNamesGrNr());
+	}
+	
+	@Test
+	public void urlRewritingTest() {
+		URLRewritingInitializer initer = new URLRewritingInitializer();
+		URLRewritingModifier ele = (URLRewritingModifier) initer.initilizeElement();
+		
+		this.baseModelAssertions("HTTP URL Re-writing Modifier", ele);
+		Assert.assertSame("", ele.getArgumentName());
+		Assert.assertFalse(ele.shouldCache());
+		Assert.assertFalse(ele.encode());
+		Assert.assertFalse(ele.isPathExtension());
+		Assert.assertFalse(ele.isPathExtensionNoEquals());
+		Assert.assertFalse(ele.isPathExtensionNoQuestionmark());
+	}
+	
 	
 	private void baseModelAssertions(String expectedName, TestElement ele) {
 		Assert.assertTrue(ele != null);
