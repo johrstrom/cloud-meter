@@ -12,21 +12,18 @@ import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.protocol.jdbc.processor.JDBCPreProcessor;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.tcp.sampler.TCPSampler;
-import org.apache.jmeter.testelement.TestElement;
+import org.cloudmeter.test.ModelTester;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ModelTest {
 
-
-	
-	
 	@Test
 	public void authManagerTest() {
 		AuthManagerInitializer initer = new AuthManagerInitializer();
 		AuthManager ele = (AuthManager) initer.initilizeElement();
 		
-		this.baseModelAssertions("HTTP Authorization Manager", ele);
+		ModelTester.testBasicFields("HTTP Authorization Manager", ele);
 		
 		Assert.assertTrue(ele.getAuthCount() == 0);
 		Assert.assertTrue(ele.isEditable());
@@ -41,7 +38,7 @@ public class ModelTest {
 		FTPConfigInitializer initer = new FTPConfigInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 		
-		this.baseModelAssertions("FTP Request Defaults", ele);
+		ModelTester.testBasicFields("FTP Request Defaults", ele);
 		
 		Assert.assertFalse(ele.getPropertyAsBoolean(FTPSampler.BINARY_MODE));
 		Assert.assertTrue("".equals(ele.getPropertyAsString(FTPSampler.REMOTE_FILENAME)));
@@ -60,7 +57,7 @@ public class ModelTest {
 		JavaConfigInitializer initer = new JavaConfigInitializer();
 		JavaConfig ele = (JavaConfig) initer.initilizeElement();
 		
-		this.baseModelAssertions("Java Request Defaults", ele);
+		ModelTester.testBasicFields("Java Request Defaults", ele);
 		
 		Assert.assertTrue("org.apache.jmeter.protocol.java.test.JavaTest"
 				.equals(ele.getPropertyAsString("classname")));
@@ -86,7 +83,7 @@ public class ModelTest {
 		JDBCConfigInitializer initer = new JDBCConfigInitializer();
 		DataSourceElement ele = (DataSourceElement) initer.initilizeElement();
 		
-		this.baseModelAssertions("JDBC Connection Configuration", ele);
+		ModelTester.testBasicFields("JDBC Connection Configuration", ele);
 	
 		Assert.assertTrue(ele.isAutocommit());
 		Assert.assertTrue("Select 1".equals(ele.getCheckQuery()));
@@ -109,7 +106,7 @@ public class ModelTest {
 		LDAPExtendedConfigInitializer initer = new LDAPExtendedConfigInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 		
-		this.baseModelAssertions("LDAP Extended Request Defaults", ele);
+		ModelTester.testBasicFields("LDAP Extended Request Defaults", ele);
 		
 		Assert.assertSame("",ele.getPropertyAsString("attributes"));
 		Assert.assertSame("",ele.getPropertyAsString("comparedn"));
@@ -137,7 +134,7 @@ public class ModelTest {
 		LDAPConfigInitializer initer = new LDAPConfigInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 		
-		this.baseModelAssertions("LDAP Request Defaults", ele);
+		ModelTester.testBasicFields("LDAP Request Defaults", ele);
 		
 		Assert.assertSame("",ele.getPropertyAsString("attributes"));
 		Assert.assertSame("",ele.getPropertyAsString("base_entry_dn"));
@@ -154,7 +151,7 @@ public class ModelTest {
 		TCPConfigInitializer initer = new TCPConfigInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 		
-		this.baseModelAssertions("TCP Sampler Config", ele);
+		ModelTester.testBasicFields("TCP Sampler Config", ele);
 		
 		Assert.assertFalse(ele.getPropertyAsBoolean(TCPSampler.CLOSE_CONNECTION));
 		Assert.assertFalse(ele.getPropertyAsBoolean(TCPSampler.NODELAY));
@@ -170,7 +167,7 @@ public class ModelTest {
 		JDBCPreProcessorInitializer initer = new JDBCPreProcessorInitializer();
 		JDBCPreProcessor ele = (JDBCPreProcessor) initer.initilizeElement();
 		
-		this.baseModelAssertions("JDBC PreProcessor", ele);
+		ModelTester.testBasicFields("JDBC PreProcessor", ele);
 		this.baseJDBCAssertions(ele);
 	}
 	
@@ -186,12 +183,5 @@ public class ModelTest {
 		Assert.assertSame("", ele.getVariableNames());
 		Assert.assertSame("", ele.getResultVariable());		
 	}
-	
-	private void baseModelAssertions(String expectedName, TestElement ele) {
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue(ele.isEnabled());
-		Assert.assertSame(expectedName, ele.getName());
-	}
-
 	
 }

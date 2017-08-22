@@ -1,9 +1,8 @@
 package org.apache.jmeter.modifiers;
 
 import org.apache.jmeter.modifiers.model.*;
-import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.CollectionProperty;
-import org.apache.jmeter.util.ScriptingTestElement;
+import org.cloudmeter.test.ModelTester;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,8 +14,8 @@ public class ModiferModelTest {
 		CounterConfigInitializer initer = new CounterConfigInitializer();
 		CounterConfig ele = (CounterConfig) initer.initilizeElement();
 		
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue("Counter".equals(ele.getName()));
+		ModelTester.testBasicFields("Counter", ele);
+		
 		Assert.assertTrue(ele.getEnd() == Long.MAX_VALUE);
 		Assert.assertTrue(ele.getStart() == 0);
 		Assert.assertTrue("".equals(ele.getFormat()));
@@ -30,7 +29,7 @@ public class ModiferModelTest {
 		BeanShellPreProcessorInitializer initer = new BeanShellPreProcessorInitializer();
 		BeanShellPreProcessor ele = (BeanShellPreProcessor) initer.initilizeElement();
 		
-		this.baseModelAssertions("BeanShell PreProcessor", ele);
+		ModelTester.testBasicFields("BeanShell PreProcessor", ele);
 		Assert.assertSame("", ele.getFilename());
 		Assert.assertSame("", ele.getParameters());
 		Assert.assertFalse(ele.isResetInterpreter());
@@ -43,8 +42,8 @@ public class ModiferModelTest {
 		JSR223PreProcessorInitializer initer = new JSR223PreProcessorInitializer();
 		JSR223PreProcessor ele = (JSR223PreProcessor) initer.initilizeElement();
 		
-		this.baseModelAssertions("JSR223 PreProcessor", ele);
-		this.baseScriptingAssertions("groovy", ele);
+		ModelTester.testBasicFields("JSR223 PreProcessor", ele);
+		ModelTester.testBasicScriptFields("groovy", ele);
 		
 		Assert.assertSame("", ele.getCacheKey());
 	}
@@ -53,7 +52,7 @@ public class ModiferModelTest {
 	public void sampleTimeoutTest() {
 		SampleTimeoutInitializer initer = new SampleTimeoutInitializer();
 		SampleTimeout ele = (SampleTimeout) initer.initilizeElement();
-		this.baseModelAssertions("Sample Timeout", ele);
+		ModelTester.testBasicFields("Sample Timeout", ele);
 		
 		Assert.assertTrue(ele.getTimeout() == 10000);
 	}
@@ -62,7 +61,7 @@ public class ModiferModelTest {
 	public void UserParametersTest() {
 		UserParametersInitializer initer = new UserParametersInitializer();
 		UserParameters ele = (UserParameters) initer.initilizeElement();
-		this.baseModelAssertions("User Parameters", ele);
+		ModelTester.testBasicFields("User Parameters", ele);
 		
 		Assert.assertFalse(ele.isPerIteration());
 		
@@ -75,18 +74,8 @@ public class ModiferModelTest {
 		
 	}
 	
-	private void baseModelAssertions(String expectedName, TestElement ele) {
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue(ele.isEnabled());
-		Assert.assertSame(expectedName, ele.getName());
-	}
 	
-	private void baseScriptingAssertions(String expectedLanguage, ScriptingTestElement ele) {
-		Assert.assertSame("", ele.getFilename());
-		Assert.assertSame("", ele.getParameters());
-		Assert.assertSame("", ele.getScript());
-		Assert.assertSame(expectedLanguage, ele.getScriptLanguage());
-	}
+
 	
 	private void collectionCompare(CollectionProperty expected, CollectionProperty actual) {
 		Assert.assertSame(expected.getName(), actual.getName());

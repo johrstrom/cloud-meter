@@ -1,7 +1,7 @@
 package org.apache.jmeter.config;
 
 import org.apache.jmeter.config.model.*;
-import org.apache.jmeter.testelement.TestElement;
+import org.cloudmeter.test.ModelTester;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class ConfigModelTest {
 		CSVDataSetInitializer initer = new CSVDataSetInitializer();
 		CSVDataSet ele = (CSVDataSet) initer.initilizeElement();
 	
-		this.baseModelAssertions("CSV Data Set Config", ele);
+		ModelTester.testBasicFields("CSV Data Set Config", ele);
 		
 		Assert.assertTrue(",".equals(ele.getDelimiter()));
 		Assert.assertTrue("".equals(ele.getFileEncoding()));
@@ -29,7 +29,7 @@ public class ConfigModelTest {
 		KeystoreConfigInitializer initer = new KeystoreConfigInitializer();
 		KeystoreConfig ele = (KeystoreConfig) initer.initilizeElement();
 	
-		this.baseModelAssertions("Keystore Configuration", ele);
+		ModelTester.testBasicFields("Keystore Configuration", ele);
 		
 		Assert.assertTrue("".equals(ele.getClientCertAliasVarName()));
 		Assert.assertTrue("".equals(ele.getEndIndex()));
@@ -43,7 +43,7 @@ public class ConfigModelTest {
 		RandomVariableConfigInitializer initer = new RandomVariableConfigInitializer();
 		RandomVariableConfig ele = (RandomVariableConfig) initer.initilizeElement();
 	
-		this.baseModelAssertions("Random Variable", ele);
+		ModelTester.testBasicFields("Random Variable", ele);
 		
 		Assert.assertSame("1", ele.getMinimumValue());
 		Assert.assertSame("", ele.getMaximumValue());
@@ -58,13 +58,7 @@ public class ConfigModelTest {
 		SimpleConfigInitializer initer = new SimpleConfigInitializer();
 		ConfigTestElement ele = (ConfigTestElement) initer.initilizeElement();
 	
-		this.baseModelAssertions("Simple Config Element", ele);
-	}
-	
-	private void baseModelAssertions(String expectedName, TestElement ele) {
-		Assert.assertTrue(ele != null);
-		Assert.assertTrue(ele.isEnabled());
-		Assert.assertSame(expectedName, ele.getName());
+		ModelTester.testBasicFields("Simple Config Element", ele);
 	}
 	
 }
