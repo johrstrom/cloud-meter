@@ -29,6 +29,8 @@ the maturity of this project increases.
 
 # Current Status
 
+[Also refer to the wiki](https://github.com/johrstrom/cloud-meter/wiki)
+
 Right now I'm working a lot on building out the /api/v1/testelement api. 
 
 This will enable users to create new items in the ui. 
