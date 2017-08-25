@@ -29,7 +29,6 @@
 		<module>cloud-meter-components</module>
 		<module>jmeter-functions</module>
 		<module>cloud-meter-protocols</module>
-		<module>jmeter-monitor</module>
 		<module>cloud-meter-server</module>
 	</modules>
 
