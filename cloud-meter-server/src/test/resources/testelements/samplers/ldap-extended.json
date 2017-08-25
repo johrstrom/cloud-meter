@@ -1,0 +1,119 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "arguments": null,
+        "attrs": "",
+        "baseEntryDN": "",
+        "connTimeOut": "",
+        "countlim": "",
+        "countlimAsLong": 0,
+        "deref": false,
+        "enabled": true,
+        "label": "ldap://:/",
+        "ldaparguments": null,
+        "parseFlag": false,
+        "port": "",
+        "properties": {
+            "TestElement.enabled": {
+                "type": "StringProperty",
+                "value": "true"
+            },
+            "TestElement.gui_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.ldap.control.gui.LdapExtTestSamplerGui"
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "LDAP Extended Request"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.ldap.sampler.LDAPExtSampler"
+            },
+            "attributes": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "comparedn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "comparefilt": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "connection_timeout": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "countlimit": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "deref_aliases": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "modddn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "newdn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "parseflag": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "port": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "return_object": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "rootdn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "scope": {
+                "type": "StringProperty",
+                "value": "2"
+            },
+            "secure": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "servername": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "timelimit": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "user_dn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "user_pw": {
+                "type": "StringProperty",
+                "value": ""
+            }
+        },
+        "retobj": false,
+        "rootdn": "",
+        "scope": "2",
+        "scopeAsInt": 2,
+        "secure": false,
+        "servername": "",
+        "test": "",
+        "timelim": "",
+        "timelimAsInt": 0,
+        "userDN": "",
+        "userPw": ""
+    },
+    "type": "sampler"
+}

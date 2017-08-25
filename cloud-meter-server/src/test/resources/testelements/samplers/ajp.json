@@ -1,0 +1,144 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "arguments": {
+            "argumentCount": 0,
+            "arguments": {
+                "type": "CollectionProperty",
+                "value": "TODO"
+            },
+            "argumentsAsMap": {},
+            "enabled": true,
+            "properties": {
+                "Arguments.arguments": {
+                    "type": "CollectionProperty",
+                    "value": "TODO"
+                },
+                "TestElement.enabled": {
+                    "type": "StringProperty",
+                    "value": "true"
+                },
+                "TestElement.gui_class": {
+                    "type": "StringProperty",
+                    "value": "org.apache.jmeter.protocol.http.gui.HTTPArgumentsPanel"
+                },
+                "TestElement.name": {
+                    "type": "StringProperty",
+                    "value": "User Defined Variables"
+                },
+                "TestElement.test_class": {
+                    "type": "StringProperty",
+                    "value": "org.apache.jmeter.config.Arguments"
+                }
+            }
+        },
+        "authManager": null,
+        "autoRedirects": false,
+        "cacheManager": null,
+        "concurrentDwn": false,
+        "concurrentPool": "6",
+        "connectTimeout": 0,
+        "contentEncoding": "",
+        "cookieManager": null,
+        "dnsresolver": null,
+        "doBrowserCompatibleMultipart": false,
+        "doMultipartPost": false,
+        "domain": "",
+        "embeddedUrlRE": "",
+        "enabled": true,
+        "followRedirects": true,
+        "headerManager": null,
+        "httpfileCount": 0,
+        "httpfiles": [],
+        "imageParser": false,
+        "implementation": "",
+        "ipSource": "",
+        "ipSourceType": 0,
+        "method": "GET",
+        "monitor": "",
+        "path": "",
+        "port": 80,
+        "portIfSpecified": 0,
+        "postBodyRaw": false,
+        "properties": {
+            "HTTPSampler.DO_MULTIPART_POST": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "HTTPSampler.auto_redirects": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "HTTPSampler.contentEncoding": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.domain": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.embedded_url_re": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.follow_redirects": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "HTTPSampler.method": {
+                "type": "StringProperty",
+                "value": "GET"
+            },
+            "HTTPSampler.path": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.port": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.protocol": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "HTTPSampler.use_keepalive": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "HTTPsampler.Arguments": {
+                "type": "TestElementProperty",
+                "value": "TODO"
+            },
+            "TestElement.enabled": {
+                "type": "StringProperty",
+                "value": "true"
+            },
+            "TestElement.gui_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.control.gui.AjpSamplerGui"
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "AJP/1.3 Sampler"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.http.sampler.AjpSampler"
+            }
+        },
+        "protocol": "http",
+        "protocolDefaultPort": true,
+        "proxyHost": "",
+        "proxyPass": "",
+        "proxyPortInt": 0,
+        "proxyUser": "",
+        "queryString": "",
+        "responseTimeout": 0,
+        "sendFileAsPostBody": false,
+        "sendParameterValuesAsPostBody": true,
+        "url": "http:/",
+        "useKeepAlive": true,
+        "useMultipartForPost": false
+    },
+    "type": "sampler"
+}

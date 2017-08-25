@@ -1,0 +1,101 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "arguments": {
+            "argumentCount": 0,
+            "arguments": {
+                "type": "CollectionProperty",
+                "value": "TODO"
+            },
+            "argumentsAsMap": {},
+            "enabled": true,
+            "properties": {
+                "Arguments.arguments": {
+                    "type": "CollectionProperty",
+                    "value": "TODO"
+                },
+                "TestElement.enabled": {
+                    "type": "StringProperty",
+                    "value": "true"
+                },
+                "TestElement.gui_class": {
+                    "type": "StringProperty",
+                    "value": "org.apache.jmeter.config.gui.ArgumentsPanel"
+                },
+                "TestElement.name": {
+                    "type": "StringProperty",
+                    "value": "User Defined Variables"
+                },
+                "TestElement.test_class": {
+                    "type": "StringProperty",
+                    "value": "org.apache.jmeter.config.Arguments"
+                }
+            }
+        },
+        "baseEntryDN": "",
+        "enabled": true,
+        "label": "ldap://:/",
+        "password": "",
+        "port": "",
+        "properties": {
+            "ConfigTestElement.password": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "ConfigTestElement.username": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TestElement.enabled": {
+                "type": "StringProperty",
+                "value": "true"
+            },
+            "TestElement.gui_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.ldap.control.gui.LdapTestSamplerGui"
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "LDAP Request"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.ldap.sampler.LDAPSampler"
+            },
+            "arguments": {
+                "type": "TestElementProperty",
+                "value": "TODO"
+            },
+            "base_entry_dn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "port": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "rootdn": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "servername": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "test": {
+                "type": "StringProperty",
+                "value": "add"
+            },
+            "user_defined": {
+                "type": "BooleanProperty",
+                "value": false
+            }
+        },
+        "rootdn": "",
+        "servername": "",
+        "test": "add",
+        "userDefinedTest": false,
+        "username": ""
+    },
+    "type": "sampler"
+}

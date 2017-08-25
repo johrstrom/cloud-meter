@@ -1,0 +1,94 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "deleteMessages": false,
+        "enabled": true,
+        "enforceStartTLS": false,
+        "folder": "INBOX",
+        "headerOnly": false,
+        "numMessages": -1,
+        "numMessagesString": "-1",
+        "password": "",
+        "port": "",
+        "properties": {
+            "SMTPSampler.enforceStartTLS": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "SMTPSampler.trustAllCerts": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "SMTPSampler.trustStoreToUse": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "SMTPSampler.useLocalTrustStore": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "SMTPSampler.useSSL": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "SMTPSampler.useStartTLS": {
+                "type": "StringProperty",
+                "value": "false"
+            },
+            "TestElement.enabled": {
+                "type": "StringProperty",
+                "value": "true"
+            },
+            "TestElement.gui_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.mail.sampler.gui.MailReaderSamplerGui"
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Mail Reader Sampler"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.mail.sampler.MailReaderSampler"
+            },
+            "delete": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "folder": {
+                "type": "StringProperty",
+                "value": "INBOX"
+            },
+            "host": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "host_type": {
+                "type": "StringProperty",
+                "value": "pop3"
+            },
+            "num_messages": {
+                "type": "IntegerProperty",
+                "value": -1
+            },
+            "password": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "username": {
+                "type": "StringProperty",
+                "value": ""
+            }
+        },
+        "server": "",
+        "serverType": "pop3",
+        "storeMimeMessage": false,
+        "trustAllCerts": false,
+        "trustStoreToUse": "",
+        "useLocalTrustStore": false,
+        "useSSL": false,
+        "useStartTLS": false,
+        "userName": ""
+    },
+    "type": "sampler"
+}

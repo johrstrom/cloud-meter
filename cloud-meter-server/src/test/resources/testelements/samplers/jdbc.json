@@ -1,0 +1,70 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "dataSource": "",
+        "enabled": true,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "StringProperty",
+                "value": "true"
+            },
+            "TestElement.gui_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.testbeans.gui.TestBeanGUI"
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "JDBC Request"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.jdbc.sampler.JDBCSampler"
+            },
+            "dataSource": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "query": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "queryArguments": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "queryArgumentsTypes": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "queryTimeout": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "queryType": {
+                "type": "StringProperty",
+                "value": "Select Statement"
+            },
+            "resultSetHandler": {
+                "type": "StringProperty",
+                "value": "Store as String"
+            },
+            "resultVariable": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "variableNames": {
+                "type": "StringProperty",
+                "value": ""
+            }
+        },
+        "query": "",
+        "queryArguments": "",
+        "queryArgumentsTypes": "",
+        "queryTimeout": 0,
+        "queryType": "",
+        "resultSetHandler": "",
+        "resultVariable": "",
+        "variableNames": ""
+    },
+    "type": "unknown"
+}
