@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.apache.jmeter.sampler.model.*;
 import org.apache.jmeter.sampler.*;
+import org.apache.jmeter.protocol.model.*;
+import org.apache.jmeter.protocol.java.sampler.*;
 
 @Component
 public class SamplerBeans {
@@ -53,6 +55,17 @@ public class SamplerBeans {
 	@Autowired
 	public DebugSampler DebugSampler(DebugSamplerInitializer initer) {
 		return (DebugSampler) initer.initilizeElement();
+	}
+	
+	@Bean
+	public JavaSamplerInitializer JavaSamplerInitializer() {
+		return new JavaSamplerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public JavaSampler JavaSampler(JavaSamplerInitializer initer) {
+		return (JavaSampler) initer.initilizeElement();
 	}
 	
 }

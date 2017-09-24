@@ -320,7 +320,7 @@ public class NewElementTest {
 	}
 	
 	@Test
-	public void HTTPSamplerTest() {
+	public void httpSamplerTest() {
 		utilities.validateFileAgainstAPI("http-sampler", SAMPLER_BASE + "http.json");
 	}
 	
@@ -355,12 +355,12 @@ public class NewElementTest {
 	}
 	
 	@Test
-	public void SMTPSamplerTest() {
+	public void smtpSamplerTest() {
 		utilities.validateFileAgainstAPI("smtp-sampler", SAMPLER_BASE + "smtp.json");
 	}
 	
 	@Test
-	public void TCPSamplerTest() {
+	public void tcpSamplerTest() {
 		utilities.validateFileAgainstAPI("tcp-sampler", SAMPLER_BASE + "tcp.json");
 	}
 	

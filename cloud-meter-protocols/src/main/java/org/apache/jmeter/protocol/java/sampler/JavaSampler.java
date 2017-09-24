@@ -65,12 +65,12 @@ public class JavaSampler extends AbstractSampler implements TestStateListener, I
     /**
      * Property key representing the classname of the JavaSamplerClient to user.
      */
-    public static final String CLASSNAME = "classname";
+    public static final String CLASSNAME = "JavaSampler.classname";
 
     /**
      * Property key representing the arguments for the JavaSamplerClient.
      */
-    public static final String ARGUMENTS = "arguments";
+    public static final String ARGUMENTS = "JavaSampler.arguments";
 
     /**
      * The JavaSamplerClient class used by this sampler.

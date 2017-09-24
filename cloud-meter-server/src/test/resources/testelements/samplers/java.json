@@ -1,62 +1,66 @@
 {
-    "hashTree": [],
-    "testElement": {
-        "arguments": {
-            "argumentCount": 8,
-            "arguments": {
-                "type": "CollectionProperty",
-                "value": "TODO"
-            },
-            "argumentsAsMap": {
-                "Label": "",
-                "ResponseCode": "",
-                "ResponseMessage": "",
-                "ResultData": "",
-                "SamplerData": "",
-                "Sleep_Mask": "0xFF",
-                "Sleep_Time": "100",
-                "Status": "OK"
-            },
-            "enabled": true,
-            "properties": {
-                "Arguments.arguments": {
-                    "type": "CollectionProperty",
-                    "value": "TODO"
-                },
-                "TestElement.enabled": {
-                    "type": "StringProperty",
-                    "value": "true"
-                },
-                "TestElement.test_class": {
-                    "type": "StringProperty",
-                    "value": "org.apache.jmeter.config.Arguments"
-                }
-            }
-        },
-        "classname": "org.apache.jmeter.protocol.java.test.JavaTest",
-        "enabled": true,
-        "properties": {
-            "TestElement.enabled": {
-                "type": "Boolean",
-                "value": true
-            },
-            "TestElement.name": {
-                "type": "StringProperty",
-                "value": "Java Request"
-            },
-            "TestElement.test_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.java.sampler.JavaSampler"
-            },
-            "arguments": {
-                "type": "TestElementProperty",
-                "value": "TODO"
-            },
-            "classname": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.java.test.JavaTest"
-            }
-        }
-    },
-    "type": "sampler"
+	"hashTree": [],
+	"testElement": {
+		"arguments": {
+			"argumentCount": 8,
+			"arguments": {
+				"type": "CollectionProperty",
+				"value": "TODO"
+			},
+			"argumentsAsMap": {
+				"Label": "",
+				"ResponseCode": "",
+				"ResponseMessage": "",
+				"ResultData": "",
+				"SamplerData": "",
+				"Sleep_Mask": "0xFF",
+				"Sleep_Time": "100",
+				"Status": "OK"
+			},
+			"enabled": true,
+			"properties": {
+				"Arguments.arguments": {
+					"type": "CollectionProperty",
+					"value": "TODO"
+				},
+				"TestElement.enabled": {
+					"type": "BooleanProperty",
+					"value": true
+				},
+				"TestElement.test_class": {
+					"type": "StringProperty",
+					"value": "org.apache.jmeter.config.Arguments"
+				},
+				"TestElement.name": {
+					"type": "StringProperty",
+					"value": "User Defined Variables"
+				}
+			}
+		},
+		"classname": "org.apache.jmeter.protocol.java.test.JavaTest",
+		"enabled": true,
+		"properties": {
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "Java Request"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.java.sampler.JavaSampler"
+			},
+			"JavaSampler.arguments": {
+				"type": "TestElementProperty",
+				"value": "TODO"
+			},
+			"JavaSampler.classname": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.java.test.JavaTest"
+			}
+		}
+	},
+	"type": "sampler"
 }

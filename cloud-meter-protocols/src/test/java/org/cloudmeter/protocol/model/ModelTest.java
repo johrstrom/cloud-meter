@@ -7,6 +7,8 @@ import org.apache.jmeter.config.ConfigTestElement;
 import org.apache.jmeter.protocol.ftp.sampler.FTPSampler;
 import org.apache.jmeter.protocol.http.control.*;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
+import org.apache.jmeter.protocol.java.sampler.JavaSampler;
+import org.apache.jmeter.protocol.java.test.JavaTest;
 import org.apache.jmeter.protocol.jdbc.AbstractJDBCTestElement;
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.protocol.jdbc.processor.JDBCPreProcessor;
@@ -170,6 +172,30 @@ public class ModelTest {
 		ModelTester.testBasicFields("JDBC PreProcessor", ele);
 		this.baseJDBCAssertions(ele);
 	}
+	
+	@Test
+	public void javaSamplerTest() {
+		JavaSamplerInitializer initer = new JavaSamplerInitializer();
+		JavaSampler ele = (JavaSampler) initer.initilizeElement();
+		
+		ModelTester.testBasicFields("Java Request", ele);
+		
+		Assert.assertSame(JavaTest.class.getName(),ele.getClassname());
+		
+		Map<String, String> args = ele.getArguments().getArgumentsAsMap();
+		Assert.assertSame(args.get("Label"),"");
+		Assert.assertSame(args.get("ResponseCode"), "");
+		Assert.assertSame(args.get("ResponseMessage"), "");
+		Assert.assertSame(args.get("ResultData"), "");
+		Assert.assertSame(args.get("SamplerData"), "");
+		Assert.assertSame(args.get("Sleep_Mask"), "0xFF");
+		Assert.assertSame(args.get("Sleep_Time"), "100");
+		Assert.assertSame(args.get("Status"), "OK");
+		
+		
+		
+	}
+	
 	
 	private void baseJDBCAssertions(AbstractJDBCTestElement ele) {
 		Assert.assertSame("Select Statement", ele.getQueryType());
