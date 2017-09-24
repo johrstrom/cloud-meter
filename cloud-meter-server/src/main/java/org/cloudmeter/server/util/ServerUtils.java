@@ -110,8 +110,8 @@ public class ServerUtils {
     	map.put("http-sampler", "HTTPSamplerProxy");
     	map.put("java-sampler", "JavaSampler");
     	map.put("jdbc-sampler", "JDBCSampler");
-    	map.put("ldap-extended-sampler", "LDAPSampler");
-    	map.put("ldap-sampler", "LDAP");
+    	map.put("ldap-extended-sampler", "LDAPExtSampler");
+    	map.put("ldap-sampler", "LDAPSampler");
     	map.put("mail-reader-sampler", "MailReader");
    		map.put("os-process-sampler", "OSProcessSampler");
    		map.put("smtp-sampler", "SMTPSampler");

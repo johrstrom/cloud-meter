@@ -17,7 +17,7 @@
 					"value": "TODO"
 				},
 				"TestElement.enabled": {
-					"type": "Boolean",
+					"type": "BooleanProperty",
 					"value": true
 				},
 				"TestElement.name": {
@@ -45,7 +45,7 @@
 				"value": ""
 			},
 			"TestElement.enabled": {
-				"type": "Boolean",
+				"type": "BooleanProperty",
 				"value": true
 			},
 			"TestElement.name": {
@@ -56,7 +56,7 @@
 				"type": "StringProperty",
 				"value": "org.apache.jmeter.protocol.ldap.sampler.LDAPSampler"
 			},
-			"arguments": {
+			"Arguments.arguments": {
 				"type": "TestElementProperty",
 				"value": "TODO"
 			},

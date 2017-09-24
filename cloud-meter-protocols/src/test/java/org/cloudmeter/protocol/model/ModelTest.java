@@ -13,6 +13,8 @@ import org.apache.jmeter.protocol.jdbc.AbstractJDBCTestElement;
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.protocol.jdbc.processor.JDBCPreProcessor;
 import org.apache.jmeter.protocol.jdbc.sampler.JDBCSampler;
+import org.apache.jmeter.protocol.ldap.sampler.LDAPExtSampler;
+import org.apache.jmeter.protocol.ldap.sampler.LDAPSampler;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.tcp.sampler.TCPSampler;
 import org.cloudmeter.test.ModelTester;
@@ -111,24 +113,24 @@ public class ModelTest {
 		
 		ModelTester.testBasicFields("LDAP Extended Request Defaults", ele);
 		
-		Assert.assertSame("",ele.getPropertyAsString("attributes"));
-		Assert.assertSame("",ele.getPropertyAsString("comparedn"));
-		Assert.assertSame("",ele.getPropertyAsString("comparefilt"));
-		Assert.assertSame("",ele.getPropertyAsString("connection_timeout"));
-		Assert.assertSame("",ele.getPropertyAsString("countlimit"));
-		Assert.assertFalse(ele.getPropertyAsBoolean("deref_aliases"));
-		Assert.assertSame("",ele.getPropertyAsString("modddn"));
-		Assert.assertSame("",ele.getPropertyAsString("newdn"));
-		Assert.assertFalse(ele.getPropertyAsBoolean("parseflag"));
-		Assert.assertSame("",ele.getPropertyAsString("port"));
-		Assert.assertFalse(ele.getPropertyAsBoolean("return_object"));
-		Assert.assertSame("",ele.getPropertyAsString("rootdn"));
-		Assert.assertTrue(ele.getPropertyAsInt("scope") ==  2);
-		Assert.assertFalse("",ele.getPropertyAsBoolean("secure"));
-		Assert.assertSame("",ele.getPropertyAsString("servername"));
-		Assert.assertSame("",ele.getPropertyAsString("timelimit"));
-		Assert.assertSame("",ele.getPropertyAsString("user_dn"));
-		Assert.assertSame("",ele.getPropertyAsString("user_pw"));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.ATTRIBS));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.COMPAREDN));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.COMPAREFILT));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.CONNTO));
+		Assert.assertTrue(0 == ele.getPropertyAsLong(LDAPExtSampler.COUNTLIM));
+		Assert.assertFalse(ele.getPropertyAsBoolean(LDAPExtSampler.DEREF));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.MODDDN));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.NEWDN));
+		Assert.assertFalse(ele.getPropertyAsBoolean(LDAPExtSampler.PARSEFLAG));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.PORT));
+		Assert.assertFalse(ele.getPropertyAsBoolean(LDAPExtSampler.RETOBJ));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.ROOTDN));
+		Assert.assertTrue(ele.getPropertyAsInt(LDAPExtSampler.SCOPE) ==  2);
+		Assert.assertFalse("",ele.getPropertyAsBoolean(LDAPExtSampler.SECURE));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.SERVERNAME));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.TIMELIM));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.USERDN));
+		Assert.assertSame("",ele.getPropertyAsString(LDAPExtSampler.USERPW));
 	}
 	
 	
@@ -203,6 +205,51 @@ public class ModelTest {
 		this.baseJDBCAssertions(ele);
 	}
 	
+	@Test
+	public void ldapExtSamplerTest() {
+		
+		LDAPExtSamplerInitializer initer = new LDAPExtSamplerInitializer();
+		LDAPExtSampler ele = (LDAPExtSampler) initer.initilizeElement();
+		
+		ModelTester.testBasicFields("LDAP Extended Request", ele);
+		
+		Assert.assertSame("", ele.getAttrs());
+		Assert.assertSame("", ele.getPropertyAsString(LDAPExtSampler.COMPAREDN));
+		Assert.assertSame("", ele.getPropertyAsString(LDAPExtSampler.COMPAREFILT));
+		Assert.assertSame("", ele.getConnTimeOut());
+		Assert.assertFalse(ele.isDeref());
+		Assert.assertSame("", ele.getPropertyAsString(LDAPExtSampler.MODDDN));
+		Assert.assertSame("", ele.getPropertyAsString(LDAPExtSampler.NEWDN));
+		Assert.assertFalse(ele.isParseFlag());
+		Assert.assertSame("", ele.getPort());
+		Assert.assertFalse(ele.isRetobj());
+		Assert.assertSame("", ele.getRootdn());
+		Assert.assertTrue(2 == ele.getScope());
+		Assert.assertFalse(ele.isSecure());
+		Assert.assertSame("", ele.getServername());
+		Assert.assertTrue(0 == ele.getTimelim());
+		Assert.assertSame("", ele.getUserDN());
+		Assert.assertSame("", ele.getUserPw());
+		Assert.assertTrue(0 == ele.getCountlim());		
+	}
+	
+	@Test
+	public void ldapSamplerTest() {	
+		LDAPSamplerInitializer initer = new LDAPSamplerInitializer();
+		LDAPSampler ele = (LDAPSampler) initer.initilizeElement();
+		
+		ModelTester.testBasicFields("LDAP Request", ele);
+		
+		Assert.assertSame("",ele.getPropertyAsString(ConfigTestElement.USERNAME));
+		Assert.assertSame("",ele.getPropertyAsString(ConfigTestElement.PASSWORD));
+		Assert.assertSame("",ele.getBaseEntryDN());
+		Assert.assertSame("",ele.getPort());
+		Assert.assertSame("",ele.getRootdn());
+		Assert.assertSame("",ele.getServername());
+		Assert.assertSame("add",ele.getTest());
+		Assert.assertFalse(ele.getUserDefinedTest());
+		
+	}
 	
 	private void baseJDBCAssertions(AbstractJDBCTestElement ele) {
 		Assert.assertSame("Select Statement", ele.getQueryType());

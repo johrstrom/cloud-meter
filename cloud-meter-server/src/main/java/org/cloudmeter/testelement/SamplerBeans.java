@@ -10,6 +10,7 @@ import org.apache.jmeter.sampler.*;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.java.sampler.*;
 import org.apache.jmeter.protocol.jdbc.sampler.*;
+import org.apache.jmeter.protocol.ldap.sampler.*;
 
 @Component
 public class SamplerBeans {
@@ -78,6 +79,28 @@ public class SamplerBeans {
 	@Autowired
 	public JDBCSampler JDBCSampler(JDBCSamplerInitializer initer) {
 		return (JDBCSampler) initer.initilizeElement();
+	}
+	
+	@Bean
+	public LDAPExtSamplerInitializer LDAPExtSamplerInitializer() {
+		return new LDAPExtSamplerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public LDAPExtSampler LDAPExtSampler(LDAPExtSamplerInitializer initer) {
+		return (LDAPExtSampler) initer.initilizeElement();
+	}
+	
+	@Bean
+	public LDAPSamplerInitializer LDAPSamplerInitializer() {
+		return new LDAPSamplerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public LDAPSampler LDAPSampler(LDAPSamplerInitializer initer) {
+		return (LDAPSampler) initer.initilizeElement();
 	}
 	
 }

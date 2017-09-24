@@ -80,73 +80,73 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      * The following strings are used in the test plan, and the values must not be changed
      * if test plans are to be upwardly compatible.
      */
-    public static final String SERVERNAME = "servername"; // $NON-NLS-1$
+    public static final String SERVERNAME = "LDAPExtSampler.servername"; // $NON-NLS-1$
 
-    public static final String PORT = "port"; // $NON-NLS-1$
+    public static final String PORT = "LDAPExtSampler.port"; // $NON-NLS-1$
 
-    public static final String SECURE = "secure"; // $NON-NLS-1$
+    public static final String SECURE = "LDAPExtSampler.secure"; // $NON-NLS-1$
 
-    public static final String ROOTDN = "rootdn"; // $NON-NLS-1$
+    public static final String ROOTDN = "LDAPExtSampler.rootdn"; // $NON-NLS-1$
 
-    public static final String TEST = "test"; // $NON-NLS-1$
+    public static final String TEST = "LDAPExtSampler.test"; // $NON-NLS-1$
 
     // These are values for the TEST attribute above
-    public static final String ADD = "add"; // $NON-NLS-1$
+    public static final String ADD = "LDAPExtSampler.add"; // $NON-NLS-1$
 
-    public static final String MODIFY = "modify"; // $NON-NLS-1$
+    public static final String MODIFY = "LDAPExtSampler.modify"; // $NON-NLS-1$
 
-    public static final String BIND = "bind"; // $NON-NLS-1$
+    public static final String BIND = "LDAPExtSampler.bind"; // $NON-NLS-1$
 
-    public static final String UNBIND = "unbind"; // $NON-NLS-1$
+    public static final String UNBIND = "LDAPExtSampler.unbind"; // $NON-NLS-1$
 
-    public static final String DELETE = "delete"; // $NON-NLS-1$
+    public static final String DELETE = "LDAPExtSampler.delete"; // $NON-NLS-1$
 
-    public static final String SEARCH = "search"; // $NON-NLS-1$
+    public static final String SEARCH = "LDAPExtSampler.search"; // $NON-NLS-1$
     // end of TEST values
 
-    public static final String SEARCHBASE = "search"; // $NON-NLS-1$
+    public static final String SEARCHBASE = "LDAPExtSampler.search"; // $NON-NLS-1$
 
-    public static final String SEARCHFILTER = "searchfilter"; // $NON-NLS-1$
+    public static final String SEARCHFILTER = "LDAPExtSampler.searchfilter"; // $NON-NLS-1$
 
-    public static final String ARGUMENTS = "arguments"; // $NON-NLS-1$
+    public static final String ARGUMENTS = "LDAPExtSampler.arguments"; // $NON-NLS-1$
 
-    public static final String LDAPARGUMENTS = "ldaparguments"; // $NON-NLS-1$
+    public static final String LDAPARGUMENTS = "LDAPExtSampler.ldaparguments"; // $NON-NLS-1$
 
-    public static final String BASE_ENTRY_DN = "base_entry_dn"; // $NON-NLS-1$
+    public static final String BASE_ENTRY_DN = "LDAPExtSampler.base_entry_dn"; // $NON-NLS-1$
 
-    public static final String SCOPE = "scope"; // $NON-NLS-1$
+    public static final String SCOPE = "LDAPExtSampler.scope"; // $NON-NLS-1$
 
-    public static final String COUNTLIM = "countlimit"; // $NON-NLS-1$
+    public static final String COUNTLIM = "LDAPExtSampler.countlimit"; // $NON-NLS-1$
 
-    public static final String TIMELIM = "timelimit"; // $NON-NLS-1$
+    public static final String TIMELIM = "LDAPExtSampler.timelimit"; // $NON-NLS-1$
 
-    public static final String ATTRIBS = "attributes"; // $NON-NLS-1$
+    public static final String ATTRIBS = "LDAPExtSampler.attributes"; // $NON-NLS-1$
 
-    public static final String RETOBJ = "return_object"; // $NON-NLS-1$
+    public static final String RETOBJ = "LDAPExtSampler.return_object"; // $NON-NLS-1$
 
-    public static final String DEREF = "deref_aliases"; // $NON-NLS-1$
+    public static final String DEREF = "LDAPExtSampler.deref_aliases"; // $NON-NLS-1$
 
-    public static final String USERDN = "user_dn"; // $NON-NLS-1$
+    public static final String USERDN = "LDAPExtSampler.user_dn"; // $NON-NLS-1$
 
-    public static final String USERPW = "user_pw"; // $NON-NLS-1$
+    public static final String USERPW = "LDAPExtSampler.user_pw"; // $NON-NLS-1$
 
-    public static final String SBIND = "sbind"; // $NON-NLS-1$
+    public static final String SBIND = "LDAPExtSampler.sbind"; // $NON-NLS-1$
 
-    public static final String COMPARE = "compare"; // $NON-NLS-1$
+    public static final String COMPARE = "LDAPExtSampler.compare"; // $NON-NLS-1$
 
-    public static final String CONNTO = "connection_timeout"; // $NON-NLS-1$
+    public static final String CONNTO = "LDAPExtSampler.connection_timeout"; // $NON-NLS-1$
 
-    public static final String COMPAREDN = "comparedn"; // $NON-NLS-1$
+    public static final String COMPAREDN = "LDAPExtSampler.comparedn"; // $NON-NLS-1$
 
-    public static final String COMPAREFILT = "comparefilt"; // $NON-NLS-1$
+    public static final String COMPAREFILT = "LDAPExtSampler.comparefilt"; // $NON-NLS-1$
 
-    public static final String PARSEFLAG = "parseflag"; // $NON-NLS-1$
+    public static final String PARSEFLAG = "LDAPExtSampler.parseflag"; // $NON-NLS-1$
 
-    public static final String RENAME = "rename"; // $NON-NLS-1$
+    public static final String RENAME = "LDAPExtSampler.rename"; // $NON-NLS-1$
 
-    public static final String MODDDN = "modddn"; // $NON-NLS-1$
+    public static final String MODDDN = "LDAPExtSampler.modddn"; // $NON-NLS-1$
 
-    public static final String NEWDN = "newdn"; // $NON-NLS-1$
+    public static final String NEWDN = "LDAPExtSampler.newdn"; // $NON-NLS-1$
 
     private static final String SEMI_COLON = ";"; // $NON-NLS-1$
 
@@ -171,8 +171,8 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
         return getPropertyAsString(CONNTO);
     }
 
-    public void setSecure(String sec) {
-        setProperty(new StringProperty(SECURE, sec));
+    public void setSecure(boolean sec) {
+        setProperty(SECURE, sec);
     }
 
     public boolean isSecure() {
@@ -184,8 +184,8 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
         return getPropertyAsBoolean(PARSEFLAG);
     }
 
-    public void setParseFlag(String parseFlag) {
-        setProperty(new StringProperty(PARSEFLAG, parseFlag));
+    public void setParseFlag(boolean parseFlag) {
+        setProperty(PARSEFLAG, parseFlag);
     }
 
     /***************************************************************************
@@ -289,11 +289,7 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      *
      * @return The scope value
      **************************************************************************/
-    public String getScope() {
-        return getPropertyAsString(SCOPE);
-    }
-
-    public int getScopeAsInt() {
+    public int getScope() {
         return getPropertyAsInt(SCOPE);
     }
 
@@ -303,7 +299,7 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      * @param newScope
      *            The new scope value
      **************************************************************************/
-    public void setScope(String newScope) {
+    public void setScope(int newScope) {
         this.setProperty(SCOPE, newScope);
     }
 
@@ -312,11 +308,7 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      *
      * @return The size limit
      **************************************************************************/
-    public String getCountlim() {
-        return getPropertyAsString(COUNTLIM);
-    }
-
-    public long getCountlimAsLong() {
+    public long getCountlim() {
         return getPropertyAsLong(COUNTLIM);
     }
 
@@ -326,7 +318,7 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      * @param newClim
      *            The new size limit value
      **************************************************************************/
-    public void setCountlim(String newClim) {
+    public void setCountlim(long newClim) {
         this.setProperty(COUNTLIM, newClim);
     }
 
@@ -335,11 +327,7 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      *
      * @return The time limit
      **************************************************************************/
-    public String getTimelim() {
-        return getPropertyAsString(TIMELIM);
-    }
-
-    public int getTimelimAsInt() {
+    public int getTimelim() {
         return getPropertyAsInt(TIMELIM);
     }
 
@@ -349,7 +337,7 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      * @param newTlim
      *            The new time limit value
      **************************************************************************/
-    public void setTimelim(String newTlim) {
+    public void setTimelim(int newTlim) {
         this.setProperty(TIMELIM, newTlim);
     }
 
@@ -368,7 +356,7 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      * @param newRobj
      *            whether the objects should be returned
      **************************************************************************/
-    public void setRetobj(String newRobj) {
+    public void setRetobj(boolean newRobj) {
         this.setProperty(RETOBJ, newRobj);
     }
 
@@ -387,8 +375,8 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
      * @param newDref
      *            The new deref value
      **************************************************************************/
-    public void setDeref(String newDref) {
-        this.setProperty(DEREF, newDref);
+    public void setDeref(boolean dref) {
+        this.setProperty(DEREF, dref);
     }
 
     /***************************************************************************
@@ -786,12 +774,12 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
                 xmlBuffer.tag("newdn",getPropertyAsString(NEWDN)); // $NON-NLS-1$
                 renameTest(dirContext, res);
             } else if (testType.equals(SEARCH)) {
-                final String scopeStr = getScope();
-                final int scope = getScopeAsInt();
+                final int scope = getScope();
+                final String scopeStr = String.valueOf(scope);
                 final String searchFilter = getPropertyAsString(SEARCHFILTER);
                 final String searchBase = getPropertyAsString(SEARCHBASE);
-                final String timeLimit = getTimelim();
-                final String countLimit = getCountlim();
+                final String timeLimit = String.valueOf(getTimelim());
+                final String countLimit = String.valueOf(getCountlim());
 
                 res.setSamplerData("Search with filter " + searchFilter);
                 xmlBuffer.tag("searchfilter", StringEscapeUtils.escapeXml10(searchFilter)); // $NON-NLS-1$
@@ -806,8 +794,8 @@ public class LDAPExtSampler extends AbstractSampler implements TestStateListener
                     res.sampleStart();
                     srch = LdapExtClient.searchTest(
                             dirContext, searchBase, searchFilter,
-                            scope, getCountlimAsLong(),
-                            getTimelimAsInt(),
+                            scope, getCountlim(),
+                            getTimelim(),
                             getRequestAttributes(getAttrs()),
                             isRetobj(),
                             isDeref());
