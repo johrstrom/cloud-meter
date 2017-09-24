@@ -725,7 +725,7 @@ public class HTTPHC4Impl extends HTTPHCAbstractImpl {
         
         final String host = url.getHost();
         String proxyHost = getProxyHost();
-        int proxyPort = getProxyPortInt();
+        int proxyPort = getProxyPort();
         String proxyPass = getProxyPass();
         String proxyUser = getProxyUser();
 

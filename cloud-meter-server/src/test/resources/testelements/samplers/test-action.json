@@ -18,12 +18,8 @@
                 "value": 0
             },
             "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.sampler.gui.TestActionGui"
+                "type": "BooleanProperty",
+                "value": true
             },
             "TestElement.name": {
                 "type": "StringProperty",

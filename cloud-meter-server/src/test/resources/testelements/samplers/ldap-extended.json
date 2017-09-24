@@ -15,12 +15,8 @@
         "port": "",
         "properties": {
             "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.ldap.control.gui.LdapExtTestSamplerGui"
+                "type": "Boolean",
+                "value": true
             },
             "TestElement.name": {
                 "type": "StringProperty",

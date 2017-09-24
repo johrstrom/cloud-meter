@@ -7,8 +7,8 @@
         "enabled": true,
         "properties": {
             "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
+                "type": "Boolean",
+                "value": true
             },
             "TestElement.gui_class": {
                 "type": "StringProperty",
@@ -17,10 +17,6 @@
             "TestElement.name": {
                 "type": "StringProperty",
                 "value": "Debug Sampler"
-            },
-            "TestElement.test_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.sampler.DebugSampler"
             },
             "displayJMeterProperties": {
                 "type": "BooleanProperty",

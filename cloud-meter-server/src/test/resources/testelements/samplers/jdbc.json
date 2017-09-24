@@ -5,12 +5,8 @@
         "enabled": true,
         "properties": {
             "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.testbeans.gui.TestBeanGUI"
+                "type": "Boolean",
+                "value": true
             },
             "TestElement.name": {
                 "type": "StringProperty",

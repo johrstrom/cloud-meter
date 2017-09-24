@@ -1,133 +1,129 @@
 {
-    "hashTree": [],
-    "testElement": {
-        "enabled": true,
-        "properties": {
-            "SMTPSampler.attachFile": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.emlMessageToSend": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.enableDebug": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.enforceStartTLS": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.headerFields": {
-                "type": "CollectionProperty",
-                "value": "TODO"
-            },
-            "SMTPSampler.include_timestamp": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.mailFrom": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.message": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.messageSizeStatistics": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.password": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.plainBody": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.receiverBCC": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.receiverCC": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.receiverTo": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.replyTo": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.server": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.serverPort": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.subject": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.suppressSubject": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.trustAllCerts": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.trustStoreToUse": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SMTPSampler.useAuth": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.useLocalTrustStore": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.useSSL": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.useStartTLS": {
-                "type": "StringProperty",
-                "value": "false"
-            },
-            "SMTPSampler.use_eml": {
-                "type": "BooleanProperty",
-                "value": false
-            },
-            "SMTPSampler.username": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.smtp.sampler.gui.SmtpSamplerGui"
-            },
-            "TestElement.name": {
-                "type": "StringProperty",
-                "value": "SMTP Sampler"
-            },
-            "TestElement.test_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.smtp.sampler.SmtpSampler"
-            }
-        }
-    },
-    "type": "sampler"
+	"hashTree": [],
+	"testElement": {
+		"enabled": true,
+		"properties": {
+			"SMTPSampler.attachFile": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.emlMessageToSend": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.enableDebug": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.enforceStartTLS": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.headerFields": {
+				"type": "CollectionProperty",
+				"value": "TODO"
+			},
+			"SMTPSampler.include_timestamp": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.mailFrom": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.message": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.messageSizeStatistics": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.password": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.plainBody": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.receiverBCC": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.receiverCC": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.receiverTo": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.replyTo": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.server": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.serverPort": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.subject": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.suppressSubject": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.trustAllCerts": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.trustStoreToUse": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.useAuth": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.useLocalTrustStore": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.useSSL": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.useStartTLS": {
+				"type": "StringProperty",
+				"value": "false"
+			},
+			"SMTPSampler.use_eml": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SMTPSampler.username": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"TestElement.enabled": {
+				"type": "Boolean",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "SMTP Sampler"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.smtp.sampler.SmtpSampler"
+			}
+		}
+	},
+	"type": "sampler"
 }

@@ -27,10 +27,6 @@
                     "type": "StringProperty",
                     "value": "true"
                 },
-                "TestElement.gui_class": {
-                    "type": "StringProperty",
-                    "value": "org.apache.jmeter.config.gui.ArgumentsPanel"
-                },
                 "TestElement.test_class": {
                     "type": "StringProperty",
                     "value": "org.apache.jmeter.config.Arguments"
@@ -41,12 +37,8 @@
         "enabled": true,
         "properties": {
             "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.java.control.gui.JavaTestSamplerGui"
+                "type": "Boolean",
+                "value": true
             },
             "TestElement.name": {
                 "type": "StringProperty",

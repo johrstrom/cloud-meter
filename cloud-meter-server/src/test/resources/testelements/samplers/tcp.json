@@ -49,12 +49,8 @@
                 "value": ""
             },
             "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.tcp.control.gui.TCPSamplerGui"
+                "type": "BooleanProperty",
+                "value": true
             },
             "TestElement.name": {
                 "type": "StringProperty",

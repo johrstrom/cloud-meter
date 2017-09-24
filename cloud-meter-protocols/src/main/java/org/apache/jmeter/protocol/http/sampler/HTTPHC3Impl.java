@@ -452,7 +452,7 @@ public class HTTPHC3Impl extends HTTPHCAbstractImpl {
         }
 
         final String proxyHost = getProxyHost();
-        final int proxyPort = getProxyPortInt();
+        final int proxyPort = getProxyPort();
 
         boolean useStaticProxy = isStaticProxy(host);
         boolean useDynamicProxy = isDynamicProxy(proxyHost, proxyPort);

@@ -1,109 +1,106 @@
 {
-    "hashTree": [],
-    "testElement": {
-        "arguments": {
-            "argumentCount": 0,
-            "arguments": {
-                "type": "CollectionProperty",
-                "value": "TODO"
-            },
-            "argumentsAsMap": {},
-            "enabled": true,
-            "properties": {
-                "Arguments.arguments": {
-                    "type": "CollectionProperty",
-                    "value": "TODO"
-                }
-            }
-        },
-        "authManager": null,
-        "autoRedirects": false,
-        "cacheManager": null,
-        "concurrentDwn": false,
-        "concurrentPool": "6",
-        "connectTimeout": 0,
-        "contentEncoding": "",
-        "cookieManager": null,
-        "dnsresolver": null,
-        "doBrowserCompatibleMultipart": false,
-        "doMultipartPost": false,
-        "domain": "",
-        "embeddedUrlRE": "",
-        "enabled": true,
-        "filterClassName": null,
-        "followRedirects": false,
-        "headerManager": null,
-        "httpfileCount": 0,
-        "httpfiles": [],
-        "imageParser": false,
-        "imageParsing": false,
-        "implementation": "",
-        "ipSource": "",
-        "ipSourceType": 0,
-        "logFile": null,
-        "method": "",
-        "monitor": "",
-        "parserClassName": null,
-        "path": "",
-        "port": 80,
-        "portIfSpecified": 0,
-        "portString": "",
-        "postBodyRaw": false,
-        "properties": {
-            "HTTPsampler.Arguments": {
-                "type": "TestElementProperty",
-                "value": "TODO"
-            },
-            "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.testbeans.gui.TestBeanGUI"
-            },
-            "TestElement.name": {
-                "type": "StringProperty",
-                "value": "Access Log Sampler"
-            },
-            "TestElement.test_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.http.sampler.AccessLogSampler"
-            },
-            "domain": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "imageParsing": {
-                "type": "BooleanProperty",
-                "value": false
-            },
-            "logFile": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "parserClassName": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.http.util.accesslog.TCLogParser"
-            },
-            "portString": {
-                "type": "StringProperty",
-                "value": ""
-            }
-        },
-        "protocol": "http",
-        "protocolDefaultPort": true,
-        "proxyHost": "",
-        "proxyPass": "",
-        "proxyPortInt": 0,
-        "proxyUser": "",
-        "queryString": "",
-        "responseTimeout": 0,
-        "sendFileAsPostBody": false,
-        "sendParameterValuesAsPostBody": true,
-        "url": "http:/",
-        "useKeepAlive": false,
-        "useMultipartForPost": false
-    },
-    "type": "sampler"
+	"hashTree": [],
+	"testElement": {
+		"arguments": {
+			"argumentCount": 0,
+			"arguments": {
+				"type": "CollectionProperty",
+				"value": "TODO"
+			},
+			"argumentsAsMap": {
+				
+			},
+			"enabled": true,
+			"properties": {
+				"Arguments.arguments": {
+					"type": "CollectionProperty",
+					"value": "TODO"
+				}
+			}
+		},
+		"authManager": null,
+		"autoRedirects": false,
+		"cacheManager": null,
+		"concurrentDwn": false,
+		"concurrentPool": "6",
+		"connectTimeout": 0,
+		"contentEncoding": "",
+		"cookieManager": null,
+		"dnsresolver": null,
+		"doBrowserCompatibleMultipart": false,
+		"doMultipartPost": false,
+		"domain": "",
+		"embeddedUrlRE": "",
+		"enabled": true,
+		"filterClassName": "",
+		"followRedirects": false,
+		"headerManager": null,
+		"httpfileCount": 0,
+		"httpfiles": [],
+		"imageParser": false,
+		"imageParsing": false,
+		"implementation": "",
+		"ipSource": "",
+		"ipSourceType": 0,
+		"logFile": "",
+		"method": "",
+		"monitor": "",
+		"parserClassName": "org.apache.jmeter.protocol.http.util.accesslog.TCLogParser",
+		"path": "",
+		"port": 80,
+		"portIfSpecified": 80,
+		"postBodyRaw": false,
+		"properties": {
+			"HTTPsampler.Arguments": {
+				"type": "TestElementProperty",
+				"value": "TODO"
+			},
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "Access Log Sampler"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.http.sampler.AccessLogSampler"
+			},
+			"HTTPSampler.domain": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"AccessLogSampler.log_file": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"AccessLogSampler.parser_class_name": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.http.util.accesslog.TCLogParser"
+			},
+			"AccessLogSampler.filter_class_name": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"HTTPSampler.port": {
+				"type": "IntegerProperty",
+				"value": 80
+			}
+		},
+		"protocol": "http",
+		"protocolDefaultPort": true,
+		"proxyHost": "",
+		"proxyPass": "",
+		"proxyPort": 0,
+		"proxyUser": "",
+		"queryString": "",
+		"responseTimeout": 0,
+		"sendFileAsPostBody": false,
+		"sendParameterValuesAsPostBody": true,
+		"url": "http:/",
+		"useKeepAlive": false,
+		"useMultipartForPost": false
+	},
+	"type": "sampler"
 }

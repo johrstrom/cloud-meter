@@ -1,119 +1,111 @@
 {
-    "hashTree": [],
-    "testElement": {
-        "arguments": {
-            "argumentCount": 0,
-            "arguments": {
-                "type": "CollectionProperty",
-                "value": "TODO"
-            },
-            "argumentsAsMap": {},
-            "enabled": true,
-            "properties": {
-                "Arguments.arguments": {
-                    "type": "CollectionProperty",
-                    "value": "TODO"
-                },
-                "TestElement.enabled": {
-                    "type": "StringProperty",
-                    "value": "true"
-                },
-                "TestElement.gui_class": {
-                    "type": "StringProperty",
-                    "value": "org.apache.jmeter.config.gui.ArgumentsPanel"
-                },
-                "TestElement.name": {
-                    "type": "StringProperty",
-                    "value": "User Defined Variables"
-                },
-                "TestElement.test_class": {
-                    "type": "StringProperty",
-                    "value": "org.apache.jmeter.config.Arguments"
-                }
-            }
-        },
-        "checkReturnCode": false,
-        "command": "",
-        "directory": "",
-        "enabled": true,
-        "environmentVariables": {
-            "argumentCount": 0,
-            "arguments": {
-                "type": "CollectionProperty",
-                "value": "TODO"
-            },
-            "argumentsAsMap": {},
-            "enabled": true,
-            "properties": {
-                "Arguments.arguments": {
-                    "type": "CollectionProperty",
-                    "value": "TODO"
-                },
-                "TestElement.enabled": {
-                    "type": "StringProperty",
-                    "value": "true"
-                },
-                "TestElement.gui_class": {
-                    "type": "StringProperty",
-                    "value": "org.apache.jmeter.config.gui.ArgumentsPanel"
-                },
-                "TestElement.name": {
-                    "type": "StringProperty",
-                    "value": "User Defined Variables"
-                },
-                "TestElement.test_class": {
-                    "type": "StringProperty",
-                    "value": "org.apache.jmeter.config.Arguments"
-                }
-            }
-        },
-        "expectedReturnCode": 0,
-        "properties": {
-            "SystemSampler.arguments": {
-                "type": "TestElementProperty",
-                "value": "TODO"
-            },
-            "SystemSampler.checkReturnCode": {
-                "type": "BooleanProperty",
-                "value": false
-            },
-            "SystemSampler.command": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SystemSampler.directory": {
-                "type": "StringProperty",
-                "value": ""
-            },
-            "SystemSampler.environment": {
-                "type": "TestElementProperty",
-                "value": "TODO"
-            },
-            "SystemSampler.expectedReturnCode": {
-                "type": "StringProperty",
-                "value": "0"
-            },
-            "TestElement.enabled": {
-                "type": "StringProperty",
-                "value": "true"
-            },
-            "TestElement.gui_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.system.gui.SystemSamplerGui"
-            },
-            "TestElement.name": {
-                "type": "StringProperty",
-                "value": "OS Process Sampler"
-            },
-            "TestElement.test_class": {
-                "type": "StringProperty",
-                "value": "org.apache.jmeter.protocol.system.SystemSampler"
-            }
-        },
-        "stderr": "",
-        "stdin": "",
-        "stdout": "",
-        "timeout": 0
-    },
-    "type": "sampler"
+	"hashTree": [],
+	"testElement": {
+		"arguments": {
+			"argumentCount": 0,
+			"arguments": {
+				"type": "CollectionProperty",
+				"value": "TODO"
+			},
+			"argumentsAsMap": {
+				
+			},
+			"enabled": true,
+			"properties": {
+				"Arguments.arguments": {
+					"type": "CollectionProperty",
+					"value": "TODO"
+				},
+				"TestElement.enabled": {
+					"type": "Boolean",
+					"value": true
+				},
+				"TestElement.name": {
+					"type": "StringProperty",
+					"value": "User Defined Variables"
+				},
+				"TestElement.test_class": {
+					"type": "StringProperty",
+					"value": "org.apache.jmeter.config.Arguments"
+				}
+			}
+		},
+		"checkReturnCode": false,
+		"command": "",
+		"directory": "",
+		"enabled": true,
+		"environmentVariables": {
+			"argumentCount": 0,
+			"arguments": {
+				"type": "CollectionProperty",
+				"value": "TODO"
+			},
+			"argumentsAsMap": {
+				
+			},
+			"enabled": true,
+			"properties": {
+				"Arguments.arguments": {
+					"type": "CollectionProperty",
+					"value": "TODO"
+				},
+				"TestElement.enabled": {
+					"type": "Boolean",
+					"value": true
+				},
+				"TestElement.name": {
+					"type": "StringProperty",
+					"value": "User Defined Variables"
+				},
+				"TestElement.test_class": {
+					"type": "StringProperty",
+					"value": "org.apache.jmeter.config.Arguments"
+				}
+			}
+		},
+		"expectedReturnCode": 0,
+		"properties": {
+			"SystemSampler.arguments": {
+				"type": "TestElementProperty",
+				"value": "TODO"
+			},
+			"SystemSampler.checkReturnCode": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SystemSampler.command": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SystemSampler.directory": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SystemSampler.environment": {
+				"type": "TestElementProperty",
+				"value": "TODO"
+			},
+			"SystemSampler.expectedReturnCode": {
+				"type": "StringProperty",
+				"value": "0"
+			},
+			"TestElement.enabled": {
+				"type": "Boolean",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "OS Process Sampler"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.system.SystemSampler"
+			}
+		},
+		"stderr": "",
+		"stdin": "",
+		"stdout": "",
+		"timeout": 0
+	},
+	"type": "sampler"
 }

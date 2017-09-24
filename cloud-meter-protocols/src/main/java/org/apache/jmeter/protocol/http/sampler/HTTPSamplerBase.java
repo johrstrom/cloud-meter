@@ -759,7 +759,7 @@ public abstract class HTTPSamplerBase extends AbstractSampler
         return getPropertyAsString(PROXYHOST);
     }
 
-    public int getProxyPortInt() {
+    public int getProxyPort() {
         return getPropertyAsInt(PROXYPORT, 0);
     }
 
