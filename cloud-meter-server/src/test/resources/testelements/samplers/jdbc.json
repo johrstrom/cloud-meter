@@ -5,7 +5,7 @@
         "enabled": true,
         "properties": {
             "TestElement.enabled": {
-                "type": "Boolean",
+                "type": "BooleanProperty",
                 "value": true
             },
             "TestElement.name": {
@@ -16,39 +16,39 @@
                 "type": "StringProperty",
                 "value": "org.apache.jmeter.protocol.jdbc.sampler.JDBCSampler"
             },
-            "dataSource": {
+            "JDBCTestElement.dataSource": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "query": {
+            "JDBCTestElement.query": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "queryArguments": {
+            "JDBCTestElement.queryArguments": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "queryArgumentsTypes": {
+            "JDBCTestElement.queryArgumentsTypes": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "queryTimeout": {
-                "type": "StringProperty",
-                "value": ""
+            "JDBCTestElement.queryTimeout": {
+                "type": "IntegerProperty",
+                "value": 0
             },
-            "queryType": {
+            "JDBCTestElement.queryType": {
                 "type": "StringProperty",
                 "value": "Select Statement"
             },
-            "resultSetHandler": {
+            "JDBCTestElement.resultSetHandler": {
                 "type": "StringProperty",
                 "value": "Store as String"
             },
-            "resultVariable": {
+            "JDBCTestElement.resultVariable": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "variableNames": {
+            "JDBCTestElement.variableNames": {
                 "type": "StringProperty",
                 "value": ""
             }
@@ -57,8 +57,8 @@
         "queryArguments": "",
         "queryArgumentsTypes": "",
         "queryTimeout": 0,
-        "queryType": "",
-        "resultSetHandler": "",
+        "queryType": "Select Statement",
+        "resultSetHandler": "Store as String",
         "resultVariable": "",
         "variableNames": ""
     },

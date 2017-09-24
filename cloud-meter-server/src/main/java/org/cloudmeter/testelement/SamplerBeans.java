@@ -9,6 +9,7 @@ import org.apache.jmeter.sampler.model.*;
 import org.apache.jmeter.sampler.*;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.java.sampler.*;
+import org.apache.jmeter.protocol.jdbc.sampler.*;
 
 @Component
 public class SamplerBeans {
@@ -66,6 +67,17 @@ public class SamplerBeans {
 	@Autowired
 	public JavaSampler JavaSampler(JavaSamplerInitializer initer) {
 		return (JavaSampler) initer.initilizeElement();
+	}
+	
+	@Bean
+	public JDBCSamplerInitializer JDBCSamplerInitializer() {
+		return new JDBCSamplerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public JDBCSampler JDBCSampler(JDBCSamplerInitializer initer) {
+		return (JDBCSampler) initer.initilizeElement();
 	}
 	
 }

@@ -109,14 +109,14 @@ public class ServerUtils {
     	map.put("debug-sampler", "DebugSampler");
     	map.put("http-sampler", "HTTPSamplerProxy");
     	map.put("java-sampler", "JavaSampler");
-    	map.put("jdbc-sampler", "JDBCSampler.json");
-    	map.put("ldap-extended-sampler", "LDAPSampler.json");
-    	map.put("ldap-sampler", "LDAP.json");
-    	map.put("mail-reader-sampler", "MailReader.json");
-   		map.put("os-process-sampler", "OSProcessSampler.json");
-   		map.put("smtp-sampler", "SMTP.json");
-   		map.put("tcp-sampler", "TCPSampler.json");
-   		map.put("test-action-sampler", "TestActionSampler.json");
+    	map.put("jdbc-sampler", "JDBCSampler");
+    	map.put("ldap-extended-sampler", "LDAPSampler");
+    	map.put("ldap-sampler", "LDAP");
+    	map.put("mail-reader-sampler", "MailReader");
+   		map.put("os-process-sampler", "OSProcessSampler");
+   		map.put("smtp-sampler", "SMTPSampler");
+   		map.put("tcp-sampler", "TCPSampler");
+   		map.put("test-action-sampler", "TestActionSampler");
     	
 		return map;
 	}

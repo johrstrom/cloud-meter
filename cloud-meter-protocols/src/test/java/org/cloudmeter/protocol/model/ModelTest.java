@@ -12,6 +12,7 @@ import org.apache.jmeter.protocol.java.test.JavaTest;
 import org.apache.jmeter.protocol.jdbc.AbstractJDBCTestElement;
 import org.apache.jmeter.protocol.jdbc.config.DataSourceElement;
 import org.apache.jmeter.protocol.jdbc.processor.JDBCPreProcessor;
+import org.apache.jmeter.protocol.jdbc.sampler.JDBCSampler;
 import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.tcp.sampler.TCPSampler;
 import org.cloudmeter.test.ModelTester;
@@ -190,10 +191,16 @@ public class ModelTest {
 		Assert.assertSame(args.get("SamplerData"), "");
 		Assert.assertSame(args.get("Sleep_Mask"), "0xFF");
 		Assert.assertSame(args.get("Sleep_Time"), "100");
-		Assert.assertSame(args.get("Status"), "OK");
+		Assert.assertSame(args.get("Status"), "OK");		
+	}
+	
+	@Test
+	public void jdbcSamplerTest() {
+		JDBCSamplerInitializer initer = new JDBCSamplerInitializer();
+		JDBCSampler ele = (JDBCSampler) initer.initilizeElement();
 		
-		
-		
+		ModelTester.testBasicFields("JDBC Request", ele);
+		this.baseJDBCAssertions(ele);
 	}
 	
 	
