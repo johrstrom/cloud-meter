@@ -2,10 +2,11 @@
 
 if [[ -n $1 ]]; then
 	#cd ../cloud-meter-core
-	cd ../cloud-meter-protocols/
+	#cd ../cloud-meter-protocols/
+	cd ../cloud-meter-components/
 	mvn clean install
 	cd ../cloud-meter-server
 fi
 
-mvn clean test -Dtest=NewElementTest#accessLogSamplerTest
+mvn clean test -Dtest=NewElementTest#debugSamplerTest
 

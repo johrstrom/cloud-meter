@@ -383,4 +383,5 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
             ((ThreadListener)filter).threadFinished();
         }
     }
+
 }

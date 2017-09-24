@@ -47,11 +47,9 @@ public class DebugSampler extends AbstractSampler implements TestBean {
     private static final Set<String> APPLIABLE_CONFIG_CLASSES = new HashSet<>(
             Arrays.asList("org.apache.jmeter.config.gui.SimpleConfigGui"));
 
-    private boolean displayJMeterVariables;
-
-    private boolean displayJMeterProperties;
-
-    private boolean displaySystemProperties;
+    private static final String DISPLAY_JMETER_VARIABLES = "DebugSampler.display_jmeter_variables";
+    private static final String DISPLAY_JMETER_PROPERTIES = "DebugSampler.display_jmeter_properties";
+    private static final String DISPLAY_SYSTEM_PROPERTIES = "DebugSampler.display_system_properties";
 
     @Override
     public SampleResult sample(Entry e) {
@@ -110,27 +108,27 @@ public class DebugSampler extends AbstractSampler implements TestBean {
     }
 
     public boolean isDisplayJMeterVariables() {
-        return displayJMeterVariables;
+        return this.getPropertyAsBoolean(DISPLAY_JMETER_VARIABLES);
     }
 
     public void setDisplayJMeterVariables(boolean displayJMeterVariables) {
-        this.displayJMeterVariables = displayJMeterVariables;
+       this.setProperty(DISPLAY_JMETER_VARIABLES, displayJMeterVariables);
     }
 
     public boolean isDisplayJMeterProperties() {
-        return displayJMeterProperties;
+        return this.getPropertyAsBoolean(DISPLAY_JMETER_PROPERTIES);
     }
 
     public void setDisplayJMeterProperties(boolean displayJMeterPropterties) {
-        this.displayJMeterProperties = displayJMeterPropterties;
+        this.setProperty(DISPLAY_JMETER_PROPERTIES, displayJMeterPropterties);
     }
 
     public boolean isDisplaySystemProperties() {
-        return displaySystemProperties;
+        return this.getPropertyAsBoolean(DISPLAY_SYSTEM_PROPERTIES);
     }
 
     public void setDisplaySystemProperties(boolean displaySystemProperties) {
-        this.displaySystemProperties = displaySystemProperties;
+        this.setProperty(DISPLAY_SYSTEM_PROPERTIES, displaySystemProperties);
     }
 
     /**

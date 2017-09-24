@@ -310,12 +310,12 @@ public class NewElementTest {
 	}
 	
 	@Test
-	public void AJPSamplerTest() {
+	public void ajpSamplerTest() {
 		utilities.validateFileAgainstAPI("ajp-sampler", SAMPLER_BASE + "ajp.json");
 	}
 	
 	@Test
-	public void DebugSamplerTest() {
+	public void debugSamplerTest() {
 		utilities.validateFileAgainstAPI("debug-sampler", SAMPLER_BASE + "debug.json");
 	}
 	

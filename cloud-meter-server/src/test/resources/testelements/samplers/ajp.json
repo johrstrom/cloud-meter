@@ -17,7 +17,7 @@
 					"value": "TODO"
 				},
 				"TestElement.enabled": {
-					"type": "Boolean",
+					"type": "BooleanProperty",
 					"value": true
 				},
 				"TestElement.name": {
@@ -56,7 +56,7 @@
 		"monitor": "",
 		"path": "",
 		"port": 80,
-		"portIfSpecified": 0,
+		"portIfSpecified": 80,
 		"postBodyRaw": false,
 		"properties": {
 			"HTTPSampler.DO_MULTIPART_POST": {
@@ -92,8 +92,8 @@
 				"value": ""
 			},
 			"HTTPSampler.port": {
-				"type": "StringProperty",
-				"value": ""
+				"type": "IntegerProperty",
+				"value": 80
 			},
 			"HTTPSampler.protocol": {
 				"type": "StringProperty",
@@ -108,12 +108,8 @@
 				"value": "TODO"
 			},
 			"TestElement.enabled": {
-				"type": "StringProperty",
-				"value": "true"
-			},
-			"TestElement.gui_class": {
-				"type": "StringProperty",
-				"value": "org.apache.jmeter.protocol.http.control.gui.AjpSamplerGui"
+				"type": "BooleanProperty",
+				"value": true
 			},
 			"TestElement.name": {
 				"type": "StringProperty",
@@ -128,7 +124,7 @@
 		"protocolDefaultPort": true,
 		"proxyHost": "",
 		"proxyPass": "",
-		"proxyPortInt": 0,
+		"proxyPort": 0,
 		"proxyUser": "",
 		"queryString": "",
 		"responseTimeout": 0,

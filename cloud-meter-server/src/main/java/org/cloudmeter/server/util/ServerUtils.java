@@ -105,7 +105,7 @@ public class ServerUtils {
 		HashMap<String, String>  map = new HashMap<>();
     	
     	map.put("access-log-sampler","AccessLogSampler");
-    	map.put("ajp-sampler", "AJPSampler");
+    	map.put("ajp-sampler", "AjpSampler");
     	map.put("debug-sampler", "DebugSampler");
     	map.put("http-sampler", "HTTPSamplerProxy");
     	map.put("java-sampler", "JavaSampler");

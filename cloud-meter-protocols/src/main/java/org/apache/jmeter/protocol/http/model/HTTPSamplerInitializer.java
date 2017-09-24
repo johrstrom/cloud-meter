@@ -40,24 +40,4 @@ public class HTTPSamplerInitializer extends AbstractInitializer {
 	}
 	
 
-//    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
-//    <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-//      <collectionProp name="Arguments.arguments"/>
-//    </elementProp>
-//    <stringProp name="HTTPSampler.domain"></stringProp>
-//    <stringProp name="HTTPSampler.port"></stringProp>
-//    <stringProp name="HTTPSampler.protocol"></stringProp>
-//    <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-//    <stringProp name="HTTPSampler.path"></stringProp>
-//    <stringProp name="HTTPSampler.method">GET</stringProp>
-//    <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-//    <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-//    <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-//    <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-//    <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-//    <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-//    <stringProp name="HTTPSampler.response_timeout"></stringProp>
-//  </HTTPSamplerProxy>
-
-
 }
