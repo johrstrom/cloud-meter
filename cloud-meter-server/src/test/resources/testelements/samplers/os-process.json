@@ -86,11 +86,11 @@
 				"value": "TODO"
 			},
 			"SystemSampler.expectedReturnCode": {
-				"type": "StringProperty",
-				"value": "0"
+				"type": "IntegerProperty",
+				"value": 0
 			},
 			"TestElement.enabled": {
-				"type": "Boolean",
+				"type": "BooleanProperty",
 				"value": true
 			},
 			"TestElement.name": {

@@ -271,7 +271,7 @@ public class SystemSampler extends AbstractSampler {
      * @param code expected return code
      */
     public void setExpectedReturnCode(int code) {
-        setProperty(EXPECTED_RETURN_CODE, Integer.toString(code));
+        setProperty(EXPECTED_RETURN_CODE, code);
     }
     
     /**
