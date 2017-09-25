@@ -41,7 +41,7 @@ import javax.mail.internet.ContentType;
 import javax.mail.internet.InternetAddress;
 
 import org.apache.jmeter.config.ConfigTestElement;
-import org.apache.jmeter.protocol.smtp.sampler.gui.SecuritySettingsPanel;
+import org.apache.jmeter.protocol.smtp.sampler.SecuritySettings;
 import org.apache.jmeter.protocol.smtp.sampler.protocol.SendMailCommand;
 import org.apache.jmeter.protocol.smtp.sampler.tools.CounterOutputStream;
 import org.apache.jmeter.samplers.AbstractSampler;
@@ -126,17 +126,17 @@ public class SmtpSampler extends AbstractSampler {
         instance.setConnectionTimeOut(getPropertyAsString(SmtpSampler.SERVER_CONNECTION_TIMEOUT));
         instance.setTimeOut(getPropertyAsString(SmtpSampler.SERVER_TIMEOUT));
 
-        instance.setUseSSL(getPropertyAsBoolean(SecuritySettingsPanel.USE_SSL));
-        instance.setUseStartTLS(getPropertyAsBoolean(SecuritySettingsPanel.USE_STARTTLS));
-        instance.setTrustAllCerts(getPropertyAsBoolean(SecuritySettingsPanel.SSL_TRUST_ALL_CERTS));
-        instance.setEnforceStartTLS(getPropertyAsBoolean(SecuritySettingsPanel.ENFORCE_STARTTLS));
+        instance.setUseSSL(getPropertyAsBoolean(SecuritySettings.USE_SSL));
+        instance.setUseStartTLS(getPropertyAsBoolean(SecuritySettings.USE_STARTTLS));
+        instance.setTrustAllCerts(getPropertyAsBoolean(SecuritySettings.SSL_TRUST_ALL_CERTS));
+        instance.setEnforceStartTLS(getPropertyAsBoolean(SecuritySettings.ENFORCE_STARTTLS));
 
         instance.setUseAuthentication(getPropertyAsBoolean(USE_AUTH));
         instance.setUsername(getPropertyAsString(USERNAME));
         instance.setPassword(getPropertyAsString(PASSWORD));
 
-        instance.setUseLocalTrustStore(getPropertyAsBoolean(SecuritySettingsPanel.USE_LOCAL_TRUSTSTORE));
-        instance.setTrustStoreToUse(getPropertyAsString(SecuritySettingsPanel.TRUSTSTORE_TO_USE));
+        instance.setUseLocalTrustStore(getPropertyAsBoolean(SecuritySettings.USE_LOCAL_TRUSTSTORE));
+        instance.setTrustStoreToUse(getPropertyAsString(SecuritySettings.TRUSTSTORE_TO_USE));
         instance.setEmlMessage(getPropertyAsString(EML_MESSAGE_TO_SEND));
         instance.setUseEmlMessage(getPropertyAsBoolean(USE_EML));
 

@@ -11,6 +11,7 @@ import org.apache.jmeter.protocol.model.*;
 import org.apache.jmeter.protocol.java.sampler.*;
 import org.apache.jmeter.protocol.jdbc.sampler.*;
 import org.apache.jmeter.protocol.ldap.sampler.*;
+import org.apache.jmeter.protocol.mail.sampler.*;
 
 @Component
 public class SamplerBeans {
@@ -101,6 +102,17 @@ public class SamplerBeans {
 	@Autowired
 	public LDAPSampler LDAPSampler(LDAPSamplerInitializer initer) {
 		return (LDAPSampler) initer.initilizeElement();
+	}
+	
+	@Bean
+	public MailReaderSamplerInitializer MailReaderSamplerInitializer() {
+		return new MailReaderSamplerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public MailReaderSampler MailReaderSampler(MailReaderSamplerInitializer initer) {
+		return (MailReaderSampler) initer.initilizeElement();
 	}
 	
 }

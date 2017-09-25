@@ -7,36 +7,35 @@
 		"folder": "INBOX",
 		"headerOnly": false,
 		"numMessages": -1,
-		"numMessagesString": "-1",
 		"password": "",
 		"port": "",
 		"properties": {
-			"SMTPSampler.enforceStartTLS": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.enforceStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.trustAllCerts": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.trustAllCerts": {
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.trustStoreToUse": {
+			"SecuritySettings.trustStoreToUse": {
 				"type": "StringProperty",
 				"value": ""
 			},
-			"SMTPSampler.useLocalTrustStore": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.useLocalTrustStore": {
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.useSSL": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.useSSL": {
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.useStartTLS": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.useStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
 			},
 			"TestElement.enabled": {
-				"type": "Boolean",
+				"type": "BooleanProperty",
 				"value": true
 			},
 			"TestElement.name": {
@@ -47,31 +46,31 @@
 				"type": "StringProperty",
 				"value": "org.apache.jmeter.protocol.mail.sampler.MailReaderSampler"
 			},
-			"delete": {
+			"MailReaderSampler.delete": {
 				"type": "BooleanProperty",
 				"value": false
 			},
-			"folder": {
+			"MailReaderSampler.folder": {
 				"type": "StringProperty",
 				"value": "INBOX"
 			},
-			"host": {
+			"MailReaderSampler.host": {
 				"type": "StringProperty",
 				"value": ""
 			},
-			"host_type": {
+			"MailReaderSampler.host_type": {
 				"type": "StringProperty",
 				"value": "pop3"
 			},
-			"num_messages": {
+			"MailReaderSampler.num_messages": {
 				"type": "IntegerProperty",
 				"value": -1
 			},
-			"password": {
+			"MailReaderSampler.password": {
 				"type": "StringProperty",
 				"value": ""
 			},
-			"username": {
+			"MailReaderSampler.username": {
 				"type": "StringProperty",
 				"value": ""
 			}
