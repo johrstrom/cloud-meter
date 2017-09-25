@@ -42,7 +42,7 @@ import javax.mail.internet.MimeUtility;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.jmeter.config.ConfigTestElement;
-import org.apache.jmeter.protocol.smtp.sampler.gui.SecuritySettingsPanel;
+import org.apache.jmeter.protocol.smtp.sampler.SecuritySettings;
 import org.apache.jmeter.protocol.smtp.sampler.protocol.LocalTrustStoreSSLSocketFactory;
 import org.apache.jmeter.protocol.smtp.sampler.protocol.TrustAllSSLSocketFactory;
 import org.apache.jmeter.samplers.AbstractSampler;
@@ -69,17 +69,17 @@ public class MailReaderSampler extends AbstractSampler implements Interruptible 
             Arrays.asList("org.apache.jmeter.config.gui.SimpleConfigGui"));
 
     //+ JMX attributes - do not change the values
-    private static final String SERVER_TYPE = "host_type"; // $NON-NLS-1$
-    private static final String SERVER = "host"; // $NON-NLS-1$
-    private static final String PORT = "port"; // $NON-NLS-1$
-    private static final String USERNAME = "username"; // $NON-NLS-1$
-    private static final String PASSWORD = "password"; // $NON-NLS-1$
-    private static final String FOLDER = "folder"; // $NON-NLS-1$
-    private static final String DELETE = "delete"; // $NON-NLS-1$
-    private static final String NUM_MESSAGES = "num_messages"; // $NON-NLS-1$
+    private static final String SERVER_TYPE = "MailReaderSampler.host_type"; // $NON-NLS-1$
+    private static final String SERVER = "MailReaderSampler.host"; // $NON-NLS-1$
+    private static final String PORT = "MailReaderSampler.port"; // $NON-NLS-1$
+    private static final String USERNAME = "MailReaderSampler.username"; // $NON-NLS-1$
+    private static final String PASSWORD = "MailReaderSampler.password"; // $NON-NLS-1$
+    private static final String FOLDER = "MailReaderSampler.folder"; // $NON-NLS-1$
+    private static final String DELETE = "MailReaderSampler.delete"; // $NON-NLS-1$
+    private static final String NUM_MESSAGES = "MailReaderSampler.num_messages"; // $NON-NLS-1$
     private static final String NEW_LINE = "\n"; // $NON-NLS-1$
-    private static final String STORE_MIME_MESSAGE = "storeMimeMessage"; // $NON-NLS-1$
-    private static final String HEADER_ONLY = "headerOnly"; // $NON-NLS-1$
+    private static final String STORE_MIME_MESSAGE = "MailReaderSampler.storeMimeMessage"; // $NON-NLS-1$
+    private static final String HEADER_ONLY = "MailReaderSampler.headerOnly"; // $NON-NLS-1$
     private static final boolean HEADER_ONLY_DEFAULT = false;
     //-
 
@@ -95,31 +95,31 @@ public class MailReaderSampler extends AbstractSampler implements Interruptible 
     private static final String TRUE = "true";  // $NON-NLS-1$
 
     public boolean isUseLocalTrustStore() {
-        return getPropertyAsBoolean(SecuritySettingsPanel.USE_LOCAL_TRUSTSTORE);
+        return getPropertyAsBoolean(SecuritySettings.USE_LOCAL_TRUSTSTORE);
     }
 
     public String getTrustStoreToUse() {
-        return getPropertyAsString(SecuritySettingsPanel.TRUSTSTORE_TO_USE);
+        return getPropertyAsString(SecuritySettings.TRUSTSTORE_TO_USE);
     }
 
 
     public boolean isUseSSL() {
-        return getPropertyAsBoolean(SecuritySettingsPanel.USE_SSL);
+        return getPropertyAsBoolean(SecuritySettings.USE_SSL);
     }
 
 
     public boolean isUseStartTLS() {
-        return getPropertyAsBoolean(SecuritySettingsPanel.USE_STARTTLS);
+        return getPropertyAsBoolean(SecuritySettings.USE_STARTTLS);
     }
 
 
     public boolean isTrustAllCerts() {
-        return getPropertyAsBoolean(SecuritySettingsPanel.SSL_TRUST_ALL_CERTS);
+        return getPropertyAsBoolean(SecuritySettings.SSL_TRUST_ALL_CERTS);
     }
 
 
     public boolean isEnforceStartTLS() {
-        return getPropertyAsBoolean(SecuritySettingsPanel.ENFORCE_STARTTLS);
+        return getPropertyAsBoolean(SecuritySettings.ENFORCE_STARTTLS);
 
     }
 
@@ -502,14 +502,6 @@ public class MailReaderSampler extends AbstractSampler implements Interruptible 
      */
     public int getNumMessages() {
         return getPropertyAsInt(NUM_MESSAGES);
-    }
-
-    /**
-     * @return The number of messages to retrieve from the mail server.
-     *         -1 denotes get all messages.
-     */
-    public String getNumMessagesString() {
-        return getPropertyAsString(NUM_MESSAGES);
     }
 
     /**

@@ -6,6 +6,7 @@ import org.apache.jmeter.protocol.http.modifier.AnchorModifier;
 import org.apache.jmeter.protocol.http.modifier.RegExUserParameters;
 import org.apache.jmeter.protocol.http.modifier.URLRewritingModifier;
 import org.apache.jmeter.protocol.http.sampler.*;
+import org.apache.jmeter.protocol.http.util.accesslog.TCLogParser;
 import org.cloudmeter.test.ModelTester;
 import org.junit.Assert;
 import org.junit.Test;
@@ -107,6 +108,42 @@ public class HTTPModelTest {
 		Assert.assertFalse(ele.isPathExtension());
 		Assert.assertFalse(ele.isPathExtensionNoEquals());
 		Assert.assertFalse(ele.isPathExtensionNoQuestionmark());
+	}
+	
+	@Test
+	public void accessLogSamplerTest() {
+		AccessLogSamplerInitializer initer = new AccessLogSamplerInitializer();
+		AccessLogSampler ele = (AccessLogSampler) initer.initilizeElement();
+		
+		ModelTester.testBasicFields("Access Log Sampler", ele);
+		
+		Assert.assertSame("", ele.getDomain());
+		Assert.assertFalse(ele.isImageParser());
+		Assert.assertFalse(ele.isImageParsing());
+		Assert.assertSame("", ele.getLogFile());
+		Assert.assertSame(TCLogParser.class.getName(), ele.getParserClassName());
+		Assert.assertTrue(80 == ele.getPort());
+		Assert.assertSame("", ele.getFilterClassName());
+	}
+	
+	public void ajpSamplerTest() {
+		AjpSamplerInitializer initer = new AjpSamplerInitializer();
+		AjpSampler ele = (AjpSampler) initer.initilizeElement();
+		
+		ModelTester.testBasicFields("AJP/1.3 Sampler", ele);
+		
+		Assert.assertTrue(ele.getFollowRedirects());
+		Assert.assertSame(HTTPSamplerBase.GET, ele.getMethod());
+		Assert.assertFalse(ele.getDoMultipartPost());
+		Assert.assertSame("", ele.getContentEncoding());
+		Assert.assertSame("", ele.getDomain());
+		Assert.assertSame("", ele.getEmbeddedUrlRE());
+		Assert.assertSame("", ele.getPath());
+		Assert.assertFalse(ele.getAutoRedirects());
+		Assert.assertTrue(ele.getFollowRedirects());
+		Assert.assertTrue(ele.getUseKeepAlive());
+		Assert.assertTrue(80 == ele.getPort());
+		Assert.assertSame("", ele.getProtocol());
 	}
 	
 }

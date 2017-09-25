@@ -1,0 +1,89 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"deleteMessages": false,
+		"enabled": true,
+		"enforceStartTLS": false,
+		"folder": "INBOX",
+		"headerOnly": false,
+		"numMessages": -1,
+		"password": "",
+		"port": "",
+		"properties": {
+			"SecuritySettings.enforceStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.trustAllCerts": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.trustStoreToUse": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SecuritySettings.useLocalTrustStore": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.useSSL": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.useStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "Mail Reader Sampler"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.mail.sampler.MailReaderSampler"
+			},
+			"MailReaderSampler.delete": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"MailReaderSampler.folder": {
+				"type": "StringProperty",
+				"value": "INBOX"
+			},
+			"MailReaderSampler.host": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"MailReaderSampler.host_type": {
+				"type": "StringProperty",
+				"value": "pop3"
+			},
+			"MailReaderSampler.num_messages": {
+				"type": "IntegerProperty",
+				"value": -1
+			},
+			"MailReaderSampler.password": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"MailReaderSampler.username": {
+				"type": "StringProperty",
+				"value": ""
+			}
+		},
+		"server": "",
+		"serverType": "pop3",
+		"storeMimeMessage": false,
+		"trustAllCerts": false,
+		"trustStoreToUse": "",
+		"useLocalTrustStore": false,
+		"useSSL": false,
+		"useStartTLS": false,
+		"userName": ""
+	},
+	"type": "sampler"
+}

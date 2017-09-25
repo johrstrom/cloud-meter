@@ -130,7 +130,7 @@
         "protocolDefaultPort": true,
         "proxyHost": "",
         "proxyPass": "",
-        "proxyPortInt": 0,
+        "proxyPort": 0,
         "proxyUser": "",
         "queryString": "",
         "responseTimeout": 0,

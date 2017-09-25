@@ -1,8 +1,6 @@
 package org.apache.jmeter.timers;
 
-import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.timers.model.*;
-import org.apache.jmeter.util.ScriptingTestElement;
 import org.cloudmeter.test.ModelTester;
 import org.junit.Assert;
 import org.junit.Test;

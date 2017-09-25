@@ -15,7 +15,7 @@
                 "type": "StringProperty",
                 "value": "org.apache.jmeter.config.ConfigTestElement"
             },
-            "arguments": {
+            "Arguments.arguments": {
                 "type": "CollectionProperty",
                 "value": "TODO"
             },

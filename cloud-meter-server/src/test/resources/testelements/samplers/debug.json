@@ -1,0 +1,36 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"displayJMeterProperties": false,
+		"displayJMeterVariables": true,
+		"displaySystemProperties": false,
+		"enabled": true,
+		"properties": {
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "Debug Sampler"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.sampler.DebugSampler"
+			},
+			"DebugSampler.display_jmeter_properties": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"DebugSampler.display_jmeter_variables": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"DebugSampler.display_system_properties": {
+				"type": "BooleanProperty",
+				"value": false
+			}
+		}
+	},
+	"type": "sampler"
+}

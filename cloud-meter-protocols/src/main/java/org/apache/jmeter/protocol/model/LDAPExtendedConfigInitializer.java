@@ -1,6 +1,7 @@
 package org.apache.jmeter.protocol.model;
 
 import org.apache.jmeter.config.ConfigTestElement;
+import org.apache.jmeter.protocol.ldap.sampler.LDAPExtSampler;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.model.AbstractInitializer;
 
@@ -11,24 +12,24 @@ public class LDAPExtendedConfigInitializer extends AbstractInitializer {
 		ConfigTestElement ele = new ConfigTestElement();
 		this.baseElement(ele, "LDAP Extended Request Defaults");
 		
-		ele.setProperty("attributes", EMPTY_STRING);
-		ele.setProperty("comparedn", EMPTY_STRING);
-		ele.setProperty("comparefilt", EMPTY_STRING);
-		ele.setProperty("connection_timeout", EMPTY_STRING);
-		ele.setProperty("countlimit", EMPTY_STRING);
-		ele.setProperty("deref_aliases", false);
-		ele.setProperty("modddn", EMPTY_STRING);
-		ele.setProperty("newdn", EMPTY_STRING);
-		ele.setProperty("parseflag", false);
-		ele.setProperty("port", EMPTY_STRING);
-		ele.setProperty("return_object", false);
-		ele.setProperty("rootdn", EMPTY_STRING);
-		ele.setProperty("scope", 2);
-		ele.setProperty("secure", false);
-		ele.setProperty("servername", EMPTY_STRING);
-		ele.setProperty("timelimit", EMPTY_STRING);
-		ele.setProperty("user_dn", EMPTY_STRING);
-		ele.setProperty("user_pw", EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.ATTRIBS, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.COMPAREDN, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.COMPAREFILT, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.CONNTO, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.COUNTLIM, 0l);
+		ele.setProperty(LDAPExtSampler.DEREF, false);
+		ele.setProperty(LDAPExtSampler.MODDDN, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.NEWDN, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.PARSEFLAG, false);
+		ele.setProperty(LDAPExtSampler.PORT, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.RETOBJ, false);
+		ele.setProperty(LDAPExtSampler.ROOTDN, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.SCOPE, 2);
+		ele.setProperty(LDAPExtSampler.SECURE, false);
+		ele.setProperty(LDAPExtSampler.SERVERNAME, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.TIMELIM, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.USERDN, EMPTY_STRING);
+		ele.setProperty(LDAPExtSampler.USERPW, EMPTY_STRING);
 		
 		return ele;
 	}

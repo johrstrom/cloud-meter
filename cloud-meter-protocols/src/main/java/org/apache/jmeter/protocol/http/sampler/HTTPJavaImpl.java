@@ -142,7 +142,7 @@ public class HTTPJavaImpl extends HTTPAbstractImpl {
 
         final HttpURLConnection conn;
         final String proxyHost = getProxyHost();
-        final int proxyPort = getProxyPortInt();
+        final int proxyPort = getProxyPort();
         if (proxyHost.length() > 0 && proxyPort > 0){
             Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
             //TODO - how to define proxy authentication for a single connection?

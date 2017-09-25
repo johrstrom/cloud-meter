@@ -12,6 +12,16 @@ import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
+/**
+ * 
+ * Validate the GET /api/v1/testelement API for all test elements. 
+ * This class tests only happy path for the api. Given correct
+ * parameters, validate the response against a file in 
+ * src/test/resources/testelements. 
+ * 
+ * @author Jeff Ohrstrom
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {CloudMeterApp.class})
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -34,11 +44,6 @@ public class NewElementTest {
 	@Before 
 	public void setup() {
 		utilities.setPort(port);
-	}
-	
-	@Test
-	public void HTTPSamplerTest() {
-		utilities.validateFileAgainstAPI("http-sampler", SAMPLER_BASE + "http.json");
 	}
 	
 	@Test
@@ -296,7 +301,72 @@ public class NewElementTest {
 	/**
 	 * Pre Processors end
 	 * 
-	 * 
+	 * Sampler begin
 	 */
+	
+	@Test
+	public void accessLogSamplerTest() {
+		utilities.validateFileAgainstAPI("access-log-sampler", SAMPLER_BASE + "access-log.json");
+	}
+	
+	@Test
+	public void ajpSamplerTest() {
+		utilities.validateFileAgainstAPI("ajp-sampler", SAMPLER_BASE + "ajp.json");
+	}
+	
+	@Test
+	public void debugSamplerTest() {
+		utilities.validateFileAgainstAPI("debug-sampler", SAMPLER_BASE + "debug.json");
+	}
+	
+	@Test
+	public void httpSamplerTest() {
+		utilities.validateFileAgainstAPI("http-sampler", SAMPLER_BASE + "http.json");
+	}
+	
+	@Test
+	public void javaSamplerTest() {
+		utilities.validateFileAgainstAPI("java-sampler", SAMPLER_BASE + "java.json");
+	}
+	
+	@Test
+	public void jdbcSamplerTest() {
+		utilities.validateFileAgainstAPI("jdbc-sampler", SAMPLER_BASE + "jdbc.json");
+	}
+	
+	@Test
+	public void ldapExtendedSamplerTest() {
+		utilities.validateFileAgainstAPI("ldap-extended-sampler", SAMPLER_BASE + "ldap-extended.json");
+	}
+	
+	@Test
+	public void ldapSamplerTest() {
+		utilities.validateFileAgainstAPI("ldap-sampler", SAMPLER_BASE + "ldap.json");
+	}
+	
+	@Test
+	public void mailReaderSamplerTest() {
+		utilities.validateFileAgainstAPI("mail-reader-sampler", SAMPLER_BASE + "mail-reader.json");
+	}
+	
+	@Test
+	public void osProcessSamplerTest() {
+		utilities.validateFileAgainstAPI("os-process-sampler", SAMPLER_BASE + "os-process.json");
+	}
+	
+	@Test
+	public void smtpSamplerTest() {
+		utilities.validateFileAgainstAPI("smtp-sampler", SAMPLER_BASE + "smtp.json");
+	}
+	
+	@Test
+	public void tcpSamplerTest() {
+		utilities.validateFileAgainstAPI("tcp-sampler", SAMPLER_BASE + "tcp.json");
+	}
+	
+	@Test
+	public void testActionTest() {
+		utilities.validateFileAgainstAPI("test-action", SAMPLER_BASE + "test-action.json");
+	}
 	
 }

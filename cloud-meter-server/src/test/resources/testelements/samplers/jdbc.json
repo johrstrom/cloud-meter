@@ -1,0 +1,66 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "dataSource": "",
+        "enabled": true,
+        "properties": {
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "JDBC Request"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.jdbc.sampler.JDBCSampler"
+            },
+            "JDBCTestElement.dataSource": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "JDBCTestElement.query": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "JDBCTestElement.queryArguments": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "JDBCTestElement.queryArgumentsTypes": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "JDBCTestElement.queryTimeout": {
+                "type": "IntegerProperty",
+                "value": 0
+            },
+            "JDBCTestElement.queryType": {
+                "type": "StringProperty",
+                "value": "Select Statement"
+            },
+            "JDBCTestElement.resultSetHandler": {
+                "type": "StringProperty",
+                "value": "Store as String"
+            },
+            "JDBCTestElement.resultVariable": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "JDBCTestElement.variableNames": {
+                "type": "StringProperty",
+                "value": ""
+            }
+        },
+        "query": "",
+        "queryArguments": "",
+        "queryArgumentsTypes": "",
+        "queryTimeout": 0,
+        "queryType": "Select Statement",
+        "resultSetHandler": "Store as String",
+        "resultVariable": "",
+        "variableNames": ""
+    },
+    "type": "unknown"
+}

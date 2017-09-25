@@ -276,8 +276,8 @@ public abstract class HTTPAbstractImpl implements Interruptible, HTTPConstantsIn
      *
      * @return the configured port to use for the proxy
      */
-    protected int getProxyPortInt() {
-        return testElement.getProxyPortInt();
+    protected int getProxyPort() {
+        return testElement.getProxyPort();
     }
 
     /**

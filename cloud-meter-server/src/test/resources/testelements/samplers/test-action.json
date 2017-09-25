@@ -1,0 +1,36 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "action": 1,
+        "durationAsString": "",
+        "enabled": true,
+        "properties": {
+            "ActionProcessor.action": {
+                "type": "IntegerProperty",
+                "value": 1
+            },
+            "ActionProcessor.duration": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "ActionProcessor.target": {
+                "type": "IntegerProperty",
+                "value": 0
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "Test Action"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.sampler.TestAction"
+            }
+        },
+        "target": 0
+    },
+    "type": "sampler"
+}

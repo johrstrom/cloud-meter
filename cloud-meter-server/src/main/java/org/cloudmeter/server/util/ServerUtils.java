@@ -14,12 +14,12 @@ public class ServerUtils {
     	HashMap<String, String>  map = new HashMap<>();
     	
     	map.put("thread-group", "ThreadGroup");
-    	map.put("http-sampler", "HTTPSamplerProxy");
 
     	map.putAll(this.controllerElements());
     	map.putAll(this.configElements());
     	map.putAll(this.timerElements());
     	map.putAll(this.preProcessorElements());
+    	map.putAll(this.samplerElements());
     	
     	return map;
     }
@@ -98,6 +98,26 @@ public class ServerUtils {
 		map.put("url-rewrite-pre-processor", "URLRewritingModifier");
 		map.put("user-parameters-pre-processor", "UserParameters");
 				
+		return map;
+	}
+	
+	private  Map<String, String> samplerElements() {
+		HashMap<String, String>  map = new HashMap<>();
+    	
+    	map.put("access-log-sampler","AccessLogSampler");
+    	map.put("ajp-sampler", "AjpSampler");
+    	map.put("debug-sampler", "DebugSampler");
+    	map.put("http-sampler", "HTTPSamplerProxy");
+    	map.put("java-sampler", "JavaSampler");
+    	map.put("jdbc-sampler", "JDBCSampler");
+    	map.put("ldap-extended-sampler", "LDAPExtSampler");
+    	map.put("ldap-sampler", "LDAPSampler");
+    	map.put("mail-reader-sampler", "MailReaderSampler");
+   		map.put("os-process-sampler", "SystemSampler");
+   		map.put("smtp-sampler", "SmtpSampler");
+   		map.put("tcp-sampler", "TCPSampler");
+   		map.put("test-action", "TestAction");
+    	
 		return map;
 	}
 

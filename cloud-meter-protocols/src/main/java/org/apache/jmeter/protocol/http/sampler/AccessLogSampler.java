@@ -76,7 +76,10 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
     private transient LogParser parser = null;
 
     // NOTUSED private Class PARSERCLASS = null;
-    private String logFile, parserClassName, filterClassName;
+    //private String logFile, parserClassName, filterClassName;
+    private static final String LOG_FILE = "AccessLogSampler.log_file";
+    private static final String PARSER_CLASS_NAME = "AccessLogSampler.parser_class_name";
+    private static final String FILTER_CLASS_NAME = "AccessLogSampler.filter_class_name";
 
     private transient Filter filter;
 
@@ -90,7 +93,7 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
      * @param path path where to store XML messages
      */
     public void setLogFile(String path) {
-        logFile = path;
+       	this.setProperty(LOG_FILE, path);
     }
 
     /**
@@ -100,7 +103,7 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
      * @return path where XML messages are stored
      */
     public String getLogFile() {
-        return logFile;
+        return this.getPropertyAsString(LOG_FILE);
     }
 
     /**
@@ -111,7 +114,7 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
      *            parser class name
      */
     public void setParserClassName(String classname) {
-        parserClassName = classname;
+        this.setProperty(PARSER_CLASS_NAME, classname);
     }
 
     /**
@@ -120,7 +123,7 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
      * @return String file path.
      */
     public String getParserClassName() {
-        return parserClassName;
+        return this.getPropertyAsString(PARSER_CLASS_NAME);
     }
 
     /**
@@ -220,7 +223,7 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
      * @return Returns the filterClassName.
      */
     public String getFilterClassName() {
-        return filterClassName;
+        return this.getPropertyAsString(FILTER_CLASS_NAME);
     }
 
     /**
@@ -228,7 +231,7 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
      *            The filterClassName to set.
      */
     public void setFilterClassName(String filterClassName) {
-        this.filterClassName = filterClassName;
+        this.setProperty(FILTER_CLASS_NAME, filterClassName);
     }
 
     /**
@@ -261,13 +264,6 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
      */
     public void setImageParsing(boolean imageParsing) {
         super.setImageParser(imageParsing);
-    }
-
-    /**
-     * @return Returns the port.
-     */
-    public String getPortString() {
-        return super.getPropertyAsString(HTTPSamplerBase.PORT);
     }
 
     /**
@@ -309,6 +305,8 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
     }
 
     protected void initFilter() {
+    	String filterClassName = this.getFilterClassName();
+    	
         if (filter == null && filterClassName != null && filterClassName.length() > 0) {
             try {
                 filter = (Filter) Class.forName(filterClassName).newInstance();
@@ -325,6 +323,8 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
     public Object clone() {
         AccessLogSampler s = (AccessLogSampler) super.clone();
         if (started) {
+        	String filterClassName = this.getFilterClassName();
+        	String parserClassName = this.getParserClassName();
             if (filterClassName != null && filterClassName.length() > 0) {
 
                 try {
@@ -383,4 +383,5 @@ public class AccessLogSampler extends HTTPSampler implements TestBean,ThreadList
             ((ThreadListener)filter).threadFinished();
         }
     }
+
 }

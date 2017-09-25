@@ -81,7 +81,7 @@ public class LDAPSampler extends AbstractSampler {
 
     public static final String USER_DEFINED = "user_defined"; //$NON-NLS-1$
 
-    public static final String ARGUMENTS = "arguments"; //$NON-NLS-1$
+//    public static final String ARGUMENTS = "arguments"; //$NON-NLS-1$
 
     public static final String BASE_ENTRY_DN = "base_entry_dn"; //$NON-NLS-1$
 
@@ -235,7 +235,7 @@ public class LDAPSampler extends AbstractSampler {
      *            the arguments
      */
     public void setArguments(Arguments value) {
-        setProperty(new TestElementProperty(ARGUMENTS, value));
+        setProperty(new TestElementProperty(Arguments.ARGUMENTS, value));
     }
 
     /**
@@ -244,7 +244,7 @@ public class LDAPSampler extends AbstractSampler {
      * @return the arguments. User defined test case.
      */
     public Arguments getArguments() {
-        return (Arguments) getProperty(ARGUMENTS).getObjectValue();
+        return (Arguments) getProperty(Arguments.ARGUMENTS).getObjectValue();
     }
 
     /**

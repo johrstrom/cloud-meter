@@ -1,0 +1,129 @@
+{
+	"hashTree": [],
+	"testElement": {
+		"enabled": true,
+		"properties": {
+			"SMTPSampler.attachFile": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.emlMessageToSend": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.enableDebug": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.enforceStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SMTPSampler.headerFields": {
+				"type": "CollectionProperty",
+				"value": "TODO"
+			},
+			"SMTPSampler.include_timestamp": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SMTPSampler.mailFrom": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.message": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.messageSizeStatistics": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SMTPSampler.password": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.plainBody": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SMTPSampler.receiverBCC": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.receiverCC": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.receiverTo": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.replyTo": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.server": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.serverPort": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.subject": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.suppressSubject": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.trustAllCerts": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.trustStoreToUse": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"SMTPSampler.useAuth": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.useLocalTrustStore": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.useSSL": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SecuritySettings.useStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SMTPSampler.use_eml": {
+				"type": "BooleanProperty",
+				"value": false
+			},
+			"SMTPSampler.username": {
+				"type": "StringProperty",
+				"value": ""
+			},
+			"TestElement.enabled": {
+				"type": "BooleanProperty",
+				"value": true
+			},
+			"TestElement.name": {
+				"type": "StringProperty",
+				"value": "SMTP Sampler"
+			},
+			"TestElement.test_class": {
+				"type": "StringProperty",
+				"value": "org.apache.jmeter.protocol.smtp.sampler.SmtpSampler"
+			}
+		}
+	},
+	"type": "sampler"
+}

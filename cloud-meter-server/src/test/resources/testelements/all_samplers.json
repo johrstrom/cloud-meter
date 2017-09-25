@@ -3,14 +3,13 @@
         {
             "hashTree": [
                 {
-                    "hashTree": [
-                    ],
+                    "hashTree": [ ],
                     "testElement": {
                         "delay": 0,
                         "done": false,
                         "duration": 0,
                         "enabled": true,
-                        "endTime": 1503197761000,
+                        "endTime": 1503638551000,
                         "numThreads": 1,
                         "numberOfThreads": 0,
                         "onErrorStartNextLoop": false,
@@ -21,6 +20,10 @@
                             "TestElement.enabled": {
                                 "type": "StringProperty",
                                 "value": "true"
+                            },
+                            "TestElement.gui_class": {
+                                "type": "StringProperty",
+                                "value": "org.apache.jmeter.threads.gui.ThreadGroupGui"
                             },
                             "TestElement.name": {
                                 "type": "StringProperty",
@@ -40,7 +43,7 @@
                             },
                             "ThreadGroup.end_time": {
                                 "type": "LongProperty",
-                                "value": 1503197761000
+                                "value": 1503638551000
                             },
                             "ThreadGroup.main_controller": {
                                 "type": "TestElementProperty",
@@ -64,7 +67,7 @@
                             },
                             "ThreadGroup.start_time": {
                                 "type": "LongProperty",
-                                "value": 1503197761000
+                                "value": 1503638551000
                             }
                         },
                         "rampUp": 1,
@@ -86,6 +89,10 @@
                                     "type": "StringProperty",
                                     "value": "true"
                                 },
+                                "TestElement.gui_class": {
+                                    "type": "StringProperty",
+                                    "value": "org.apache.jmeter.control.gui.LoopControlPanel"
+                                },
                                 "TestElement.name": {
                                     "type": "StringProperty",
                                     "value": "Loop Controller"
@@ -97,7 +104,7 @@
                             }
                         },
                         "scheduler": false,
-                        "startTime": 1503197761000
+                        "startTime": 1503638551000
                     },
                     "type": "controller"
                 }

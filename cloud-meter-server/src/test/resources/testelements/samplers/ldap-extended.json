@@ -1,7 +1,17 @@
 {
     "hashTree": [],
     "testElement": {
+        "arguments": null,
+        "attrs": "",
+        "baseEntryDN": "",
+        "connTimeOut": "",
+        "countlim": 0,
+        "deref": false,
         "enabled": true,
+        "label": "ldap://:/",
+        "ldaparguments": null,
+        "parseFlag": false,
+        "port": "",
         "properties": {
             "TestElement.enabled": {
                 "type": "BooleanProperty",
@@ -9,11 +19,11 @@
             },
             "TestElement.name": {
                 "type": "StringProperty",
-                "value": "LDAP Extended Request Defaults"
+                "value": "LDAP Extended Request"
             },
             "TestElement.test_class": {
                 "type": "StringProperty",
-                "value": "org.apache.jmeter.config.ConfigTestElement"
+                "value": "org.apache.jmeter.protocol.ldap.sampler.LDAPExtSampler"
             },
             "LDAPExtSampler.attributes": {
                 "type": "StringProperty",
@@ -76,8 +86,8 @@
                 "value": ""
             },
             "LDAPExtSampler.timelimit": {
-                "type": "StringProperty",
-                "value": ""
+                "type": "IntegerProperty",
+                "value": 0
             },
             "LDAPExtSampler.user_dn": {
                 "type": "StringProperty",
@@ -87,7 +97,16 @@
                 "type": "StringProperty",
                 "value": ""
             }
-        }
+        },
+        "retobj": false,
+        "rootdn": "",
+        "scope": 2,
+        "secure": false,
+        "servername": "",
+        "test": "",
+        "timelim": 0,
+        "userDN": "",
+        "userPw": ""
     },
-    "type": "config"
+    "type": "sampler"
 }

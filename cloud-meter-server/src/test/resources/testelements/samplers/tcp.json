@@ -1,0 +1,72 @@
+{
+    "hashTree": [],
+    "testElement": {
+        "classname": "TCPClientImpl",
+        "closeConnection": false,
+        "connectTimeout": 0,
+        "enabled": true,
+        "eolByte": 0,
+        "filename": "",
+        "label": "tcp://:0",
+        "noDelay": false,
+        "password": "",
+        "port": 0,
+        "properties": {
+            "ConfigTestElement.password": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "ConfigTestElement.username": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TCPSampler.closeConnection": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "TCPSampler.nodelay": {
+                "type": "BooleanProperty",
+                "value": false
+            },
+            "TCPSampler.port": {
+                "type": "IntegerProperty",
+                "value": 0
+            },
+            "TCPSampler.reUseConnection": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TCPSampler.request": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TCPSampler.server": {
+                "type": "StringProperty",
+                "value": ""
+            },
+            "TCPSampler.timeout": {
+                "type": "LongProperty",
+                "value": 0
+            },
+            "TestElement.enabled": {
+                "type": "BooleanProperty",
+                "value": true
+            },
+            "TestElement.name": {
+                "type": "StringProperty",
+                "value": "TCP Sampler"
+            },
+            "TestElement.test_class": {
+                "type": "StringProperty",
+                "value": "org.apache.jmeter.protocol.tcp.sampler.TCPSampler"
+            }
+        },
+        "reUseConnection": true,
+        "requestData": "",
+        "server": "",
+        "soLinger": 0,
+        "timeout": 0,
+        "username": ""
+    },
+    "type": "sampler"
+}
