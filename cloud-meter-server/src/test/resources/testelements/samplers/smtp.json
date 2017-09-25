@@ -12,20 +12,20 @@
 				"value": ""
 			},
 			"SMTPSampler.enableDebug": {
-				"type": "StringProperty",
-				"value": "false"
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.enforceStartTLS": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.enforceStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
 			},
 			"SMTPSampler.headerFields": {
 				"type": "CollectionProperty",
 				"value": "TODO"
 			},
 			"SMTPSampler.include_timestamp": {
-				"type": "StringProperty",
-				"value": "false"
+				"type": "BooleanProperty",
+				"value": false
 			},
 			"SMTPSampler.mailFrom": {
 				"type": "StringProperty",
@@ -36,16 +36,16 @@
 				"value": ""
 			},
 			"SMTPSampler.messageSizeStatistics": {
-				"type": "StringProperty",
-				"value": "false"
+				"type": "BooleanProperty",
+				"value": false
 			},
 			"SMTPSampler.password": {
 				"type": "StringProperty",
 				"value": ""
 			},
 			"SMTPSampler.plainBody": {
-				"type": "StringProperty",
-				"value": "false"
+				"type": "BooleanProperty",
+				"value": false
 			},
 			"SMTPSampler.receiverBCC": {
 				"type": "StringProperty",
@@ -76,32 +76,32 @@
 				"value": ""
 			},
 			"SMTPSampler.suppressSubject": {
-				"type": "StringProperty",
-				"value": "false"
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.trustAllCerts": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.trustAllCerts": {
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.trustStoreToUse": {
+			"SecuritySettings.trustStoreToUse": {
 				"type": "StringProperty",
 				"value": ""
 			},
 			"SMTPSampler.useAuth": {
-				"type": "StringProperty",
-				"value": "false"
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.useLocalTrustStore": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.useLocalTrustStore": {
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.useSSL": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.useSSL": {
+				"type": "BooleanProperty",
+				"value": false
 			},
-			"SMTPSampler.useStartTLS": {
-				"type": "StringProperty",
-				"value": "false"
+			"SecuritySettings.useStartTLS": {
+				"type": "BooleanProperty",
+				"value": false
 			},
 			"SMTPSampler.use_eml": {
 				"type": "BooleanProperty",
@@ -112,7 +112,7 @@
 				"value": ""
 			},
 			"TestElement.enabled": {
-				"type": "Boolean",
+				"type": "BooleanProperty",
 				"value": true
 			},
 			"TestElement.name": {

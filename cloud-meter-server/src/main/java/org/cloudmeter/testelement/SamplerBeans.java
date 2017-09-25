@@ -13,6 +13,7 @@ import org.apache.jmeter.protocol.jdbc.sampler.*;
 import org.apache.jmeter.protocol.ldap.sampler.*;
 import org.apache.jmeter.protocol.mail.sampler.*;
 import org.apache.jmeter.protocol.system.SystemSampler;
+import org.apache.jmeter.protocol.smtp.sampler.*;
 
 @Component
 public class SamplerBeans {
@@ -127,4 +128,14 @@ public class SamplerBeans {
 		return (SystemSampler) initer.initilizeElement();
 	}
 	
+	@Bean
+	public SmtpSamplerInitializer SmtpSamplerInitializer() {
+		return new SmtpSamplerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public SmtpSampler SmtpSampler(SmtpSamplerInitializer initer) {
+		return (SmtpSampler) initer.initilizeElement();
+	}
 }
