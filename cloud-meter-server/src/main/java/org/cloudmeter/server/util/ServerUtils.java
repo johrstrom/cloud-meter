@@ -116,7 +116,7 @@ public class ServerUtils {
    		map.put("os-process-sampler", "SystemSampler");
    		map.put("smtp-sampler", "SmtpSampler");
    		map.put("tcp-sampler", "TCPSampler");
-   		map.put("test-action-sampler", "TestActionSampler");
+   		map.put("test-action", "TestAction");
     	
 		return map;
 	}

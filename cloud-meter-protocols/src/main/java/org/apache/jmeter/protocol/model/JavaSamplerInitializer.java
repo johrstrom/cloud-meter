@@ -15,7 +15,7 @@ public class JavaSamplerInitializer extends AbstractInitializer {
 		this.baseElement(ele, "Java Request");
 
 		
-		ele.setArguments(this.initializeArgs());
+		ele.setArguments(initializeArgs());
 		ele.setClassname(JavaTest.class.getName());
 		
 		return ele;

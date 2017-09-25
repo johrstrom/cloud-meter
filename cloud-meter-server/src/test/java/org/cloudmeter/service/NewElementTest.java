@@ -366,7 +366,7 @@ public class NewElementTest {
 	
 	@Test
 	public void testActionTest() {
-		utilities.validateFileAgainstAPI("test-action-sampler", SAMPLER_BASE + "test-action.json");
+		utilities.validateFileAgainstAPI("test-action", SAMPLER_BASE + "test-action.json");
 	}
 	
 }

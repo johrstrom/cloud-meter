@@ -29,8 +29,8 @@
                 "value": false
             },
             "TCPSampler.port": {
-                "type": "StringProperty",
-                "value": ""
+                "type": "IntegerProperty",
+                "value": 0
             },
             "TCPSampler.reUseConnection": {
                 "type": "BooleanProperty",
@@ -45,8 +45,8 @@
                 "value": ""
             },
             "TCPSampler.timeout": {
-                "type": "StringProperty",
-                "value": ""
+                "type": "LongProperty",
+                "value": 0
             },
             "TestElement.enabled": {
                 "type": "BooleanProperty",

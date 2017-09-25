@@ -15,75 +15,75 @@
                 "type": "StringProperty",
                 "value": "org.apache.jmeter.config.ConfigTestElement"
             },
-            "attributes": {
+            "LDAPExtSampler.attributes": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "comparedn": {
+            "LDAPExtSampler.comparedn": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "comparefilt": {
+            "LDAPExtSampler.comparefilt": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "connection_timeout": {
+            "LDAPExtSampler.connection_timeout": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "countlimit": {
-                "type": "StringProperty",
-                "value": ""
+            "LDAPExtSampler.countlimit": {
+                "type": "LongProperty",
+                "value": 0
             },
-            "deref_aliases": {
+            "LDAPExtSampler.deref_aliases": {
                 "type": "BooleanProperty",
                 "value": false
             },
-            "modddn": {
+            "LDAPExtSampler.modddn": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "newdn": {
+            "LDAPExtSampler.newdn": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "parseflag": {
+            "LDAPExtSampler.parseflag": {
                 "type": "BooleanProperty",
                 "value": false
             },
-            "port": {
+            "LDAPExtSampler.port": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "return_object": {
+            "LDAPExtSampler.return_object": {
                 "type": "BooleanProperty",
                 "value": false
             },
-            "rootdn": {
+            "LDAPExtSampler.rootdn": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "scope": {
+            "LDAPExtSampler.scope": {
                 "type": "IntegerProperty",
                 "value": 2
             },
-            "secure": {
+            "LDAPExtSampler.secure": {
                 "type": "BooleanProperty",
                 "value": false
             },
-            "servername": {
+            "LDAPExtSampler.servername": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "timelimit": {
+            "LDAPExtSampler.timelimit": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "user_dn": {
+            "LDAPExtSampler.user_dn": {
                 "type": "StringProperty",
                 "value": ""
             },
-            "user_pw": {
+            "LDAPExtSampler.user_pw": {
                 "type": "StringProperty",
                 "value": ""
             }

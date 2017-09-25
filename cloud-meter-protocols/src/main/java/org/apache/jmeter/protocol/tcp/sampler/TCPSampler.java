@@ -232,8 +232,8 @@ public class TCPSampler extends AbstractSampler implements ThreadListener, Inter
         return getPropertyAsBoolean(RE_USE_CONNECTION, RE_USE_CONNECTION_DEFAULT);
     }
 
-    public void setCloseConnection(String close) {
-        this.setProperty(CLOSE_CONNECTION, close, "");
+    public void setCloseConnection(boolean close) {
+        this.setProperty(CLOSE_CONNECTION, close);
     }
 
     public boolean isCloseConnection() {
@@ -257,8 +257,8 @@ public class TCPSampler extends AbstractSampler implements ThreadListener, Inter
     }
     
 
-    public void setPort(String newFilename) {
-        this.setProperty(PORT, newFilename);
+    public void setPort(int port) {
+        this.setProperty(PORT, port);
     }
 
     public int getPort() {
@@ -281,7 +281,7 @@ public class TCPSampler extends AbstractSampler implements ThreadListener, Inter
         return getPropertyAsString(REQUEST);
     }
 
-    public void setTimeout(int newTimeout) {
+    public void setTimeout(long newTimeout) {
         this.setProperty(TIMEOUT, newTimeout);
     }
 

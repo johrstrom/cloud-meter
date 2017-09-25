@@ -2,6 +2,7 @@ package org.apache.jmeter.protocol.model;
 
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.protocol.java.config.JavaConfig;
+import org.apache.jmeter.protocol.java.test.JavaTest;
 import org.apache.jmeter.testelement.TestElement;
 import org.cloudmeter.model.AbstractInitializer;
 
@@ -12,8 +13,8 @@ public class JavaConfigInitializer extends AbstractInitializer {
 		JavaConfig ele = new JavaConfig();
 		this.baseElement(ele,"Java Request Defaults");
 		
+		ele.setClassname(JavaTest.class.getName());
 		ele.setArguments(this.createArgs());
-		ele.setProperty("classname", "org.apache.jmeter.protocol.java.test.JavaTest");
 		
 		return ele;
 	}

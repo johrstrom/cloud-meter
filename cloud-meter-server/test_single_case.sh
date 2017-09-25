@@ -8,5 +8,5 @@ if [[ -n $1 ]]; then
 	cd ../cloud-meter-server
 fi
 
-mvn clean test -Dtest=NewElementTest#smtpSamplerTest
+mvn clean test -Dtest=NewElementTest#ldapConfigTest
 

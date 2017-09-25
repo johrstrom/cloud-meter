@@ -14,6 +14,7 @@ import org.apache.jmeter.protocol.ldap.sampler.*;
 import org.apache.jmeter.protocol.mail.sampler.*;
 import org.apache.jmeter.protocol.system.SystemSampler;
 import org.apache.jmeter.protocol.smtp.sampler.*;
+import org.apache.jmeter.protocol.tcp.sampler.*;
 
 @Component
 public class SamplerBeans {
@@ -137,5 +138,27 @@ public class SamplerBeans {
 	@Autowired
 	public SmtpSampler SmtpSampler(SmtpSamplerInitializer initer) {
 		return (SmtpSampler) initer.initilizeElement();
+	}
+	
+	@Bean
+	public TCPSamplerInitializer TCPSamplerInitializer() {
+		return new TCPSamplerInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public TCPSampler TCPSampler(TCPSamplerInitializer initer) {
+		return (TCPSampler) initer.initilizeElement();
+	}
+	
+	@Bean
+	public TestActionInitializer TestActionInitializer() {
+		return new TestActionInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public TestAction TestAction(TestActionInitializer initer) {
+		return (TestAction) initer.initilizeElement();
 	}
 }
