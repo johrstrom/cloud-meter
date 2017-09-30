@@ -2,12 +2,25 @@ package org.cloudmeter.testelement;
 
 import org.apache.jmeter.control.*;
 import org.apache.jmeter.control.model.*;
+import org.apache.jmeter.threads.ThreadGroupInitializer;
+import org.apache.jmeter.threads.ThreadGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ControllerBeans {
+	
+	@Bean
+	public ThreadGroupInitializer ThreadGroupInitializer() {
+		return new ThreadGroupInitializer();
+	}
+	
+	@Bean
+	@Autowired
+	public ThreadGroup ThreadGroup(ThreadGroupInitializer initer) {
+		return (ThreadGroup) initer.initilizeElement();
+	}
 
 	@Bean
 	public CriticalSectionControllerInitializer CriticalSectionControllerInitializer() {

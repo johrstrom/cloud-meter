@@ -15,12 +15,12 @@
     list-style-image: url('../images/tree/lisenter.png');
 }
 
-.base-test-element.post-processor {
-    list-style-image: url('../images/tree/post-processor.png');
+.base-test-element.post_processor {
+    list-style-image: url('../images/tree/post_processor.png');
 }
 
-.base-test-element.pre-processor {
-    list-style-image: url('../images/tree/pre-processor.png');
+.base-test-element.pre_processor {
+    list-style-image: url('../images/tree/pre_processor.png');
 }
 
 .base-test-element.sampler {
@@ -31,8 +31,8 @@
     list-style-image: url('../images/tree/testplan.png');
 }
 
-.base-test-element.thread-group {
-    list-style-image: url('../images/tree/thread-group.png');
+.base-test-element.thread_group {
+    list-style-image: url('../images/tree/thread_group.png');
 }
 
 .base-test-element.timer {

@@ -32,14 +32,11 @@ public class TestElementModel {
 	
 	public void setTestElement(TestElement testElement) {
 		this.testElement = testElement;
+		this.type = getElementType(testElement);
 	}
 	
 	public ModelType getType() {
 		return type;
-	}
-
-	public void setType(ModelType modelType) {
-		this.type = modelType;
 	}
 
 	public HashTree getHashTree() {
@@ -70,7 +67,9 @@ public class TestElementModel {
 		if(!(ele instanceof TestElement)) 
 			return ModelType.unknown;
 		
-		if (ele instanceof Assertion) {
+		if(ele instanceof AbstractThreadGroup) {
+			return ModelType.thread_group;
+		}else if (ele instanceof Assertion) {
 			return ModelType.assertion;
 		}else if (ele instanceof ConfigTestElement || ele instanceof ConfigElement) { 
 			return ModelType.config;
@@ -86,8 +85,6 @@ public class TestElementModel {
 			return ModelType.sampler;
 		}else if(ele instanceof TestPlan) {
 			return ModelType.testplan;
-		}else if(ele instanceof AbstractThreadGroup) {
-			return ModelType.thread_group;
 		}else if(ele instanceof Timer) {
 			return ModelType.timer;
 		}else if(ele instanceof WorkBench) {

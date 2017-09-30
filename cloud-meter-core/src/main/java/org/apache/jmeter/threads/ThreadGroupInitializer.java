@@ -1,4 +1,4 @@
-package org.cloudmeter.model.threads;
+package org.apache.jmeter.threads;
 
 import org.apache.jmeter.control.LoopController;
 import org.apache.jmeter.testelement.TestElement;

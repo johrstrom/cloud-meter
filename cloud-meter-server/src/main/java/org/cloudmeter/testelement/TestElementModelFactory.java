@@ -30,7 +30,7 @@ public class TestElementModelFactory {
 			
 			TestElement ele = (TestElement) context.getBean(name);
 			model.setTestElement(ele);
-			model.setType(TestElementModel.getElementType(ele));
+			//model.setType(TestElementModel.getElementType(ele));
 			model.setHashTree(new HashTree());
 			
 			return model;

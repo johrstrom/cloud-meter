@@ -47,10 +47,10 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
 								});
 							},
 						},
-					],
+					],//children of thread group
 				},
 
-			],
+			],//children of Add
 			
 		},
 	];
@@ -60,7 +60,7 @@ CloudMeter.controller('CloudMeterController', ["$scope", "$http", function($scop
 	
 
 	$scope.GetTestPlan = function () {
-		var promise = $http.get("http://localhost:8080/api/v1/testplan?name=cm-test.jmx");
+		var promise = $http.get("http://localhost:8080/api/v1/testplan?name=blank.jmx");
 		promise.then(function successCallBack(response){
 			$scope.testplan = response.data.CloudMeterTestPlan
 			
