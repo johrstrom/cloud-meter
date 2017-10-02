@@ -1,0 +1,57 @@
+
+.base-test-element {
+	cursor: pointer;
+}
+
+.base-test-element.assertion {
+    list-style-image: url('../../assets/tree/assertion.png');
+}
+
+.base-test-element.config {
+    list-style-image: url('../../assets/tree/config.png');
+}
+
+.base-test-element.lisenter {
+    list-style-image: url('../../assets/tree/listener.png');
+}
+
+.base-test-element.post_processor {
+    list-style-image: url('../../assets/tree/post_processor.png');
+}
+
+.base-test-element.pre_processor {
+    list-style-image: url('../../assets/tree/pre_processor.png');
+}
+
+.base-test-element.sampler {
+    list-style-image: url('../../assets/tree/sampler.png');
+}
+
+.base-test-element.testplan {
+    list-style-image: url('../../assets/tree/testplan.png');
+}
+
+.base-test-element.thread_group {
+    list-style-image: url('../../assets/tree/thread_group.png');
+}
+
+.base-test-element.timer {
+    list-style-image: url('../../assets/tree/timer.png');
+}
+
+.base-test-element.workbench {
+    list-style-image: url('../../assets/tree/workbench.png');
+}
+
+
+.testplan-menu-tree {
+	cursor: pointer;
+	
+	border: 1px solid black;
+/*     margin-top: 100px; */
+/*     margin-bottom: 100px; */
+	width: 100px;
+/*     margin-right: 0px; */
+/*     margin-left: 0px; */
+    background-color: lightblue;
+}
