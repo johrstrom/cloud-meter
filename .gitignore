@@ -18,3 +18,45 @@ change_logger.sh
 cloud-meter-server/testplans
 cloud-meter-server/*.json
 cloud-meter-server/testresults
+
+# compiled output
+cloud-meter-frontend/dist
+cloud-meter-frontend/tmp
+cloud-meter-frontend/out-tsc
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# CM Frontend 
+cloud-meter-frontend/.sass-cache
+cloud-meter-frontend/connect.lock
+cloud-meter-frontend/coverage
+cloud-meter-frontend/libpeerconnection.log
+cloud-meter-frontend/npm-debug.log
+cloud-meter-frontend/testem.log
+cloud-meter-frontend/typings
+cloud-meter-frontend/node_modules/
+
+# e2e
+cloud-meter-frontend/e2e/*.js
+cloud-meter-frontend/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
