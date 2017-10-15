@@ -1,0 +1,5 @@
+<ul class="testplan">
+	<li *ngFor="let node of testplan" [class.selected]="node === selectedNode" (click)="onSelect(node)">
+		{{node.getName()}}
+	</li>
+</ul>

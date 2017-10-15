@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TestplanComponent } from './testplan/testplan.component';
+import { TopNavBarComponent } from './common/topnavbar.component';
 
 import { BackendService } from './backend.service';
 
