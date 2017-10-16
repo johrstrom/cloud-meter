@@ -3,7 +3,7 @@
  */
 
 export class TestElement {
-  properties:  Map<string, string>;
+  public properties:  Map<string, string>;
 
   constructor() {
     this.properties = new Map<string, string>();

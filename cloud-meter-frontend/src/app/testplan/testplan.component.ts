@@ -18,9 +18,21 @@ export class TestplanComponent {
   testplan: TestElementNode[];
   selectedNode: TestElementNode;
 
+  private _opened = true;
+  private _mode = 'push';
+
   constructor() {
     this.testplan = defaultTestPlan();
   }
+
+  onSelect(node: TestElementNode) {
+    this.selectedNode = node;
+  }
+
+  private getMode(): string {
+    return 'push';
+  }
+
 }
 
 function defaultTestPlan() {
