@@ -1,12 +1,13 @@
-
-<ng-sidebar-container class="testplan"> <ng-sidebar [(opened)]="_opened" [mode]="_mode" [sidebarClass]="'testplan base-test-element'"  [dockedSize]="'50px'">
-<p>Test Plan Editor</p>
-<div ng-sidebar-content> 
-<ul class="testplan base-test-element" layout-align="start left">
-	<li *ngFor="let node of testplan" [class.selected]="node === selectedNode" (click)="onSelect(node)">
-		{{node.getName()}}</li>
-</ul>
+<div >
+	<ul class="testplan-tree" layout-align="start left">
+		<li class="testplan-tree" *ngFor="let node of testplan" [class.selected]="node === selectedNode" [ngClass]="node.elementType"
+			(click)="onSelect(node)">{{ node.element.getProperty('TestElement.name') }}</li>
+	</ul>
 </div>
-</ng-sidebar>
-</ng-sidebar-container>
+<div class="testelement">
+	<div *ngIf="selectedNode" >
+		<p>Test Element Edit</p>
+		<app-testelement></app-testelement>
+	</div>
+</div>
 

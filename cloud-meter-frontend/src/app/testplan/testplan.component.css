@@ -1,4 +1,3 @@
-
 /*     .heroes li { */
 /*       cursor: pointer; */
 /*       position: relative; */
@@ -43,18 +42,23 @@
 /*       padding: 0; */
 /*       width: 15em; */
 /*     } */
+/* .testplan-tree { */
 
-.base-test-element {
+/* } */
+.testplan-tree {
+	/* 	height: 100vh; */
+	width: 40vh;
 	cursor: pointer;
 	padding: 0;
 }
 
-.testplan {
+.testelement {
 	height: 100vh;
-	width: 100vh;
+	padding: 0 1em;
+	/* 	width: 1vh; */
 }
 
-.base-test-element li {
+.testplan-tree li {
 	cursor: pointer;
 	position: relative;
 	left: 0;
@@ -65,60 +69,58 @@
 	border-radius: 4px;
 }
 
-.base-test-element .text {
+.testplan-tree li.selected:hover {
+	background-color: #BBD8DC !important;
+	color: white;
+}
+
+.testplan-tree li:hover {
+	color: #607D8B;
+	background-color: #DDD;
+	left: .1em;
+}
+
+.testplan-tree .text {
 	position: relative;
 	top: -3px;
 }
 
-.base-test-element.assertion {
-    list-style-image: url('../../assets/tree/assertion.png');
+.testplan-tree.assertion {
+	list-style-image: url('../../assets/tree/assertion.png');
 }
 
-.base-test-element.config {
-    list-style-image: url('../../assets/tree/config.png');
+.testplan-tree.config {
+	list-style-image: url('../../assets/tree/config.png');
 }
 
-.base-test-element.lisenter {
-    list-style-image: url('../../assets/tree/listener.png');
+.testplan-tree.lisenter {
+	list-style-image: url('../../assets/tree/listener.png');
 }
 
-.base-test-element.post_processor {
-    list-style-image: url('../../assets/tree/post_processor.png');
+.testplan-tree.post_processor {
+	list-style-image: url('../../assets/tree/post_processor.png');
 }
 
-.base-test-element.pre_processor {
-    list-style-image: url('../../assets/tree/pre_processor.png');
+.testplan-tree.pre_processor {
+	list-style-image: url('../../assets/tree/pre_processor.png');
 }
 
-.base-test-element.sampler {
-    list-style-image: url('../../assets/tree/sampler.png');
+.testplan-tree.sampler {
+	list-style-image: url('../../assets/tree/sampler.png');
 }
 
-.base-test-element.testplan {
-    list-style-image: url('../../assets/tree/testplan.png');
+.testplan-tree.testplan {
+	list-style-image: url('../../assets/tree/testplan.png');
 }
 
-.base-test-element.thread_group {
-    list-style-image: url('../../assets/tree/thread_group.png');
+.testplan-tree.thread_group {
+	list-style-image: url('../../assets/tree/thread_group.png');
 }
 
-.base-test-element.timer {
-    list-style-image: url('../../assets/tree/timer.png');
+.testplan-tree.timer {
+	list-style-image: url('../../assets/tree/timer.png');
 }
 
-.base-test-element.workbench {
-    list-style-image: url('../../assets/tree/workbench.png');
-}
-
-
-.testplan-menu-tree {
-	cursor: pointer;
-	
-	border: 1px solid black;
-/*     margin-top: 100px; */
-/*     margin-bottom: 100px; */
-	width: 100px;
-/*     margin-right: 0px; */
-/*     margin-left: 0px; */
-    background-color: lightblue;
+.testplan-tree.workbench {
+	list-style-image: url('../../assets/tree/workbench.png');
 }

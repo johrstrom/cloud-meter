@@ -1,7 +1,6 @@
 /**
- * The TestElement class
+ * New typescript file
  */
-
 export class TestElement {
   public properties:  Map<string, string>;
 
@@ -9,12 +8,12 @@ export class TestElement {
     this.properties = new Map<string, string>();
   }
 
-  setName(name: string) {
-    return this.properties.set('TestElement.name', name);
+  setProperty(name: string, value: string) {
+    this.properties.set(name, value);
   }
 
-  getName() {
-    return this.properties.get('TestElement.name');
+  getProperty(name: string) {
+    return this.properties.get(name);
   }
 
 }
@@ -24,10 +23,16 @@ export class TestElementNode {
   subTree: TestElement[];
   elementType: string;
 
+  constructor() {
+   this.element = new TestElement();
+  }
+
   getName() {
-    return this.element.getName();
+    return this.element.getProperty('TestElement.name');
+  }
+
+  setName(name: string) {
+    this.element.setProperty('TestElement.name', name);
   }
 
 }
-
-

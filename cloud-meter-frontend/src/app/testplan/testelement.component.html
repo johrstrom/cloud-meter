@@ -1,0 +1,11 @@
+ <div>
+ <div> Name: <input 
+       maxlength="255" 
+       placeholder="" 
+       type="text"
+       #newName
+       [ngModel]="element.getProperty('Testelement.name')"
+       (ngModelChange)="element.setProperty('Testelement.name', newName)"
+        >
+  </div>
+</div>

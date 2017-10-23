@@ -25,7 +25,8 @@ export class TestplanComponent {
     this.testplan = defaultTestPlan();
   }
 
-  onSelect(node: TestElementNode) {
+  private onSelect(node: TestElementNode) {
+    console.log('called onSelect()');
     this.selectedNode = node;
   }
 
@@ -41,13 +42,13 @@ function defaultTestPlan() {
   let node = new TestElementNode();
   node.elementType = 'testplan';
   node.element = new TestElement();
-  node.element.setName('Test Plan');
+  node.setName('TestPlan');
   tp[0] = node;
 
   node = new TestElementNode();
   node.elementType = 'workbench';
   node.element = new TestElement();
-  node.element.setName('WorkBench');
+  node.setName('WorkBench');
   tp[1] = node;
 
 
