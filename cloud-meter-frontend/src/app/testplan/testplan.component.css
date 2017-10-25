@@ -50,12 +50,14 @@
 	width: 40vh;
 	cursor: pointer;
 	padding: 0;
+	float:left;
 }
 
 .testelement {
 	height: 100vh;
 	padding: 0 1em;
 	/* 	width: 1vh; */
+	float:left;
 }
 
 .testplan-tree li {

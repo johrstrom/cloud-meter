@@ -3,6 +3,7 @@
        maxlength="255"
        type="text"
        placeholder="{{ node.getName() }}"
+       [ngModel]="node.element.getProperty('TestElement.name')"
        (ngModelChange)="changeName($event)"
         >
   </div>
@@ -10,6 +11,7 @@
        maxlength="255" 
        type="text"
        placeholder="{{ node.element.getProperty('TestElement.comments') }}"
+       [ngModel]="node.element.getProperty('TestElement.comments')"
        (ngModelChange)="changeComments($event)"
         >
   </div>

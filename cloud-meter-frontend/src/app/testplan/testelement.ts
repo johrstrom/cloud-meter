@@ -16,7 +16,9 @@ export class TestElement {
   }
 
   getProperty(name: string) {
-    return this.properties.get(name);
+    const prop = this.properties.get(name);
+    console.log('setting property: %s to %s', name, prop);
+    return prop;
   }
 
 }
