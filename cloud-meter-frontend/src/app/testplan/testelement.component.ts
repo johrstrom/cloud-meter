@@ -12,11 +12,13 @@ import { TestElementNode } from './testelement';
 
 export class TestElementComponent {
   @Input() node: TestElementNode;
-  @Input() name: string;
 
-  nameChange(event) {
-    this.name = event;
+  changeName(event) {
     this.node.setName(event);
+  }
+
+  changeComments(event) {
+    this.node.element.setProperty('TestElement.comments', event);
   }
 
 }

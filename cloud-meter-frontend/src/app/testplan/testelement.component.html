@@ -1,10 +1,16 @@
  <div>
  <div> Name: <input 
-       maxlength="255" 
-       placeholder="" 
+       maxlength="255"
        type="text"
-       [ngModel]="name"
-       (ngModelChange)="nameChange($event)"
+       placeholder="{{ node.getName() }}"
+       (ngModelChange)="changeName($event)"
+        >
+  </div>
+   <div> Comments: <input 
+       maxlength="255" 
+       type="text"
+       placeholder="{{ node.element.getProperty('TestElement.comments') }}"
+       (ngModelChange)="changeComments($event)"
         >
   </div>
 </div>

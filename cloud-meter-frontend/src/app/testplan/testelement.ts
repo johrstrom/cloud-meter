@@ -11,6 +11,7 @@ export class TestElement {
   }
 
   setProperty(name: string, value: string) {
+    console.log('setting property: %s to %s', name, value);
     this.properties.set(name, value);
   }
 
