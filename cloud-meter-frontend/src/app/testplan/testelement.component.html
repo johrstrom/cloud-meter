@@ -3,9 +3,8 @@
        maxlength="255" 
        placeholder="" 
        type="text"
-       #newName
-       [ngModel]="element.getProperty('Testelement.name')"
-       (ngModelChange)="element.setProperty('Testelement.name', newName)"
+       [ngModel]="name"
+       (ngModelChange)="nameChange($event)"
         >
   </div>
 </div>

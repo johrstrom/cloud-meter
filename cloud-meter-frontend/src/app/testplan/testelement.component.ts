@@ -1,8 +1,8 @@
 /**
  * The TestElement class
  */
-import { Component } from '@angular/core';
-import { TestElement } from './testelement';
+import { Component, Input } from '@angular/core';
+import { TestElementNode } from './testelement';
 
 @Component({
   selector: 'app-testelement',
@@ -11,10 +11,12 @@ import { TestElement } from './testelement';
 })
 
 export class TestElementComponent {
-  element: TestElement;
+  @Input() node: TestElementNode;
+  @Input() name: string;
 
-  constructor() {
-    this.element = new TestElement();
+  nameChange(event) {
+    this.name = event;
+    this.node.setName(event);
   }
 
 }

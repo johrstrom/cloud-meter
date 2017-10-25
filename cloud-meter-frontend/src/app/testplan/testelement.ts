@@ -1,6 +1,8 @@
 /**
  * New typescript file
  */
+import {EventEmitter} from '@angular/core';
+
 export class TestElement {
   public properties:  Map<string, string>;
 
@@ -36,3 +38,4 @@ export class TestElementNode {
   }
 
 }
+

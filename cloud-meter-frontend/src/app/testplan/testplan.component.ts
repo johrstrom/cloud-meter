@@ -4,8 +4,7 @@
 import { BackendService } from '../backend.service';
 import { Component } from '@angular/core';
 
-import { TestElement } from './testelement';
-import { TestElementNode } from './testelement';
+import { TestElement, TestElementNode } from './testelement';
 
 @Component({
   selector: 'app-testplan',
@@ -14,24 +13,16 @@ import { TestElementNode } from './testelement';
   providers: [BackendService]
 })
 
-export class TestplanComponent {
+export class TestplanComponent  {
   testplan: TestElementNode[];
   selectedNode: TestElementNode;
-
-  private _opened = true;
-  private _mode = 'push';
 
   constructor() {
     this.testplan = defaultTestPlan();
   }
 
   private onSelect(node: TestElementNode) {
-    console.log('called onSelect()');
     this.selectedNode = node;
-  }
-
-  private getMode(): string {
-    return 'push';
   }
 
 }
