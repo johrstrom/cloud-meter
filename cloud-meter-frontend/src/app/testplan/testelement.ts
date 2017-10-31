@@ -1,7 +1,6 @@
 /**
  * New typescript file
  */
-import {EventEmitter} from '@angular/core';
 
 export class TestElement {
   public properties:  Map<string, string>;
@@ -11,14 +10,11 @@ export class TestElement {
   }
 
   setProperty(name: string, value: string) {
-    console.log('setting property: %s to %s', name, value);
     this.properties.set(name, value);
   }
 
   getProperty(name: string) {
-    const prop = this.properties.get(name);
-    console.log('setting property: %s to %s', name, prop);
-    return prop;
+    return this.properties.get(name);
   }
 
 }
@@ -27,6 +23,8 @@ export class TestElementNode {
   element: TestElement;
   subTree: TestElement[];
   elementType: string;
+  actions: any[];
+  public contextMenuActions = [];
 
   constructor() {
    this.element = new TestElement();
@@ -40,5 +38,8 @@ export class TestElementNode {
     this.element.setProperty('TestElement.name', name);
   }
 
-}
+  setActions(actions: any[]){
+    this.actions = actions;
+  }
 
+}

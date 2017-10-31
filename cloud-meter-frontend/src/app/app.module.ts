@@ -7,6 +7,7 @@ import { TestplanComponent } from './testplan/testplan.component';
 import { TestElementComponent } from './testplan/testelement.component';
 import { TopNavBarComponent } from './common/topnavbar.component';
 import { SidebarModule } from 'ng-sidebar';
+import { ContextMenuModule } from 'ngx-contextmenu';
 
 import { BackendService } from './backend.service';
 
@@ -19,7 +20,8 @@ import { BackendService } from './backend.service';
   imports: [
     BrowserModule,
     SidebarModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ContextMenuModule
   ],
   providers: [
     BackendService,

@@ -1,7 +1,17 @@
 <div >
 	<ul class="testplan-tree" layout-align="start left">
 		<li class="testplan-tree" *ngFor="let node of testplan" [class.selected]="node === selectedNode" [ngClass]="node.elementType"
+		  [contextMenu]="testPlanContextMenu"
+			[contextMenuSubject]="node"
+			(contextmenu)="onContextMenu($event, node)"
 			(click)="onSelect(node)">{{ node.element.getProperty('TestElement.name') }}</li>
+
+			<context-menu #testPlanContextMenu>
+				<ng-template *ngFor="let action of selectedNode.actions" contextMenuItem let-item
+					(execute)="action.execute($event.node)">
+					{{ action.html(selectedNode) }}
+				</ng-template>
+			</context-menu>
 	</ul>
 </div>
 <div class="testelement">
@@ -10,4 +20,3 @@
 		<app-testelement [node]="selectedNode"></app-testelement>
 	</div>
 </div>
-
