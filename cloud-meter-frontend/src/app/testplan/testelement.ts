@@ -23,8 +23,7 @@ export class TestElementNode {
   element: TestElement;
   subTree: TestElement[];
   elementType: string;
-  actions: any[];
-  public contextMenuActions = [];
+  public actions: any[];
 
   constructor() {
    this.element = new TestElement();

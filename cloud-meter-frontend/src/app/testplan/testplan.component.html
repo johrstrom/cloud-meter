@@ -5,15 +5,61 @@
 			[contextMenuSubject]="node"
 			(contextmenu)="onContextMenu($event, node)"
 			(click)="onSelect(node)">{{ node.element.getProperty('TestElement.name') }}</li>
-
-			<context-menu #testPlanContextMenu>
-				<ng-template *ngFor="let action of selectedNode.actions" contextMenuItem let-item
-					(execute)="action.execute($event.node)">
-					{{ action.html(selectedNode) }}
-				</ng-template>
-			</context-menu>
 	</ul>
+
+	<context-menu #testPlanContextMenu  >
+		<ng-container *ngFor="let action of selectedNode?.actions" >
+
+		<context-menu #subActionsMenu>
+			<ng-template *ngFor="let subAction of action.subActions" let-item contextMenuItem (execute)="subAction.click($event.event, $event.item)">
+				{{ subAction.label }}
+			</ng-template>
+		</context-menu>
+
+			<ng-template  let-item contextMenuItem
+			[subMenu]="subActionsMenu" (execute)="action.click($event.event, $event.item)">
+				{{ action.label }}
+			</ng-template>
+
+
+
+		</ng-container>
+	</context-menu>
+
+	<!-- <context-menu>
+    <ng-container *ngFor="let action of contextUserActions">
+      <context-menu #subActions>
+        <ng-template *ngFor="let subAction of action.subActions" let-item contextMenuItem (execute)="subAction.click($event.event, $event.item)">
+          {{subAction.label}}
+        </ng-template>
+      </context-menu>
+      <ng-template let-item contextMenuItem [subMenu]="action.subActions && subActions" (execute)="action.click($event.event, $event.item)">
+        {{action.label}}
+      </ng-template>
+    </ng-container>
+  </context-menu> -->
+
+	<!-- <context-menu #myContextMenu>
+	    <ng-template *ngFor="let action of contextMenuActions" contextMenuItem let-item
+	                 [visible]="action.visible" [enabled]="action.enabled" [divider]="action.divider" [subMenu]="action.submenu"
+	                 (execute)="action.click($event.item)">
+	        {{ action.html() }}
+	    </ng-template>
+	</context-menu>
+
+	<context-menu #mySubMenu>
+	    <ng-template *ngFor="let action of contextSubMenuActions" contextMenuItem let-item
+	                 [visible]="action.visible" [enabled]="action.enabled" [divider]="action.divider"
+	                 (execute)="action.click($event.item)">
+	        {{ action.html() }}
+	    </ng-template>
+	</context-menu> -->
+
+
+
 </div>
+
+
 <div class="testelement">
 	<div *ngIf="selectedNode" >
 		<p>Test Element Edit</p>

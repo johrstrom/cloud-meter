@@ -32,6 +32,7 @@ export class TestplanComponent  {
   public onContextMenu($event: MouseEvent, item: any): void {
     this.contextMenuService.show.next({ event: $event, item: item });
     $event.preventDefault();
+    console.log("showing menu on ", item)
   }
 
 
@@ -51,6 +52,7 @@ function defaultTestPlan() {
   node.elementType = 'workbench';
   node.element = new TestElement();
   node.setName('WorkBench');
+  node.actions = TopLevelOptions;
   tp[1] = node;
 
 

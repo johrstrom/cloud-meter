@@ -1,34 +1,77 @@
 
 import {TestElementNode} from '../testelement';
 
-export const TopLevelOptions = [
+export const ThreadGroupOptions = [
   {
     enabled: true,
     visible: true,
-    html: (item) => 'ThreadGroup',
-    execute: (item) => {
-      console.log("threadgroup clicked")
+    label: 'ThreadGroup',
+    click: (event, item) => {
+      console.log("new thread group")
+    },
+  },
+  {
+    enabled: true,
+    visible: true,
+    label:  'SetUp ThreadGroup',
+    click: (event, item): void => {
+      console.log("new setup thread group")
+    },
+  },
+  {
+    enabled: true,
+    visible: true,
+    label: 'TearDown ThreadGroup',
+    click: (event, item) => {
+      console.log("new tear down thread group")
     },
   },
 ];
 
-export const ThreadGroupOptions = [
+export const SamplerOptions = [
   {
-    html: (item) => 'ThreadGroup',
-    click: (item) => {
-
+    enabled: true,
+    visible: true,
+    label: 'Http Sampler',
+    click: (event, item) => {
+      console.log("new thread group")
     },
   },
   {
-    html: (item): string => 'SetUp ThreadGroup',
-    click: (item): void => {
-
+    enabled: true,
+    visible: true,
+    label:  'JSR223 Sampler',
+    click: (event, item): void => {
+      console.log("new setup thread group")
     },
   },
   {
-    html: (item) => 'TearDown ThreadGroup',
-    click: (item) => {
-
+    enabled: true,
+    visible: true,
+    label: 'Third Sampler',
+    click: (event, item) => {
+      console.log("new tear down thread group")
     },
+  },
+];
+
+export const TopLevelOptions = [
+  {
+    enabled: true,
+    visible: true,
+    label:  'Add',
+    click:(event, item) => {
+      console.log("trying to add something")
+    },
+    subActions: ThreadGroupOptions,
+  },
+  {
+    enabled: true,
+    visible: true,
+    label:  'Delete',
+    click:(event, item) => {
+      console.log("trying to delete something")
+    },
+    subActions: SamplerOptions,
   },
 ];
