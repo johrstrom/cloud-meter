@@ -30,8 +30,15 @@ export class TestplanComponent  {
   }
 
   public onContextMenu($event: MouseEvent, item: any): void {
-    this.contextMenuService.show.next({ event: $event, item: item });
+    this.contextMenuService.show.next(
+      { event: $event,
+        item: item,
+        contextMenu: this.contextMenu,
+      }
+    );
+
     $event.preventDefault();
+    $event.stopPropagation();
     console.log("showing menu on ", item)
   }
 
