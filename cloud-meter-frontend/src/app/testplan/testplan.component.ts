@@ -6,7 +6,7 @@ import { Component, ViewChild } from '@angular/core';
 
 import { TestElement, TestElementNode } from './testelement';
 import {ContextMenuService ,ContextMenuComponent} from 'ngx-contextmenu';
-import {TopLevelOptions} from './testelementmenu/menus';
+import {TopLevelMenu} from './testelementmenu/menus';
 
 @Component({
   selector: 'app-testplan',
@@ -52,14 +52,14 @@ function defaultTestPlan() {
   node.elementType = 'testplan';
   node.element = new TestElement();
   node.setName('TestPlan');
-  node.actions = TopLevelOptions;
+  node.menus = TopLevelMenu;
   tp[0] = node;
 
   node = new TestElementNode();
   node.elementType = 'workbench';
   node.element = new TestElement();
   node.setName('WorkBench');
-  node.actions = TopLevelOptions;
+  node.menus = TopLevelMenu;
   tp[1] = node;
 
 

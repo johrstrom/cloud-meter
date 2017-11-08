@@ -8,20 +8,20 @@
 	</ul>
 
 	<context-menu   #testPlanContextMenu>
-		<ng-container *ngFor="let action of selectedNode?.actions">
+		<ng-container *ngFor="let menu of selectedNode?.menus">
 
-			<context-menu #subActionsMenu>
+			<context-menu #firstLevelMenu>
 				<ng-template let-item contextMenuItem
-				*ngFor="let subAction of action?.subActions"
-				(execute)="subAction.click(node, $event)">
-				{{ subAction.html(node) }}
+				*ngFor="let subMenu of menu?.subMenus"
+				(execute)="subMenu.click(node, $event)">
+				{{ subMenu.html(node) }}
 				</ng-template>
 			</context-menu>
 
 			<ng-template  let-item contextMenuItem
-			[subMenu]="subActionsMenu"
-			(execute)="action.click(node, $event)">
-				{{ action.html(node) }}
+			[subMenu]="firstLevelMenu"
+			(execute)="menu.click(node, $event)">
+				{{ menu.html(node) }}
 			</ng-template>
 
 		</ng-container>

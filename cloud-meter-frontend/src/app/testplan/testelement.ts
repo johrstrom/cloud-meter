@@ -23,7 +23,7 @@ export class TestElementNode {
   element: TestElement;
   subTree: TestElement[];
   elementType: string;
-  public actions: any[];
+  public menus: any[];
 
   constructor() {
    this.element = new TestElement();
@@ -35,10 +35,6 @@ export class TestElementNode {
 
   setName(name: string) {
     this.element.setProperty('TestElement.name', name);
-  }
-
-  setActions(actions: any[]){
-    this.actions = actions;
   }
 
 }

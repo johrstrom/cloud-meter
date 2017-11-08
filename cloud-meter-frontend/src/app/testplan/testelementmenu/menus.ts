@@ -1,7 +1,7 @@
 
 import {TestElementNode} from '../testelement';
 
-export const ThreadGroupOptions = [
+export const ThreadGroupMenu = [
   {
     enabled: true,
     visible: (item: any) => true,
@@ -28,13 +28,7 @@ export const ThreadGroupOptions = [
   },
 ];
 
-// export interface ILinkConfig {
-//   click: (item: any, $event?: MouseEvent) => void;
-//   enabled?: (item: any) => boolean;
-//   html: (item: any) => string;
-// }
-
-export const TopLevelOptions = [
+export const TopLevelMenu = [
   {
     enabled: true,
     visible: (item: any) => true,
@@ -42,7 +36,7 @@ export const TopLevelOptions = [
     click: (item, event) => {
       console.log("trying to add something")
     },
-    subActions: ThreadGroupOptions,
+    subMenus: ThreadGroupMenu,
   },
   // {
   //   enabled: true,
