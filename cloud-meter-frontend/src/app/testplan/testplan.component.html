@@ -10,12 +10,22 @@
 	<context-menu   #testPlanContextMenu>
 		<ng-container *ngFor="let menu of selectedNode?.menus">
 
-			<context-menu #firstLevelMenu>
-				<ng-template let-item contextMenuItem
-				*ngFor="let subMenu of menu?.subMenus"
-				(execute)="subMenu.click(node, $event)">
-				{{ subMenu.html(node) }}
-				</ng-template>
+			<context-menu #firstLevelMenu >
+				<ng-container *ngFor="let firstLevelMenu of menu?.subMenus">
+					<context-menu #secondLevelMenu >
+						<ng-template let-item contextMenuItem
+						*ngFor="let secondLevelMenu of firstLevelMenu.subMenus"
+						(execute)="secondLevelMenu.click(node, $event)">
+						{{ secondLevelMenu.html(node) }}
+						</ng-template>
+					</context-menu>
+
+					<ng-template let-item contextMenuItem
+					[subMenu]="secondLevelMenu"
+					(execute)="firstLevelMenu.click(node, $event)">
+					{{ firstLevelMenu.html(node) }}
+					</ng-template>
+				</ng-container>
 			</context-menu>
 
 			<ng-template  let-item contextMenuItem

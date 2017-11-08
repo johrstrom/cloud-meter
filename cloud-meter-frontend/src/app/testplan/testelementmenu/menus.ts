@@ -33,18 +33,13 @@ export const TopLevelMenu = [
     enabled: true,
     visible: (item: any) => true,
     html: (item: any) => 'Add',
-    click: (item, event) => {
-      console.log("trying to add something")
-    },
-    subMenus: ThreadGroupMenu,
+    click: (item, event) => {},
+    subMenus: [{
+      enabled: true,
+      visible: (item: any) => true,
+      html: (item: any) => 'ThreadGroups',
+      click: (item, event) => {},
+      subMenus: ThreadGroupMenu
+    }],
   },
-  // {
-  //   enabled: true,
-  //   visible: true,
-  //   label:  'Delete',
-  //   click:(item, event) => {
-  //     console.log("trying to delete something")
-  //   },
-  //   subActions: SamplerOptions,
-  // },
 ];
